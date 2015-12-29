@@ -7,7 +7,8 @@
 //
 
 #import "RegVC.h"
-
+#import "LoginData.h"
+#import "RegOKVC.h"
 @interface RegVC ()
 
 @end
@@ -17,6 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tf_phone.tag=TAG_TF_PHONE;
+    self.tf_pwd.tag=TAG_TF_PWD;
+    self.tf_vcode.tag=TAG_TF_VCODE;
+    
+    self.bt_send.hidden = YES;
+    self.operation = [[HLLoginOperation alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,60 +44,91 @@
 
 - (IBAction)getVercodeAction:(UIButton *)sender
 {
-    //检测是否是有效手机号码
     
-    if (_tf_phone.text.length < 11 || _tf_phone.text.length > 13)
-    {
+    
+    if (self.tf_phone.text.length < 11) {
         
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请输入有效手机号码" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        
+        [APSProgress showToast:self.view withMessage:@"请输入有效手机号码"];
         return;
     }
     
-    [APSProgress showIndicatorView];
-    //设置为NO的时候，走本类的delegate，设置为YES的时候，就走的CommonCallback里的delegate，CommonCallbackDelegate作为接收result用
-    Api* _api = [[Api alloc] initWithDelegate:self needCommonProcess:NO];
-    [_api getVerityCode:_tf_phone.text];
+    
+    [self.operation vericodeGetByPhone:self.tf_phone.text completeBlock:^(id result, NSError *error) {
+        
+        NSString *e = [result objectForKey:@"e"];
+        int valeu = (int)[e intValue];
+        if (valeu != -1) {
+            __weak typeof(self) weakSelf = self;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.bt_getVcode.userInteractionEnabled = NO;
+                [weakSelf.bt_getVcode setTitle:@"60秒后重发" forState:UIControlStateNormal];
+                [weakSelf.bt_getVcode changeStatus];
+                [weakSelf countDown];
+            });
+        }
+
+    }];
     
 }
 
+- (void) countDown
+{
+    __block int timeout=60; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_object_t _o = (_timer);
+            _dispatch_object_validate(_o);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.bt_getVcode.userInteractionEnabled = YES;
+                [self.bt_getVcode changeStatus];
+                [self.bt_getVcode setTitle:@"获取验证码" forState:UIControlStateNormal];
+                self.bt_getVcode.countDownLabel.text = @"";
+                self.bt_getVcode.userInteractionEnabled = YES;
+            });
+        }else{
+            int seconds = timeout;
+            NSString *strTime = [NSString stringWithFormat:@"%d秒后重发", seconds];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.bt_getVcode setTitle:@"" forState:UIControlStateNormal];
+                self.bt_getVcode.countDownLabel.text = strTime;
+            });
+            timeout--;
+        }
+    });
+    dispatch_resume(_timer);
+}
+
+
+- (IBAction)getSend:(UIButton *)sender
+{
+
+    [LoginData saveValue:_tf_vcode.text key:KEY_USER_VCODE];
+    [LoginData saveValue:_tf_pwd.text key:KEY_USER_PWD];
+    [LoginData saveValue:_tf_phone.text key:KEY_USER_LOGIN_NAME];
+    
+    
+    //跳转到下一个页面
+    
+    RegOKVC *vc_next  = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"regokvc"];
+    
+    [self.navigationController showViewController:vc_next sender:NULL];
+    
+}
+
+
+#pragma mark -
+#pragma mark network
 
 - (void)finishedWithRequest:(HttpRequest *)request
                    Response:(HttpResponse *)response
                    AndError:(NSError *)error
-{
-    
-    [APSProgress hidenIndicatorView];
-    
-    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:&error];
-    
-    NSObject *_object = [dic objectForKey:@"e"];
-    
-    NSLog(@"_object :%@",dic);
-    
-    NSString *_message = [dic objectForKey:@"msg"];
-    
-    int json_e = [(NSNumber*)_object intValue];
-    
-    if (json_e==0)
-    {
-        
-        
-    }
-    else
-    {
-        
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"提示" message:_message delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
-        [alert show];
-        
-    }
-    
-}
 
-- (void) callbackResult:(id) result
 {
-    
+    [APSProgress hidenIndicatorView];
 }
 
 #pragma mark -
@@ -97,24 +136,65 @@
 - ( BOOL )textField:( UITextField  *)textField shouldChangeCharactersInRange:( NSRange )range replacementString:( NSString  *)string
 {
     
-    if (textField.tag != 10) {
-        
-        return YES;
+    switch (textField.tag) {
+        case TAG_TF_PHONE:
+        {
+            NSMutableString *_temp_vcode = [NSMutableString stringWithString:_tf_phone.text];
+            
+            [_temp_vcode appendString:string];
+            
+            if (_temp_vcode.length > 11)
+            {
+                _tf_phone.text = _temp_vcode;
+                
+                return NO;
+            }
+        }
+            break;
+        case TAG_TF_PWD:
+        {
+            
+            if (![self.tf_phone.text isEqual:@""]  && ![self.tf_vcode.text isEqual:@""])
+            {
+                self.bt_send.hidden = NO;
+                
+            }
+            
+            
+        }
+            break;
+        case TAG_TF_VCODE:
+        {
+            if (![self.tf_phone.text isEqual:@""]  && ![self.tf_pwd.text isEqual:@""])
+            {
+                self.bt_send.hidden = NO;
+                
+            }
+            
+        }
+            break;
+        default:
+            break;
     }
     
-    //判断验证码是否正确
     
-    NSMutableString *_temp_vcode = [NSMutableString stringWithString:_tf_phone.text];
-    
-    [_temp_vcode appendString:string];
-    
-    if (_temp_vcode.length > 4)
-    {
-        _tf_phone.text = _temp_vcode;
-    }
     
     
     return YES;
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    
+    
+    textField.text=@"";
+    
+    return true;
+    
+}
 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+    
+}
 @end

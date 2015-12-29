@@ -1,0 +1,6 @@
+framework module ABTableViewCellController {
+  umbrella header "ABTableViewCellController-umbrella.h"
+
+  export *
+  module * { export * }
+}

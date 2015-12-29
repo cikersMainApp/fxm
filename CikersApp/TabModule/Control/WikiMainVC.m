@@ -7,7 +7,10 @@
 //
 
 #import "WikiMainVC.h"
-
+#import "WikiViewModel.h"
+#import "MJRefresh.h"
+#import "UIScrollView+MJExtension.h"
+#import "UIScrollView+MJRefresh.h"
 @interface WikiMainVC ()
 
 @end
@@ -17,21 +20,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    self.wikiModel = [[WikiViewModel alloc] init];
+
+    self.wikiModel.dataSource = [[NSMutableArray alloc] init];
+
+    
+    
+    self.mainTableView.dataSource = self.wikiModel;
+    self.mainTableView.delegate = self.wikiModel;
+    self.wikiModel.tableView = self.mainTableView;
+    
+    [self.wikiModel initData];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

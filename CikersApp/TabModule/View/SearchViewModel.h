@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "HLCommonUsedCell.h"
 @interface SearchViewModel : NSObject
+<UITableViewDataSource,
+UITableViewDelegate,
+HLTableViewDelegate,
+HLCommonUsedCellDataSource,
+HLCommonUsedCellDelegate>
+@property (nonatomic,strong) NSMutableArray * dataSource;
+@property(nonatomic,weak) id delegate;
+@property (nonatomic,strong) UITableView * tempTableView;
 
 @end

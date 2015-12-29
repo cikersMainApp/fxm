@@ -14,7 +14,7 @@
                    Response:(HttpResponse *)response
                    AndError:(NSError *)error
 {
-    //    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.response options:NSJSONReadingAllowFragments error:&error];
+        NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.response options:NSJSONReadingAllowFragments error:&error];
     [self.delegate callbackResult:response];
 }
 

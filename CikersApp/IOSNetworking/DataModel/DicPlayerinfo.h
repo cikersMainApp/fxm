@@ -10,4 +10,6 @@
 
 @interface DicPlayerinfo : NSObject
 
+@property(nonatomic,strong)NSString *name;
+
 @end

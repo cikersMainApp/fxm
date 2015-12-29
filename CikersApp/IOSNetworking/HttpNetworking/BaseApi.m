@@ -60,6 +60,23 @@
             rsp.responseData = operation.responseData;
             rsp.responseString = operation.responseString;
             [self.delegate finishedWithRequest:req Response:rsp AndError:nil];
+            
+            
+            NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:rsp.responseData options:NSJSONReadingAllowFragments error:nil];
+            
+            NSLog(@"_object :%@",dic);
+            
+            NSObject *e = [dic objectForKey:@"e"];
+            int json_e = [(NSNumber*)e intValue];
+            
+            
+            if (json_e == 0 && [req.apiName isEqual:NET_MATCH_INFO])
+            {
+                [self.delegate finishedWithScuessData:dic];
+
+            }
+            
+            
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -70,6 +87,17 @@
             rsp.responseData = operation.responseData;
             rsp.responseString = operation.responseString;
             [self.delegate finishedWithRequest:req Response:rsp AndError:error];
+            
+//            NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:rsp.responseData options:NSJSONReadingAllowFragments error:nil];
+            
+//            NSLog(@"_object :%@",dic);
+
+            [APSProgress hideHUDWithAnimated:YES];
+            
+
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"网络错误" message:@"请兄弟姐们们看下是否有网" delegate:nil cancelButtonTitle:@"明白" otherButtonTitles:nil, nil];
+//            [alert show];
+            
         }
         
     }];

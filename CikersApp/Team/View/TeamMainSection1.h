@@ -10,4 +10,6 @@
 
 @interface TeamMainSection1 : UIView
 
+@property(nonatomic,weak)IBOutlet UIView *view;
+
 @end

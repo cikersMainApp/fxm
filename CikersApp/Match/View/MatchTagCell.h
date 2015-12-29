@@ -10,4 +10,18 @@
 
 @interface MatchTagCell : UITableViewCell
 
+@property(nonatomic,weak)IBOutlet UIImageView *img_photo;
+@property(nonatomic,weak)IBOutlet UILabel *lb_name;
+@property(nonatomic,weak)IBOutlet UILabel *lb_tag1; //标签1
+@property(nonatomic,weak)IBOutlet UILabel *lb_tag2;
+@property(nonatomic,weak)IBOutlet UILabel *lb_tag3;
+
+@property(nonatomic,weak)IBOutlet UIView *view_sectionbg; // 显示标题的背景
+@property(nonatomic,weak)IBOutlet UILabel *lb_sectionTitle;
+
+-(IBAction)bnt_action:(UIButton*)sender;
+
+
+-(void)showSectionState:(BOOL)show bgcolor:(int)color;
+
 @end

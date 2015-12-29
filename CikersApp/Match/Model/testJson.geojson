@@ -1,6 +1,85 @@
+
+//----------------------
+// matchid 298 比赛详情
 {
-    "type": "MultiPolygon",
-    "coordinates": [
-        
-    ]
+    "e": 0,
+    "total": null,
+    "data": {
+        "id": 298,
+        "createdBy": null,
+        "modifiedBy": null,
+        "createdOn": null,
+        "modifiedOn": null,
+        "companyId": 1,
+        "description": null,
+        "groupName": "A",
+        "fieldName": "B",
+        "score": "2-1",
+        "result": "A",
+        "scorea": 2,
+        "scoreb": 1,
+        "penaltya": null,
+        "penaltyb": null,
+        "favora": 43,
+        "favorb": 5,
+        "teamAid": 17,
+        "teamBid": 12,
+        "tournamentid": 22,
+        "scheduletime": 1414810800000,
+        "starttime": null,
+        "endtime": null,
+        "teama": {
+            "id": 17,
+            "playercount": 4,
+            "name": "NYWW",
+            "icon": "/repos/1/uploads/2015/05/24/13626.png",
+            "province": "海外",
+            "createdOn": 1399177469000,
+            "eventcount": 0,
+            "viewcount": 1414,
+            "playerIds": [ ]
+        },
+        "teamb": {
+            "id": 12,
+            "playercount": 120,
+            "name": "Syracuse",
+            "icon": "/repos/1/uploads/2014/08/19/2446.png",
+            "province": "海外",
+            "createdOn": 1398698100000,
+            "eventcount": 42,
+            "viewcount": 24283,
+            "playerIds": [ ]
+        },
+        "game": {
+            "id": 22,
+            "sportscat": null,
+            "name": "美东杯",
+            "year": "2014",
+            "province": "海外",
+            "tags": null,
+            "icon": "/repos/1/uploads/2015/05/19/13253.png",
+            "starttime": 1414785600000,
+            "endtime": 1414872000000,
+            "status": 1,
+            "teamcount": 12,
+            "rules": {
+                "halfDuration": 0,
+                "halfCount": 0,
+                "intervalTime": 0,
+                "winScore": 3,
+                "failScore": 0,
+                "drawScore": 1,
+                "participants": 0,
+                "penalty": false,
+                "overtime": false
+            },
+            "matchIds": [ ]
+        },
+        "tacnname": null,
+        "taportrait": null,
+        "tbcnname": null,
+        "tbportrait": null
+    },
+    "msg": "",
+    "success": true
 }

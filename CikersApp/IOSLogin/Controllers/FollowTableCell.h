@@ -10,4 +10,22 @@
 
 @interface FollowTableCell : UITableViewCell
 
+@property(nonatomic,weak)IBOutlet UILabel *lb_name;
+@property(nonatomic,weak)IBOutlet UILabel *lb_number_follow;
+@property(nonatomic,weak)IBOutlet UILabel *lb_number_wiki;
+@property(nonatomic,weak)IBOutlet UIImageView *img_icon;
+@property(nonatomic,weak)IBOutlet UIButton *bt_follow;
+
+//right
+
+@property(nonatomic,weak)IBOutlet UILabel *lb_name_right;
+@property(nonatomic,weak)IBOutlet UILabel *lb_number_follow_right;
+@property(nonatomic,weak)IBOutlet UILabel *lb_number_wiki_right;
+@property(nonatomic,weak)IBOutlet UIImageView *img_icon_right;
+
+
+-(IBAction)bnt_follow:(id)sender;
+
+-(void)cell_update;
+
 @end

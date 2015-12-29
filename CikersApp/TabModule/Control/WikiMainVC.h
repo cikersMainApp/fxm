@@ -7,7 +7,12 @@
 //
 
 #import "HLBaseViewController.h"
-
+#import "WikiViewModel.h"
 @interface WikiMainVC : HLBaseViewController
+
+
+@property(nonatomic,strong)WikiViewModel *wikiModel;
+@property (weak, nonatomic) IBOutlet UITableView *mainTableView;
+
 
 @end

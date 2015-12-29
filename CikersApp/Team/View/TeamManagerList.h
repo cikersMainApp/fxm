@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TeamManagerList : UIView
+@interface TeamManagerList : UIView<UITableViewDataSource,UITableViewDelegate>
+
+
+@property(nonatomic,weak)IBOutlet UITableView *tempTableView;
+
+-(IBAction)bnt_back;
+-(IBAction)bnt_creatTeam;
 
 @end

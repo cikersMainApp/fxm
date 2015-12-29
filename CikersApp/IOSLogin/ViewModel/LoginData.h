@@ -10,4 +10,8 @@
 
 @interface LoginData : NSObject
 
++(void)saveValue:(NSString*)value key:(NSString*)key;
+
++(NSString*)getValueBykey:(NSString*)key;
+
 @end

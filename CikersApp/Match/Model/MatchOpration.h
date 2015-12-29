@@ -7,7 +7,26 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Api.h"
 
-@interface MatchOpration : NSObject
+@protocol MatchOprationDelegate <NSObject>
+
+-(void)data_scuess:(id)dic;
+
+@end
+
+
+@interface MatchOpration : NSObject<BaseApiDelegate>
+
+@property(nonatomic,strong)id<MatchOprationDelegate>delegate;
+@property(nonatomic,strong)Api *net_sendApi;
+
+
+-(void)getDataForAllinfoBymatchid:(NSString *)matchid;
+-(void)parseDataForAllinfo:(NSDictionary*)dic;
+
+
+
+
 
 @end

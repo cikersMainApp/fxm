@@ -7,7 +7,12 @@
 //
 
 #import "ARSegmentPageController.h"
+#import "MatchOpration.h"
+@interface MatchVC : ARSegmentPageController<MatchOprationDelegate>
 
-@interface MatchVC : ARSegmentPageController
+@property(nonatomic,strong)MatchOpration *opration;
+@property(nonatomic,strong)NSString *str_score;
+
+-(IBAction)bnt_back:(id)sender;
 
 @end

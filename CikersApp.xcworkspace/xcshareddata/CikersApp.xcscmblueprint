@@ -1,0 +1,34 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : {
+
+    },
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : 0,
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1EF36C86-0385-42BD-BB92-CC7B414F7B8D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : "..\/Downloads\/Teapod\/TeaLife",
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : "..\/Downloads\/Teapod\/TeaLife"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CikersApp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CikersApp.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/121.40.189.149:1443\/svn\/TeapodIOS",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:CoffeeTea\/TeaLife.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89"
+    }
+  ]
+}

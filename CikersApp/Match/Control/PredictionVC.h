@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARSegmentPageController.h"
 
-@interface PredictionVC : UITableViewController
+@interface PredictionVC : UITableViewController<ARSegmentControllerDelegate>
 
 @end

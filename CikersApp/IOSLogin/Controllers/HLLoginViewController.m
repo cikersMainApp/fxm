@@ -12,6 +12,7 @@
 #import "HLLoginOperation.h"
 #import "HLLoginInfoView.h"
 #import "HLGetVericodeButton.h"
+#import "LoginData.h"
 @interface HLLoginViewController ()<UITextFieldDelegate,HLLoginInfoViewDelegate>
 @property (nonatomic,strong) HLLoginOperation * operation;
 @property (nonatomic,strong) UILabel * l;
@@ -19,6 +20,11 @@
 @property (weak, nonatomic) IBOutlet HLGetVericodeButton *getVericodeButton;
 @property (weak, nonatomic) IBOutlet HLLoginInfoView *inputView;
 - (IBAction)getVericodeMethod:(id)sender;
+
+
+@property(nonatomic,weak)IBOutlet UITextField *tf_name;
+@property(nonatomic,weak)IBOutlet UITextField *tf_pwd;
+
 @end
 
 @implementation HLLoginViewController
@@ -27,14 +33,12 @@
     [super viewDidLoad];
     self.l = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 320, 40)];
     [self.view addSubview:self.l];
+    
     self.operation = [[HLLoginOperation alloc] init];
-    [self generateInputView];
-    
-    
-//    [AppDelegate setTabRoot];
 
-    
-    // Do any additional setup after loading the view.
+    self.tf_name.text = @"18610932023";
+    self.tf_pwd.text = @"123";
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +50,7 @@
 {
     NSMutableArray * param = [[NSMutableArray alloc] init];
     [param addObject:@"请输入手机号"];
-    [param addObject:@"请输入验证码"];
+    [param addObject:@"请输入密码"];
     
     _inputView.delegate = self;
     [_inputView initInputViewByParam:param];
@@ -66,32 +70,41 @@
     
     
     [AppDelegate setTabRoot];
-
     
     return;
     
-//vericode
     
-    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"HLLogin" bundle:nil];
-    HLVericodeViewController *_vericode = [mainStoryboard instantiateViewControllerWithIdentifier:@"vericode"];
-
-    [self.navigationController pushViewController:_vericode animated:YES];
+    if ([self.tf_name.text isEqual:@""] || [self.tf_pwd.text isEqual:@""])
+    {
+        [APSProgress showToast:self.view withMessage:@"输入有误"];
+        
+        return;
+    }
     
     
-//    
-//    [self.operation vericodeGetByPhone:self.phoneNumString completeBlock:^(id result, NSError *error) {
-//        if (!error) {
-//            if ([result isKindOfClass:[NSString class]] && [result isEqualToString:@"发送成功"]) {
-//                __weak typeof(self) weakSelf = self;
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    weakSelf.getVericodeButton.userInteractionEnabled = NO;
-//                    [weakSelf.getVericodeButton setTitle:@"60秒后重发" forState:UIControlStateNormal];
-//                    [weakSelf.getVericodeButton changeStatus];
-//                    [weakSelf countDown];
-//                });
-//            }
-//        }
-//    }];
+    [self.operation userLoginByname:self.tf_name.text pwd:self.tf_pwd.text completeBlock:^(id result,NSError *error){
+    
+        [APSProgress hidenIndicatorView];
+        
+        NSObject *json_ob = [result objectForKey:@"e"];
+        
+        int json_e = [(NSNumber*)json_ob intValue];
+        
+        if (json_e == 0) {
+            
+            [AppDelegate setTabRoot];
+            
+//            [LoginData saveValue:self.tf_name.text key:KEY_USER_LOGIN_NAME];
+//            [LoginData saveValue:self.tf_pwd.text key:KEY_USER_PWD];
+            
+        }
+        else
+        {
+            [APSProgress showHUDAddedTo:self.view message:[result objectForKey:@"msg"] animated:YES];
+        }
+        
+    }];
+    
 }
 
 - (void) countDown

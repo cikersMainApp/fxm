@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ARSegmentPageController.h"
 
-@interface MatchMVPTableVC : UITableViewController
+@interface MatchMVPTableVC : UITableViewController<ARSegmentControllerDelegate>
 
 @end

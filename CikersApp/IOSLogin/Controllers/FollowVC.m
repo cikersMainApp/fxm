@@ -7,8 +7,10 @@
 //
 
 #import "FollowVC.h"
-
-@interface FollowVC ()
+#import "AppDelegate.h"
+#import "Api.h"
+#import "FollowTableCell.h"
+@interface FollowVC ()<BaseApiDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -17,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +36,48 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(IBAction)bnt_follow
+{
+
+//    [APSProgress showIndicatorView];
+    
+    [AppDelegate setTabRoot];
+    
+}
+- (void)finishedWithRequest:(HttpRequest *)request
+                   Response:(HttpResponse *)response
+                   AndError:(NSError *)error
+{
+
+//    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:nil];
+
+    [AppDelegate setTabRoot];
+
+    
+}
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static  NSString  *CellIdentiferId = @"cell";
+    FollowTableCell  *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentiferId];
+
+    
+    return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 @end

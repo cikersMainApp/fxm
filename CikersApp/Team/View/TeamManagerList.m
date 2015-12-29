@@ -7,7 +7,8 @@
 //
 
 #import "TeamManagerList.h"
-
+#import "TeamManagerCell.h"
+#import "CreatTeam.h"
 @implementation TeamManagerList
 
 /*
@@ -18,4 +19,42 @@
 }
 */
 
+-(IBAction)bnt_back
+{
+    [self setFrame:CGRectMake(-400, 0, self.frame.size.width, self.frame.size.height)];
+}
+-(IBAction)bnt_creatTeam
+{
+    CreatTeam *nextvc = [[UIStoryboard storyboardWithName:@"TeamCreat" bundle:nil] instantiateViewControllerWithIdentifier:@"teamcreat"];
+
+    [[DataSingleton Instance].curVC showViewController:nextvc sender:nil];
+    
+}
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.tempTableView = tableView;
+    return 94.f;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 30;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static  NSString  *CellIdentiferId = @"cell";
+    TeamManagerCell  *cell = [self.tempTableView dequeueReusableCellWithIdentifier:CellIdentiferId];
+
+    [cell updataUI:indexPath.row];
+    
+    return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
 @end

@@ -27,7 +27,7 @@
 
 -(NSString *)segmentTitle
 {
-    return @"TableView";
+    return @"测试";
 }
 
 -(UIScrollView *)streachScrollView

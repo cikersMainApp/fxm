@@ -9,13 +9,25 @@
 #import <UIKit/UIKit.h>
 #import "HLBaseViewController.h"
 #import "Api.h"
-@interface RegVC : HLBaseViewController<UITextFieldDelegate,BaseApiDelegate,CommonCallbackDelegate>
+#import "HLLoginOperation.h"
+#import "HLGetVericodeButton.h"
+
+@interface RegVC : HLBaseViewController<UITextFieldDelegate,BaseApiDelegate>
+
+
+
+@property (nonatomic,strong) HLLoginOperation * operation;
+
+@property(nonatomic,weak)IBOutlet UITextField *tf_phone;
+@property(nonatomic,weak)IBOutlet UITextField *tf_vcode;
+@property(nonatomic,weak)IBOutlet UITextField *tf_pwd;
+@property(nonatomic,weak)IBOutlet HLGetVericodeButton *bt_getVcode;
+@property(nonatomic,weak)IBOutlet UIButton *bt_send;
 
 - (IBAction)getVercodeAction:(UIButton *)sender;
+- (IBAction)getSend:(UIButton *)sender;
 
-@property (strong, nonatomic) IBOutlet UIButton *bt_send;
+- (void) countDown;
 
-//手机号输入框
-@property (weak, nonatomic) IBOutlet UITextField *tf_phone;
 
 @end

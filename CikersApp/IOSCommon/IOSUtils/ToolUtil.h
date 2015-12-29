@@ -10,4 +10,6 @@
 
 @interface ToolUtil : NSObject
 
++(NSString*)tool_utcToNsstring:(NSNumber*)time;
++(NSNumber*)tool_curUnitTime;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "MatchTagTableVC.h"
-
+#import "MatchTagCell.h"
 @interface MatchTagTableVC ()
 
 @end
@@ -30,26 +30,60 @@
 }
 
 #pragma mark - Table view data source
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        
+    if (indexPath.row == 0 || indexPath.row == 10) {
+        
+        return 30;
+    }
+    
+    return 90.0f;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
-
+//- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//
+//    NSString *str;
+//    
+//    str = (section==0)?@"赛客丝明星队":@"赛客丝员工队";
+//    
+//    return str;
+//}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 20;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    MatchTagCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
     
+    if (indexPath.row == 0 || indexPath.row == 10) {
+    
+        [cell showSectionState:YES bgcolor:1];
+        
+        return cell;
+    }
+    
+    [cell showSectionState:NO bgcolor:1];
+    
     return cell;
 }
-*/
+
+-(NSString *)segmentTitle
+{
+    return @"贴标签";
+}
+
+-(UIScrollView *)streachScrollView
+{
+    return self.tableView;
+}
 
 /*
 // Override to support conditional editing of the table view.

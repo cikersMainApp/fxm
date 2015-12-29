@@ -10,4 +10,15 @@
 
 @interface TeamManagerCell : UITableViewCell
 
+@property(nonatomic,strong) UILabel *lb_name;
+@property(nonatomic,strong) UIImageView *img_icon;
+@property(nonatomic,strong)UIButton *bt_manager;
+@property(nonatomic)int index;
+@property(nonatomic,weak)IBOutlet UIButton *test;
+
+
+-(void)initUI:(NSInteger)index;
+-(void)updataUI:(NSInteger)index;
+-(void)bnt_click:(id)sender;
+
 @end

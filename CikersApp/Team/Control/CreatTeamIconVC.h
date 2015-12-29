@@ -10,4 +10,13 @@
 
 @interface CreatTeamIconVC : HLBaseViewController
 
+
+@property(nonatomic,weak)IBOutlet UIView *view_content;
+
+@property(nonatomic,weak)IBOutlet UIView *view_1;
+@property(nonatomic,weak)IBOutlet UIView *view_2;
+
+-(void)initUI;
+-(void)bnt_select:(id)sender;
+
 @end

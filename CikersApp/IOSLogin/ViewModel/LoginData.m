@@ -10,4 +10,16 @@
 
 @implementation LoginData
 
++(void)saveValue:(NSString*)value key:(NSString*)key
+{
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:key];
+    
+}
+
++(NSString*)getValueBykey:(NSString*)key
+{
+    return  [[NSUserDefaults standardUserDefaults] objectForKey:key];
+}
+
+
 @end

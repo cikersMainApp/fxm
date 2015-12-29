@@ -9,5 +9,6 @@
 #import "HLBaseViewController.h"
 
 @interface TeamJionVC : HLBaseViewController
+-(IBAction)bnt_back;
 
 @end

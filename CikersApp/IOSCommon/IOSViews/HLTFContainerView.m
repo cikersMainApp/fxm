@@ -21,6 +21,9 @@
     // Drawing code
 
 
+    //背景为灰色
+    
+    self.backgroundColor = [UIColor blackColor];
 }
 
 

@@ -10,4 +10,7 @@
 
 @interface FollowVC : HLBaseViewController
 
+
+-(IBAction)bnt_follow;
+
 @end

@@ -33,5 +33,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(IBAction)bnt_back
+{
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 @end

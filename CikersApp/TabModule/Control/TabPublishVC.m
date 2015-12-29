@@ -7,7 +7,7 @@
 //
 
 #import "TabPublishVC.h"
-
+#import "CreatTeam.h"
 @interface TabPublishVC ()
 
 @end
@@ -33,5 +33,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+-(IBAction)bnt_creatTeam
+{
+
+    CreatTeam *nextvc = [[UIStoryboard storyboardWithName:@"TeamCreat" bundle:nil] instantiateViewControllerWithIdentifier:@"teamcreat"];
+
+    [self presentViewController:nextvc animated:YES completion:nil];
+    
+    
+}
 
 @end

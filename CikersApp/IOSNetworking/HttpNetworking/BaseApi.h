@@ -14,7 +14,9 @@
 
 @protocol BaseApiDelegate <NSObject>
 
-@required
+@optional
+- (void)finishedWithScuessData:(NSDictionary *)dic;
+
 - (void)finishedWithRequest:(HttpRequest *)request
                    Response:(HttpResponse *)response
                    AndError:(NSError *)error;

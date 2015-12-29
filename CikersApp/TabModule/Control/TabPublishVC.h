@@ -10,4 +10,6 @@
 
 @interface TabPublishVC : HLBaseViewController
 
+-(IBAction)bnt_creatTeam;
+
 @end

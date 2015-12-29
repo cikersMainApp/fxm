@@ -7,12 +7,47 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "ARSegmentPageControllerHeaderProtocol.h"
+#import "ARSegmentPageControllerHeaderProtocol.h"
 
-#import "ARSegmentPageController/ARSegmentPageControllerHeaderProtocol.h"
 
-@interface CustomHeader : UIView
+@interface CustomHeader : UIView<ARSegmentPageControllerHeaderProtocol>
+@property (nonatomic, strong) NSLayoutConstraint *imageTopConstraint;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *img_left;
+@property (nonatomic, strong) UIImageView *img_right;
+
+
+@property(nonatomic,weak)IBOutlet UILabel*lb_namebygame; // 赛事名称
+@property(nonatomic,weak)IBOutlet UILabel*lb_timebymatch; //比赛开始时间
+@property(nonatomic,weak)IBOutlet UILabel*lb_namebymatch;// 比赛名称
+@property(nonatomic,weak)IBOutlet UILabel *lb_score;
+@property(nonatomic,weak)IBOutlet UIImageView *img_icon_left; //左边球队的队徽
+@property(nonatomic,weak)IBOutlet UIImageView *img_icon_right; //右边球队的队徽
+@property(nonatomic,weak)IBOutlet UILabel *lb_leftName; // 左边的球队名称
+@property(nonatomic,weak)IBOutlet UILabel *lb_rightName; //右边的球队名称
+@property(nonatomic,weak)IBOutlet UILabel *lb_follow_left; //左边的支持数
+@property(nonatomic,weak)IBOutlet UILabel *lb_follow_right; //右边的支持数
+@property(nonatomic,weak)IBOutlet UIButton *bt_left; // 右边的支持按钮
+@property(nonatomic,weak)IBOutlet UIButton *bt_right; // 左边的支持按钮
+@property(nonatomic,weak)IBOutlet UIView *view_vs; // 蓝色的条
+@property(nonatomic,strong)UIView *view_vs_red; //红色的条
+
+@property(nonatomic,weak)IBOutlet UIView *view_bg;//60%透明度的灰色图
+
+
+-(void)hideUI;
+-(void)showUI;
+
+
+
+
+-(IBAction)bnt_left:(id)sender;
+-(IBAction)bnt_right:(id)sender;
+
+
+
+-(void)updateUI:(id)sender;
+
 
 @end

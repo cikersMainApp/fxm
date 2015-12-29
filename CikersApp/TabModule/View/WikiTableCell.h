@@ -9,5 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface WikiTableCell : UITableViewCell
+@property(nonatomic,strong)IBOutlet UIImageView *img_icon;
+@property(nonatomic,strong)IBOutlet UILabel *lb_name;
+@property(nonatomic,strong) UILabel *lb_info;
+@property(nonatomic,strong)IBOutlet UIButton *bt_manager;
+
+
+
+-(void)initUI;
+-(void)updataContent:(NSDictionary*)dic;
+-(void)bnt_click:(id)sender;
+
 
 @end
