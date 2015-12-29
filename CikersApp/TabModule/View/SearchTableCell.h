@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  SearchTableCell.h
 //  CikersApp
 //
-//  Created by fxm on 15/12/19.
+//  Created by fxm on 15/12/21.
 //  Copyright © 2015年 cikers. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SearchTableCell : UITableViewCell
 
 @end
-
