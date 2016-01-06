@@ -17,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
     // Do any additional setup after loading the view.
     self.tf_phone.tag=TAG_TF_PHONE;
     self.tf_pwd.tag=TAG_TF_PWD;

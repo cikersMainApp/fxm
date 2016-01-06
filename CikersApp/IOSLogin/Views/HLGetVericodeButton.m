@@ -37,7 +37,7 @@
 {
     if (self.userInteractionEnabled) {
         [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self setBackgroundImage:[HLImageUtil createImageWithColor:[UIColor colorWithHexString:@"1987cf"]] forState:UIControlStateNormal];
+        [self setBackgroundImage:[HLImageUtil createImageWithColor:SUBJECT_COLOR] forState:UIControlStateNormal];
     }
     else
     {

@@ -13,7 +13,8 @@
 #import "AddressPickerViewC.h"
 #import "TeamMainVC.h"
 #import "HLNavgationController.h"
-@interface CreatTeam ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,BaseApiDelegate,UIActionSheetDelegate,UIPickerViewDataSource,UIPickerViewDelegate,AddressPickerDelegate>
+#import "ClityListDatePick.h"
+@interface CreatTeam ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,BaseApiDelegate,UIActionSheetDelegate>
 
 @end
 
@@ -30,13 +31,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSMutableString *str = [[NSMutableString alloc]init];
-    [str appendString:[YMUtils getCityData][0][@"children"][0][@"name"]];
     
-    proviceStr = str;
-    districtStr =[YMUtils getCityData][0][@"children"][0][@"children"][0][@"name"];
+    proviceStr = @"北京市";
+    districtStr = @"海淀区";
     
-    _view_picbg.hidden = YES;
+    NSString * dic = [[NSBundle mainBundle] pathForResource:@"city" ofType:@"plist"];
+    
+    NSArray *data = [[NSArray alloc] initWithContentsOfFile:dic];
+    self.clity =[[ClityListDatePick alloc] initWithFrame:self.view.bounds];
+    self.clity.dataArr = data;
+    
+    self.clity.block = ^(NSString *cityList1,NSString *cityList2){
+        
+        proviceStr = cityList1;
+        districtStr= cityList2;
+        
+    };
+    
+    [self.view addSubview:self.clity];
+    
+    self.clity.hidden = YES;
 
 
 }
@@ -71,7 +85,7 @@
 }
 -(IBAction)bnt_selectAddress
 {
-    _view_picbg.hidden = NO;
+    self.clity.hidden = NO;
 
 }
 
@@ -283,25 +297,25 @@
 #pragma mark 地址选择器
 
 
--(IBAction)returnOkaddress
-{
-    
-    _view_picbg.hidden = YES;
-    
-    //在这里隐藏该页面
-    
-    [_bt_address setTitle:[NSString stringWithFormat:@"%@-%@",proviceStr,districtStr] forState:UIControlStateNormal];
-    
-}
--(IBAction)returnCanceladdress
-{
-    
-}
+//-(IBAction)returnOkaddress
+//{
+//    
+//    _view_picbg.hidden = YES;
+//    
+//    //在这里隐藏该页面
+//    
+//    [_bt_address setTitle:[NSString stringWithFormat:@"%@-%@",proviceStr,districtStr] forState:UIControlStateNormal];
+//    
+//}
+//-(IBAction)returnCanceladdress
+//{
+//    
+//}
 
 -(IBAction)showAddressPic
 {
     
-    _view_picbg.hidden = NO;
+    self.clity.hidden = NO;
     
 }
 
@@ -311,135 +325,135 @@
     [_bt_address setTitle:[NSString stringWithFormat:@"%@-%@",proviceStr,districtStr] forState:UIControlStateNormal];
     
 }
-//返回显示的列数
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-{
-    if (pickerView == self.cityPicker) {
-        return 2;
-    }
-    else
-        return 1;
-}
-
-//返回当前列显示的行数
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
-    
-    switch (component) {
-        case 0:
-        {
-            NSArray *array = [YMUtils getCityData][0][@"children"];
-            if ((NSNull*)array != [NSNull null]) {
-                return array.count;
-            }
-            return 0;
-            
-        }
-            break;
-        case 1:
-        {
-            NSArray *array = [YMUtils getCityData][0][@"children"];
-            if ((NSNull*)array != [NSNull null]) {
-                NSArray *array1 = [YMUtils getCityData][0][@"children"][row1][@"children"];
-                if ((NSNull*)array1 != [NSNull null]) {
-                    return array1.count;
-                }
-                return 0;
-            }
-            return 0;
-            
-        }
-            break;
-        default:
-            break;
-    }
-    
-    return 0;
-}
-//设置当前行的内容
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    if(component == 0) {
-        return [YMUtils getCityData][0][@"children"][row][@"name"];
-        
-        
-    }
-    else if (component == 1) {
-        return [YMUtils getCityData][0][@"children"][row1][@"children"][row][@"name"];
-    }
-    else if (component == 3) {
-        return [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
-    }
-    return nil;
-    
-}
-//选择的行数
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (component == 0) {
-        row1 = row;
-        row2 = 0;
-        [self.cityPicker reloadComponent:1];
-    }
-    else if (component == 1){
-        row2 = row;
-    }
-    NSInteger cityRow1 = [self.cityPicker selectedRowInComponent:0];
-    NSInteger cityRow2 = [self.cityPicker selectedRowInComponent:1];
-    NSMutableString *str = [[NSMutableString alloc]init];
-    [str appendString:[YMUtils getCityData][0][@"children"][cityRow1][@"name"]];
-    
-    
-    NSLog(@"%@",str);
-    
-    proviceStr = str;
-    
-//    NSInteger a = [str replaceOccurrencesOfString:proviceStr withString:@"" options:NSLiteralSearch  range:NSMakeRange(0, [str length])];
-//    
-//    districtStr = str;
+////返回显示的列数
+//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+//{
+//    if (pickerView == self.cityPicker) {
+//        return 2;
+//    }
+//    else
+//        return 1;
+//}
+//
+////返回当前列显示的行数
+//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
 //    
 //    
-//    NSLog(@"%@",districtStr);
-    
-    
-    NSArray *array = [YMUtils getCityData][0][@"children"][cityRow1][@"children"];
-    if ((NSNull*)array != [NSNull null]) {
-        
-        districtStr =[YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"name"];
-        
-        NSLog(@"%@",districtStr);
-        
-        
-        NSArray *array1 = [YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"children"];
-        if ((NSNull*)array1 != [NSNull null]) {
-//            [str appendString:[YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"name"]];
-            
-        }
-    }
-//    self.cityLabel.text = str;
-    
-    
-    
-}
-//每行显示的文字样式
-- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-{
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 107, 30)];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont systemFontOfSize:14];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    if (component == 0) {
-        titleLabel.text = [YMUtils getCityData][0][@"children"][row][@"name"];
-    }
-    else if (component == 1) {
-        titleLabel.text = [YMUtils getCityData][0][@"children"][row1][@"children"][row][@"name"];
-    }
-    else {
-        titleLabel.text = [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
-    }
-    return titleLabel;
-    
-}
+//    switch (component) {
+//        case 0:
+//        {
+//            NSArray *array = [YMUtils getCityData][0][@"children"];
+//            if ((NSNull*)array != [NSNull null]) {
+//                return array.count;
+//            }
+//            return 0;
+//            
+//        }
+//            break;
+//        case 1:
+//        {
+//            NSArray *array = [YMUtils getCityData][0][@"children"];
+//            if ((NSNull*)array != [NSNull null]) {
+//                NSArray *array1 = [YMUtils getCityData][0][@"children"][row1][@"children"];
+//                if ((NSNull*)array1 != [NSNull null]) {
+//                    return array1.count;
+//                }
+//                return 0;
+//            }
+//            return 0;
+//            
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    return 0;
+//}
+////设置当前行的内容
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+//    
+//    if(component == 0) {
+//        return [YMUtils getCityData][0][@"children"][row][@"name"];
+//        
+//        
+//    }
+//    else if (component == 1) {
+//        return [YMUtils getCityData][0][@"children"][row1][@"children"][row][@"name"];
+//    }
+//    else if (component == 3) {
+//        return [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
+//    }
+//    return nil;
+//    
+//}
+////选择的行数
+//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+//    if (component == 0) {
+//        row1 = row;
+//        row2 = 0;
+//        [self.cityPicker reloadComponent:1];
+//    }
+//    else if (component == 1){
+//        row2 = row;
+//    }
+//    NSInteger cityRow1 = [self.cityPicker selectedRowInComponent:0];
+//    NSInteger cityRow2 = [self.cityPicker selectedRowInComponent:1];
+//    NSMutableString *str = [[NSMutableString alloc]init];
+//    [str appendString:[YMUtils getCityData][0][@"children"][cityRow1][@"name"]];
+//    
+//    
+//    NSLog(@"%@",str);
+//    
+//    proviceStr = str;
+//    
+////    NSInteger a = [str replaceOccurrencesOfString:proviceStr withString:@"" options:NSLiteralSearch  range:NSMakeRange(0, [str length])];
+////    
+////    districtStr = str;
+////    
+////    
+////    NSLog(@"%@",districtStr);
+//    
+//    
+//    NSArray *array = [YMUtils getCityData][0][@"children"][cityRow1][@"children"];
+//    if ((NSNull*)array != [NSNull null]) {
+//        
+//        districtStr =[YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"name"];
+//        
+//        NSLog(@"%@",districtStr);
+//        
+//        
+//        NSArray *array1 = [YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"children"];
+//        if ((NSNull*)array1 != [NSNull null]) {
+////            [str appendString:[YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"name"]];
+//            
+//        }
+//    }
+////    self.cityLabel.text = str;
+//    
+//    
+//    
+//}
+////每行显示的文字样式
+//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
+//{
+//    
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 107, 30)];
+//    titleLabel.textAlignment = NSTextAlignmentCenter;
+//    titleLabel.font = [UIFont systemFontOfSize:14];
+//    titleLabel.backgroundColor = [UIColor clearColor];
+//    if (component == 0) {
+//        titleLabel.text = [YMUtils getCityData][0][@"children"][row][@"name"];
+//    }
+//    else if (component == 1) {
+//        titleLabel.text = [YMUtils getCityData][0][@"children"][row1][@"children"][row][@"name"];
+//    }
+//    else {
+//        titleLabel.text = [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
+//    }
+//    return titleLabel;
+//    
+//}
 
 
 

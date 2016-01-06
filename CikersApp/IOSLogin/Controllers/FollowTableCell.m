@@ -22,4 +22,15 @@
 
 }
 
+-(void)initUI
+{
+
+    // left
+    
+    
+    
+    // right
+    
+}
+
 @end

@@ -108,10 +108,21 @@
     body_ = [body copy];
 
     if ([self needBody]) {
-        NSString *strLength = [NSString stringWithFormat:@"%d", [body_ length]];
+        NSString *strLength = [NSString stringWithFormat:@"%ld", [body_ length]];
         [_request setValue:strLength forHTTPHeaderField:@"Content-Length"];
         [_request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
         [_request setValue:@"https://ipcrs.pbccrc.org.cn/" forHTTPHeaderField:@"Referer"];
+        
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"login"])
+        {
+            
+            NSNumber *uid = [[NSUserDefaults standardUserDefaults] objectForKey:@"userid"];
+            
+            [_request setValue:[NSString stringWithFormat:@"PID_%@",uid] forHTTPHeaderField:@"_CIKERS_KEY_"];
+
+        }
+        
+
         [_request setHTTPBody:body_];
     }
 }
@@ -217,7 +228,7 @@
 {
     if (!dictHeaders) return;
     [_request setAllHTTPHeaderFields:dictHeaders];
-    //NSLog(@"请求包头: %@", [_request allHTTPHeaderFields]);
+    NSLog(@"请求包头: %@", [_request allHTTPHeaderFields]);
 }
 
 #pragma mark - basic auth

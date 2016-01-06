@@ -8,6 +8,7 @@
 
 #import "MatchTagTableVC.h"
 #import "MatchTagCell.h"
+#import "MatchTagInfoVC.h"
 @interface MatchTagTableVC ()
 
 @end
@@ -22,12 +23,41 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    self.opration = [[MatchOpration alloc] init];
+    self.opration.delegate = self;
+    [self.opration sendPlayersInfoByteamid:@"3211" matchid:@""];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)getData:(NSString *)matchid
+{
+    
+    
+    [self.opration sendPlayersInfoByteamid:@"3211" matchid:matchid];
+}
+
+-(void)dataTag_scuess:(id)dic
+{
+
+    NSDictionary * newdic = (NSDictionary*)dic;
+    
+    self.dic_data = newdic;
+    
+    [self.tableView reloadData];
+}
+
 
 #pragma mark - Table view data source
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,15 +74,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-//- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-//{
-//
-//    NSString *str;
-//    
-//    str = (section==0)?@"赛客丝明星队":@"赛客丝员工队";
-//    
-//    return str;
-//}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
 }
@@ -70,9 +92,21 @@
         return cell;
     }
     
+    cell.i_index = indexPath.row;
+    
     [cell showSectionState:NO bgcolor:1];
     
+    [cell updateUI:self.dic_data];
+    
     return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    MatchTagInfoVC *nextvc = [[MatchTagInfoVC alloc] init];
+    [self.navigationController pushViewController:nextvc animated:YES];
 }
 
 -(NSString *)segmentTitle

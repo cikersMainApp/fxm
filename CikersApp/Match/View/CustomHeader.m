@@ -15,6 +15,7 @@
 
 @implementation CustomHeader
 
+
 -(void)awakeFromNib
 {
 
@@ -140,8 +141,6 @@
     self.lb_timebymatch.text = dic.formatScheduletime;
 
     
-    
-    
     [self.img_icon_left sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",dic.teama.icon]]];
     
     [self.img_icon_right sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",dic.teamb.icon]]];
@@ -151,15 +150,15 @@
     
     //计算支持条显示
     
-    float vsWitch = self.view_vs.frame.size.width;
-    float vsPer = [dic.favorb floatValue]/([dic.favora floatValue]+[dic.favorb floatValue]);
-    
-    self.view_vs_red = [[UIView alloc] initWithFrame:CGRectMake(vsWitch - vsWitch*vsPer, 0, vsWitch*vsPer, self.view_vs.frame.size.height)];
-    
-    self.view_vs_red.backgroundColor = [UIColor redColor];
-    
-    [self.view_vs addSubview:self.view_vs_red];
-
+//    float vsWitch = self.view_vs.frame.size.width;
+//    float vsPer = [dic.favorb floatValue]/([dic.favora floatValue]+[dic.favorb floatValue]);
+//    
+//    self.view_vs_red = [[UIView alloc] initWithFrame:CGRectMake(vsWitch - vsWitch*vsPer, 0, vsWitch*vsPer, self.view_vs.frame.size.height)];
+//    
+//    self.view_vs_red.backgroundColor = [UIColor redColor];
+//    
+//    [self.view_vs addSubview:self.view_vs_red];
+//
 }
 
 

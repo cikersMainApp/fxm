@@ -27,7 +27,7 @@
 
 -(void)initUI
 {
-    [self setFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64)];
+    [self setFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     
     
     // create droppy
@@ -74,76 +74,10 @@
     NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"TeamMainSection1" owner:nil options:nil];
     TeamMainSection1 *view = [views lastObject];
     
-    [view setFrame:CGRectMake(0, 0, ScreenWidth, 500)];
-//    
-//    
-//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 0, SWidth-20, 150)];
-//    [view setBackgroundColor:[self randomColor]];
+//    [view setFrame:CGRectMake(0, 0, ScreenWidth, 500)];
+    NSLog(@"view----------%f-----%f",view.frame.size.height,view.frame.size.width);
 
-    //team icon
-    
-//    UIImageView *icon = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 80, 80)];
-//    [icon setImage:[UIImage imageNamed:@"button1_03"]];
-//    [view addSubview:icon];
-    
-    //icon behaved two menu
-    
-//    UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(10, 30, 100, 50)];
-//    [bt setBackgroundColor:[self randomColor]];
-//    [view addSubview:bt];
-//    [bt addTarget:self action:@selector(bnt_action:) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIButton *bt1 = [[UIButton alloc] initWithFrame:CGRectMake(150, 30, 100, 50)];
-//    [bt1 setBackgroundColor:[self randomColor]];
-//    [view addSubview:bt1];
-//    [bt1 addTarget:self action:@selector(bnt_action:) forControlEvents:UIControlEventTouchUpInside];
-//    
-
-    // team name
-    
-    
-    // team address
-    
-    //
-    
-    
-    
-    [self.droppy dropSubview:view];
-    
-}
--(void)initSecond
-{
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 0, SWidth-20, 100)];
-    [view setBackgroundColor:[self randomColor]];
-    
-    
-    //title
-    
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 50, 20)];
-    [title setText:@"球队点评"];
-    [view addSubview:title];
-    
-    
-    
-    
-    [self.droppy dropSubview:view];
-    
-}
--(void)initMenu
-{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 0, SWidth-20, 80)];
-    [view setBackgroundColor:[self randomColor]];
-    
-    
-    for (int i = 1; i<5; i++) {
-        
-        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(0+ScreenHeight/5*i, 10, 50, 50)];
-        [bt setBackgroundColor:[self randomColor]];
-        [view addSubview:bt];
-        [bt addTarget:self action:@selector(bnt_action:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    
+    [view setBackgroundColor:[UIColor orangeColor]];
     
     [self.droppy dropSubview:view];
     

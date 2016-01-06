@@ -7,11 +7,11 @@
 //
 
 #import "HLBaseViewController.h"
-
+#import "ClityListDatePick.h"
 @interface CreatTeam : HLBaseViewController
 
 
-
+@property(nonatomic,strong)ClityListDatePick *clity;
 @property(nonatomic,strong)NSString *encodedImageStr;
 
 
@@ -21,10 +21,6 @@
 @property(nonatomic,weak)IBOutlet UITextField *tf_name;
 @property(nonatomic,weak)IBOutlet UISegmentedControl *seg_type;
 
-@property (nonatomic ,strong)IBOutlet UIPickerView *cityPicker;
-@property (nonatomic,strong)IBOutlet UIView *view_picbg;
--(IBAction)returnOkaddress;
--(IBAction)returnCanceladdress;
 -(IBAction)bnt_selectImg;
 -(IBAction)bnt_selectAddress;
 -(IBAction)bnt_send;

@@ -30,13 +30,17 @@
 
 @interface BaseApi : NSObject
 
-@property (nonatomic, weak) id<BaseApiDelegate> delegate;
+@property (nonatomic, weak) id<BaseApiDelegate> httpdelegate;
 @property (nonatomic, strong) HttpDispatcher *httpDispatcher;
 
 
 - (id)initWithDelegate:(id<BaseApiDelegate>)newDelegate needCommonProcess:(BOOL) need;
 
 - (void)sendRequestWithUrl:(NSString *)apiUrl Method:(NSString *)method AndParams:(NSDictionary *)paramsDict;
+- (void)sendRequestWithUrl:(NSString *)apiUrl Method:(NSString *)method AndParams:(NSDictionary *)paramsDict httpTag:(NSString*)tag;
+-(NSArray *)getCookie:(HttpRequest *)req;
+
+
 - (void)sendRequest:(HttpRequest *)req;
 
 @end

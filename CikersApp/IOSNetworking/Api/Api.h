@@ -172,4 +172,27 @@
 
 
 
+/*
+ 
+ 发送竞猜
+ 
+ 标示说明
+ 
+ A 主胜 O 平局  B 客胜   0 1 2 3 4 5 6
+ 
+ */
+
+-(void)predict_sendBymatchid:(NSString*)matchid code:(NSString*)type;
+/*
+ 获取竞猜结果
+ */
+
+-(void)predict_getDataBymatchid:(NSString*)matchid;
+
+
+/*
+ 点赞
+ */
+
+
 @end

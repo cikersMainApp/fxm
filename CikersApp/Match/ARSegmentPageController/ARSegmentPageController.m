@@ -98,16 +98,18 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
 
 -(void)_setUp
 {
-    self.headerHeight = 280;
+    self.headerHeight = 260;
     self.segmentHeight = 44;
-    self.segmentToInset = 200;
+    self.segmentToInset = 220;
     self.segmentMiniTopInset = 0;
     self.controllers = [NSMutableArray array];
     
     
-    if ([UIDevice currentResolution] == UIDevice_iPhone6s)
+    if (IS_IPhone6plus)
     {
-        self.segmentHeight = 84;
+        self.segmentHeight = 44;
+        self.segmentToInset = 180;
+
 
     }
     

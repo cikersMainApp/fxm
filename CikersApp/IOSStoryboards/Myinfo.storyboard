@@ -5,16 +5,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--个人中心-->
         <scene sceneID="WRH-aV-LL9">
             <objects>
-                <tableViewController id="1gx-uo-tp8" sceneMemberID="viewController">
+                <tableViewController id="1gx-uo-tp8" customClass="PersonalVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sI0-z6-Ouk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m6h-x1-zfm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setting" id="m6h-x1-zfm" customClass="XBSettingCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m6h-x1-zfm" id="LfN-r2-Izd">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="1gx-uo-tp8" id="bha-wK-Jly"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="bs4-of-mMG"/>
+                    <navigationItem key="navigationItem" title="个人中心" id="bs4-of-mMG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uH5-uU-Zul" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,4 +10,10 @@
 
 @implementation TeamMainSection1
 
+-(void)awakeFromNib
+{
+    NSLog(@"----------%f-----%f",self.frame.size.height,self.frame.size.width);
+
+}
+
 @end

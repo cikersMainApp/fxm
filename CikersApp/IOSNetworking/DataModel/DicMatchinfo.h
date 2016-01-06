@@ -29,11 +29,17 @@
 @property(nonatomic,strong)NSString *starttime;//比赛正式开始时间
 @property(nonatomic,strong)NSString *endtime;
 
+@property(nonatomic,strong)NSString *result;//比赛是否结束标志
+
+
 
 @property(nonatomic,strong)DicTeaminfo *teama;//主队数据集合
 @property(nonatomic,strong)DicTeaminfo *teamb;
 @property(nonatomic,strong)DicGameinfo *gameinfo; //赛事信息
 
 @property(nonatomic,strong)NSString *formatScheduletime; // 格式化后的时间
+
+
+@property(nonatomic)NSNumber *isWaiting;// 比赛还未开始 判断字段为result是否为空
 
 @end

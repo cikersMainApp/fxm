@@ -17,6 +17,19 @@
 
 #import "MAThemeKit.h"
 #import "CreatTeam.h"
+
+#import "ICSDrawerController.h"
+#import "BaoyuLeftViewController.h"
+#import "TeamMainVC.h"
+
+#import "GameVC.h"
+#import "GameLeftVC.h"
+
+//启动加载公告图片
+#import "UIView+TYLaunchAnimation.h"
+#import "TYLaunchFadeScaleAnimation.h"
+#import "UIImage+TYLaunchImage.h"
+#import "TAdLaunchImageView.h"
 @interface AppDelegate ()
 
 @end
@@ -35,8 +48,8 @@
     //InstallUncaughtExceptionHandler();
     // Override point for customization after application launch.
     
-    [MAThemeKit setupThemeWithPrimaryColor:[MAThemeKit colorWithR:32 G:69 B:98] secondaryColor:[UIColor whiteColor] fontName:@"HelveticaNeue-Light" lightStatusBar:YES];
-    [MAThemeKit colorWithHexString:@"204562"];
+    [MAThemeKit setupThemeWithPrimaryColor:[MAThemeKit colorWithR:COLOR_R G:COLOR_G B:COLOR_B] secondaryColor:[UIColor whiteColor] fontName:@"HelveticaNeue-Light" lightStatusBar:YES];
+    [MAThemeKit colorWithHexString:@"2e3959"];
     
     
     //添加分享
@@ -58,7 +71,49 @@
     [UMSocialQQHandler setSupportWebView:YES];
     
 
+    
+    // Ad(广告) FadeAnimation
+    TAdLaunchImageView *adLaunchImageView = [[TAdLaunchImageView alloc]initWithImage:[UIImage ty_getLaunchImage]];
+    adLaunchImageView.URLString = @"http://static.cikers.com/repos/thumbnail/s170/themes/cms/soccermanager/images/logo.png";
+    
+    // 显示imageView
+    [adLaunchImageView showInWindowWithAnimation:[TYLaunchFadeScaleAnimation fadeAnimationWithDelay:3.0] completion:^(BOOL finished) {
+        
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        NSLog(@"finished");
+        
+        
+        [AppDelegate setLoginRoot];
+
+    }];
+    
+    __typeof (self) __weak weakSelf = self;
+    // 点击广告block
+    [adLaunchImageView setClickedImageURLHandle:^(NSString *URLString) {
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        [weakSelf pushAdViewCntroller];
+        NSLog(@"clickedImageURLHandle");
+    }];
+
+    
     return YES;
+}
+- (void)pushAdViewCntroller
+{
+    
+    
+    [AppDelegate setLoginRoot];
+    
+//    // 获取到navVC
+//    UITabBarController *tabbBarVC = (UITabBarController *)self.window.rootViewController;
+//    UINavigationController *navVC = tabbBarVC.viewControllers.firstObject;
+//    
+//    // 你要推出的VC
+//    UIViewController *VC = [[UIViewController alloc]init];
+//    VC.view.backgroundColor = [UIColor redColor];
+//    [navVC pushViewController:VC animated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -90,15 +145,35 @@
     AppDelegate * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDele.window.rootViewController = loginNav;
 }
-+(void) setTeamRoot
+
++(void)setGameRoot
 {
-    HLNavgationController *  loginNav =  [[UIStoryboard storyboardWithName:@"Team" bundle:nil] instantiateViewControllerWithIdentifier:@"team"];
+    GameVC *  loginNav =  [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"game"];
+    
     AppDelegate * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    [appDele.window.rootViewController showViewController:loginNav sender:nil];
+    GameLeftVC *leftVC = [[GameLeftVC alloc] init];
+    
+    ICSDrawerController *drawer = [[ICSDrawerController alloc] initWithLeftViewController:leftVC centerViewController:loginNav];
+    
+    [appDele.window.rootViewController showViewController:drawer sender:nil];
+
+}
+
++(void) setTeamRoot
+{
+    TeamMainVC *  loginNav =  [[UIStoryboard storyboardWithName:@"Team" bundle:nil] instantiateViewControllerWithIdentifier:@"team"];
+    
+    AppDelegate * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    BaoyuLeftViewController *leftVC = [[BaoyuLeftViewController alloc] init];
+
+    ICSDrawerController *drawer = [[ICSDrawerController alloc] initWithLeftViewController:leftVC centerViewController:loginNav];
+
+    
+    [appDele.window.rootViewController showViewController:drawer sender:nil];
     
     
-//    appDele.window.rootViewController = loginNav;
 }
 
 +(void)setTeamCreat
@@ -124,11 +199,11 @@
 {
     HLTabBarController * tabbar = [[HLTabBarController alloc] init];
     
-    HLNavgationController * loanNav = [self createTabWithStoryboardName:@"WikiMain" identifier:@"wikimain" title:@"主页" image:@"tabbarCommonUsed"];
-    HLNavgationController * loanNav1 = [self createTabWithStoryboardName:@"Search" identifier:@"search" title:@"搜索" image:@"tabbarCommonUsed"];
-    HLNavgationController * loanNav2 = [self createTabWithStoryboardName:@"Publish" identifier:@"publish" title:@"发布" image:@"tabbarCommonUsed"];
-    HLNavgationController * creditNav = [self createTabWithStoryboardName:@"Message" identifier:@"message" title:@"消息" image:@"tabbarQRCode"];
-    HLNavgationController * personalNav = [self createTabWithStoryboardName:@"Myinfo" identifier:@"myinfo" title:@"我" image:@"tabbarPersonal"];
+    HLNavgationController * loanNav = [self createTabWithStoryboardName:@"WikiMain" identifier:@"wikimain" title:@"主页" image:@"tab_wiki"];
+    HLNavgationController * loanNav1 = [self createTabWithStoryboardName:@"Search" identifier:@"search" title:@"搜索" image:@"tab_search"];
+    HLNavgationController * loanNav2 = [self createTabWithStoryboardName:@"Publish" identifier:@"publish" title:@"" image:@"tab_publish"];
+    HLNavgationController * creditNav = [self createTabWithStoryboardName:@"Message" identifier:@"message" title:@"消息" image:@"tab_message"];
+    HLNavgationController * personalNav = [self createTabWithStoryboardName:@"Myinfo" identifier:@"myinfo" title:@"我" image:@"tab_personal"];
     
     tabbar.viewControllers = [NSArray arrayWithObjects:loanNav,loanNav1,loanNav2,creditNav,personalNav, nil];
     
@@ -143,12 +218,22 @@
 {
     HLNavgationController *  nav =  [[UIStoryboard storyboardWithName:storyName bundle:nil] instantiateViewControllerWithIdentifier:identifier];
     if (title && imageName) {
-        UITabBarItem *firstItem = [[UITabBarItem alloc]initWithTitle:title image:[UIImage imageNamed:imageName] selectedImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@Selected",imageName]]];
-        //    [firstItem setFinishedSelectedImage:[UIImage imageNamed:@"p1"] withFinishedUnselectedImage:[UIImage imageNamed:@"p1_f"]];
+        
+        UIImage *normal = [UIImage imageNamed:imageName];
+        normal = [normal imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        
+        UIImage *selectimg = [UIImage imageNamed:[NSString stringWithFormat:@"%@select",imageName]];
+        selectimg = [selectimg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        
+        UITabBarItem *firstItem = [[UITabBarItem alloc] initWithTitle:title image:normal selectedImage:selectimg];
+
         
         nav.topViewController.tabBarItem = firstItem;
     }
     
     return nav;
 }
+
 @end

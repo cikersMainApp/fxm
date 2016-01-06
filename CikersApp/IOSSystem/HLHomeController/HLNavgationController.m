@@ -20,10 +20,27 @@
     // Do any additional setup after loading the view.
     
 
+    self.navigationBar.layer.contents = (id)[HLNavgationController imageWithColor:[UIColor redColor]];
+    
+    self.navigationBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nav_img"]];
+    
+
 }
 
-
-
++(UIImage*) imageWithColor:(UIColor*)color
+{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

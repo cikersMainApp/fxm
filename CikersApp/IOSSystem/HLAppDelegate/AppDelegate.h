@@ -16,6 +16,7 @@
 +(void) setLoginRoot;
 +(void) setTabRoot;
 +(void) setTeamRoot;
++(void) setGameRoot;
 +(void) setTeamCreat;
 +(void) setPlayerinfoRoot;
 @end

@@ -23,7 +23,7 @@
 
     //背景为灰色
     
-    self.backgroundColor = [UIColor blackColor];
+//    self.backgroundColor = [UIColor blackColor];
 }
 
 

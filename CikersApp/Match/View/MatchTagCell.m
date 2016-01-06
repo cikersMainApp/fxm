@@ -17,7 +17,6 @@
     // Initialization code
     
     
-    [self.img_photo sd_setImageWithURL:[NSURL URLWithString:testurl]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -35,11 +34,24 @@
 
     self.view_sectionbg.hidden = !show;
     
-    
     self.view_sectionbg.backgroundColor = [UIColor blueColor];
     
-    
     self.lb_sectionTitle.text = @"湖南大学老乡队";
+}
+
+-(void)updateUI:(NSDictionary *)dic
+{
+    
+    NSArray *data = [dic objectForKey:@"data"];
+    
+
+    NSDictionary *dic_elem = [data objectAtIndex:self.i_index];
+
+    NSString *url = [NSString stringWithFormat:@"http://static.cikers.com%@",[dic_elem objectForKey:@"icon"]];
+    
+    [self.img_photo sd_setImageWithURL:[NSURL URLWithString:url]];
+
+    self.lb_name.text = [dic_elem objectForKey:@"name"];
 }
 
 @end

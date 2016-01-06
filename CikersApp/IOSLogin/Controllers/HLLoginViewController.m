@@ -13,9 +13,13 @@
 #import "HLLoginInfoView.h"
 #import "HLGetVericodeButton.h"
 #import "LoginData.h"
+#import "DicUserinfo.h"
+#import "RMMapper.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
+#import "ARLabel.h"
+
 @interface HLLoginViewController ()<UITextFieldDelegate,HLLoginInfoViewDelegate>
 @property (nonatomic,strong) HLLoginOperation * operation;
-@property (nonatomic,strong) UILabel * l;
 @property (strong, nonatomic) NSString *phoneNumString;
 @property (weak, nonatomic) IBOutlet HLGetVericodeButton *getVericodeButton;
 @property (weak, nonatomic) IBOutlet HLLoginInfoView *inputView;
@@ -30,14 +34,20 @@
 @implementation HLLoginViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.l = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 320, 40)];
-    [self.view addSubview:self.l];
     
+    [super viewDidLoad];
+        
     self.operation = [[HLLoginOperation alloc] init];
 
     self.tf_name.text = @"18610932023";
     self.tf_pwd.text = @"123";
+    
+    
+    ARLabel *test = [[ARLabel alloc] initWithFrame:CGRectMake(0, 400, 100, 100)];
+    test.text=@"我是测试文我是测试文";
+    [self.view addSubview:test];
+    
+    
 
 }
 
@@ -56,23 +66,26 @@
     [_inputView initInputViewByParam:param];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
 }
-*/
+
 
 - (IBAction)getVericodeMethod:(id)sender {
     
     
-    [AppDelegate setTabRoot];
-    
-    return;
-    
+//    [AppDelegate setTabRoot];
+//    
+//    return;
+//    
     
     if ([self.tf_name.text isEqual:@""] || [self.tf_pwd.text isEqual:@""])
     {
@@ -94,6 +107,17 @@
             
             [AppDelegate setTabRoot];
             
+            //解析数据
+            
+            NSDictionary *data=[result objectForKey:@"data"];
+            DicUserinfo *user = [RMMapper objectWithClass:[DicUserinfo class] fromDictionary:data];
+            
+            [[NSUserDefaults standardUserDefaults] rm_setCustomObject:user forKey:@"user"];
+            
+            
+            [[NSUserDefaults standardUserDefaults] setValue:user.entityId forKey:@"userid"];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"login"];
+            
 //            [LoginData saveValue:self.tf_name.text key:KEY_USER_LOGIN_NAME];
 //            [LoginData saveValue:self.tf_pwd.text key:KEY_USER_PWD];
             
@@ -106,38 +130,6 @@
     }];
     
 }
-
-- (void) countDown
-{
-    __block int timeout=60; //倒计时时间
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
-    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
-    dispatch_source_set_event_handler(_timer, ^{
-        if(timeout<=0){ //倒计时结束，关闭
-            dispatch_source_cancel(_timer);
-            dispatch_object_t _o = (_timer);
-            _dispatch_object_validate(_o);
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.getVericodeButton.userInteractionEnabled = YES;
-                [self.getVericodeButton changeStatus];
-                [self.getVericodeButton setTitle:@"获取验证码" forState:UIControlStateNormal];
-                self.getVericodeButton.countDownLabel.text = @"";
-                self.getVericodeButton.userInteractionEnabled = YES;
-            });
-        }else{
-            int seconds = timeout;
-            NSString *strTime = [NSString stringWithFormat:@"%d秒后重发", seconds];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.getVericodeButton setTitle:@"" forState:UIControlStateNormal];
-                self.getVericodeButton.countDownLabel.text = strTime;
-            });
-            timeout--;
-        }
-    });
-    dispatch_resume(_timer);
-}
-
 - (void) recallForCanGetVericode:(BOOL) canGet
 {
     if (self.getVericodeButton.userInteractionEnabled)

@@ -9,10 +9,12 @@
 #import "HLBaseViewController.h"
 #import "TeamManagerList.h"
 #import "TeamContentView.h"
-@interface TeamMainVC : HLBaseViewController<UITableViewDelegate,UITableViewDataSource>
+#import "ICSDrawerController.h"
+@interface TeamMainVC : HLBaseViewController<UITableViewDelegate,UITableViewDataSource,ICSDrawerControllerChild, ICSDrawerControllerPresenting>
 
-@property(nonatomic,weak)IBOutlet TeamManagerList *view_left;
+//@property(nonatomic,weak)IBOutlet TeamManagerList *view_left;
 @property(nonatomic,weak)IBOutlet TeamContentView *view_scrollow;
+@property (nonatomic,weak) ICSDrawerController *drawer;
 
 -(IBAction)bnt_back;
 -(IBAction)bnt_share;

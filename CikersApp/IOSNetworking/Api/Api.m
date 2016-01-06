@@ -292,10 +292,31 @@
 {
 
     NSString *apiUrl=[NSString stringWithFormat:@"%@match/%@",HOST,matchid];
-    
-//    NSDictionary *params=@{@"id":matchid,
-//                           };
+
     self.http_tag = NET_MATCH_INFO;
+    
+    [self sendRequestWithUrl:apiUrl Method:@"GET" AndParams:nil];
+
+}
+
+
+
+-(void)predict_sendBymatchid:(NSString *)matchid code:(NSString *)type
+{
+
+    NSString *apiUrl=[NSString stringWithFormat:@"%@predict/bet/%@",HOST,matchid];
+    
+    NSDictionary *params=@{@"code":type,};
+    
+    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params];
+
+    
+}
+
+-(void)predict_getDataBymatchid:(NSString *)matchid
+{
+    NSString *apiUrl=[NSString stringWithFormat:@"%@predict/bymatch/%@",HOST,matchid];
+    
     
     [self sendRequestWithUrl:apiUrl Method:@"GET" AndParams:nil];
 

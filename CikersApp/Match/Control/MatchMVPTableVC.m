@@ -50,7 +50,9 @@
     
     return cell;
 }
-
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
 -(NSString *)segmentTitle
 {
     return @"MVP";

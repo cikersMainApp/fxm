@@ -7,7 +7,7 @@
 //
 
 #import "PredictionVC.h"
-#import "PredictionCell.h"
+
 @interface PredictionVC ()
 
 @end
@@ -22,11 +22,30 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    self.opration = [[MatchOpration alloc] init];
+    self.opration.delegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)getData:(NSString *)matchid
+{
+    [self.opration getDataForPredictionBymatchid:matchid];
+
+}
+
+-(void)data_scuess:(id)dic
+{
+    self.net_dic = (NSDictionary*)dic;
+    
+    [self.tableView reloadData];
+
 }
 
 #pragma mark - Table view data source
@@ -53,15 +72,25 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     PredictionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.delegate = self;
     
-//    cell.textLabel.text = @"测试";
+    [cell updateUI:self.net_dic];
     
     return cell;
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    return nil;
+}
+
+-(void)sendNet:(NSString *)code
+{
+
+    [self.opration sendForPredictionBymatchid:self.str_matchiid code:code];
+}
 
 /*
 // Override to support conditional editing of the table view.

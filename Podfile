@@ -13,4 +13,5 @@ target'CikersApp' do
     pod 'AFNetworking', '1.3.3'
     pod 'ABTableViewCellController’, '~> 1.0’
     pod ‘MJRefresh’, '~> 3.0’
+    pod ‘LLBootstrapButton’, '~> 0.0’
 end

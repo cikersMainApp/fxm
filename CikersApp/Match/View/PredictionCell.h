@@ -7,16 +7,25 @@
 //
 
 typedef enum : NSUInteger {
-    LABLE_TAG = 0,
     BNT_1,
     BNT_2,
     BNT_3,
 } BNT_TAG;
 
 
+@protocol PredictionCellDelegate <NSObject>
+
+-(void)sendNet:(NSString *)code;
+
+@end
+
+
 #import <UIKit/UIKit.h>
 
 @interface PredictionCell : UITableViewCell
+
+@property(nonatomic,strong)id<PredictionCellDelegate>delegate;
+
 
 @property(nonatomic,weak)IBOutlet UILabel *lb_namebyhome;
 @property(nonatomic,weak)IBOutlet UILabel *lb_namebyguest;
@@ -28,7 +37,7 @@ typedef enum : NSUInteger {
 
 
 @property(nonatomic,weak)IBOutlet UIView *view_bg; // 进球数背景
-
+@property(nonatomic,weak)IBOutlet UIView *view_vsbg;//胜负平背景
 
 //---------methon-------------
 
@@ -36,6 +45,6 @@ typedef enum : NSUInteger {
 
 -(IBAction)bnt_action:(id)sender;
 
-
+-(void)updateUI:(id)sender;
 
 @end

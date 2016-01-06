@@ -17,8 +17,6 @@
 -(void)initUI;
 
 -(void)inithead;
--(void)initSecond;
--(void)initMenu;
 -(void)initWiki;
 
 -(void)bnt_action:(id)sender;

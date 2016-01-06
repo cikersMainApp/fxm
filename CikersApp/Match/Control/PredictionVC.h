@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "ARSegmentPageController.h"
+#import "MatchOpration.h"
+#import "PredictionCell.h"
+@interface PredictionVC : UITableViewController<ARSegmentControllerDelegate,MatchOprationDelegate,PredictionCellDelegate>
 
-@interface PredictionVC : UITableViewController<ARSegmentControllerDelegate>
+
+@property(nonatomic,strong)NSString *str_matchiid;
+
+@property(nonatomic,strong)MatchOpration *opration;
+
+@property(nonatomic,strong)NSDictionary *net_dic;
+
+-(void)getData:(NSString*)matchid;
 
 @end

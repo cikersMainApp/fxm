@@ -1,4 +1,5 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
     "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : {
 
@@ -8,18 +9,27 @@
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : 0,
     "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : 0,
-    "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : 0
+    "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456" : 0,
+    "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1EF36C86-0385-42BD-BB92-CC7B414F7B8D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : "..\/Downloads\/Teapod\/TeaLife",
     "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : "..\/Downloads\/Teapod\/TeaLife",
-    "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : "..\/Downloads\/Teapod\/TeaLife"
+    "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456" : "TYLaunchAnimation\/",
+    "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : "CikersApp\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "CikersApp",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CikersApp.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/cikersMainApp\/fxm.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/121.40.189.149:1443\/svn\/TeapodIOS",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
@@ -29,6 +39,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:CoffeeTea\/TeaLife.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/12207480\/TYLaunchAnimation.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456"
     }
   ]
 }

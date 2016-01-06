@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ARSegmentPageController.h"
+#import "MatchOpration.h"
+@interface MatchTagTableVC : UITableViewController<ARSegmentControllerDelegate,MatchOprationDelegate>
 
-@interface MatchTagTableVC : UITableViewController<ARSegmentControllerDelegate>
+@property(nonatomic,strong)MatchOpration *opration;
+@property(nonatomic,strong)NSDictionary *dic_data;
+
+
+-(void)getData:(NSString*)matchid;
 
 @end

@@ -7,13 +7,14 @@
 //
 
 #import "MatchVC.h"
-#import "TableViewController.h"
-#import "CollectionViewController.h"
 #import "UIImage+ImageEffects.h"
 #import "PredictionVC.h"
 #import "MatchTagTableVC.h"
 #import "MatchMVPTableVC.h"
 #import "DicMatchinfo.h"
+
+#define testMatchid @"8350"
+
 void *MatchVCobserver = &MatchVCobserver;
 
 @interface MatchVC ()
@@ -68,18 +69,15 @@ void *MatchVCobserver = &MatchVCobserver;
 {
     return @"测试";
 }
+// 初始化头部数据
 
 -(void)data_scuess:(id)dic
 {
-    NSLog(@"data:%@",dic);
-    
-    
-    // 初始化头部数据
-    
     self.str_score = ((DicMatchinfo*)dic).score;
     [self.headerView updateUI:dic];
     
 }
+
 
 - (void)viewDidLoad {
     
@@ -94,26 +92,42 @@ void *MatchVCobserver = &MatchVCobserver;
     self.blurImage = [[UIImage imageNamed:@"haibao"] applyDarkEffect];
     
     
-    PredictionVC *table =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"predictionvc"];
+    self.table_predic =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"predictionvc"];
     
-    MatchTagTableVC *collectionView =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchtagtablevc"];
+    self.table_tag =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchtagtablevc"];
 
-    MatchMVPTableVC *table1 =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchmvptablevc"];
+    self.table_mvp =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchmvptablevc"];
 
+    self.table_wiki =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchwikivc"];
+
+    
     self.segmentMiniTopInset = 64;
 
-    [self setViewControllers:@[table,collectionView,table1]];
+    [self setViewControllers:@[self.table_predic,self.table_tag,self.table_wiki]];
     
     [self addObserver:self forKeyPath:@"segmentToInset" options:NSKeyValueObservingOptionNew context:MatchVCobserver];
     
     
+    [DataSingleton Instance].id_cur_match = testMatchid;
+    
     self.opration = [[MatchOpration alloc] init];
     self.opration.delegate = self;
     
-    [self.opration getDataForAllinfoBymatchid:@"298"];
+    
+    //请求比赛数据
+    [self.opration getDataForAllinfoBymatchid:testMatchid];
+    
+    //请求竞猜数据
+    [self.table_predic getData:testMatchid];
+    self.table_predic.str_matchiid = testMatchid;
+
+    //请求球员数据
+    
+    [self.table_tag getData:testMatchid];
     
     
-    
+    //请求帖子数据
+    self.table_wiki.matchid = testMatchid;
     
 }
 

@@ -44,14 +44,14 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="创建活动"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="66" y="285" width="60" height="30"/>
+                                    <rect key="frame" x="170" y="250" width="60" height="30"/>
                                 </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHa-tY-7cs">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="创建球队"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="278" y="285" width="60" height="30"/>
+                                    <rect key="frame" x="170" y="315" width="60" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="bnt_creatTeam" destination="8hG-ha-co1" eventType="touchUpInside" id="4hq-8I-WEw"/>

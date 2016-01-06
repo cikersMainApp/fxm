@@ -14,6 +14,10 @@
 
 #import "PredictionCell.h"
 #import "HLRoundButton.h"
+#import "DicMatchinfo.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
+#import "DicTeaminfo.h"
+#import "ARLabel.h"
 @implementation PredictionCell
 
 - (void)awakeFromNib {
@@ -44,7 +48,42 @@
     
     float b_width = (ScreenWidth - 30 - 30 - 15 - 15)/3.0f;
     
-    // 第一排
+    
+    const char * title[] = {"胜","平","负"};
+    
+    // 胜负 第一排
+    
+    for (int i = 0; i< 3; i++)
+    {
+        
+        
+        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(30+i*(b_width+15), 80 + (i/3)*100, b_width, 32)];
+        
+        [bt setTitle:[NSString stringWithUTF8String:title[i]] forState:UIControlStateNormal];
+        [bt setTag:i];
+        [bt addTarget:self action:@selector(bnt_action:) forControlEvents:UIControlEventTouchUpInside];
+        [bt setBackgroundColor:[UIColor grayColor]];
+        [self.view_vsbg addSubview:bt];
+        
+        [bt.layer setMasksToBounds:YES];
+        [bt.layer setCornerRadius:10.0f];
+        [bt.layer setBorderWidth:1.0];
+        
+        
+        ARLabel *lable = [[ARLabel alloc] initWithFrame:CGRectMake(30+i*(b_width+15), 55+ (i/3)*100, b_width, 15)];
+        [lable setBackgroundColor:[UIColor orangeColor]];
+        lable.tag = 20+i;
+        [lable setTextAlignment:NSTextAlignmentCenter];
+        [lable setText:@"已获得投票数量"];
+        [lable setFont:[UIFont fontWithName:@"Helvetica" size:12]];
+        [lable setTextColor:[UIColor blackColor]];
+        [self.view_vsbg addSubview:lable];
+        
+    }
+
+    
+    
+    // 进球数 第一排
     
     for (int i = 0; i< 6; i++)
     {
@@ -56,24 +95,22 @@
         }
         
         
-        
-        
-        
-        
-        HLRoundButton *bt = [[HLRoundButton alloc] initWithFrame:CGRectMake(30+w*(b_width+15), 100 + (i/3)*100, b_width, 32)];
+        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(30+w*(b_width+15), 60 + (i/3)*80, b_width, 32)];
 
-        [bt setTitle:[NSString stringWithFormat:@"%d",i] forState:UIControlStateNormal];
+        [bt setTitle:[NSString stringWithFormat:@"%d",i+1] forState:UIControlStateNormal];
         [bt setTag:i+BNT_3+1];
+        [bt setBackgroundColor:[UIColor grayColor]];
         [bt addTarget:self action:@selector(bnt_action:) forControlEvents:UIControlEventTouchUpInside];
         [self.view_bg addSubview:bt];
         
         
         
-        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(30+w*(b_width+15), 30 + (i/3)*100, b_width, 15)];
+        ARLabel *lable = [[ARLabel alloc] initWithFrame:CGRectMake(30+w*(b_width+15), 35+ (i/3)*80, b_width, 15)];
         [lable setBackgroundColor:[UIColor orangeColor]];
-        lable.tag = LABLE_TAG;
+        lable.tag = 20+i+BNT_3+1;
         [lable setTextAlignment:NSTextAlignmentCenter];
         [lable setText:@"已获得投票数量"];
+        [lable setFont:[UIFont fontWithName:@"Helvetica" size:12]];
         [lable setTextColor:[UIColor blackColor]];
         [self.view_bg addSubview:lable];
         
@@ -89,19 +126,104 @@
 
     UIButton *bt = (UIButton*)sender;
     
-    switch (bt.tag) {
-        case BNT_1:
-        {
+    if (bt.tag < 3) {
         
+        
+        switch (bt.tag) {
+            case 0:
+            {
+                [self.delegate sendNet:@"A"];
+            }
+                break;
+            case 1:
+            {
+                [self.delegate sendNet:@"O"];
+            }
+                break;
+            case 2:
+            {
+                [self.delegate sendNet:@"B"];
+            }
+                break;
+                
+            default:
+                break;
         }
-            break;
-            
-        default:
-            break;
+        
+        
     }
+    else
+    {
+        NSString *str = [NSString stringWithFormat:@"%d",(bt.tag - 3)];
+        
+        [self.delegate sendNet:str];
+        
+    }
+    
     
 }
 
+-(void)updateUI:(id)sender
+{
 
+    //更新双方球队名称
+    
+    DicMatchinfo *info = (DicMatchinfo*)[[NSUserDefaults standardUserDefaults] rm_customObjectForKey:[NSString stringWithFormat:@"match%@",[DataSingleton Instance].id_cur_match]];
+    
+    
+    if (info==nil) {
+        return;
+    }
+    
+    
+    self.lb_namebyhome.text = info.teama.name;
+    self.lb_namebyguest.text= info.teamb.name;
+    self.lb_score.text = info.score;
+    
+    
+    //更新文本
+    
+    NSDictionary *dic = (NSDictionary*)sender;
+    
+    NSDictionary *data = [dic objectForKey:@"data"];
+    
+    
+    
+//    NSArray *myops = [data objectForKey:@"myops"];
+    
+
+    
+    
+    NSArray *stats = [data objectForKey:@"stats"];
+    
+    
+    NSArray *array_str = [NSArray arrayWithObjects:@"A",@"O",@"B",@"1",@"2",@"3",@"4",@"5",@"6", nil];
+    
+    for (NSDictionary *elem in stats)
+    {
+        NSLog(@"%@",elem);
+        
+        NSString *name = [elem objectForKey:@"name"];
+        NSNumber *count = [elem objectForKey:@"count"];
+        
+        
+        NSUInteger _index = [array_str indexOfObject:name];
+        
+        if (_index < 3)
+        {
+            UILabel * lable = [self.view_vsbg viewWithTag:_index+20];
+            lable.text = [NSString stringWithFormat:@"已获得投票%@",count];
+        }
+        else
+        {
+            UILabel * lable = [self.view_bg viewWithTag:_index+20];
+            lable.text = [NSString stringWithFormat:@"已获得投票%@",count];
+        }
+        
+        
+        
+    }
+    
+}
 
 @end
