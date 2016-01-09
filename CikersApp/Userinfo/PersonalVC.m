@@ -12,7 +12,7 @@
 #import "XBSettingCell.h"
 #import "XBSettingItemModel.h"
 #import "XBSettingSectionModel.h"
-
+#import "AppDelegate.h"
 @interface PersonalVC ()
 @property (nonatomic,strong) XBMeHeaderView *header;
 @property (nonatomic,strong) NSArray  *sectionArray; /**< section模型数组*/
@@ -133,6 +133,9 @@
     if (itemModel.executeCode) {
         itemModel.executeCode();
     }
+    
+    [AppDelegate setLoginRoot];
+    
 }
 //uitableview处理section的不悬浮，禁止section停留的方法，主要是这段代码
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

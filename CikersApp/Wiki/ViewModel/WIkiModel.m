@@ -25,6 +25,19 @@
     self.marks = [self.extra objectForKey:@"marks"];
     
     self.time = [ToolUtil tool_utcToNsstring:self.createdOn];
+    
+    
+    if ([self.authorname isEqual:[NSNull null]])
+    {
+        self.authorname = @"";
+    }
+    
+    
+    if ([self.image isEqual:[NSNull null]])
+    {
+        self.image = [[NSMutableArray alloc] init];
+    }
+    
 }
 
 @end

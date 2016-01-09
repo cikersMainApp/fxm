@@ -33,6 +33,10 @@ static NSString *const HOST_IMAGE = @"http://www.cikers.com/";
 #define DEBUGSTATE 1
 
 
+//按钮蓝色色值
+
+#define BNT_COLOR_BLUE @"1d6ade"
+
 /**
  *  屏幕宽高
  */

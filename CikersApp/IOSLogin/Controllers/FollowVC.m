@@ -45,6 +45,15 @@
     [AppDelegate setTabRoot];
     
 }
+-(IBAction)bnt_switch:(UIButton*)sender
+{
+
+    
+    [sender setBackgroundImage:[UIImage imageNamed:@"button_select"] forState:UIControlStateNormal];
+    
+}
+
+
 - (void)finishedWithRequest:(HttpRequest *)request
                    Response:(HttpResponse *)response
                    AndError:(NSError *)error

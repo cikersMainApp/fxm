@@ -77,7 +77,7 @@
  球队上传logo
  */
 
--(void)team_uploadByid:(NSString*)teamid img:(NSString*)base64img;
+-(void)team_uploadByid:(NSNumber*)teamid img:(NSString*)base64img;
 
 /*
  模糊搜索 使用场景 查询球队  查询队员  查询联赛
@@ -191,8 +191,9 @@
 
 
 /*
- 点赞
+ 贴标签  三个类型区分  team game player
  */
 
+-(void)Tag_sendByOgroupid:(NSString*)type oid:(NSNumber*)oid;
 
 @end

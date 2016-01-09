@@ -28,9 +28,10 @@
         self.countDownLabel.font = [self.titleLabel font];
         self.countDownLabel.textAlignment = NSTextAlignmentCenter;
         self.countDownLabel.textColor = self.titleLabel.textColor;
-        self.countDownLabel.backgroundColor = [UIColor clearColor];
         [self addSubview: self.countDownLabel];
     }
+    
+    
 }
 
 - (void) changeStatus

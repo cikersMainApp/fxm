@@ -12,14 +12,16 @@
     "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : 0,
     "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : 0,
     "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456" : 0,
-    "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : 0
+    "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : 0,
+    "D9356A042CDA2547EFDDDE759F9118640F71F77C+++8CD46DB" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1EF36C86-0385-42BD-BB92-CC7B414F7B8D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : "..\/Downloads\/Teapod\/TeaLife",
     "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : "..\/Downloads\/Teapod\/TeaLife",
     "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456" : "TYLaunchAnimation\/",
-    "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : "CikersApp\/"
+    "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : "CikersApp\/",
+    "D9356A042CDA2547EFDDDE759F9118640F71F77C+++8CD46DB" : "VOSegmentedControlDemo\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "CikersApp",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -44,6 +46,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/12207480\/TYLaunchAnimation.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pozi119\/VOSegmentedControlDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D9356A042CDA2547EFDDDE759F9118640F71F77C+++8CD46DB"
     }
   ]
 }

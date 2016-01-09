@@ -17,7 +17,7 @@
 #import "RMMapper.h"
 #import "NSUserDefaults+RMSaveCustomObject.h"
 #import "ARLabel.h"
-
+#import "GamelistTableVC.h"
 @interface HLLoginViewController ()<UITextFieldDelegate,HLLoginInfoViewDelegate>
 @property (nonatomic,strong) HLLoginOperation * operation;
 @property (strong, nonatomic) NSString *phoneNumString;
@@ -43,10 +43,26 @@
     self.tf_pwd.text = @"123";
     
     
-    ARLabel *test = [[ARLabel alloc] initWithFrame:CGRectMake(0, 400, 100, 100)];
-    test.text=@"我是测试文我是测试文";
-    [self.view addSubview:test];
+//    self.tf_name.layer.cornerRadius=8.0f;
+//    self.tf_name.layer.masksToBounds=NO;
+//    self.tf_name.layer.borderColor=[[UIColor colorAndAlphaWithHexString:@"F6F6F6"]CGColor];
+//    self.tf_name.layer.borderWidth= 1.0f;
+//    
+//    
+//    self.tf_pwd.layer.cornerRadius=8.0f;
+//    self.tf_pwd.layer.masksToBounds=NO;
+//    self.tf_pwd.layer.borderColor=[[UIColor colorAndAlphaWithHexString:@"F6F6F6"]CGColor];
+//    self.tf_pwd.layer.borderWidth= 1.0f;
+//    
     
+    
+    
+    
+    
+//    ARLabel *test = [[ARLabel alloc] initWithFrame:CGRectMake(0, 400, 100, 100)];
+//    test.text=@"我是测试文我是测试文";
+//    [self.view addSubview:test];
+//    
     
 
 }
@@ -105,7 +121,11 @@
         
         if (json_e == 0) {
             
-            [AppDelegate setTabRoot];
+            
+            GamelistTableVC *nextvc = [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"gamelisttablevc"];
+            [self.navigationController pushViewController:nextvc animated:YES];
+            
+            //[AppDelegate setTabRoot];
             
             //解析数据
             

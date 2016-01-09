@@ -31,6 +31,7 @@
     [self.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationBar setTranslucent:YES];
 
+
 }
 -(UIImage *) createImageWithColor: (UIColor *) color
 {
@@ -44,6 +45,10 @@
     UIGraphicsEndImageContext();
     return theImage;
 }
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

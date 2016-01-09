@@ -23,10 +23,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.str_matchiid = [NSNumber numberWithInt:-1];
+    
     
     self.opration = [[MatchOpration alloc] init];
     self.opration.delegate = self;
 
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,18 +37,52 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)getData:(NSString *)matchid
+-(void)getData:(NSNumber *)matchid
 {
     [self.opration getDataForPredictionBymatchid:matchid];
 
+    self.str_matchiid = matchid;
 }
 
 -(void)data_scuess:(id)dic
 {
     self.net_dic = (NSDictionary*)dic;
     
+    NSNumber *e = [dic objectForKey:@"e"];
+    
+    if ([e intValue] == -1)
+    {
+        
+        [APSProgress showToast:self.view withMessage:[dic objectForKey:@"msg"]];
+        
+        return;
+    }
+    
+    
     [self.tableView reloadData];
 
+}
+
+-(void)data_prediction:(id)dic
+{
+    
+    NSNumber *e = [(NSDictionary*)dic objectForKey:@"e"];
+    
+    if ([e intValue] == -1)
+    {
+        
+        [APSProgress showToast:self.view withMessage:[(NSDictionary*)dic objectForKey:@"msg"]];
+        
+        return;
+    }
+    
+
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+    
+    PredictionCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
+    [self.cell_predic updateUIByUser:self.str_predictionTag];
+    
 }
 
 #pragma mark - Table view data source
@@ -73,13 +110,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    PredictionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    self.cell_predic = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.delegate = self;
+    self.cell_predic.delegate = self;
     
-    [cell updateUI:self.net_dic];
+    self.cell_predic.data_obj_matchinfo = self.data_obj_matchinfo;
     
-    return cell;
+    [self.cell_predic updateUI:self.net_dic matchid:self.str_matchiid];
+    
+    return self.cell_predic;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -89,51 +128,10 @@
 -(void)sendNet:(NSString *)code
 {
 
+    self.str_predictionTag = code;
+    
     [self.opration sendForPredictionBymatchid:self.str_matchiid code:code];
+    
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -26,6 +26,18 @@
 		D779DBC91C3BBE0000472FD9 /* WikiNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBC81C3BBE0000472FD9 /* WikiNewsCell.m */; };
 		D779DBCC1C3BBF2A00472FD9 /* WikiAllCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBCB1C3BBF2A00472FD9 /* WikiAllCell.m */; };
 		D779DBCF1C3BC72500472FD9 /* WikiPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBCE1C3BC72500472FD9 /* WikiPhotoView.m */; };
+		D779DBD21C3CF51000472FD9 /* UIView+FXM.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBD11C3CF51000472FD9 /* UIView+FXM.m */; };
+		D779DBF81C3E0EE800472FD9 /* VOContentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBF11C3E0EE800472FD9 /* VOContentLayer.m */; };
+		D779DBF91C3E0EE800472FD9 /* VOIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBF31C3E0EE800472FD9 /* VOIndicatorAnimation.m */; };
+		D779DBFA1C3E0EE800472FD9 /* VOSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBF51C3E0EE800472FD9 /* VOSegment.m */; };
+		D779DBFB1C3E0EE800472FD9 /* VOSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBF71C3E0EE800472FD9 /* VOSegmentedControl.m */; };
+		D779DC001C3E1B4100472FD9 /* DemoVC7Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBFD1C3E1B4100472FD9 /* DemoVC7Cell.m */; };
+		D779DC011C3E1B4100472FD9 /* DemoVC7Cell2.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DBFF1C3E1B4100472FD9 /* DemoVC7Cell2.m */; };
+		D779DC071C3E58B300472FD9 /* DeformationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC031C3E58B300472FD9 /* DeformationButton.m */; };
+		D779DC081C3E58B300472FD9 /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC061C3E58B300472FD9 /* MMMaterialDesignSpinner.m */; };
+		D779DC0B1C3FA81D00472FD9 /* GamelistTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC0A1C3FA81D00472FD9 /* GamelistTableVC.m */; };
+		D779DC0E1C3FADAB00472FD9 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC0D1C3FADAB00472FD9 /* GameModel.m */; };
+		D779DC111C3FB72F00472FD9 /* GameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC101C3FB72F00472FD9 /* GameListCell.m */; };
 		D7B0DCCF1C3520EE00A3997A /* GameTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DCCE1C3520EE00A3997A /* GameTableView.m */; };
 		D7B0DCD11C35258F00A3997A /* GameSection1.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B0DCD01C35258F00A3997A /* GameSection1.xib */; };
 		D7B0DCD41C36583F00A3997A /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DCD31C36583F00A3997A /* CALayer+Addition.m */; };
@@ -269,6 +281,30 @@
 		D779DBCB1C3BBF2A00472FD9 /* WikiAllCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiAllCell.m; sourceTree = "<group>"; };
 		D779DBCD1C3BC72500472FD9 /* WikiPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiPhotoView.h; sourceTree = "<group>"; };
 		D779DBCE1C3BC72500472FD9 /* WikiPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiPhotoView.m; sourceTree = "<group>"; };
+		D779DBD01C3CF51000472FD9 /* UIView+FXM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FXM.h"; sourceTree = "<group>"; };
+		D779DBD11C3CF51000472FD9 /* UIView+FXM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FXM.m"; sourceTree = "<group>"; };
+		D779DBF01C3E0EE800472FD9 /* VOContentLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOContentLayer.h; sourceTree = "<group>"; };
+		D779DBF11C3E0EE800472FD9 /* VOContentLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOContentLayer.m; sourceTree = "<group>"; };
+		D779DBF21C3E0EE800472FD9 /* VOIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOIndicatorAnimation.h; sourceTree = "<group>"; };
+		D779DBF31C3E0EE800472FD9 /* VOIndicatorAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOIndicatorAnimation.m; sourceTree = "<group>"; };
+		D779DBF41C3E0EE800472FD9 /* VOSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegment.h; sourceTree = "<group>"; };
+		D779DBF51C3E0EE800472FD9 /* VOSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegment.m; sourceTree = "<group>"; };
+		D779DBF61C3E0EE800472FD9 /* VOSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VOSegmentedControl.h; sourceTree = "<group>"; };
+		D779DBF71C3E0EE800472FD9 /* VOSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VOSegmentedControl.m; sourceTree = "<group>"; };
+		D779DBFC1C3E1B4100472FD9 /* DemoVC7Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC7Cell.h; sourceTree = "<group>"; };
+		D779DBFD1C3E1B4100472FD9 /* DemoVC7Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC7Cell.m; sourceTree = "<group>"; };
+		D779DBFE1C3E1B4100472FD9 /* DemoVC7Cell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC7Cell2.h; sourceTree = "<group>"; };
+		D779DBFF1C3E1B4100472FD9 /* DemoVC7Cell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC7Cell2.m; sourceTree = "<group>"; };
+		D779DC021C3E58B300472FD9 /* DeformationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeformationButton.h; sourceTree = "<group>"; };
+		D779DC031C3E58B300472FD9 /* DeformationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeformationButton.m; sourceTree = "<group>"; };
+		D779DC051C3E58B300472FD9 /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
+		D779DC061C3E58B300472FD9 /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
+		D779DC091C3FA81D00472FD9 /* GamelistTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamelistTableVC.h; sourceTree = "<group>"; };
+		D779DC0A1C3FA81D00472FD9 /* GamelistTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamelistTableVC.m; sourceTree = "<group>"; };
+		D779DC0C1C3FADAB00472FD9 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		D779DC0D1C3FADAB00472FD9 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		D779DC0F1C3FB72F00472FD9 /* GameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListCell.h; sourceTree = "<group>"; };
+		D779DC101C3FB72F00472FD9 /* GameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListCell.m; sourceTree = "<group>"; };
 		D7B0DCCD1C3520EE00A3997A /* GameTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableView.h; sourceTree = "<group>"; };
 		D7B0DCCE1C3520EE00A3997A /* GameTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableView.m; sourceTree = "<group>"; };
 		D7B0DCD01C35258F00A3997A /* GameSection1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSection1.xib; sourceTree = "<group>"; };
@@ -727,6 +763,30 @@
 			path = SDPhotoBrowser;
 			sourceTree = "<group>";
 		};
+		D779DBEF1C3E0EE800472FD9 /* VOSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				D779DBF01C3E0EE800472FD9 /* VOContentLayer.h */,
+				D779DBF11C3E0EE800472FD9 /* VOContentLayer.m */,
+				D779DBF21C3E0EE800472FD9 /* VOIndicatorAnimation.h */,
+				D779DBF31C3E0EE800472FD9 /* VOIndicatorAnimation.m */,
+				D779DBF41C3E0EE800472FD9 /* VOSegment.h */,
+				D779DBF51C3E0EE800472FD9 /* VOSegment.m */,
+				D779DBF61C3E0EE800472FD9 /* VOSegmentedControl.h */,
+				D779DBF71C3E0EE800472FD9 /* VOSegmentedControl.m */,
+			);
+			path = VOSegmentedControl;
+			sourceTree = "<group>";
+		};
+		D779DC041C3E58B300472FD9 /* MMMaterialDesignSpinner-master */ = {
+			isa = PBXGroup;
+			children = (
+				D779DC051C3E58B300472FD9 /* MMMaterialDesignSpinner.h */,
+				D779DC061C3E58B300472FD9 /* MMMaterialDesignSpinner.m */,
+			);
+			path = "MMMaterialDesignSpinner-master";
+			sourceTree = "<group>";
+		};
 		D7B0DCE11C36758F00A3997A /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +902,10 @@
 		D7B0DCFC1C36758F00A3997A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D779DBFC1C3E1B4100472FD9 /* DemoVC7Cell.h */,
+				D779DBFD1C3E1B4100472FD9 /* DemoVC7Cell.m */,
+				D779DBFE1C3E1B4100472FD9 /* DemoVC7Cell2.h */,
+				D779DBFF1C3E1B4100472FD9 /* DemoVC7Cell2.m */,
 				D7B0DCFA1C36758F00A3997A /* WikiViewModel.h */,
 				D7B0DCFB1C36758F00A3997A /* WikiViewModel.m */,
 				D779DBC41C3BBB2700472FD9 /* WIkiModel.h */,
@@ -1149,6 +1213,8 @@
 			isa = PBXGroup;
 			children = (
 				D7B5FBA31C350AA400AE7341 /* main */,
+				D779DC0F1C3FB72F00472FD9 /* GameListCell.h */,
+				D779DC101C3FB72F00472FD9 /* GameListCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1156,6 +1222,8 @@
 		D7B5FB961C34D78E00AE7341 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D779DC0C1C3FADAB00472FD9 /* GameModel.h */,
+				D779DC0D1C3FADAB00472FD9 /* GameModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1167,6 +1235,8 @@
 				D7B5FB9B1C34E17D00AE7341 /* GameVC.m */,
 				D7B5FBA01C350A3500AE7341 /* GameLeftVC.h */,
 				D7B5FBA11C350A3500AE7341 /* GameLeftVC.m */,
+				D779DC091C3FA81D00472FD9 /* GamelistTableVC.h */,
+				D779DC0A1C3FA81D00472FD9 /* GamelistTableVC.m */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -1263,6 +1333,7 @@
 		D7D569AF1C266871009CBF2D /* IOSCommon */ = {
 			isa = PBXGroup;
 			children = (
+				D779DBEF1C3E0EE800472FD9 /* VOSegmentedControl */,
 				D7B5F8DE1C34CE4200AE7341 /* ICSDrawerController */,
 				D7B5F8401C2B975E00AE7341 /* UMSocial_Sdk_Extra_Frameworks */,
 				D7B5F8041C2B871900AE7341 /* UMSocial_Sdk_4.4 */,
@@ -1312,6 +1383,8 @@
 				D7D569D31C266871009CBF2D /* KeyboardUtil */,
 				D7D569D61C266871009CBF2D /* ResponderUtil */,
 				D7D569D91C266871009CBF2D /* StringUtil */,
+				D779DBD01C3CF51000472FD9 /* UIView+FXM.h */,
+				D779DBD11C3CF51000472FD9 /* UIView+FXM.m */,
 			);
 			path = IOSUtils;
 			sourceTree = "<group>";
@@ -1416,6 +1489,9 @@
 		D7D569E31C266871009CBF2D /* IOSViews */ = {
 			isa = PBXGroup;
 			children = (
+				D779DC021C3E58B300472FD9 /* DeformationButton.h */,
+				D779DC031C3E58B300472FD9 /* DeformationButton.m */,
+				D779DC041C3E58B300472FD9 /* MMMaterialDesignSpinner-master */,
 				D7D569E41C266871009CBF2D /* APSProgress.h */,
 				D7D569E51C266871009CBF2D /* APSProgress.m */,
 				D7D569E61C266871009CBF2D /* HLFullButton.h */,
@@ -2032,6 +2108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7B5F8011C2ABEEF00AE7341 /* DataSingleton.m in Sources */,
+				D779DC0E1C3FADAB00472FD9 /* GameModel.m in Sources */,
 				D7B5F8E31C34CECD00AE7341 /* BaoyuLeftViewController.m in Sources */,
 				D7D56A971C266872009CBF2D /* ViewController.m in Sources */,
 				D7B0DD421C3954D200A3997A /* MatchWikiCell.m in Sources */,
@@ -2054,13 +2131,17 @@
 				D779DBC21C3BB93B00472FD9 /* SDPhotoBrowser.m in Sources */,
 				D7B5FBAA1C350DD200AE7341 /* GameSection1.m in Sources */,
 				D7D56A901C266872009CBF2D /* HttpResponse.m in Sources */,
+				D779DBFB1C3E0EE800472FD9 /* VOSegmentedControl.m in Sources */,
 				D779DB9D1C3B5DE900472FD9 /* UIImageView+BMExtension.m in Sources */,
 				D7D56A781C266872009CBF2D /* HLVericodeViewController.m in Sources */,
 				D7B0DD141C37F35200A3997A /* MessageInfoTBVC.m in Sources */,
+				D779DC111C3FB72F00472FD9 /* GameListCell.m in Sources */,
 				D7B5F85C1C2BB86C00AE7341 /* FollowTableCell.m in Sources */,
 				D7D56A611C266872009CBF2D /* UIColor+HSV.m in Sources */,
 				D7B0DD331C37FC5A00A3997A /* XBSettingCell.m in Sources */,
 				D7D56A631C266872009CBF2D /* UIImage+Custom.m in Sources */,
+				D779DBFA1C3E0EE800472FD9 /* VOSegment.m in Sources */,
+				D779DBD21C3CF51000472FD9 /* UIView+FXM.m in Sources */,
 				D7D569011C2584EC009CBF2D /* main.m in Sources */,
 				D7D56A5D1C266872009CBF2D /* NSString+CMUtils.m in Sources */,
 				D7D56A721C266872009CBF2D /* HLTFContainerView.m in Sources */,
@@ -2081,10 +2162,12 @@
 				D7D56A5C1C266872009CBF2D /* NSMutableURLRequest+CMUtils.m in Sources */,
 				D7D56A801C266872009CBF2D /* CommonCallback.m in Sources */,
 				D7D56A761C266872009CBF2D /* RMMapper.m in Sources */,
+				D779DC0B1C3FA81D00472FD9 /* GamelistTableVC.m in Sources */,
 				D7D56A8F1C266872009CBF2D /* HttpRequest.m in Sources */,
 				D7D56A8D1C266872009CBF2D /* BaseApi.m in Sources */,
 				D7D56A751C266872009CBF2D /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				D779DBC31C3BB93B00472FD9 /* SDWaitingView.m in Sources */,
+				D779DC071C3E58B300472FD9 /* DeformationButton.m in Sources */,
 				D7B5F8BA1C326B9B00AE7341 /* DicGameinfo.m in Sources */,
 				D7B5F8981C31030E00AE7341 /* CustomHeader.m in Sources */,
 				D7B5F7E81C2950B000AE7341 /* YMUtils.m in Sources */,
@@ -2115,6 +2198,7 @@
 				D779DBAA1C3B697900472FD9 /* TYLaunchBaseAnimation.m in Sources */,
 				D7B5F8B41C3267DA00AE7341 /* DicMatchinfo.m in Sources */,
 				D7D56A621C266872009CBF2D /* UIDevice+CMUtils.m in Sources */,
+				D779DBF81C3E0EE800472FD9 /* VOContentLayer.m in Sources */,
 				D7B0DD111C36896400A3997A /* WikiListTabview.m in Sources */,
 				D7D56A651C266872009CBF2D /* HLErrorUtil.m in Sources */,
 				D7D56A7F1C266872009CBF2D /* Api.m in Sources */,
@@ -2146,8 +2230,10 @@
 				D7B0DCCF1C3520EE00A3997A /* GameTableView.m in Sources */,
 				D779DBBF1C3BB93B00472FD9 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				D7D56A6E1C266872009CBF2D /* HLFullButton.m in Sources */,
+				D779DC001C3E1B4100472FD9 /* DemoVC7Cell.m in Sources */,
 				D7D56AB31C269455009CBF2D /* RegOKVC.m in Sources */,
 				D7B5FBA61C350AC200AE7341 /* GameMainContent.m in Sources */,
+				D779DBF91C3E0EE800472FD9 /* VOIndicatorAnimation.m in Sources */,
 				D7D56A771C266872009CBF2D /* HLLoginViewController.m in Sources */,
 				D7B5F8A81C323EE900AE7341 /* MatchMVPCell.m in Sources */,
 				D7D56A911C266872009CBF2D /* NetworkingUtils.m in Sources */,
@@ -2161,6 +2247,7 @@
 				D7D56A7C1C266872009CBF2D /* HLLoginOperation.m in Sources */,
 				D779DBAD1C3B697900472FD9 /* UIView+TYLaunchAnimation.m in Sources */,
 				D7D56A791C266872009CBF2D /* PasswordChangeVC.m in Sources */,
+				D779DC011C3E1B4100472FD9 /* DemoVC7Cell2.m in Sources */,
 				D7B5F8631C2E7C2B00AE7341 /* TeamMainSection1.m in Sources */,
 				D7B5F87D1C30DE2F00AE7341 /* ARSegmentPageHeader.m in Sources */,
 				D7D56A931C266872009CBF2D /* AppDelegate.m in Sources */,
@@ -2173,6 +2260,7 @@
 				D7B5F8681C2EA4F900AE7341 /* TeamWikiView.m in Sources */,
 				D7B0DD301C37FC5A00A3997A /* XBSettingSectionModel.m in Sources */,
 				D7B0DCFE1C36758F00A3997A /* SearchVC.m in Sources */,
+				D779DC081C3E58B300472FD9 /* MMMaterialDesignSpinner.m in Sources */,
 				D7B0DD001C36758F00A3997A /* SearchViewModel.m in Sources */,
 				D7B5F89C1C312D0400AE7341 /* PredictionVC.m in Sources */,
 				D7B0DD311C37FC5A00A3997A /* XBMeHeaderView.m in Sources */,

@@ -10,7 +10,10 @@
 
 @interface FollowVC : HLBaseViewController
 
+@property(nonatomic,strong)IBOutlet UIView *view_bntbg;
+
 
 -(IBAction)bnt_follow;
 
+-(IBAction)bnt_switch:(UIButton*)sender;
 @end

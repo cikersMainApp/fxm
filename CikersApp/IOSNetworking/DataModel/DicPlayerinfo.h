@@ -10,13 +10,20 @@
 
 @interface DicPlayerinfo : NSObject
 
-@property(nonatomic,strong)NSString *name;
-@property(nonatomic,strong)NSString *clubnumber;
-@property(nonatomic,strong)NSString *icon;
+@property(nonatomic,strong)NSString *name; //姓名
+@property(nonatomic,strong)NSString *clubnumber; //球衣号码
+@property(nonatomic,strong)NSString *icon;//头像
 
-@property(nonatomic,strong)NSString *position;
-@property(nonatomic,strong)NSNumber *id;
-@property(nonatomic,strong)NSNumber *pub;
+@property(nonatomic,strong)NSString *position;//位置
+@property(nonatomic,strong)NSNumber *id;//id
+@property(nonatomic,strong)NSNumber *pub;//
 @property(nonatomic,strong)NSString *atype;
+
+@property(nonatomic,strong)NSArray *hottags;//标签
+
+@property(nonatomic,strong)NSNumber *votecount;
+
+-(void)checkData;
+
 
 @end

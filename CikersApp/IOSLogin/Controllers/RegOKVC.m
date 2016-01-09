@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "Api.h"
 #import "FollowVC.h"
+#import "JCAlertView.h"
+#import "PasswordChangeVC.h"
 @interface RegOKVC ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,BaseApiDelegate,UITextFieldDelegate>
 
 @end
@@ -51,7 +53,12 @@
     
     [APSProgress showIndicatorView];
     
-    [self.api user_uploadUserPhoto:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_LOGIN_NAME] image64data:[NSString stringWithFormat:@"%@%@",@"data:image/jpeg;base64,",_encodedImageStr]];
+    [self.api register_first:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_LOGIN_NAME]
+                         pwd:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_PWD]
+                   validCode:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_VCODE]
+                        name:self.tf_name.text
+                       token:@"123"];
+    
 
     
 }
@@ -162,18 +169,18 @@
     
     
     
-//    if (dic == nil) {
-//        
-//        [APSProgress hidenIndicatorView];
-//
-//        if (DEBUGSTATE) {
-//            
-//            [APSProgress showToast:self.view withMessage:@"接口错误"];
-//            
-//        }
-//        return;
-//    }
-//    
+    if (dic == nil) {
+        
+        [APSProgress hidenIndicatorView];
+
+        if (DEBUGSTATE) {
+            
+            [APSProgress showToast:self.view withMessage:@"接口错误"];
+            
+        }
+        return;
+    }
+    
     
     NSObject *_object = [dic objectForKey:@"e"];
     
@@ -187,42 +194,51 @@
     if ([httpTag isEqual:@"uploadavatar"]) {
 
         
-//        if (json_e!=0)
-//        {
-//            [APSProgress hidenIndicatorView];
-//            
-//            [APSProgress showNetworkErrorToast:self.view];
-//            
-//            return;
-//        }
+        if (json_e!=0)
+        {
+            [APSProgress hidenIndicatorView];
+            
+            
+            return;
+        }
 
-        
-        [self.api register_first:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_LOGIN_NAME]
-                             pwd:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_PWD]
-                       validCode:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_VCODE]
-                            name:self.tf_name.text
-                           token:@"123"];
-        
-    }
-    
-    if ([httpTag isEqual:@"reg"]) {
         
         [APSProgress hidenIndicatorView];
 
-//        if (json_e!=0)
-//        {
-//
-//            [APSProgress showToast:self.view withMessage:[dic objectForKey:@"msg"]];
-//
-//            return;
-//        }
-
-        
         //跳转到下一个页面
         
         FollowVC *vc_next  = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"select"];
         
         [self.navigationController showViewController:vc_next sender:NULL];
+    }
+    
+    if ([httpTag isEqual:@"reg"]) {
+        
+
+        if (json_e==201)
+        {
+            [APSProgress hidenIndicatorView];
+
+            [JCAlertView showTwoButtonsWithTitle:@"提示" Message:@"该手机号已经注册过" ButtonType:JCAlertViewButtonTypeWarn ButtonTitle:@"返回上一页" Click:^{
+                
+                [self.navigationController popViewControllerAnimated:YES];
+                
+            } ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:@"找回密码" Click:^{
+                
+                
+                PasswordChangeVC *vc_next  = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"passwordchangevc"];
+                
+                [self.navigationController showViewController:vc_next sender:NULL];
+                
+            }];
+            
+
+            return;
+        }
+
+        [self.api user_uploadUserPhoto:[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_LOGIN_NAME] image64data:[NSString stringWithFormat:@"%@%@",@"data:image/jpeg;base64,",_encodedImageStr]];
+
+
     }
     
     
@@ -234,18 +250,14 @@
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField        // return NO to disallow editing.
 {
 
-    if ([self.tf_name.text isEqual:@"输入姓名"]) {
-        self.tf_name.text = @"";
-    }
+
     
     return true;
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    if ([self.tf_name.text isEqual:@""]) {
-        self.tf_name.text = @"输入姓名";
-    }
+
     return true;
 }
 @end

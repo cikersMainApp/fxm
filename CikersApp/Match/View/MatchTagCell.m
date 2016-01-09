@@ -8,6 +8,7 @@
 
 #import "MatchTagCell.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "DicPlayerinfo.h"
 @implementation MatchTagCell
 
 
@@ -15,43 +16,62 @@
 
 - (void)awakeFromNib {
     // Initialization code
+        
+    _img_photo.layer.masksToBounds =YES;
+    
+    _img_photo.layer.cornerRadius =_img_photo.frame.size.height/2;
     
     
+    self.lb_teamname = [[UILabel  alloc] initWithFrame:CGRectMake(5, 2, 300, 24)];
+    [self.view_sectionbg addSubview:self.lb_teamname];
+    
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+    [super setSelected:NO animated:animated];
 
     // Configure the view for the selected state
 }
 -(IBAction)bnt_action:(UIButton*)sender
 {
-
+    [self.delegate data_back:[NSNumber numberWithLong:self.i_index]];
 }
 
--(void)showSectionState:(BOOL)show bgcolor:(int)color
+-(void)showSectionState:(BOOL)show bgcolor:(int)color name:(NSString*)name
 {
 
     self.view_sectionbg.hidden = !show;
     
-    self.view_sectionbg.backgroundColor = [UIColor blueColor];
+    self.view_sectionbg.backgroundColor = [UIColor orangeColor];
     
-    self.lb_sectionTitle.text = @"湖南大学老乡队";
+    self.lb_teamname.text = name;
 }
 
--(void)updateUI:(NSDictionary *)dic
+-(void)updateUI:(DicPlayerinfo *)dic
 {
     
-    NSArray *data = [dic objectForKey:@"data"];
+    if ([dic isEqual:[NSNull null]]) {
+        
+        return;
+    }
     
-
-    NSDictionary *dic_elem = [data objectAtIndex:self.i_index];
-
-    NSString *url = [NSString stringWithFormat:@"http://static.cikers.com%@",[dic_elem objectForKey:@"icon"]];
+    NSString *url = [NSString stringWithFormat:@"http://static.cikers.com%@",dic.icon];
     
     [self.img_photo sd_setImageWithURL:[NSURL URLWithString:url]];
 
-    self.lb_name.text = [dic_elem objectForKey:@"name"];
+    self.lb_name.text = dic.name;
+    
+    self.lb_tag1.text = @"没有热门";
+    
+    if (![dic.hottags isEqual:[NSNull null]])
+    {
+        //hottags 里面的内容有三个
+
+        NSLog(@"%@",[dic.hottags objectAtIndex:0]);
+        
+//        self.lb_tag1.text = [dic.hottags objectAtIndex:0];
+    }
 }
 
 @end

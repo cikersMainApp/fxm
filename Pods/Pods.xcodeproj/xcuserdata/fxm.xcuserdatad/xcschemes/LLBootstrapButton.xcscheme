@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4F48BE3EFD072B6D0E09301A'
+               BlueprintIdentifier = 'F4995F0DCCC6FEC8663172E9'
                BlueprintName = 'LLBootstrapButton'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'LLBootstrapButton.framework'>

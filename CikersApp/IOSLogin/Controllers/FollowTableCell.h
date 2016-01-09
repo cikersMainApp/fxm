@@ -22,7 +22,7 @@
 @property(nonatomic,weak)IBOutlet UILabel *lb_number_follow_right;
 @property(nonatomic,weak)IBOutlet UILabel *lb_number_wiki_right;
 @property(nonatomic,weak)IBOutlet UIImageView *img_icon_right;
-
+@property(nonatomic,weak)IBOutlet UIButton *bt_follow_right;
 -(void)initUI;
 -(IBAction)bnt_follow:(id)sender;
 

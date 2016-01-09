@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ARSegmentPageControllerHeaderProtocol.h"
-
+#import "DicMatchinfo.h"
 
 @interface CustomHeader : UIView<ARSegmentPageControllerHeaderProtocol>
 @property (nonatomic, strong) NSLayoutConstraint *imageTopConstraint;
@@ -36,6 +36,16 @@
 @property(nonatomic,weak)IBOutlet UIView *view_bg;//60%透明度的灰色图
 
 
+@property(nonatomic,assign)BOOL isFinish; //比赛结束
+
+@property (nonatomic, copy) void (^clickBackBlock)(NSString *teamid);
+@property (nonatomic, copy) void (^clickedBlock)(NSString *teamid);
+
+@property(nonatomic,strong)DicMatchinfo *data_dic;
+
+@property(nonatomic)NSInteger choice_num; // 0 无  1 左  2 右
+
+
 -(void)hideUI;
 -(void)showUI;
 
@@ -44,9 +54,10 @@
 
 -(IBAction)bnt_left:(id)sender;
 -(IBAction)bnt_right:(id)sender;
+-(IBAction)bnt_back:(id)sender;
 
 
-
+-(void)receiveData;
 -(void)updateUI:(id)sender;
 
 

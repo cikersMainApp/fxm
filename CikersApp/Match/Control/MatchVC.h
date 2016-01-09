@@ -12,15 +12,21 @@
 #import "MatchMVPTableVC.h"
 #import "MatchTagTableVC.h"
 #import "MatchWikiVC.h"
+#import "DicMatchinfo.h"
+#import "CustomHeader.h"
 @interface MatchVC : ARSegmentPageController<MatchOprationDelegate>
 
 @property(nonatomic,strong)MatchOpration *opration;
 @property(nonatomic,strong)NSString *str_score;
 
+
+@property(nonatomic,strong)CustomHeader *view_head;
 @property(nonatomic,strong)PredictionVC *table_predic;
 @property(nonatomic,strong)MatchMVPTableVC *table_mvp;
 @property(nonatomic,strong)MatchTagTableVC *table_tag;
 @property(nonatomic,strong)MatchWikiVC *table_wiki;
+
+@property(nonatomic,strong)DicMatchinfo *data_dic_matchinfo;
 
 -(IBAction)bnt_back:(id)sender;
 

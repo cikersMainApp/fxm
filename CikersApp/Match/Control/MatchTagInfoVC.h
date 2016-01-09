@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DicPlayerinfo.h"
 
-@interface MatchTagInfoVC : UITableViewController
+@interface MatchTagInfoVC : HLBaseViewController<UITableViewDataSource,UITableViewDelegate>
+
+
+@property(nonatomic,strong)DicPlayerinfo *dic_player;
+@property(nonatomic,strong)UITextField *tf_tag;
+
+-(void)bnt_action:(id)sender;
 
 @end

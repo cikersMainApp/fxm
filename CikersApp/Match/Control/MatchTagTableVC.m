@@ -9,6 +9,7 @@
 #import "MatchTagTableVC.h"
 #import "MatchTagCell.h"
 #import "MatchTagInfoVC.h"
+#import "DicTeaminfo.h"
 @interface MatchTagTableVC ()
 
 @end
@@ -25,10 +26,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     
+    self.array_teamA = [[NSMutableArray alloc] init];
+    self.array_teamB = [[NSMutableArray alloc] init];
+    self.array_team = [[NSMutableArray alloc] init];
+    
     self.opration = [[MatchOpration alloc] init];
     self.opration.delegate = self;
-    [self.opration sendPlayersInfoByteamid:@"3211" matchid:@""];
+    [self.opration getPlayersInfoByteamid:self.data_obj_matchinfo.teama.id matchid:self.data_obj_matchinfo.matchid httpTag:@"A" tags:@"1" mvp:@"0"];
+    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -42,28 +50,67 @@
 }
 
 -(void)getData:(NSString *)matchid
-{
-    
-    
-    [self.opration sendPlayersInfoByteamid:@"3211" matchid:matchid];
+{    
+
 }
+
+-(void)data_back:(id)sender
+{
+
+    NSNumber *num = (NSNumber*)sender;
+    
+    MatchTagInfoVC *nextvc = [[MatchTagInfoVC alloc] init];
+    
+    int tag = 1;
+    
+    if ([num intValue] >= [self.array_teamA count])
+    {
+        tag = 2;
+    }
+    
+    nextvc.dic_player = [self.array_team objectAtIndex:[num intValue] - tag];
+
+    [self ];
+    
+    
+}
+/*
+ 传过来的是一个字典
+ 里面有两个数组，分别代表A队和B对
+ */
 
 -(void)dataTag_scuess:(id)dic
 {
 
-    NSDictionary * newdic = (NSDictionary*)dic;
+    NSMutableDictionary *dic_temp = (NSMutableDictionary*)dic;
     
-    self.dic_data = newdic;
+    if ([dic_temp count] == 2) {
+        
+        self.str_teamA = self.data_obj_matchinfo.teama.name;
+        self.str_teamB = self.data_obj_matchinfo.teamb.name;
+        
+        
+        
+        self.array_teamA = [dic_temp objectForKey:@"A"];
+        self.array_teamB = [dic_temp objectForKey:@"B"];
+        [self.array_team addObjectsFromArray:self.array_teamA];
+        [self.array_team addObjectsFromArray:self.array_teamB];
+        
+        [self.tableView reloadData];
+    }
+    else
+    {
+        [self.opration getPlayersInfoByteamid:self.data_obj_matchinfo.teamb.id matchid:self.data_obj_matchinfo.matchid httpTag:@"B" tags:@"1" mvp:@"0"];
+    }
     
-    [self.tableView reloadData];
 }
 
 
 #pragma mark - Table view data source
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        
-    if (indexPath.row == 0 || indexPath.row == 10) {
+    if (indexPath.row == 0 || indexPath.row == [self.array_teamA count]) {
         
         return 30;
     }
@@ -76,7 +123,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return [self.array_team count]+2;
 }
 
 
@@ -85,27 +132,54 @@
     
     // Configure the cell...
     
-    if (indexPath.row == 0 || indexPath.row == 10) {
+    if ([self.array_team count] == 0)
+    {
+        return cell;
+    }
     
-        [cell showSectionState:YES bgcolor:1];
+    if (indexPath.row == 0 ) {
+    
+        [cell showSectionState:YES bgcolor:1 name:self.str_teamA];
         
         return cell;
     }
     
+    if (indexPath.row == [self.array_teamA count]) {
+        
+        [cell showSectionState:YES bgcolor:1 name:self.str_teamB];
+        
+        return cell;
+    }
+    int tag = 1;
+    
+    if (indexPath.row >= [self.array_teamA count])
+    {
+        tag = 2;
+    }
+    
     cell.i_index = indexPath.row;
     
-    [cell showSectionState:NO bgcolor:1];
+    [cell showSectionState:NO bgcolor:1 name:@""];
     
-    [cell updateUI:self.dic_data];
+        
+    [cell updateUI:[self.array_team objectAtIndex:indexPath.row -tag]];
     
     return cell;
 }
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
     MatchTagInfoVC *nextvc = [[MatchTagInfoVC alloc] init];
+    
+    int tag = 1;
+    
+    if (indexPath.row >= [self.array_teamA count])
+    {
+        tag = 2;
+    }
+
+    nextvc.dic_player = [self.array_team objectAtIndex:indexPath.row - tag];
+    
     [self.navigationController pushViewController:nextvc animated:YES];
 }
 
@@ -118,49 +192,5 @@
 {
     return self.tableView;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ARSegmentPageController.h"
+#import "MatchOpration.h"
+@interface MatchMVPTableVC : UITableViewController<ARSegmentControllerDelegate,MatchOprationDelegate>
 
-@interface MatchMVPTableVC : UITableViewController<ARSegmentControllerDelegate>
+@property(nonatomic,strong)MatchOpration *opration;
+@property(nonatomic,strong)DicMatchinfo *dic_data;
+@property(nonatomic,strong)NSMutableArray *array_team;
+@property(nonatomic,strong)NSMutableArray *array_teamA;
+@property(nonatomic,strong)NSMutableArray *array_teamB;
+
+@property(nonatomic,assign)NSInteger int_length;
 
 @end

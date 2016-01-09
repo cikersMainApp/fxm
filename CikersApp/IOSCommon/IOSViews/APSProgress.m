@@ -43,7 +43,12 @@ static __weak UIView *currentView;
 
 
 + (void)showHUDAddedTo:(UIView *)view  message:(NSString*) message animated:(BOOL)animated; {
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:view];
+    
+    
+    AppDelegate  * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:appDele.window];
 	[view addSubview:HUD];
 //	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     HUD.mode = MBProgressHUDModeText;

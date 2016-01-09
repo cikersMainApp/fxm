@@ -11,6 +11,7 @@
 #import "DicMatchinfo.h"
 #import "DicTeaminfo.h"
 #import "DicGameinfo.h"
+#import "DicPlayerinfo.h"
 #import "NSUserDefaults+RMSaveCustomObject.h"
 @implementation MatchOpration
 
@@ -20,7 +21,7 @@
     
     if (self) {
         
-        
+        self.dic_team_total = [[NSMutableDictionary alloc] init];
         
     }
     
@@ -50,11 +51,9 @@
         [self parseDataForPrediction:dic];
     }
     
-    if ([request.apiName isEqual:NET_TEAM_PLAYER]) {
-        
-        [self parsePlayerInfo:dic];
-    }
+    if([request.apiName isEqual:@"A"]) [self parsePlayerInfo:dic httpTag:@"A"];
     
+    if([request.apiName isEqual:@"B"]) [self parsePlayerInfo:dic httpTag:@"B"];
 
     if ([request.apiName isEqual:NET_WIKI]) {
         [self parseWiki:dic];
@@ -67,6 +66,9 @@
     
     if ([request.apiName isEqual:NET_MATCH_VOTE_SEND]) [self parseFovar:dic];
     
+    
+    
+    
 
 }
 
@@ -76,7 +78,7 @@
 }
 
 
--(void)getDataForAllinfoBymatchid:(NSString *)matchid
+-(void)getDataForAllinfoBymatchid:(NSNumber *)matchid
 {
 
     [APSProgress showIndicatorView];
@@ -144,7 +146,7 @@
 #pragma mark Prediction
 
 //得到竞猜结果
--(void)getDataForPredictionBymatchid:(NSString*)matchid
+-(void)getDataForPredictionBymatchid:(NSNumber*)matchid
 {
     
     NSString *apiUrl=[NSString stringWithFormat:@"%@predict/bymatch/%@",HOST,matchid];
@@ -160,7 +162,6 @@
 {
     [APSProgress showIndicatorView];
     
-    
     NSString *apiUrl=[NSString stringWithFormat:@"%@predict/bet/%@",HOST,matchid];
     
     NSDictionary *params=@{@"code":type,};
@@ -168,16 +169,17 @@
     [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params httpTag:NET_PREDICT_SEND];
     
 }
+
 -(void)parseDataForSendPrediction:(NSDictionary *)dic
 {
-
+    [self.delegate data_prediction:dic];
 }
 
 
 #pragma mark -
 #pragma mark Favor
 
--(void)sendFovarBymatchid:(NSString *)matchid teamid:(NSString *)teamid
+-(void)sendFovarBymatchid:(NSNumber *)matchid teamid:(NSString *)teamid
 {
 
     
@@ -191,10 +193,20 @@
 -(void)parseFovar:(NSDictionary *)dic
 {
 
+    NSNumber *e = [dic objectForKey:@"e"];
+    
+    if ([e intValue] == -1)
+    {
+        [APSProgress showToast:((UIViewController*)self.delegate).view withMessage:[dic objectForKey:@"msg"]];
+    }
+    else
+    {
+        [self.delegate dataFavor_scuess:dic];
+    }
 }
 
 
--(void)sendMvpVoteBymatchid:(NSString *)matchid playerid:(NSString *)playerid
+-(void)sendMvpVoteBymatchid:(NSNumber *)matchid playerid:(NSString *)playerid
 {
     NSString *apiUrl=[NSString stringWithFormat:@"%@match/mvpvote/%@/%@",HOST,matchid,playerid];
     
@@ -210,35 +222,50 @@
 #pragma mark -
 #pragma mark players
 
--(void)getPlayersInfoByteamid:(NSString*)teamid matchid:(NSString*)matchid
+-(void)getPlayersInfoByteamid:(NSNumber*)teamid matchid:(NSNumber*)matchid httpTag:(NSString *)tag tags:(NSString*)tags mvp:(NSString*)mvp
 {
 
     [APSProgress showIndicatorView];
     
     NSString *apiUrl=[NSString stringWithFormat:@"%@player/listbyteam",HOST];
     
-    NSDictionary *params=@{@"tid":teamid,};
+    NSDictionary *params=@{@"tid":teamid,
+                           @"withtags":tags,
+                           @"withmvp":mvp,
+                           @"mid":matchid};
     
-    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params httpTag:NET_TEAM_PLAYER];
+    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params httpTag:tag];
 
     
 }
 
--(void)parsePlayerInfo:(NSDictionary *)dic
+-(void)parsePlayerInfo:(NSDictionary *)dic httpTag:(NSString*)tag
 {
 
     [APSProgress hidenIndicatorView];
     
-//    NSDictionary *data = [dic objectForKey:@"data"];
+    NSArray *data = [dic objectForKey:@"data"];
     
-    [self.delegate dataTag_scuess:dic];
+    NSMutableArray *array_temp = [[NSMutableArray alloc] init];
+    
+    for (NSDictionary * elem_dic in data)
+    {
+        DicPlayerinfo *player = [RMMapper objectWithClass:[DicPlayerinfo class] fromDictionary:elem_dic];
+        [array_temp addObject:player];
+    }
+    
+    [self.dic_team_total removeObjectForKey:tag];
+    [self.dic_team_total setValue:array_temp forKey:tag];
+    
+    [self.delegate dataTag_scuess:self.dic_team_total];
+    
 }
 
 
 #pragma mark -
 #pragma mark wiki
 
--(void)getWikiBymatchid:(NSString *)matchid offset:(NSString*)offset
+-(void)getWikiBymatchid:(NSNumber *)matchid offset:(NSString*)offset
 {
     [APSProgress showIndicatorView];
     
@@ -246,7 +273,6 @@
     
     [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:NULL httpTag:NET_WIKI];
     
-
 }
 
 -(void)parseWiki:(NSDictionary *)dic

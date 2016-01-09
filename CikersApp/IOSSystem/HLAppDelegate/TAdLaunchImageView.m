@@ -83,6 +83,8 @@
 {
     if (self.clickedImageURLHandle) {
         self.clickedImageURLHandle(self.URLString);
+        
+        
     }
     if (self.superview) {
         [self removeFromSuperview];

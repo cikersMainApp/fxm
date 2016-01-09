@@ -29,7 +29,13 @@
 @property(nonatomic,strong)NSArray *image; //图像集合
 @property(nonatomic,strong)NSArray *marks; //@人名单
 
+
+
+
 @property(nonatomic,strong)NSString *time; //转化后的时间
+
+
+
 //--------------------
 
 

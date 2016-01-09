@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
 
 
 #import <UIKit/UIKit.h>
-
+#import "DicMatchinfo.h"
 @interface PredictionCell : UITableViewCell
 
 @property(nonatomic,strong)id<PredictionCellDelegate>delegate;
@@ -36,8 +36,14 @@ typedef enum : NSUInteger {
 @property(nonatomic,weak)IBOutlet UIButton *bt_3;
 
 
-@property(nonatomic,weak)IBOutlet UIView *view_bg; // 进球数背景
-@property(nonatomic,weak)IBOutlet UIView *view_vsbg;//胜负平背景
+@property(nonatomic,strong)IBOutlet UIView *view_bg; // 进球数背景
+@property(nonatomic,strong)IBOutlet UIView *view_vsbg;//胜负平背景
+
+@property(nonatomic,strong)NSNumber *num_matchid;
+@property(nonatomic,strong)DicMatchinfo *data_obj_matchinfo;
+
+@property(nonatomic,strong)NSMutableArray *array_bnts;
+@property(nonatomic,strong)NSMutableArray *array_lbs;
 
 //---------methon-------------
 
@@ -45,6 +51,11 @@ typedef enum : NSUInteger {
 
 -(IBAction)bnt_action:(id)sender;
 
--(void)updateUI:(id)sender;
+-(void)updateUI:(id)sender matchid:(NSNumber*)matchid;
+
+-(void)updataBnt:(NSUInteger)index;
+
+
+-(void)updateUIByUser:(NSString*)sender ;//点击竞彩后更新界面
 
 @end

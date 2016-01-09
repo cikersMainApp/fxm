@@ -14,8 +14,10 @@
 @optional
 
 -(void)data_scuess:(id)dic;
+-(void)data_prediction:(id)dic;
 -(void)dataTag_scuess:(id)dic;
 -(void)dataWiki_scuess:(id)dic;
+-(void)dataFavor_scuess:(id)dic;
 @end
 
 
@@ -25,33 +27,35 @@
 @property(nonatomic,strong)Api *net_sendApi;
 @property(nonatomic,strong)NSString *http_tag;
 
+@property(nonatomic,strong)NSMutableDictionary *dic_team_total;
 
 //得到比赛基本信息
--(void)getDataForAllinfoBymatchid:(NSString *)matchid;
+-(void)getDataForAllinfoBymatchid:(NSNumber *)matchid;
 -(void)parseDataForAllinfo:(NSDictionary*)dic;
 
 //得到竞猜结果
--(void)getDataForPredictionBymatchid:(NSString*)matchid;
+-(void)getDataForPredictionBymatchid:(NSNumber*)matchid;
 -(void)parseDataForPrediction:(NSDictionary*)dic;
 
 //发送竞猜
--(void)sendForPredictionBymatchid:(NSString*)matchid code:(NSString*)type;
+-(void)sendForPredictionBymatchid:(NSNumber*)matchid code:(NSString*)type;
 -(void)parseDataForSendPrediction:(NSDictionary *)dic;
 
 //发送支持
--(void)sendFovarBymatchid:(NSString*)matchid teamid:(NSString *)teamid;
+-(void)sendFovarBymatchid:(NSNumber*)matchid teamid:(NSString *)teamid;
 -(void)parseFovar:(NSDictionary*)dic;
 
 //获取球员信息
--(void)getPlayersInfoByteamid:(NSString*)teamid matchid:(NSString*)matchid;
--(void)parsePlayerInfo:(NSDictionary *)dic;
+-(void)getPlayersInfoByteamid:(NSNumber*)teamid matchid:(NSNumber*)matchid httpTag:(NSString*)tag tags:(NSString*)tags mvp:(NSString*)mvp;
+;
+-(void)parsePlayerInfo:(NSDictionary *)dic httpTag:(NSString*)tag;
 
 //获取wiki
 -(void)getWikiBymatchid:(NSString*)matchid  offset:(NSString*)offset;
 -(void)parseWiki:(NSDictionary*)dic;
 
 //mvp投票
--(void)sendMvpVoteBymatchid:(NSString*)matchid playerid:(NSString*)playerid;
+-(void)sendMvpVoteBymatchid:(NSNumber*)matchid playerid:(NSString*)playerid;
 -(void)parseMvpVote:(NSDictionary*)dic;
 
 

@@ -47,11 +47,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //InstallUncaughtExceptionHandler();
     // Override point for customization after application launch.
-    
-    [MAThemeKit setupThemeWithPrimaryColor:[MAThemeKit colorWithR:COLOR_R G:COLOR_G B:COLOR_B] secondaryColor:[UIColor whiteColor] fontName:@"HelveticaNeue-Light" lightStatusBar:YES];
-    [MAThemeKit colorWithHexString:@"2e3959"];
-    
-    
+//    
+//    [MAThemeKit setupThemeWithPrimaryColor:[MAThemeKit colorWithR:COLOR_R G:COLOR_G B:COLOR_B] secondaryColor:[UIColor whiteColor] fontName:@"HelveticaNeue-Light" lightStatusBar:YES];
+//    [MAThemeKit colorWithHexString:@"2e3959"];
+//    
+//    
     //添加分享
     
     [UMSocialData setAppKey:@"507fcab25270157b37000010"];
@@ -73,38 +73,36 @@
 
     
     // Ad(广告) FadeAnimation
-    TAdLaunchImageView *adLaunchImageView = [[TAdLaunchImageView alloc]initWithImage:[UIImage ty_getLaunchImage]];
-    adLaunchImageView.URLString = @"http://static.cikers.com/repos/thumbnail/s170/themes/cms/soccermanager/images/logo.png";
-    
-    // 显示imageView
-    [adLaunchImageView showInWindowWithAnimation:[TYLaunchFadeScaleAnimation fadeAnimationWithDelay:3.0] completion:^(BOOL finished) {
-        
-        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-        NSLog(@"finished");
-        
-        
-        [AppDelegate setLoginRoot];
+//    TAdLaunchImageView *adLaunchImageView = [[TAdLaunchImageView alloc]initWithImage:[UIImage ty_getLaunchImage]];
+//    adLaunchImageView.URLString = @"http://static.cikers.com/repos/thumbnail/s170/themes/cms/soccermanager/images/logo.png";
+//    
+//    // 显示imageView
+//    [adLaunchImageView showInWindowWithAnimation:[TYLaunchFadeScaleAnimation fadeAnimationWithDelay:3.0] completion:^(BOOL finished) {
+//        
+//
+//        NSLog(@"finished");
+//        
+//        
+//        [AppDelegate setLoginRoot];
+//
+//    }];
+//    
+//    __typeof (self) __weak weakSelf = self;
+//    // 点击广告block
+//    [adLaunchImageView setClickedImageURLHandle:^(NSString *URLString) {
+//
+//        [weakSelf pushAdViewCntroller];
+//        NSLog(@"clickedImageURLHandle");
+//    }];
 
-    }];
-    
-    __typeof (self) __weak weakSelf = self;
-    // 点击广告block
-    [adLaunchImageView setClickedImageURLHandle:^(NSString *URLString) {
-        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-        [weakSelf pushAdViewCntroller];
-        NSLog(@"clickedImageURLHandle");
-    }];
+    [AppDelegate setLoginRoot];
 
-    
     return YES;
 }
 - (void)pushAdViewCntroller
 {
     
     
-    [AppDelegate setLoginRoot];
     
 //    // 获取到navVC
 //    UITabBarController *tabbBarVC = (UITabBarController *)self.window.rootViewController;

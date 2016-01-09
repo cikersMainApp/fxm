@@ -10,4 +10,11 @@
 
 @implementation DicPlayerinfo
 
+-(void)checkData
+{
+
+
+    
+}
+
 @end

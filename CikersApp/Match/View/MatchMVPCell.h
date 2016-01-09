@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DicPlayerinfo.h"
 @interface MatchMVPCell : UITableViewCell
 
 
+@property(nonatomic,weak)IBOutlet UIView *view_bg1;
 @property(nonatomic,weak)IBOutlet UIImageView *img_photo1;
 @property(nonatomic,weak)IBOutlet UILabel *lb_name1;
 @property(nonatomic,weak)IBOutlet UILabel *lb_favorNum1;
 @property(nonatomic,weak)IBOutlet UIButton *bt_follow1;
 -(IBAction)bnt_action1:(id)sender;
 
+@property(nonatomic,weak)IBOutlet UIView *view_bg2;
 @property(nonatomic,weak)IBOutlet UIImageView *img_photo2;
 @property(nonatomic,weak)IBOutlet UILabel *lb_name2;
 @property(nonatomic,weak)IBOutlet UILabel *lb_favorNum2;
@@ -26,6 +28,8 @@
 
 
 -(void)initUI;
+
+-(void)updateUI:(DicPlayerinfo*)playera playerb:(DicPlayerinfo*)playerb;
 
 
 

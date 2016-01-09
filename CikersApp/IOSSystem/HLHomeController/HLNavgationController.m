@@ -20,12 +20,30 @@
     // Do any additional setup after loading the view.
     
 
-    self.navigationBar.layer.contents = (id)[HLNavgationController imageWithColor:[UIColor redColor]];
-    
-    self.navigationBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"nav_img"]];
-    
+   // self.navigationBar.layer.contents = (id)[HLNavgationController imageWithColor:[UIColor redColor]];
 
+    
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_img"] forBarMetrics:UIBarMetricsDefault];
+
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    
 }
+
+-(void)nav_addBntWhereTitle
+{
+
+    
+    
+    
+    
+    UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
+    [bt setTitle:@"推荐" forState:UIControlStateNormal];
+    [bt setFrame:CGRectMake(200, 50, 30, 30)];
+    [self.navigationBar addSubview:bt];
+    
+}
+
 
 +(UIImage*) imageWithColor:(UIColor*)color
 {

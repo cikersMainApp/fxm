@@ -56,6 +56,8 @@
     
     [self.tableView registerClass:[MatchWikiCell class] forCellReuseIdentifier:kCell];
 
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+
 }
 
 -(void)loadMoreData
@@ -63,7 +65,7 @@
 
      [self.tableView.mj_footer endRefreshing];
     
-    [self.opration getWikiBymatchid:@"9294" offset:[NSString stringWithFormat:@"%u",[self.array_wikidata count]-1]];
+    [self.opration getWikiBymatchid:@"9294" offset:[NSString stringWithFormat:@"%lu",[self.array_wikidata count]-1]];
 
 }
 
@@ -97,7 +99,7 @@
         {
             NSArray *temp_array = [extra objectForKey:@"image"];
             
-            NSLog(@"count : %d",[temp_array count]);
+            NSLog(@"count : %ld",[temp_array count]);
             
             float _height = Height_img;
             
@@ -131,9 +133,6 @@
         [self.array_wikidata addObject:model];
         
     }
-    
-    
-    
     
     
     

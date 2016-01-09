@@ -31,4 +31,6 @@
 //override this method to custom your own header view
 -(UIView<ARSegmentPageControllerHeaderProtocol> *)customHeaderView;
 
+-(void)changeViewControllers:(UIViewController*)vc;
+
 @end

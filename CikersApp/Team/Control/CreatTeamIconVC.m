@@ -7,7 +7,7 @@
 //
 
 #import "CreatTeamIconVC.h"
-
+#import "CreatTeam.h"
 @interface CreatTeamIconVC ()
 
 @end
@@ -18,18 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    [self initUI];
     
-    NSArray* constrains2 = self.view.constraints;
-    for (NSLayoutConstraint* constraint in constrains2) {
-        if (constraint.secondItem == self. view_1) {
-            //据底部0
-            if (constraint.firstAttribute == NSLayoutAttributeHeight) {
-                constraint.constant = 600.0;
-                
-            }
-        }
-    }
+    [self initUI];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,24 +32,41 @@
 -(void)initUI
 {
 
-    float width = self.view_content.frame.size.width;
-    float height= self.view_content.frame.size.height;
+    UIScrollView *scroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight - 64)];
+    [self.view addSubview:scroll];
     
-    for (int y = 1; y<7; y++)
+    UIView *view_content = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 700)];
+    
+    [scroll addSubview:view_content];
+    
+    float b_width = (ScreenWidth - 30 - 30 - 15 - 15)/3.0f;
+
+    
+    
+
+    
+    for (int i = 0; i< 6; i++)
     {
         
+        int w = i;
         
-        
-        for (int x = 1; x<4; x++) {
-            
-            UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake( 50, 100,100 ,100)];
-
-            [bt setBackgroundImage:[UIImage imageNamed:@"cover_01"] forState:UIControlStateNormal];
-            [bt setTag:y*10+x];
-            [self.view_content addSubview:bt];
-            [bt addTarget:self action:@selector(bnt_select:) forControlEvents:UIControlEventTouchUpInside];
+        if (i>=3) {
+            w = i - 3;
         }
+        
+        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(30+w*(b_width+15), 100 + (i/3)*100, b_width, b_width)];
+        
+        [bt setTag:i+1];
+        [bt setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d",i+1]] forState:UIControlStateNormal];
+        [bt addTarget:self action:@selector(bnt_select:) forControlEvents:UIControlEventTouchUpInside];
+        [view_content addSubview:bt];
+        [bt.layer setMasksToBounds:YES];
+        [bt.layer setCornerRadius:10.0f];
+        [bt.layer setBorderWidth:1.0];
+        
     }
+
+    [scroll setContentSize:CGSizeMake(ScreenWidth, view_content.frame.size.height)];
     
     
 }
@@ -69,8 +78,26 @@
     
     NSLog(@"%ld",bt.tag);
     
-    [self dismissViewControllerAnimated:YES completion:nil];
     
+    //此页面已经存在于self.navigationController.viewControllers中,并且是当前页面的前一页面
+    
+    CreatTeam
+    *setPrizeVC = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
+    
+    //初始化其属性
+    
+    setPrizeVC.selectIcon
+    = nil;
+    
+    //传递参数过去
+    
+    setPrizeVC.selectIcon = [NSString stringWithFormat:@"%ld",bt.tag];
+    
+    //使用popToViewController返回并传值到上一页面
+    
+    [self.navigationController
+     popToViewController:setPrizeVC animated:true];
+        
 }
 
 @end

@@ -149,7 +149,7 @@
             {
                 _tf_phone.text = _temp_vcode;
                 
-                return NO;
+                return YES;
             }
         }
             break;
@@ -159,7 +159,8 @@
             if (![self.tf_phone.text isEqual:@""]  && ![self.tf_vcode.text isEqual:@""])
             {
                 self.bt_send.hidden = NO;
-                
+                return YES;
+
             }
             
             
@@ -170,7 +171,8 @@
             if (![self.tf_phone.text isEqual:@""]  && ![self.tf_pwd.text isEqual:@""])
             {
                 self.bt_send.hidden = NO;
-                
+                return YES;
+
             }
             
         }
@@ -188,7 +190,7 @@
 {
     
     
-    textField.text=@"";
+//    textField.text=@"";
     
     return true;
     

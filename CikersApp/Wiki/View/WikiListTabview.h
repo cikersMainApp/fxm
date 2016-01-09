@@ -7,7 +7,16 @@
 //
 
 #import "HLTableView.h"
+#import "WikiAllCell.h"
+#import "WikiNewsCell.h"
 
 @interface WikiListTabview : UITableView
+
+@property(nonatomic,assign)BOOL cellTypeNews;  //true is news only image&text   false is All news
+
+
+-(WikiAllCell*)updataCellByAll:(UITableViewCell*)cell;
+
+-(WikiNewsCell*)updataCellByNews:(UITableViewCell*)cell;
 
 @end

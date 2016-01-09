@@ -23,6 +23,11 @@
     self.operation = [[HLLoginOperation alloc] init];
 
     self.bt_send.hidden = YES;
+    
+
+//    [self.bt_send.forDisplayButton setImage:[UIImage imageNamed:@"微博logo.png"] forState:UIControlStateNormal];
+
+    
     self.tf_phone.tag=TAG_TF_PHONE;
     self.tf_pwd.tag=TAG_TF_PWD;
     self.tf_vcode.tag=TAG_TF_VCODE;
@@ -45,7 +50,12 @@
 
 - (IBAction)getVercodeAction:(UIButton *)sender
 {
-
+    if (self.tf_phone.text.length < 11) {
+        
+        [APSProgress showToast:self.view withMessage:@"请输入有效手机号码"];
+        return;
+    }
+    
     [self.operation vericodeGetByPhone:self.tf_phone.text completeBlock:^(id result, NSError *error) {
 
         
@@ -128,7 +138,7 @@
     if ([(NSNumber*)json_ob intValue]==0)
     {
         
-        [APSProgress showToast:self.view withMessage:@"修改完成"];
+        [APSProgress showToast:[UIApplication sharedApplication].keyWindow.rootViewController.view withMessage:@"修改完成"];
         
         [AppDelegate setLoginRoot];
 
@@ -162,7 +172,7 @@
             {
                 _tf_phone.text = _temp_vcode;
                 
-                return NO;
+                return YES;
             }
         }
             break;
@@ -172,6 +182,7 @@
             if (![self.tf_phone.text isEqual:@""]  && ![self.tf_vcode.text isEqual:@""])
             {
                 self.bt_send.hidden = NO;
+                return YES;
 
             }
             
@@ -183,7 +194,8 @@
             if (![self.tf_phone.text isEqual:@""]  && ![self.tf_pwd.text isEqual:@""])
             {
                 self.bt_send.hidden = NO;
-                
+                return YES;
+
             }
 
         }
@@ -201,7 +213,6 @@
 {
 
 
-    textField.text=@"";
     
     return true;
     
@@ -210,38 +221,7 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     
-    switch (textField.tag) {
-        case TAG_TF_PHONE:
-        {
-            if ([self.tf_phone.text isEqual:@""]) {
-                self.tf_phone.text = @"请输入手机号";
-            }
-
-        }
-            break;
-        case TAG_TF_PWD:
-        {
-            if ([self.tf_pwd.text isEqual:@""]) {
-                self.tf_pwd.text = @"请输入新密码";
-            }
-
-        }
-            break;
-        case TAG_TF_VCODE:
-        {
-            if ([self.tf_vcode.text isEqual:@""]) {
-                self.tf_vcode.text = @"请输入验证码";
-            }
-
-        }
-            break;
-        default:
-            break;
-    }
-    
-    
-
-
+  
 }
 
 

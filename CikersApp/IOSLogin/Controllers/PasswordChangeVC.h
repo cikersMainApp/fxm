@@ -10,6 +10,8 @@
 #import "HLBaseViewController.h"
 #import "HLLoginOperation.h"
 #import "HLGetVericodeButton.h"
+#import "DeformationButton.h"
+
 @interface PasswordChangeVC :HLBaseViewController
 
 @property (nonatomic,strong) HLLoginOperation * operation;
@@ -18,7 +20,7 @@
 @property(nonatomic,weak)IBOutlet UITextField *tf_vcode;
 @property(nonatomic,weak)IBOutlet UITextField *tf_pwd;
 @property(nonatomic,weak)IBOutlet HLGetVericodeButton *bt_getVcode;
-@property(nonatomic,weak)IBOutlet UIButton *bt_send;
+@property(nonatomic,weak)IBOutlet DeformationButton *bt_send;
 
 
 

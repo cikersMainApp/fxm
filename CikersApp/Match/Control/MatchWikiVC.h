@@ -14,7 +14,7 @@
 
 @property(nonatomic,strong)MatchOpration *opration;
 @property(nonatomic,strong)NSMutableArray *array_data;
-@property(nonatomic,strong)NSString *matchid;
+@property(nonatomic,strong)NSNumber *matchid;
 @property(nonatomic,strong)NSMutableArray *array_netdata;
 
 @property(nonatomic,strong)NSMutableArray *array_wikidata;

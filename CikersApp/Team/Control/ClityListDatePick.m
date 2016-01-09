@@ -191,7 +191,7 @@
         ;
       }
     
-    [self removeFromSuperview];
+//    [self removeFromSuperview];
     
 }
 

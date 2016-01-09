@@ -32,9 +32,27 @@ void *MatchVCobserver = &MatchVCobserver;
 {
 //    return [[ARSegmentPageHeader alloc] init];
 
-    CustomHeader *view = [[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
-    view.backgroundColor = [UIColor clearColor];
-    return view;
+    self.view_head = [[[NSBundle mainBundle] loadNibNamed:@"CustomHeader" owner:nil options:nil] lastObject];
+    self.view_head.backgroundColor = [UIColor clearColor];
+    
+    __typeof (self) __weak weakSelf = self;
+
+    [self.view_head setClickedBlock:^(NSString *teamid) {
+        
+        [weakSelf.opration sendFovarBymatchid:weakSelf.data_dic_matchinfo.matchid teamid:teamid];
+        
+    }];
+    
+    
+    [self.view_head setClickBackBlock:^(NSString *teamid) {
+        
+        [weakSelf bnt_callbanck:nil];
+        
+    }];
+    
+
+
+    return self.view_head;
 
     
 }
@@ -74,10 +92,30 @@ void *MatchVCobserver = &MatchVCobserver;
 -(void)data_scuess:(id)dic
 {
     self.str_score = ((DicMatchinfo*)dic).score;
+    
     [self.headerView updateUI:dic];
+    
+    self.data_dic_matchinfo =((DicMatchinfo*)dic);
+    
+    self.table_tag.dic_data =((DicMatchinfo*)dic);
+    
+    if ([self.table_tag.dic_data.finished boolValue] || ![self.table_tag.dic_data.mvpsettle boolValue])
+    {
+        self.table_mvp =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchmvptablevc"];
+
+        self.table_mvp.dic_data = ((DicMatchinfo*)dic);
+        
+        [self changeViewControllers:self.table_mvp];
+        
+    }
+    
     
 }
 
+-(void)dataFavor_scuess:(id)dic
+{
+    [self.view_head receiveData];
+}
 
 - (void)viewDidLoad {
     
@@ -86,7 +124,8 @@ void *MatchVCobserver = &MatchVCobserver;
     
     // get network data
     
-   
+
+    
     
     self.defaultImage = [UIImage imageNamed:@"haibao"];
     self.blurImage = [[UIImage imageNamed:@"haibao"] applyDarkEffect];
@@ -96,7 +135,6 @@ void *MatchVCobserver = &MatchVCobserver;
     
     self.table_tag =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchtagtablevc"];
 
-    self.table_mvp =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchmvptablevc"];
 
     self.table_wiki =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchwikivc"];
 
@@ -108,26 +146,48 @@ void *MatchVCobserver = &MatchVCobserver;
     [self addObserver:self forKeyPath:@"segmentToInset" options:NSKeyValueObservingOptionNew context:MatchVCobserver];
     
     
-    [DataSingleton Instance].id_cur_match = testMatchid;
     
     self.opration = [[MatchOpration alloc] init];
     self.opration.delegate = self;
     
     
-    //请求比赛数据
-    [self.opration getDataForAllinfoBymatchid:testMatchid];
+    if ([self.data_dic_matchinfo isEqual:[NSNull null]])
+    {
+                //请求比赛数据
+        [self.opration getDataForAllinfoBymatchid:self.data_dic_matchinfo.matchid];
+    }
+    else
+    {
+        
+        self.str_score = self.data_dic_matchinfo.score;
+        
+        [self.headerView updateUI:self.data_dic_matchinfo];
+        
+        self.table_tag.dic_data =self.data_dic_matchinfo;
+        self.table_predic.data_obj_matchinfo = self.data_dic_matchinfo;
+        
+        
+        
+        if ([self.table_tag.dic_data.finished boolValue] || ![self.table_tag.dic_data.mvpsettle boolValue])
+        {
+            self.table_mvp =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchmvptablevc"];
+            
+            self.table_mvp.dic_data = self.data_dic_matchinfo;
+            
+            [self changeViewControllers:self.table_mvp];
+            
+        }
+
+    }
+    
     
     //请求竞猜数据
-    [self.table_predic getData:testMatchid];
-    self.table_predic.str_matchiid = testMatchid;
+    [self.table_predic getData:self.data_dic_matchinfo.matchid];
 
-    //请求球员数据
-    
-    [self.table_tag getData:testMatchid];
-    
+
     
     //请求帖子数据
-    self.table_wiki.matchid = testMatchid;
+    self.table_wiki.matchid = self.data_dic_matchinfo.matchid;
     
 }
 
@@ -142,9 +202,19 @@ void *MatchVCobserver = &MatchVCobserver;
 }
 
 
+-(void)bnt_callbanck:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+
 -(IBAction)bnt_back:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+
+//    [AppDelegate setLoginRoot];
+//    [self.navigationController popoverPresentationController];
 }
 
 

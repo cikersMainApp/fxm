@@ -14,7 +14,14 @@
 #import "TeamMainVC.h"
 #import "HLNavgationController.h"
 #import "ClityListDatePick.h"
+#import "VOSegmentedControl.h"
+#import "DicTeaminfo.h"
+#import "RMMapper.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
 @interface CreatTeam ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,BaseApiDelegate,UIActionSheetDelegate>
+
+@property(nonatomic,strong)Api *api;
+
 
 @end
 
@@ -27,25 +34,62 @@
     NSString *districtStr; //区
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+
+    if (self.selectIcon == nil) {
+        return;
+    }
+    
+    if (!self.isSelectOther)
+    {
+        return;
+    }
+    
+    
+    
+    self.isSelectOther = NO;
+    
+    [self.bt_img setBackgroundImage:[UIImage imageNamed:self.selectIcon] forState:UIControlStateNormal];
+
+    UIImage *image1 = [UIImage imageNamed:self.selectIcon];
+    NSData *data = UIImagePNGRepresentation(image1);
+    _encodedImageStr = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    self.selectIcon = @"";
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.api = [[Api alloc] initWithDelegate:self needCommonProcess:nil];
+
+    self.isSelectOther = NO;
     
     proviceStr = @"北京市";
     districtStr = @"海淀区";
-    
+    [self.bt_address setTitle:[NSString stringWithFormat:@"%@-%@",proviceStr,districtStr] forState:UIControlStateNormal];
+
     NSString * dic = [[NSBundle mainBundle] pathForResource:@"city" ofType:@"plist"];
     
     NSArray *data = [[NSArray alloc] initWithContentsOfFile:dic];
     self.clity =[[ClityListDatePick alloc] initWithFrame:self.view.bounds];
     self.clity.dataArr = data;
     
+    
+    
+    __typeof (self) __weak weakSelf = self;
+
     self.clity.block = ^(NSString *cityList1,NSString *cityList2){
         
         proviceStr = cityList1;
         districtStr= cityList2;
-        
+        [weakSelf.bt_address setTitle:[NSString stringWithFormat:@"%@-%@",cityList1,cityList2] forState:UIControlStateNormal];
+        weakSelf.clity.hidden = YES;
+
     };
     
     [self.view addSubview:self.clity];
@@ -53,8 +97,42 @@
     self.clity.hidden = YES;
 
 
-}
+    
+    
+    
+//    VOSegmentedControl *segctrl1 = [[VOSegmentedControl alloc] initWithSegments:@[@{VOSegmentText: @"足球"},
+//                                                                                  @{VOSegmentText: @"篮球"},
+//                                                                                  @{VOSegmentText: @"其它"}]];
+//    segctrl1.contentStyle = VOContentStyleTextAlone;
+//    segctrl1.indicatorStyle = VOSegCtrlIndicatorStyleBox;
+//    segctrl1.textColor = [UIColor whiteColor];
+//    segctrl1.selectedTextColor = [UIColor orangeColor];
+//    segctrl1.backgroundColor = [UIColor clearColor];
+//    segctrl1.selectedBackgroundColor = [UIColor orangeColor];
+//    segctrl1.allowNoSelection = NO;
+//
+//    segctrl1.frame = CGRectMake(90, 10, ScreenWidth-130, self.view_segbg.frame.size.height);
+//    
+//    segctrl1.indicatorThickness = 4;
+//    segctrl1.tag = 1;
+//    [self.view_segbg addSubview:segctrl1];
+//    [segctrl1 setIndexChangeBlock:^(NSInteger index) {
+//        NSLog(@"1: block --> %@", @(index));
+//        
+//        self.seg_type.selectedSegmentIndex = index;
+//        
+//    }];
+//    [segctrl1 addTarget:self action:@selector(segment_action1:) forControlEvents:UIControlEventValueChanged];
+//    
+    
+    
+//    self.seg_type.hidden = YES;
 
+}
+-(void)segment_action1:(id)sender
+{
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -103,10 +181,18 @@
         return;
     }
     
-    Api *api = [[Api alloc] initWithDelegate:self needCommonProcess:nil];
+    
+    [APSProgress showIndicatorView];
     
     
-    [api user_creatTeam:@"-1" phone:@"" address:proviceStr tags:districtStr sportscat:@"0" name:self.tf_name.text portraint:@""];
+    
+    [self.api user_creatTeam:@"-1"
+                  phone:@""
+                address:proviceStr
+                   tags:districtStr
+              sportscat:[NSString stringWithFormat:@"%ld",self.seg_type.selectedSegmentIndex+1]
+                   name:self.tf_name.text
+              portraint:@""];
     
     
 }
@@ -134,11 +220,8 @@
     
     int json_e = [(NSNumber*)_object intValue];
 
-    
-    
-    NSString *tag = request.apiName;
-    
-    if ([tag isEqual:NET_TEAM_REG])
+
+    if ([self.api.http_tag isEqual:NET_TEAM_REG])
     {
         
         if (json_e != 0) {
@@ -150,13 +233,17 @@
             return;
         }
         
-        Api *api = [[Api alloc] initWithDelegate:self needCommonProcess:nil];
+    
+        NSDictionary *data = [dic objectForKey:@"data"] ;
+        DicTeaminfo *teaminfo = [RMMapper objectWithClass:[DicTeaminfo class] fromDictionary:data];
+        
+        
 
-        [api team_uploadByid:@"" img:self.encodedImageStr];
+        [self.api team_uploadByid:teaminfo.id img:[NSString stringWithFormat:@"%@%@",@"data:image/jpeg;base64,",_encodedImageStr]];
         
     }
     
-    if ([tag isEqual:NET_TEAM_LOGO])
+    if ([self.api.http_tag  isEqual:NET_TEAM_LOGO])
     {
         if (json_e != 0) {
             
@@ -186,6 +273,9 @@
             break;
         case 2:// 添加一个新的页面
         {
+            
+            self.isSelectOther = YES;
+            
             CreatTeamIconVC *nextvc = [[UIStoryboard storyboardWithName:@"TeamCreat" bundle:nil] instantiateViewControllerWithIdentifier:@"creatteamiconvc"];
             
             [self.navigationController showViewController:nextvc sender:nil];
@@ -193,6 +283,9 @@
             break;
         case 1:
         {
+            
+            
+            
             UIImagePickerController * picker = [[UIImagePickerController alloc]init];
             
             picker.delegate = self;
@@ -232,6 +325,7 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
     // ios 图片压缩
+    
     
     NSData *imgData = UIImageJPEGRepresentation(image, 0.5);
 
@@ -297,21 +391,6 @@
 #pragma mark 地址选择器
 
 
-//-(IBAction)returnOkaddress
-//{
-//    
-//    _view_picbg.hidden = YES;
-//    
-//    //在这里隐藏该页面
-//    
-//    [_bt_address setTitle:[NSString stringWithFormat:@"%@-%@",proviceStr,districtStr] forState:UIControlStateNormal];
-//    
-//}
-//-(IBAction)returnCanceladdress
-//{
-//    
-//}
-
 -(IBAction)showAddressPic
 {
     
@@ -325,136 +404,6 @@
     [_bt_address setTitle:[NSString stringWithFormat:@"%@-%@",proviceStr,districtStr] forState:UIControlStateNormal];
     
 }
-////返回显示的列数
-//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
-//{
-//    if (pickerView == self.cityPicker) {
-//        return 2;
-//    }
-//    else
-//        return 1;
-//}
-//
-////返回当前列显示的行数
-//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-//    
-//    
-//    switch (component) {
-//        case 0:
-//        {
-//            NSArray *array = [YMUtils getCityData][0][@"children"];
-//            if ((NSNull*)array != [NSNull null]) {
-//                return array.count;
-//            }
-//            return 0;
-//            
-//        }
-//            break;
-//        case 1:
-//        {
-//            NSArray *array = [YMUtils getCityData][0][@"children"];
-//            if ((NSNull*)array != [NSNull null]) {
-//                NSArray *array1 = [YMUtils getCityData][0][@"children"][row1][@"children"];
-//                if ((NSNull*)array1 != [NSNull null]) {
-//                    return array1.count;
-//                }
-//                return 0;
-//            }
-//            return 0;
-//            
-//        }
-//            break;
-//        default:
-//            break;
-//    }
-//    
-//    return 0;
-//}
-////设置当前行的内容
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-//    
-//    if(component == 0) {
-//        return [YMUtils getCityData][0][@"children"][row][@"name"];
-//        
-//        
-//    }
-//    else if (component == 1) {
-//        return [YMUtils getCityData][0][@"children"][row1][@"children"][row][@"name"];
-//    }
-//    else if (component == 3) {
-//        return [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
-//    }
-//    return nil;
-//    
-//}
-////选择的行数
-//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-//    if (component == 0) {
-//        row1 = row;
-//        row2 = 0;
-//        [self.cityPicker reloadComponent:1];
-//    }
-//    else if (component == 1){
-//        row2 = row;
-//    }
-//    NSInteger cityRow1 = [self.cityPicker selectedRowInComponent:0];
-//    NSInteger cityRow2 = [self.cityPicker selectedRowInComponent:1];
-//    NSMutableString *str = [[NSMutableString alloc]init];
-//    [str appendString:[YMUtils getCityData][0][@"children"][cityRow1][@"name"]];
-//    
-//    
-//    NSLog(@"%@",str);
-//    
-//    proviceStr = str;
-//    
-////    NSInteger a = [str replaceOccurrencesOfString:proviceStr withString:@"" options:NSLiteralSearch  range:NSMakeRange(0, [str length])];
-////    
-////    districtStr = str;
-////    
-////    
-////    NSLog(@"%@",districtStr);
-//    
-//    
-//    NSArray *array = [YMUtils getCityData][0][@"children"][cityRow1][@"children"];
-//    if ((NSNull*)array != [NSNull null]) {
-//        
-//        districtStr =[YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"name"];
-//        
-//        NSLog(@"%@",districtStr);
-//        
-//        
-//        NSArray *array1 = [YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"children"];
-//        if ((NSNull*)array1 != [NSNull null]) {
-////            [str appendString:[YMUtils getCityData][0][@"children"][cityRow1][@"children"][cityRow2][@"name"]];
-//            
-//        }
-//    }
-////    self.cityLabel.text = str;
-//    
-//    
-//    
-//}
-////每行显示的文字样式
-//- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view
-//{
-//    
-//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 107, 30)];
-//    titleLabel.textAlignment = NSTextAlignmentCenter;
-//    titleLabel.font = [UIFont systemFontOfSize:14];
-//    titleLabel.backgroundColor = [UIColor clearColor];
-//    if (component == 0) {
-//        titleLabel.text = [YMUtils getCityData][0][@"children"][row][@"name"];
-//    }
-//    else if (component == 1) {
-//        titleLabel.text = [YMUtils getCityData][0][@"children"][row1][@"children"][row][@"name"];
-//    }
-//    else {
-//        titleLabel.text = [YMUtils getCityData][row1][@"children"][row2][@"children"][row][@"name"];
-//    }
-//    return titleLabel;
-//    
-//}
-
 
 
 @end

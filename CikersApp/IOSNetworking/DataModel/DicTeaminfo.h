@@ -16,8 +16,15 @@
 
 @property(nonatomic,strong)NSString *createdOn;//创建时间
 @property(nonatomic,strong)NSString *icon;
-@property(nonatomic,strong)NSString *id;
+@property(nonatomic,strong)NSNumber *id;
 @property(nonatomic,strong)NSString *name;
 @property(nonatomic,strong)NSString *province;//球队地址
+
+@property(nonatomic,strong)NSString *city;
+@property(nonatomic,strong)NSString *cnname;
+@property(nonatomic,strong)NSNumber *companyId;
+@property(nonatomic,strong)NSString *contact;
+@property(nonatomic,strong)NSNumber *createdBy;
+
 
 @end

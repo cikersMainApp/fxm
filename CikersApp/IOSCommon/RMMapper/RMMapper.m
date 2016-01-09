@@ -76,19 +76,19 @@ static const char *getPropertyType(objc_property_t property) {
     for (id key in dict) {
         // Skip for non-string key
         if ([key isKindOfClass:[NSString class]] == NO) {
-            NSLog(@"TDUtils: key must be NSString. Received key %@", key);
+//            NSLog(@"TDUtils: key must be NSString. Received key %@", key);
             continue;
         }
         
         // If key is not inside the object properties, skip it
         if ([properties objectForKey:key] == nil) {
-            NSLog(@"TDUtils: key %@ is not existed in class %@", key, NSStringFromClass(cls));
+//            NSLog(@"TDUtils: key %@ is not existed in class %@", key, NSStringFromClass(cls));
             continue;
         }
         
         // If key inside excludeArray, skip it
         if (excludeArray && [excludeArray indexOfObject:key] != NSNotFound) {
-            NSLog(@"TDUtils: key %@ is skipped", key);
+//            NSLog(@"TDUtils: key %@ is skipped", key);
             continue;
         }
         
@@ -179,7 +179,7 @@ static const char *getPropertyType(objc_property_t property) {
     NSMutableDictionary* objDict = [NSMutableDictionary dictionaryWithCapacity:includeArray.count];
     for (NSString* key in propertyDict) {
         if (includeArray && [includeArray indexOfObject:key] == NSNotFound) {
-            NSLog(@"TDUtils: key %@ is skipped", key);
+//            NSLog(@"TDUtils: key %@ is skipped", key);
             continue;
         }
         
@@ -203,7 +203,7 @@ static const char *getPropertyType(objc_property_t property) {
     for (id item in array) {
         // The item must be a dictionary. Otherwise, skip it
         if ([item isKindOfClass:[NSDictionary class]] == NO) {
-            NSLog(@"TDUtils: item inside array must be NSDictionary object");
+//            NSLog(@"TDUtils: item inside array must be NSDictionary object");
             continue;
         }
         

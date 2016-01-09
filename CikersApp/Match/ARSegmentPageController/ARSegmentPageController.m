@@ -94,6 +94,32 @@ const void* _ARSEGMENTPAGE_CURRNTPAGE_SCROLLVIEWOFFSET = &_ARSEGMENTPAGE_CURRNTP
     return [[ARSegmentPageHeader alloc] init];
 }
 
+-(void)changeViewControllers:(UIViewController*)vc
+{
+    
+    [self.controllers replaceObjectAtIndex:1 withObject:vc];
+    
+    
+    
+    
+    //all segment title and controllers
+    [self.controllers enumerateObjectsUsingBlock:^(UIViewController<ARSegmentControllerDelegate> *controller, NSUInteger idx, BOOL *stop) {
+        
+        if (idx == 1) {
+            NSString *title = [controller segmentTitle];
+            
+            [self.segmentView.segmentControl setTitle:title forSegmentAtIndex:idx];
+            
+        }
+        
+
+    }];
+
+    
+}
+
+
+
 #pragma mark - private methdos
 
 -(void)_setUp

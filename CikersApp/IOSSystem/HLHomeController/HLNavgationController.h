@@ -10,4 +10,6 @@
 
 @interface HLNavgationController : UINavigationController
 
+-(void)nav_addBntWhereTitle;
+
 @end

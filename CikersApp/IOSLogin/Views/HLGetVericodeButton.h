@@ -8,7 +8,7 @@
 
 #import "HLFullButton.h"
 
-@interface HLGetVericodeButton : HLFullButton
+@interface HLGetVericodeButton : UIButton
 @property (nonatomic,strong) UILabel * countDownLabel;
 - (void) changeStatus;
 @end

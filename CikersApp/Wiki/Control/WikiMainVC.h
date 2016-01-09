@@ -10,11 +10,14 @@
 #import "WikiViewModel.h"
 #import "WikiListTabview.h"
 #import "FollowVC.h"
+
+@class VOSegmentedControl;
+
 @interface WikiMainVC : HLBaseViewController
 
 
 @property(nonatomic,strong)WikiViewModel *wikiModel;
-@property(nonatomic,strong)UITableView *table_list;
+@property(nonatomic,strong)WikiListTabview *table_list;
 @property(nonatomic,strong)FollowVC *view_follow;
 
 
@@ -22,6 +25,9 @@
 @property(nonatomic,strong)UISegmentedControl *seg_topbnt;
 
 
--(void)segment_action:(UISegmentedControl*)sender;
+
+
+
+-(void)segment_action:(VOSegmentedControl*)sender;
 
 @end

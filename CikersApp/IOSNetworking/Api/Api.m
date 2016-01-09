@@ -132,7 +132,7 @@
     
     
 }
--(void)team_uploadByid:(NSString*)teamid img:(NSString*)base64img
+-(void)team_uploadByid:(NSNumber*)teamid img:(NSString*)base64img
 {
     NSString *apiUrl=[NSString stringWithFormat:@"%@%@",HOST,@"team/uploadavatar"];
     
@@ -310,15 +310,23 @@
     
     [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params];
 
-    
 }
 
 -(void)predict_getDataBymatchid:(NSString *)matchid
 {
+    
     NSString *apiUrl=[NSString stringWithFormat:@"%@predict/bymatch/%@",HOST,matchid];
     
-    
     [self sendRequestWithUrl:apiUrl Method:@"GET" AndParams:nil];
+
+}
+
+-(void)Tag_sendByOgroupid:(NSString *)type oid:(NSNumber *)oid
+{
+
+    NSString *apiUrl=[NSString stringWithFormat:@"%@tag/add/%@/%@",HOST,type,oid];
+    
+    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:nil];
 
 }
 
