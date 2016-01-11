@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _api = [[Api alloc] initWithDelegate:self needCommonProcess:NO];
-
+self.encodedImageStr = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,7 +49,13 @@
         
         return;
     }
-    
+    if ([self.encodedImageStr isEqual:@""]) {
+        
+        
+        [APSProgress showToast:self.view withMessage:@"请上传头像"];
+        
+        return;
+    }
     
     [APSProgress showIndicatorView];
     
@@ -219,7 +225,7 @@
         {
             [APSProgress hidenIndicatorView];
 
-            [JCAlertView showTwoButtonsWithTitle:@"提示" Message:@"该手机号已经注册过" ButtonType:JCAlertViewButtonTypeWarn ButtonTitle:@"返回上一页" Click:^{
+            [JCAlertView showTwoButtonsWithTitle:@"提示" Message:@"该手机号已经注册过" ButtonType:JCAlertViewButtonTypeCancel ButtonTitle:@"返回上一页" Click:^{
                 
                 [self.navigationController popViewControllerAnimated:YES];
                 
@@ -227,6 +233,8 @@
                 
                 
                 PasswordChangeVC *vc_next  = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"passwordchangevc"];
+                
+                vc_next.tf_phone.text =[[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_LOGIN_NAME];
                 
                 [self.navigationController showViewController:vc_next sender:NULL];
                 

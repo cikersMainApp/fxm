@@ -130,6 +130,8 @@
 {
     AppDelegate * app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (error) {
+        [APSProgress hidenIndicatorView];
+
         [[HLAlertManager shareInstance] showNoCancelAlertByTitle:@"提示" message:@"系统错误" delegate:nil presentBaseVC:app.window.rootViewController sureBlock:^(id sureResult) {
             
         }];

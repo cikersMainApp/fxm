@@ -122,10 +122,8 @@
         if (json_e == 0) {
             
             
-            GamelistTableVC *nextvc = [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"gamelisttablevc"];
-            [self.navigationController pushViewController:nextvc animated:YES];
-            
-            //[AppDelegate setTabRoot];
+     
+            [AppDelegate setTabRoot];
             
             //解析数据
             

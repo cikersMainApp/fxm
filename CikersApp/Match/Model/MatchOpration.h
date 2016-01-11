@@ -18,6 +18,8 @@
 -(void)dataTag_scuess:(id)dic;
 -(void)dataWiki_scuess:(id)dic;
 -(void)dataFavor_scuess:(id)dic;
+-(void)dataMvp_scuess:(id)dic;
+
 @end
 
 
@@ -50,8 +52,13 @@
 ;
 -(void)parsePlayerInfo:(NSDictionary *)dic httpTag:(NSString*)tag;
 
+
+//发送球员MVP投票
+-(void)sendPlayerMvpBymatchid:(NSNumber*)matchid playerid:(NSNumber*)playerid;
+-(void)parsePlayerMvp:(NSDictionary*)dic;
+
 //获取wiki
--(void)getWikiBymatchid:(NSString*)matchid  offset:(NSString*)offset;
+-(void)getWikiBymatchid:(NSNumber*)matchid  offset:(NSNumber*)offset;
 -(void)parseWiki:(NSDictionary*)dic;
 
 //mvp投票

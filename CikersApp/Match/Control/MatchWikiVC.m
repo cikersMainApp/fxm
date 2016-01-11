@@ -40,7 +40,7 @@
     self.opration = [[MatchOpration alloc] init];
     self.opration.delegate = self;
     
-    [self.opration getWikiBymatchid:@"9294" offset:@"0"];
+    [self.opration getWikiBymatchid:self.data_obj_matchinfo.matchid offset:[NSNumber numberWithInt:0]];
     
     self.tableView.estimatedRowHeight = 44.0f;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -65,14 +65,23 @@
 
      [self.tableView.mj_footer endRefreshing];
     
-    [self.opration getWikiBymatchid:@"9294" offset:[NSString stringWithFormat:@"%lu",[self.array_wikidata count]-1]];
+    
+    
+    [self.opration getWikiBymatchid:self.data_obj_matchinfo.matchid offset:[NSNumber numberWithUnsignedInteger:[self.array_wikidata count]]];
 
 }
 
 -(void)dataWiki_scuess:(id)dic
 {
+    if ([[dic objectForKey:@"total"] intValue]==0) {
+        
+        [APSProgress showToast:self.view withMessage:@"暂无新闻报道"];
+        
+        return;
+    }
     
-//    self.array_netdata = [dic objectForKey:@"data"];
+    
+    
     NSArray *ar = [dic objectForKey:@"data"];
   
     [self.array_netdata addObjectsFromArray:ar];
@@ -80,8 +89,6 @@
 //    @"solid",@"image",@"video"
     
     for (NSDictionary *elem_dic in ar) {
-        
-//        [self.array_netdata addObject:elem_dic];
         
         NSString *contenttype = [elem_dic objectForKey:@"contenttype"];
         
@@ -143,11 +150,6 @@
 -(void)bnt_lookImg:(NSMutableArray *)imgs
 {
 
-//    WikiLookVC *nextvc = [[WikiLookVC alloc] init];
-//    nextvc.array_imgs = imgs;
-//    
-//    [self showViewController:nextvc sender:nil];
-    
 }
 
 - (void)didReceiveMemoryWarning {

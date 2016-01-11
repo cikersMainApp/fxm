@@ -204,6 +204,17 @@
 - (void)setCookieWithCookiesArray:(NSArray *)arrCookies;
 {
     self.cookie = [self cookieStringWithCookiesArray:arrCookies];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"login"])
+    {
+        
+        NSNumber *uid = [[NSUserDefaults standardUserDefaults] objectForKey:@"userid"];
+        
+        [_request setValue:[NSString stringWithFormat:@"PID_%@",uid] forHTTPHeaderField:@"_CIKERS_KEY_"];
+        
+    }
+
+    
 }
 
 - (NSDictionary *)cookieDict

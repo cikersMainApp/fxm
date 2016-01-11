@@ -19,13 +19,15 @@
         
     _img_photo.layer.masksToBounds =YES;
     
-    _img_photo.layer.cornerRadius =_img_photo.frame.size.height/2;
+    _img_photo.layer.cornerRadius =15;
     
     
     self.lb_teamname = [[UILabel  alloc] initWithFrame:CGRectMake(5, 2, 300, 24)];
     [self.view_sectionbg addSubview:self.lb_teamname];
     
 
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -63,14 +65,20 @@
     self.lb_name.text = dic.name;
     
     self.lb_tag1.text = @"没有热门";
+    self.lb_tag2.text = @"";
+    self.lb_tag3.text = @"";
+    
     
     if (![dic.hottags isEqual:[NSNull null]])
     {
         //hottags 里面的内容有三个
-
-        NSLog(@"%@",[dic.hottags objectAtIndex:0]);
         
-//        self.lb_tag1.text = [dic.hottags objectAtIndex:0];
+        for (NSDictionary *elem_dic in dic.hottags)
+        {
+            self.lb_tag1.text = [NSString stringWithFormat:@"%@ +%@",[elem_dic objectForKey:@"name"],[elem_dic objectForKey:@"count"]];
+        }
+        
+        
     }
 }
 

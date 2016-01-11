@@ -18,13 +18,15 @@
     
     _img_photo1.layer.masksToBounds =YES;
     
-    _img_photo1.layer.cornerRadius =_img_photo1.frame.size.height/2;
+    _img_photo1.layer.cornerRadius =15;
     
     _img_photo2.layer.masksToBounds =YES;
     
-    _img_photo2.layer.cornerRadius =_img_photo2.frame.size.height/2;
+    _img_photo2.layer.cornerRadius =15;
     
     [self initUI];
+    
+    self.view_bg.hidden = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -41,9 +43,12 @@
 -(IBAction)bnt_action1:(id)sender
 {
 
+    [self.delegate cell_click:[NSNumber numberWithInteger:self.lb_name1.tag]];
+    
 }
 -(IBAction)bnt_action2:(id)sender
 {
+    [self.delegate cell_click:[NSNumber numberWithInteger:self.lb_name2.tag]];
 
 }
 
@@ -60,7 +65,9 @@
 
         self.lb_name1.text = playera.name;
         self.view_bg1.hidden = NO;
+        self.lb_favorNum1.text = [NSString stringWithFormat:@"%@票",playera.votecount];
 
+        self.lb_name1.tag = [playera.id intValue];
     }
     
     if (playerb) {
@@ -70,9 +77,24 @@
         
         self.lb_name2.text = playerb.name;
         self.view_bg2.hidden = NO;
+        self.lb_favorNum2.text = [NSString stringWithFormat:@"%@票",playerb.votecount];
 
+        self.lb_name2.tag = [playerb.id intValue];
 
     }
+    
+}
+-(void)updateUI:(DicPlayerinfo *)player
+{
+    
+    self.view_bg.hidden = NO;
+    
+    NSString *url = [NSString stringWithFormat:@"http://www.cikers.com%@",player.icon];
+    [self.img_photo sd_setImageWithURL:[NSURL URLWithString:url]];
+    
+    self.lb_name.text = player.name;
+    
+    
     
 }
 

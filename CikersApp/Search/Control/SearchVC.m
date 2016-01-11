@@ -62,6 +62,9 @@
     self.mainTableView.delegate = self.viewModel;
     self.mainTableView.dataSource = self.viewModel;
     self.mainTableView.hlDelegate = self.viewModel;
+    
+    self.viewModel.vc_search = self;
+    
 }
 
 -(void)dataLoad

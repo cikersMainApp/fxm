@@ -147,6 +147,7 @@
 		D7B5FBA21C350A3500AE7341 /* GameLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FBA11C350A3500AE7341 /* GameLeftVC.m */; };
 		D7B5FBA61C350AC200AE7341 /* GameMainContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FBA51C350AC200AE7341 /* GameMainContent.m */; };
 		D7B5FBAA1C350DD200AE7341 /* GameSection1.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FBA81C350DD200AE7341 /* GameSection1.m */; };
+		D7CC759A1C421E690081BFE3 /* MatchMVPResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75991C421E690081BFE3 /* MatchMVPResultCell.m */; };
 		D7D569011C2584EC009CBF2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D569001C2584EC009CBF2D /* main.m */; };
 		D7D5690A1C2584EC009CBF2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D569081C2584EC009CBF2D /* Main.storyboard */; };
 		D7D5690F1C2584EC009CBF2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D5690D1C2584EC009CBF2D /* LaunchScreen.storyboard */; };
@@ -501,6 +502,8 @@
 		D7B5FBA51C350AC200AE7341 /* GameMainContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainContent.m; sourceTree = "<group>"; };
 		D7B5FBA71C350DD200AE7341 /* GameSection1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSection1.h; sourceTree = "<group>"; };
 		D7B5FBA81C350DD200AE7341 /* GameSection1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSection1.m; sourceTree = "<group>"; };
+		D7CC75981C421E690081BFE3 /* MatchMVPResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchMVPResultCell.h; sourceTree = "<group>"; };
+		D7CC75991C421E690081BFE3 /* MatchMVPResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchMVPResultCell.m; sourceTree = "<group>"; };
 		D7D568FC1C2584EC009CBF2D /* CikersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CikersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D569001C2584EC009CBF2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D569091C2584EC009CBF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1145,6 +1148,8 @@
 				D7B5F8A41C32379A00AE7341 /* MatchTagCell.m */,
 				D7B5F8A61C323EE900AE7341 /* MatchMVPCell.h */,
 				D7B5F8A71C323EE900AE7341 /* MatchMVPCell.m */,
+				D7CC75981C421E690081BFE3 /* MatchMVPResultCell.h */,
+				D7CC75991C421E690081BFE3 /* MatchMVPResultCell.m */,
 				D7B5FB9D1C34ED3100AE7341 /* MatchToolButton.h */,
 				D7B5FB9E1C34ED3100AE7341 /* MatchToolButton.m */,
 				D7B0DD401C3954D200A3997A /* MatchWikiCell.h */,
@@ -2195,6 +2200,7 @@
 				D7B5F88B1C30E04300AE7341 /* UIImage+ImageEffects.m in Sources */,
 				D7B5F88E1C30E96C00AE7341 /* MatchNavigation.m in Sources */,
 				D7B5F7DA1C292AC900AE7341 /* DroppyScrollView.m in Sources */,
+				D7CC759A1C421E690081BFE3 /* MatchMVPResultCell.m in Sources */,
 				D779DBAA1C3B697900472FD9 /* TYLaunchBaseAnimation.m in Sources */,
 				D7B5F8B41C3267DA00AE7341 /* DicMatchinfo.m in Sources */,
 				D7D56A621C266872009CBF2D /* UIDevice+CMUtils.m in Sources */,

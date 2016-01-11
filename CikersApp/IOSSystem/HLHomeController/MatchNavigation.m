@@ -30,6 +30,8 @@
     [self.navigationBar setShadowImage:[self createImageWithColor:[UIColor clearColor]]];
     [self.navigationBar setTintColor:[UIColor whiteColor]];
     [self.navigationBar setTranslucent:YES];
+    
+
 
 
 }

@@ -62,7 +62,7 @@
     HttpRequest *req = [[HttpRequest alloc] initWithUrl:apiUrl method:method params:paramsDict];
     req.identifier = req.url;
     req.apiName=tag;
-    [req setTimeoutInterval:100];
+    [req setTimeoutInterval:30];
     [req setCookieWithCookiesArray:[self getCookie:req]];
     [self sendRequest:req];
 
@@ -92,7 +92,7 @@
             
             NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:rsp.responseData options:NSJSONReadingAllowFragments error:nil];
             
-//            NSLog(@"_object :%@",dic);
+            NSLog(@"_object :%@",dic);
             
             NSObject *e = [dic objectForKey:@"e"];
             int json_e = [(NSNumber*)e intValue];
@@ -113,7 +113,6 @@
             if (json_e == 0 && [req.apiName isEqual:NET_MATCH_INFO])
             {
                 [self.httpdelegate finishedWithScuessData:dic];
-
             }
             
             
@@ -126,12 +125,16 @@
             rsp.response = operation.response;
             rsp.responseData = operation.responseData;
             rsp.responseString = operation.responseString;
-            [self.httpdelegate finishedWithRequest:req Response:rsp AndError:error];
+//            [self.httpdelegate finishedWithRequest:req Response:rsp AndError:error];
             
-
 
             [APSProgress hideHUDWithAnimated:YES];
             
+            [APSProgress showToast:nil withMessage:@"测试打印：网络不畅"];
+
+            NSLog(@"++++++++++++++++++++++++++++++++++");
+            NSLog(@"===================网络不畅");
+            NSLog(@"++++++++++++++++++++++++++++++++++");
 
         }
         

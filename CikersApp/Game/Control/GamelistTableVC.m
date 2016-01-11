@@ -15,6 +15,7 @@
 #import "DicGameinfo.h"
 #import "GameListCell.h"
 #import "MatchVC.h"
+#import "MatchNavigation.h"
 @interface GamelistTableVC ()<GameModelDelegate>
 
 @end
@@ -35,7 +36,7 @@
     GameModel *model = [[GameModel alloc] init];
     model.delegate = self;
     
-    [model getListByGameId:@"165"];
+    [model getListByGameId:self.num_gameid];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,20 +82,20 @@
         
         matchinfo.formatScheduletime = [ToolUtil tool_utcToNsstring:matchinfo.scheduletime];
         
-        //判断比分是否为nil
-        
-        matchinfo.score = ([matchinfo.score isEqual:[NSNull null]])?@"VS":matchinfo.score;
-                
+ 
         //判断比赛是否结束
         
         matchinfo.isWaiting = ([matchinfo.result isEqual:[NSNull null]])?[NSNumber numberWithInt:1]:[NSNumber numberWithInt:0];
         
-
+        //判断比分是否为nil
+        
+        
+        matchinfo.score = [NSString stringWithFormat:@"%@-%@",matchinfo.scorea,matchinfo.scoreb];
         
         [matchinfo dic_exchangData];
         
-//        [[NSUserDefaults standardUserDefaults] rm_setCustomObject:matchinfo forKey:[NSString stringWithFormat:@"match%@",matchinfo.matchid]];
-//        
+        [[NSUserDefaults standardUserDefaults] rm_setCustomObject:matchinfo forKey:[NSString stringWithFormat:@"match%@",matchinfo.matchid]];
+
         [self.array_data addObject:matchinfo];
     }
     
@@ -146,12 +147,22 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    MatchVC *nextvc = [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchvc"];
+//    MatchVC *nextvc = [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchvc"];
+//    nextvc.data_dic_matchinfo = [[DicMatchinfo alloc] init];
+//    nextvc.data_dic_matchinfo = (DicMatchinfo*)[self.array_data objectAtIndex:indexPath.row];
+//    
+    
+    MatchNavigation *  nav =  [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"match"];
+
+    MatchVC *nextvc = (MatchVC*)[nav.viewControllers firstObject];
     nextvc.data_dic_matchinfo = [[DicMatchinfo alloc] init];
     nextvc.data_dic_matchinfo = (DicMatchinfo*)[self.array_data objectAtIndex:indexPath.row];
     
+
+    
+    
 //    [self.navigationController pushViewController:nextvc animated:YES];
-    [self presentViewController:nextvc animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 /*
 // Override to support conditional editing of the table view.

@@ -19,9 +19,9 @@
 @property(nonatomic,strong)NSNumber *pub;//
 @property(nonatomic,strong)NSString *atype;
 
-@property(nonatomic,strong)NSArray *hottags;//标签
+@property(nonatomic,strong)NSMutableArray *hottags;//标签
 
-@property(nonatomic,strong)NSNumber *votecount;
+@property(nonatomic,strong)NSNumber *votecount;//得到的票数
 
 -(void)checkData;
 

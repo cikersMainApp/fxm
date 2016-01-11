@@ -38,7 +38,7 @@ static __weak UIView *currentView;
     HUD.mode = MBProgressHUDModeCustomView;
     HUD.labelText = @"网络请求失败";
     [HUD show:YES];
-	[HUD hide:YES afterDelay:2];
+	[HUD hide:YES afterDelay:1];
 }
 
 
@@ -74,15 +74,16 @@ static __weak UIView *currentView;
 }
 
 +(void)showToast:(UIView *)view withMessage:(NSString *) message{
-    
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:view];
+    AppDelegate  * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:appDele.window];
     [view addSubview:HUD];
     //	// Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
     HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     HUD.mode = MBProgressHUDModeCustomView;
     HUD.labelText = message;
     [HUD show:YES];
-    [HUD hide:YES afterDelay:2];
+    [HUD hide:YES afterDelay:1];
 }
 
 @end

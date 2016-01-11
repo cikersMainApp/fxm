@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SearchVC;
 
 
 
 @interface SearchTableCell : UITableViewCell
 
 
-@property(nonatomic,strong)NSString * eventId; // 所选id
+@property(nonatomic,strong)NSNumber * eventId; // 所选id
 
 
 
@@ -35,7 +35,7 @@
 
 //无搜索项目
 
-
+@property(nonatomic,strong)SearchVC *vc_search;
 
 
 

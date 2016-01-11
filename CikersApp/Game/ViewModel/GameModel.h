@@ -23,6 +23,6 @@
 @property(nonatomic,strong)Api *api;
 @property(nonatomic,strong)NSString *http_tag;
 
--(void)getListByGameId:(NSString*)gameid;
+-(void)getListByGameId:(NSNumber*)gameid;
 
 @end

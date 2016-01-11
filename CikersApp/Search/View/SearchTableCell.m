@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "SearchVC.h"
 #import "HLNavgationController.h"
+#import "GamelistTableVC.h"
 @implementation SearchTableCell
 
 - (void)awakeFromNib {
@@ -129,12 +130,19 @@
         {
             [DataSingleton Instance].id_search_team = self.eventId;
             [AppDelegate setTeamRoot];
-        }
+          }
             break;
         case VIEW_SEARCH_GAME:
         {
             [DataSingleton Instance].id_search_game = self.eventId;
-            [AppDelegate setGameRoot];
+
+            
+            GamelistTableVC *nextvc = [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"gamelisttablevc"];
+            nextvc.num_gameid = self.eventId;
+            
+//            GameVC *nav = [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"game"];            
+            [self.vc_search.navigationController pushViewController:nextvc animated:YES];
+
             
         }
             break;

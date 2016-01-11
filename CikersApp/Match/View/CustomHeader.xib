@@ -31,18 +31,6 @@
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg0-h5-yI8">
-                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                            <state key="normal" title="返回">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <variation key="widthClass=compact" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="7" width="50" height="30"/>
-                            </variation>
-                            <connections>
-                                <action selector="bnt_back:" destination="s7b-RY-GfQ" eventType="touchUpInside" id="QD0-CH-Ibq"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="L94-xc-AT8" firstAttribute="leading" secondItem="qg4-bl-cZV" secondAttribute="leading" id="05V-94-FKD"/>
@@ -69,7 +57,6 @@
                         <mask key="subviews">
                             <exclude reference="L94-xc-AT8"/>
                             <exclude reference="dLx-28-gVa"/>
-                            <exclude reference="lg0-h5-yI8"/>
                         </mask>
                         <mask key="constraints">
                             <exclude reference="7ht-0l-2E8"/>
@@ -87,7 +74,6 @@
                         <mask key="subviews">
                             <include reference="L94-xc-AT8"/>
                             <include reference="dLx-28-gVa"/>
-                            <include reference="lg0-h5-yI8"/>
                         </mask>
                         <mask key="constraints">
                             <include reference="7ht-0l-2E8"/>

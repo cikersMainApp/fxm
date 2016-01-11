@@ -66,7 +66,7 @@
     
     if ([request.apiName isEqual:NET_MATCH_VOTE_SEND]) [self parseFovar:dic];
     
-    
+    if([request.apiName isEqual:@"mvpvote"]) [self parsePlayerMvp:dic];
     
     
 
@@ -126,7 +126,9 @@
     
     //判断比分是否为nil
     
-    matchinfo.score = ([matchinfo.score isEqual:[NSNull null]])?@"VS":matchinfo.score;
+//    matchinfo.score = ([matchinfo.score isEqual:[NSNull null]])?@"VS":matchinfo.score;
+
+    matchinfo.score = [NSString stringWithFormat:@"%@-%@",matchinfo.scorea,matchinfo.scoreb];
     
     NSLog(@"----%@",matchinfo.score);
     
@@ -262,14 +264,35 @@
 }
 
 
-#pragma mark -
-#pragma mark wiki
-
--(void)getWikiBymatchid:(NSNumber *)matchid offset:(NSString*)offset
+-(void)sendPlayerMvpBymatchid:(NSNumber*)matchid playerid:(NSNumber*)playerid
 {
     [APSProgress showIndicatorView];
     
-    NSString *apiUrl=[NSString stringWithFormat:@"%@%@%@?limit=%@&offset=%@",HOST,@"wiki/listbyteam/",matchid,@"10",offset];
+    NSString *apiUrl=[NSString stringWithFormat:@"%@match/mvpvote",HOST];
+    
+    NSDictionary *params=@{@"tid":playerid,
+                           @"mid":matchid};
+    
+    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params httpTag:@"mvpvote"];
+
+}
+-(void)parsePlayerMvp:(NSDictionary*)dic
+{
+
+    [APSProgress hidenIndicatorView];
+
+    [self.delegate dataMvp_scuess:dic];
+}
+
+
+#pragma mark -
+#pragma mark wiki
+
+-(void)getWikiBymatchid:(NSNumber *)matchid offset:(NSNumber*)offset
+{
+    [APSProgress showIndicatorView];
+    
+    NSString *apiUrl=[NSString stringWithFormat:@"%@%@%@?limit=%@&offset=%@",HOST,@"wiki/listbymatch/",matchid,@"10",offset];
     
     [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:NULL httpTag:NET_WIKI];
     

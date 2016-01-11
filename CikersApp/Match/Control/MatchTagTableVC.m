@@ -34,7 +34,6 @@
     self.opration.delegate = self;
     [self.opration getPlayersInfoByteamid:self.data_obj_matchinfo.teama.id matchid:self.data_obj_matchinfo.matchid httpTag:@"A" tags:@"1" mvp:@"0"];
     
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     
 }
@@ -42,6 +41,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
 
+    [self.tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +71,11 @@
     
     nextvc.dic_player = [self.array_team objectAtIndex:[num intValue] - tag];
 
-    [self ];
+    nextvc.num_index = [num intValue] - tag;
+    
+    nextvc.delegate_match = self;
+    
+    [self.navigationController pushViewController:nextvc animated:YES];
     
     
 }
@@ -114,7 +119,13 @@
         
         return 30;
     }
-    
+    // 解决teama没有球员时的高度
+
+    if (indexPath.row == 1 || 0 == [self.array_teamA count]) {
+        
+        return 30;
+    }
+
     return 90.0f;
 }
 
@@ -144,6 +155,14 @@
         return cell;
     }
     
+    // 解决teama没有球员时跳出
+    if ([self.array_teamA count] == 0 && indexPath.row == 1) {
+        
+        [cell showSectionState:YES bgcolor:1 name:self.str_teamB];
+        
+        return cell;
+    }
+    
     if (indexPath.row == [self.array_teamA count]) {
         
         [cell showSectionState:YES bgcolor:1 name:self.str_teamB];
@@ -157,11 +176,14 @@
         tag = 2;
     }
     
+    NSLog(@"%ld",indexPath.row);
+    
     cell.i_index = indexPath.row;
     
     [cell showSectionState:NO bgcolor:1 name:@""];
     
-        
+    cell.delegate = self;
+    
     [cell updateUI:[self.array_team objectAtIndex:indexPath.row -tag]];
     
     return cell;
@@ -169,18 +191,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MatchTagInfoVC *nextvc = [[MatchTagInfoVC alloc] init];
-    
-    int tag = 1;
-    
-    if (indexPath.row >= [self.array_teamA count])
-    {
-        tag = 2;
-    }
-
-    nextvc.dic_player = [self.array_team objectAtIndex:indexPath.row - tag];
-    
-    [self.navigationController pushViewController:nextvc animated:YES];
+  
 }
 
 -(NSString *)segmentTitle

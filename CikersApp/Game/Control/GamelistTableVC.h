@@ -13,4 +13,7 @@
 
 @property(nonatomic,strong)NSMutableArray *array_data;
 
+@property(nonatomic,assign)NSNumber *num_gameid;
+
+
 @end

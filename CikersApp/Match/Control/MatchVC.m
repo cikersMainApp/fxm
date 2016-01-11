@@ -97,9 +97,11 @@ void *MatchVCobserver = &MatchVCobserver;
     
     self.data_dic_matchinfo =((DicMatchinfo*)dic);
     
-    self.table_tag.dic_data =((DicMatchinfo*)dic);
+    self.table_tag.data_obj_matchinfo =self.data_dic_matchinfo;
+    self.table_predic.data_obj_matchinfo = self.data_dic_matchinfo;
+    self.table_wiki.data_obj_matchinfo = self.data_dic_matchinfo;
     
-    if ([self.table_tag.dic_data.finished boolValue] || ![self.table_tag.dic_data.mvpsettle boolValue])
+    if ([self.data_dic_matchinfo.finished boolValue] || ![self.data_dic_matchinfo.mvpsettle boolValue])
     {
         self.table_mvp =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchmvptablevc"];
 
@@ -163,12 +165,12 @@ void *MatchVCobserver = &MatchVCobserver;
         
         [self.headerView updateUI:self.data_dic_matchinfo];
         
-        self.table_tag.dic_data =self.data_dic_matchinfo;
+        self.table_tag.data_obj_matchinfo =self.data_dic_matchinfo;
         self.table_predic.data_obj_matchinfo = self.data_dic_matchinfo;
+        self.table_wiki.data_obj_matchinfo = self.data_dic_matchinfo;
         
         
-        
-        if ([self.table_tag.dic_data.finished boolValue] || ![self.table_tag.dic_data.mvpsettle boolValue])
+        if ([self.table_tag.data_obj_matchinfo.finished boolValue] || ![self.table_tag.data_obj_matchinfo.mvpsettle boolValue])
         {
             self.table_mvp =[[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"matchmvptablevc"];
             

@@ -10,6 +10,7 @@
 #import "MatchMVPCell.h"
 #import "DicPlayerinfo.h"
 #import "DicTeaminfo.h"
+#import "MatchMVPResultCell.h"
 @interface MatchMVPTableVC ()
 
 @end
@@ -28,14 +29,26 @@
     self.array_teamA = [[NSMutableArray alloc] init];
     self.array_teamB = [[NSMutableArray alloc] init];
     self.array_team = [[NSMutableArray alloc] init];
+    self.array_teamrank=[[NSMutableArray alloc] init];
+    
     
     self.opration = [[MatchOpration alloc] init];
     self.opration.delegate = self;
 
+    
+    self.isShowResult = [self.dic_data.mvpsettle boolValue];
+    
+    //获取投票信息
+    
     [self.opration getPlayersInfoByteamid:self.dic_data.teama.id matchid:self.dic_data.matchid httpTag:@"A" tags:@"0" mvp:@"1"];
  
+    //获取结果信息
+    
+    
     
     self.int_length = 0;
+    
+    
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
@@ -46,10 +59,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)cell_click:(NSNumber *)playerid
+{
+    [self.opration sendPlayerMvpBymatchid:self.dic_data.matchid playerid:playerid];
+}
+
+-(void)dataMvp_scuess:(id)dic
+{
+
+
+    if ([[dic objectForKey:@"e"] intValue] == 0)
+    {
+        [APSProgress showToast:self.view withMessage:@"支持成功"];
+    }
+    
+    
+    
+}
+
 -(void)dataTag_scuess:(id)dic
 {
 
-    
     NSMutableDictionary *dic_temp = (NSMutableDictionary*)dic;
     
     if ([dic_temp count] == 2) {
@@ -64,6 +95,32 @@
         
         self.int_length = (self.int_length < [self.array_teamB count])?[self.array_teamB count]:[self.array_teamA count];
 
+        
+        
+        self.isShowResult = false;
+        
+        if (self.isShowResult)
+        {
+            
+            [self.array_teamrank addObjectsFromArray:self.array_teamA];
+            [self.array_teamrank addObjectsFromArray:self.array_teamB];
+            
+            
+            NSArray *array_temp = [NSArray arrayWithArray:self.array_teamrank];
+            array_temp = [array_temp sortedArrayUsingComparator:(NSComparator)^(DicPlayerinfo* obj1, DicPlayerinfo* obj2) {
+                
+                return [obj1.votecount intValue] > [obj1.votecount intValue];
+                
+            }];
+            
+            
+            [self.array_teamrank removeAllObjects];
+            [self.array_teamrank addObjectsFromArray:array_temp];
+            
+            self.int_length = 10; //只显示前10名
+            
+        }
+        
         [self.tableView reloadData];
         
     }
@@ -96,11 +153,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  
+    
+    
     MatchMVPCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-
     if (self.int_length == 0) return cell;
-    
     
     DicPlayerinfo *playea;
     DicPlayerinfo *playeb;
@@ -109,7 +166,17 @@
     playeb = (indexPath.row < [self.array_teamB count])?[self.array_teamB objectAtIndex:indexPath.row]:playeb;
     
     
-    [cell updateUI:playea playerb:playeb];
+    if (self.isShowResult) {
+        
+        [(MatchMVPCell *)cell updateUI:[self.array_teamrank objectAtIndex:indexPath.row]];
+        cell.lb_rank.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+        
+    }
+    else{
+    
+        [(MatchMVPCell *)cell updateUI:playea playerb:playeb];
+    }
+    
     
     return cell;
 }

@@ -6,9 +6,21 @@
 //  Copyright © 2015年 cikers. All rights reserved.
 //
 
+@protocol MatchMVPCellDelegate <NSObject>
+
+@optional
+
+-(void)cell_click:(NSNumber*)playerid;
+
+@end
+
+
 #import <UIKit/UIKit.h>
 #import "DicPlayerinfo.h"
 @interface MatchMVPCell : UITableViewCell
+
+@property(nonatomic,strong)id<MatchMVPCellDelegate>delegate;
+@property(nonatomic,strong)NSNumber *playerid;
 
 
 @property(nonatomic,weak)IBOutlet UIView *view_bg1;
@@ -26,10 +38,18 @@
 -(IBAction)bnt_action2:(id)sender;
 
 
+@property(nonatomic,strong)IBOutlet UIView *view_bg;
+@property(nonatomic,strong)IBOutlet UILabel *lb_rank;
+@property(nonatomic,strong)IBOutlet UIImageView *img_photo;
+@property(nonatomic,strong)IBOutlet UILabel *lb_name;
+
+
+
 
 -(void)initUI;
 
 -(void)updateUI:(DicPlayerinfo*)playera playerb:(DicPlayerinfo*)playerb;
+-(void)updateUI:(DicPlayerinfo *)player;
 
 
 

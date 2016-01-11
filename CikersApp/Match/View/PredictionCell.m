@@ -28,7 +28,7 @@
     
     self.array_bnts = [[NSMutableArray alloc] init];
     self.array_lbs = [[NSMutableArray alloc] init];
-    
+    self.array_myops = [[NSMutableArray alloc] init];
     
     
     [self initUI];
@@ -103,10 +103,14 @@
             w = i - 3;
         }
         
+        NSString *str = [NSString stringWithFormat:@"%d",i];
+        
+        str = (i == 5)?@"5+":str;
+        
         
         UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(30+w*(b_width+15), 60 + (i/3)*80, b_width, 32)];
 
-        [bt setTitle:[NSString stringWithFormat:@"%d",i+1] forState:UIControlStateNormal];
+        [bt setTitle:str forState:UIControlStateNormal];
         [bt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [bt setTag:i+BNT_3+1+100];
         [bt setBackgroundColor:[UIColor colorAndAlphaWithHexString:BNT_COLOR_BLUE]];
@@ -115,6 +119,9 @@
         [bt.layer setMasksToBounds:YES];
         [bt.layer setCornerRadius:10.0f];
         [bt.layer setBorderWidth:1.0];
+        
+        
+        
         
         
         ARLabel *lable = [[ARLabel alloc] initWithFrame:CGRectMake(30+w*(b_width+15), 35+ (i/3)*80, b_width, 15)];
@@ -189,7 +196,7 @@
     
     self.lb_namebyhome.text = self.data_obj_matchinfo.teama.name;
     self.lb_namebyguest.text= self.data_obj_matchinfo.teamb.name;
-    self.lb_score.text = self.data_obj_matchinfo.score;
+    self.lb_score.text = @"";
     
     
     //更新文本
@@ -251,26 +258,16 @@
     
     NSArray *myops = [data objectForKey:@"myops"];
     
-    NSMutableArray *abc = [[NSMutableArray alloc] init];
-    
-    [abc addObjectsFromArray:myops];
-    if ([myops count] == 0)
-    {
-        [abc addObject:@"A"];
-        [abc addObject:@"4"];
-        [abc addObject:@"6"];
-//        return;
-    
-    }
-    
-    for (NSString *str_select in abc) {
+    for (NSString *str_select in myops) {
         
             NSUInteger _index = [array_str indexOfObject:str_select];
-        
         
         NSLog(@"------%ld",_index);
         
             [self updataBnt:_index];
+        
+        [self.array_myops addObject:[NSNumber numberWithInteger:_index]];
+        
         }
     
       
@@ -287,21 +284,56 @@
         NSLog(@"scorea:%@",self.data_obj_matchinfo.score);
         NSLog(@"scorea:%@",self.data_obj_matchinfo.goals);
         
-        str_result = (self.data_obj_matchinfo.scorea = self.data_obj_matchinfo.scoreb)?@"O":str_result;
-        str_result = (self.data_obj_matchinfo.scorea < self.data_obj_matchinfo.scoreb)?@"B":str_result;
+        str_result = ([self.data_obj_matchinfo.scorea intValue] == [self.data_obj_matchinfo.scoreb intValue])?@"O":str_result;
+        str_result = ([self.data_obj_matchinfo.scorea intValue] < [self.data_obj_matchinfo.scoreb intValue])?@"B":str_result;
         
+        
+        //胜负平按钮下标
         NSUInteger _index = [array_str indexOfObject:str_result];
-        UIButton * button = [self.array_bnts objectAtIndex:_index];
-        [button setBackgroundColor:[UIColor orangeColor]];
         
-        int int_result = [self.data_obj_matchinfo.goals intValue];
-        if (int_result != 0) {
-            
-            NSUInteger _index = [array_str indexOfObject:[NSString stringWithFormat:@"%d",int_result]];
-            UIButton * button = [self.array_bnts objectAtIndex:_index];
-            [button setBackgroundColor:[UIColor orangeColor]];
+        for (NSNumber *int_index in self.array_myops)
+        {
+        
+            UIColor *selectColor = [UIColor blackColor];
+            UIButton * button = [self.array_bnts objectAtIndex:[int_index intValue]];
 
+            if ([int_index intValue]<3)
+            {
+                
+                selectColor = ([int_index intValue] == _index)?[UIColor redColor]:selectColor;
+                
+                [button setBackgroundColor:selectColor];
+            }
+            else
+            {
+            
+                int int_result = [self.data_obj_matchinfo.goals intValue];
+                
+                if (int_result < 6) {
+                    
+                    selectColor = ([int_index intValue] == int_result)?[UIColor redColor]:selectColor;
+                    
+                    [button setBackgroundColor:selectColor];
+
+                    
+                }
+                if (int_result>6) {
+                    
+                    
+                    UIButton * button1 = [self.array_bnts lastObject];
+                    selectColor = ([int_index intValue] == int_result)?[UIColor redColor]:selectColor;
+                    [button1 setBackgroundColor:selectColor];
+
+                    
+                }
+                
+                
+            }
+            
+            
+            
         }
+        
         
     }
     
@@ -363,6 +395,48 @@
                 
                 NSLog(@"++++++++++++%d",i);
 
+            }
+        }
+    }
+    
+}
+-(void)updataBntFinish:(NSUInteger)index
+{
+    
+    if (index<3)
+    {
+        for (int i = 0; i<3; i++)
+        {
+            UIButton * button = [self.array_bnts objectAtIndex:i];
+            
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setBackgroundColor:[UIColor grayColor]];
+            [button setEnabled:NO];
+            if (index == i)
+            {
+                [button setBackgroundColor:[UIColor whiteColor]];
+                
+                NSLog(@"++++++++++%d",i);
+            }
+        }
+        
+        
+    }
+    if (index>=3 && index <9)
+    {
+        for (int i = 3; i<9; i++)
+        {
+            UIButton * button = [self.array_bnts objectAtIndex:i];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setBackgroundColor:[UIColor grayColor]];
+            [button setEnabled:NO];
+            
+            if (index == i)
+            {
+                [button setBackgroundColor:[UIColor whiteColor]];
+                
+                NSLog(@"++++++++++++%d",i);
+                
             }
         }
     }

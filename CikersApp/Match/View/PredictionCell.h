@@ -44,6 +44,7 @@ typedef enum : NSUInteger {
 
 @property(nonatomic,strong)NSMutableArray *array_bnts;
 @property(nonatomic,strong)NSMutableArray *array_lbs;
+@property(nonatomic,strong)NSMutableArray *array_myops;//我的投票数
 
 //---------methon-------------
 
@@ -57,5 +58,8 @@ typedef enum : NSUInteger {
 
 
 -(void)updateUIByUser:(NSString*)sender ;//点击竞彩后更新界面
+
+-(void)updataBntFinish:(NSUInteger)index;
+
 
 @end

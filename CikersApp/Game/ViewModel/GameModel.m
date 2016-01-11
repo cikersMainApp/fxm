@@ -27,7 +27,7 @@
 #pragma mark 
 
 
--(void)getListByGameId:(NSString *)gameid
+-(void)getListByGameId:(NSNumber *)gameid
 {
  
     

@@ -15,7 +15,7 @@
     HttpRequest *req = [[HttpRequest alloc] initWithUrl:apiUrl method:method params:paramsDict];
     req.identifier = req.url;
     req.apiName=self.http_tag;
-    [req setTimeoutInterval:100];
+    [req setTimeoutInterval:30];
     [req setCookieWithCookiesArray:[self getCookie:req]];
     [super sendRequest:req];
 }

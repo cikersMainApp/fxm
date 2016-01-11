@@ -26,9 +26,9 @@ typedef enum : NSUInteger {
 @property(nonatomic,strong)HLBaseViewController *curVC; // 当前的视图控制器
 
 
-@property(nonatomic,strong)NSString * id_search_game;//在搜索页面点击的赛事ID
-@property(nonatomic,strong)NSString * id_search_team;
-@property(nonatomic,strong)NSString * id_search_player;
+@property(nonatomic,strong)NSNumber * id_search_game;//在搜索页面点击的赛事ID
+@property(nonatomic,strong)NSNumber * id_search_team;
+@property(nonatomic,strong)NSNumber * id_search_player;
 
 
 @property(nonatomic,strong)NSString * id_cur_match; //当前所在的比赛

@@ -10,11 +10,32 @@
 #import "DicPlayerinfo.h"
 #import "UIView+SDAutoLayout.h"
 #import "Api.h"
+#import "MatchTagTableVC.h"
 @interface MatchTagInfoVC ()<BaseApiDelegate>
 
 @end
 
 @implementation MatchTagInfoVC
+
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+
+    if (![self.tf_tag isEqual:@""])
+    {
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+        [dic setValue:@"测试" forKey:@"name"];
+        [dic setValue:[NSNumber numberWithInt:1] forKey:@"count"];
+        
+//        [self.dic_player.hottags addObject:dic];
+        
+    }
+    
+    
+    [self.delegate_match.array_team replaceObjectAtIndex:self.num_index withObject:self.dic_player];
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,13 +54,13 @@
     
     
     _tf_tag = [[UITextField alloc] init];
-    [_tf_tag setBackgroundColor:[UIColor grayColor]];
+    [_tf_tag setBackgroundColor:[UIColor orangeColor]];
     [_tf_tag setPlaceholder:@"吐槽你眼中的他吧"];
     
     UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
     [bt addTarget:self action:@selector(bnt_action:) forControlEvents:UIControlEventTouchUpInside];
     [bt setTitle:@"发送" forState:UIControlStateNormal];
-    [bt setBackgroundColor:[UIColor grayColor]];
+    [bt setBackgroundColor:[UIColor orangeColor]];
     
     NSArray *views = @[view,view_table,_tf_tag,bt];
     
@@ -48,23 +69,25 @@
     }];
     
     
-    view_table.sd_layout
-    .topSpaceToView(self.view,64)
-    .leftSpaceToView(self.view,10)
-    .rightSpaceToView(self.view,10)
-    .heightIs(400);
-    
     _tf_tag.sd_layout
     .leftSpaceToView(self.view,10)
-    .topSpaceToView(view_table,50)
+    .topSpaceToView(self.view,74)
     .heightIs(30)
     .widthIs(0.7*self.view.frame.size.width);
     
+    
     bt.sd_layout
     .rightSpaceToView(self.view,10)
-    .topSpaceToView(view_table,50)
+    .topSpaceToView(self.view,74)
     .heightIs(30)
     .widthIs(0.2*self.view.frame.size.width);
+    
+
+    view_table.sd_layout
+    .topSpaceToView(_tf_tag,64)
+    .leftSpaceToView(self.view,10)
+    .rightSpaceToView(self.view,10)
+    .heightIs(400);
     
 
 
@@ -86,8 +109,18 @@
 
 -(void)finishedWithRequest:(HttpRequest *)request Response:(HttpResponse *)response AndError:(NSError *)error
 {
+    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:nil];
 
-    [APSProgress showToast:self.view withMessage:@"标记成功"];
+    NSNumber *json_e = [dic objectForKey:@"e"];
+    
+    if ([json_e intValue]  == 0) {
+        [APSProgress showToast:self.view withMessage:@"标记成功"];
+        
+    }
+    else
+    {
+        [APSProgress showToast:self.view withMessage:[dic objectForKey:@"msg"]];
+    }
     
 }
 

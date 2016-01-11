@@ -10,6 +10,7 @@
 #import "MatchOpration.h"
 #import "ARSegmentControllerDelegate.h"
 #import "MatchWikiCell.h"
+#import "DicMatchinfo.h"
 @interface MatchWikiVC : UITableViewController<MatchOprationDelegate,ARSegmentControllerDelegate,MatchWikiCellDelegate>
 
 @property(nonatomic,strong)MatchOpration *opration;
@@ -20,4 +21,7 @@
 @property(nonatomic,strong)NSMutableArray *array_wikidata;
 
 @property(nonatomic,assign)float _screenWidth;
+
+@property(nonatomic,strong)DicMatchinfo *data_obj_matchinfo;
+
 @end

@@ -234,7 +234,7 @@
     float vsPer = [self.data_dic.favorb floatValue]/([self.data_dic.favora floatValue]+[self.data_dic.favorb floatValue]);
     
     if (!isnan(vsPer)) {
-//        self.view_vs_red.frame =CGRectMake(vsWitch - vsWitch*vsPer, 0, vsWitch*vsPer, self.view_vs.frame.size.height);
+        self.view_vs_red.frame =CGRectMake(vsWitch - vsWitch*vsPer, 0, vsWitch*vsPer, self.view_vs.frame.size.height);
     }
     
     

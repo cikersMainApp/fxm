@@ -32,6 +32,8 @@
  
     NSDictionary *dic  = [self.dataSource objectAtIndex:indexPath.row];
     
+    cell.vc_search = self.vc_search;
+    
     [cell updataContent:dic type:0];
     
     
