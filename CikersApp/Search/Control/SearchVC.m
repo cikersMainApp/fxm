@@ -34,8 +34,8 @@
 }
 - (void) viewInit
 {
-    self.searchbarBGView.backgroundColor = [UIColor colorWithRed:249.f/255.f green:249.f/255.f blue:1.f/255.f alpha:1.f];
-    self.searchBar.backgroundImage = [self imageWithColor:[UIColor clearColor] size:self.searchBar.frame.size];
+//    self.searchbarBGView.backgroundColor = [UIColor colorWithRed:249.f/255.f green:249.f/255.f blue:1.f/255.f alpha:1.f];
+//    self.searchBar.backgroundImage = [self imageWithColor:[UIColor clearColor] size:self.searchBar.frame.size];
 }
 
 - (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size
@@ -55,7 +55,6 @@
 
 - (void) dataInit
 {
-//    self.operation = [[HLCommonlyUsedOperation alloc] init];
     self.viewModel = [[SearchViewModel alloc] init];
     self.viewModel.dataSource = [[NSMutableArray alloc] init];
     self.viewModel.delegate = self;
@@ -71,39 +70,14 @@
 {
 
 }
-//- (void) settoTop:(RecentUse *) recent
-//{
-//    __weak __typeof(self) weakSelf = self;
-//    
-//    //发送网络
-//   
-//    [self.operation searchbyType:@"game" keyword:self.searchBar.text completeBlock:^(id resule , NSError *error){
-//    
-//        [weakSelf showResultBy:resule];
-//        
-//    }];
-//    
-//    
-//}
-//
-//- (void) deleteRecent:(RecentUse *) recent
-//{
-//    __weak __typeof(self) weakSelf = self;
-//    //发送网络
-//    
-//    [self.operation searchbyType:@"game" keyword:self.searchBar.text completeBlock:^(id resule , NSError *error){
-//        
-//        [weakSelf showResultBy:resule];
-//        
-//    }];
-//}
 - (void) showResultBy:(id) result
 {
     AppDelegate * app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [[HLAlertManager shareInstance] showNoCancelAlertByTitle:@"提示" message:[result objectForKey:@"result"] delegate:nil presentBaseVC:app.window.rootViewController sureBlock:^(id sureResult) {
         
     }];
-    //[[HLAlertManager shareInstance] showNoCancelAlertByTitle:@"提示" message:[result objectForKey:@"result"] delegate:nil];
+
+    
     [self dataLoad];
 }
 
@@ -164,6 +138,7 @@
         
     
     [APSProgress showIndicatorView];
+    
     [self.api searchByType:self.str_type keyword:self.searchBar.text];
     
     
@@ -191,9 +166,7 @@
     [APSProgress hidenIndicatorView];
     
     NSDictionary * resultDic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:&error];
-    
-//    NSLog(@"%@",resultDic);
-    
+        
     NSObject *json_e = [resultDic objectForKey:JSON_KEY_E];
     
     NSObject *json_total = [resultDic objectForKey:JSON_KEY_TOTAL];
@@ -234,6 +207,9 @@
         case 0:
         {
         self.str_type=@"game";
+            
+            [DataSingleton Instance].viewType = VIEW_SEARCH_GAME;
+
         }
             break;
         case 1:

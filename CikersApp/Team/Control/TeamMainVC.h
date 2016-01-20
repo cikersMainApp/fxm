@@ -10,16 +10,20 @@
 #import "TeamManagerList.h"
 #import "TeamContentView.h"
 #import "ICSDrawerController.h"
+
+#import "TeamMainHeadView.h"
 @interface TeamMainVC : HLBaseViewController<UITableViewDelegate,UITableViewDataSource,ICSDrawerControllerChild, ICSDrawerControllerPresenting>
 
-//@property(nonatomic,weak)IBOutlet TeamManagerList *view_left;
-@property(nonatomic,weak)IBOutlet TeamContentView *view_scrollow;
+//@property(nonatomic,weak)IBOutlet TeamContentView *view_scrollow;
 @property (nonatomic,weak) ICSDrawerController *drawer;
 
--(IBAction)bnt_back;
--(IBAction)bnt_share;
--(IBAction)bnt_manager;
--(IBAction)bnt_publish;
+@property(nonatomic,strong)TeamMainHeadView *view_1;
+
+
+//-(IBAction)bnt_back;
+//-(IBAction)bnt_share;
+//-(IBAction)bnt_manager;
+//-(IBAction)bnt_publish;
 
 -(IBAction)bnt_join:(id)sender;
 -(IBAction)bnt_creat:(id)sender;

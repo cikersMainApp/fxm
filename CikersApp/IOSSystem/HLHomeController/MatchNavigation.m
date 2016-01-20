@@ -32,6 +32,7 @@
     [self.navigationBar setTranslucent:YES];
     
 
+    [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
 
 
 }

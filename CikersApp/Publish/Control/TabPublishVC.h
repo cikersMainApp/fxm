@@ -7,8 +7,9 @@
 //
 
 #import "HLBaseViewController.h"
+#import "CKRadialMenu.h"
 
-@interface TabPublishVC : HLBaseViewController
+@interface TabPublishVC : HLBaseViewController<CKRadialMenuDelegate>
 
 -(IBAction)bnt_creatTeam;
 

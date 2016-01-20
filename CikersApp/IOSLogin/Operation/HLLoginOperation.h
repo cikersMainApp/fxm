@@ -14,4 +14,7 @@
 
 -(void)userLoginByname:(NSString*)phone pwd:(NSString*)pwd completeBlock:(void(^)(id resule,NSError *error)) completeBlock;
 
+
+-(void)checkUsername:(NSString*)name completeBlock:(void(^)(id result,NSError *error)) completeBlock;
+
 @end

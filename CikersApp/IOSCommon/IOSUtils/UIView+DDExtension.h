@@ -24,18 +24,18 @@
 @interface UIView (DDExtension)
 
 
-@property (nonatomic, assign ,setter=dd_setX:)        CGFloat dd_x;
-@property (nonatomic, assign ,setter=dd_setY:)        CGFloat dd_y;
-@property (nonatomic, assign ,setter=dd_setWidth:)    CGFloat dd_width;
-@property (nonatomic, assign ,setter=dd_setHeight:)   CGFloat dd_height;
+@property (nonatomic, assign ,setter=coustom_setX:)        CGFloat coustom_x;
+@property (nonatomic, assign ,setter=coustom_setY:)        CGFloat coustom_y;
+@property (nonatomic, assign ,setter=coustom_setWidth:)    CGFloat coustom_width;
+@property (nonatomic, assign ,setter=coustom_setHeight:)   CGFloat coustom_height;
 
-@property (nonatomic, assign ,setter=dd_setOrigin:)   CGPoint dd_origin;
-@property (nonatomic, assign ,setter=dd_setSize:)     CGSize dd_size;
+@property (nonatomic, assign ,setter=coustom_setOrigin:)   CGPoint coustom_origin;
+@property (nonatomic, assign ,setter=coustom_setSize:)     CGSize coustom_size;
 
-@property (nonatomic, assign ,setter=dd_setCenterX:)  CGFloat  dd_centerX;
-@property (nonatomic, assign ,setter=dd_setCenterY:)  CGFloat  dd_centerY;
+@property (nonatomic, assign ,setter=coustom_setCenterX:)  CGFloat  coustom_centerX;
+@property (nonatomic, assign ,setter=coustom_setCenterY:)  CGFloat  coustom_centerY;
 
-@property (nonatomic, assign ,setter=dd_setCornerRadius:) CGFloat dd_cornerRadius;
+@property (nonatomic, assign ,setter=coustom_setCornerRadius:) CGFloat coustom_cornerRadius;
 
 
 @end

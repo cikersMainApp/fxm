@@ -16,7 +16,7 @@
 +(void) setLoginRoot;
 +(void) setTabRoot;
 +(void) setTeamRoot;
-+(void) setGameRoot;
++(UIViewController*) setGameRoot;
 +(void) setTeamCreat;
 +(void) setPlayerinfoRoot;
 @end

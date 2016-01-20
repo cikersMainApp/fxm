@@ -12,109 +12,109 @@
 @implementation UIView (DDExtension)
 
 
-- (CGFloat)dd_x
+- (CGFloat)coustom_x
 {
     return self.frame.origin.x;
 }
-- (void)dd_setX:(CGFloat)dd_x
+- (void)coustom_setX:(CGFloat)coustom_x
 {
     CGRect frame = self.frame;
-    frame.origin.x = dd_x;
+    frame.origin.x = coustom_x;
     self.frame = frame;
 }
 
-- (CGFloat)dd_y
+- (CGFloat)coustom_y
 {
     return self.frame.origin.y;
 }
-- (void)dd_setY:(CGFloat)dd_y
+- (void)coustom_setY:(CGFloat)coustom_y
 {
     CGRect frame = self.frame;
-    frame.origin.x = dd_y;
+    frame.origin.x = coustom_y;
     self.frame = frame;
 }
 
 
-- (CGFloat)dd_width
+- (CGFloat)coustom_width
 {
     return self.frame.size.width;
 }
-- (void)dd_setWidth:(CGFloat)dd_width
+- (void)coustom_setWidth:(CGFloat)coustom_width
 {
     CGRect frame = self.frame;
-    frame.size.width = dd_width;
+    frame.size.width = coustom_width;
     self.frame = frame;
 }
 
-- (CGFloat)dd_height
+- (CGFloat)coustom_height
 {
     return self.frame.size.height;
 }
-- (void)dd_setHeight:(CGFloat)dd_height
+- (void)coustom_setHeight:(CGFloat)coustom_height
 {
     CGRect frame = self.frame;
-    frame.size.height = dd_height;
+    frame.size.height = coustom_height;
     self.frame = frame;
 }
 
 
 
 
-- (CGPoint)dd_origin
+- (CGPoint)coustom_origin
 {
     return self.frame.origin;
 }
-- (void)dd_setOrigin:(CGPoint)dd_origin
+- (void)coustom_setOrigin:(CGPoint)coustom_origin
 {
     CGRect frame = self.frame;
-    frame.origin = dd_origin;
+    frame.origin = coustom_origin;
     self.frame = frame;
 }
 
-- (CGSize)dd_size
+- (CGSize)coustom_size
 {
     return self.frame.size;
 }
-- (void)dd_setSize:(CGSize)dd_size
+- (void)coustom_setSize:(CGSize)coustom_size
 {
     CGRect frame = self.frame;
-    frame.size = dd_size;
+    frame.size = coustom_size;
     self.frame = frame;
 }
 
 
 
 // 中点
-- (CGFloat)dd_centerX
+- (CGFloat)coustom_centerX
 {
     return self.center.x;
 }
-- (void)dd_setCenterX:(CGFloat)dd_centerX
+- (void)coustom_setCenterX:(CGFloat)coustom_centerX
 {
     CGPoint center = self.center;
-    center.x = dd_centerX;
+    center.x = coustom_centerX;
     self.center = center;
 }
-- (CGFloat)dd_centerY
+- (CGFloat)coustom_centerY
 {
     return self.center.y;
 }
-- (void)dd_setCenterY:(CGFloat)dd_centerY
+- (void)coustom_setCenterY:(CGFloat)coustom_centerY
 {
     CGPoint center = self.center;
-    center.y= dd_centerY;
+    center.y= coustom_centerY;
     self.center = center;
 }
 
 
 // 圆角
-- (CGFloat)dd_cornerRadius
+- (CGFloat)coustom_cornerRadius
 {
     return self.layer.cornerRadius;
 }
-- (void)dd_setCornerRadius:(CGFloat)dd_cornerRadius
+- (void)coustom_setCornerRadius:(CGFloat)coustom_cornerRadius
 {
-    self.layer.cornerRadius = dd_cornerRadius;
+    self.layer.cornerRadius = coustom_cornerRadius;
     self.clipsToBounds = YES;
 }
 

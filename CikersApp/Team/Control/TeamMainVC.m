@@ -8,6 +8,7 @@
 
 #import "TeamMainVC.h"
 #import "CreatTeam.h"
+#import "UIView+DDExtension.h"
 @interface TeamMainVC ()
 
 @end
@@ -18,12 +19,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.view_scrollow initUI];
+//    [self.view_scrollow initUI];
     
     
-//    self.view_left.hidden = YES;
+    _view_1 = [[NSBundle mainBundle] loadNibNamed:@"TeamMainHead" owner:nil options:nil][0];
+    
+    _view_1.coustom_x = 0;
+    _view_1.coustom_y = 64;
+    _view_1.coustom_width = ScreenWidth;
+    _view_1.coustom_height = 160;
     
     
+    [self.view addSubview:_view_1];
     
 }
 
@@ -56,9 +63,6 @@
 
     [self.drawer open];
 
-    
-//    [self.view_left setFrame:CGRectMake(0, 0, self.view_left.frame.size.width, self.view_left.frame.size.height)];
-    
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

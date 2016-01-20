@@ -22,7 +22,7 @@
 #import "BaoyuLeftViewController.h"
 #import "TeamMainVC.h"
 
-#import "GameVC.h"
+#import "TounamentVC.h"
 #import "GameLeftVC.h"
 
 //启动加载公告图片
@@ -95,6 +95,8 @@
 //        NSLog(@"clickedImageURLHandle");
 //    }];
 
+    NSLog(@"curtime :%@",[ToolUtil tool_returnCurTime]);
+    
     [AppDelegate setLoginRoot];
 
     return YES;
@@ -144,18 +146,16 @@
     appDele.window.rootViewController = loginNav;
 }
 
-+(void)setGameRoot
++(UIViewController*)setGameRoot
 {
-    GameVC *  loginNav =  [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"game"];
-    
-    AppDelegate * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    HLNavgationController *  loginNav =  [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"game"];
     
     GameLeftVC *leftVC = [[GameLeftVC alloc] init];
     
-    ICSDrawerController *drawer = [[ICSDrawerController alloc] initWithLeftViewController:leftVC centerViewController:loginNav];
+    ICSDrawerController *drawer = [[ICSDrawerController alloc] initWithLeftViewController:leftVC centerViewController:(TounamentVC*)loginNav.visibleViewController];
     
-    [appDele.window.rootViewController showViewController:drawer sender:nil];
 
+    return drawer;
 }
 
 +(void) setTeamRoot
@@ -199,7 +199,7 @@
     
     HLNavgationController * loanNav = [self createTabWithStoryboardName:@"WikiMain" identifier:@"wikimain" title:@"主页" image:@"tab_wiki"];
     HLNavgationController * loanNav1 = [self createTabWithStoryboardName:@"Search" identifier:@"search" title:@"搜索" image:@"tab_search"];
-    HLNavgationController * loanNav2 = [self createTabWithStoryboardName:@"Publish" identifier:@"publish" title:@"" image:@"tab_publish"];
+    HLNavgationController * loanNav2 = [self createTabWithStoryboardName:@"Publish" identifier:@"publish" title:@"" image:@"bt_plus_bottombar"];
     HLNavgationController * creditNav = [self createTabWithStoryboardName:@"Message" identifier:@"message" title:@"消息" image:@"tab_message"];
     HLNavgationController * personalNav = [self createTabWithStoryboardName:@"Myinfo" identifier:@"myinfo" title:@"我" image:@"tab_personal"];
     

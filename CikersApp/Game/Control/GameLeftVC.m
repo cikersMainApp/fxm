@@ -22,12 +22,12 @@ static NSString * const BaoyuCellReuseId = @"baoyucell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor redColor];
     
     self.tabelArr = @[@"1",@"2",@"3",@"4"];
     
     [self.view addSubview:self.tabelView];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +66,7 @@ static NSString * const BaoyuCellReuseId = @"baoyucell";
 #pragma mark ----------------懒加载--------------------
 - (UITableView *)tabelView{
     if (!_tabelView) {
-        _tabelView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tabelView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) style:UITableViewStylePlain];
         _tabelView.delegate = self;
         _tabelView.dataSource = self;
         [_tabelView registerClass:[UITableViewCell class] forCellReuseIdentifier:BaoyuCellReuseId];

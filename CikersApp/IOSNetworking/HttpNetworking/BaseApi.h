@@ -10,7 +10,8 @@
 #import "HttpRequest.h"
 #import "HttpResponse.h"
 #import "HttpDispatcher.h"
-#import "AFHTTPRequestOperation.h"
+
+//#import "AFHTTPRequestOperation.h"
 
 @protocol BaseApiDelegate <NSObject>
 

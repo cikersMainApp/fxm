@@ -12,6 +12,14 @@
 #import "SearchVC.h"
 #import "HLNavgationController.h"
 #import "GamelistTableVC.h"
+#import "TounamentVC.h"
+#import "GameLeftVC.h"
+#import "TounamentBaseVC.h"
+#import "TeamBaseVC.h"
+#import "TeamMainVC.h"
+#import "BaoyuLeftViewController.h"
+#import "PlayerBaseVC.h"
+#import "PlayerMainVC.h"
 @implementation SearchTableCell
 
 - (void)awakeFromNib {
@@ -129,20 +137,58 @@
         case VIEW_SEARCH_TEAM:
         {
             [DataSingleton Instance].id_search_team = self.eventId;
-            [AppDelegate setTeamRoot];
-          }
+
+            
+            HLNavgationController *  loginNav =  [[UIStoryboard storyboardWithName:@"Team" bundle:nil] instantiateViewControllerWithIdentifier:@"team"];
+            
+            
+            GameLeftVC *leftVC = [[GameLeftVC alloc] init];
+            
+            TeamMainVC *  nextvc =  [[UIStoryboard storyboardWithName:@"Team" bundle:nil] instantiateViewControllerWithIdentifier:@"teammainvc"];
+            
+            
+            TeamBaseVC * rootvc = (TeamBaseVC*)loginNav.visibleViewController;
+            
+            rootvc = [rootvc initWithLeftViewController:leftVC centerViewController:nextvc];
+
+            [self.vc_search.navigationController pushViewController:rootvc animated:YES];
+
+        }
             break;
         case VIEW_SEARCH_GAME:
         {
             [DataSingleton Instance].id_search_game = self.eventId;
 
             
-            GamelistTableVC *nextvc = [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"gamelisttablevc"];
+            HLNavgationController *  loginNav =  [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"game"];
+            
+            
+            GameLeftVC *leftVC = [[GameLeftVC alloc] init];
+            
+            TounamentVC *  nextvc =  [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"tounamentvc"];
+
+            
             nextvc.num_gameid = self.eventId;
             
-//            GameVC *nav = [[UIStoryboard storyboardWithName:@"Game" bundle:nil] instantiateViewControllerWithIdentifier:@"game"];            
-            [self.vc_search.navigationController pushViewController:nextvc animated:YES];
+            
+            TounamentBaseVC * rootvc = (TounamentBaseVC*)loginNav.visibleViewController;
+            
+            rootvc = [rootvc initWithLeftViewController:leftVC centerViewController:nextvc];
+            
+//            
+//            ICSDrawerController *drawer = [[ICSDrawerController alloc] initWithLeftViewController:leftVC centerViewController:nextvc];
+//            
+            
+//             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:drawer];
 
+            
+//            
+//            ((TounamentVC*)loginNav.visibleViewController).num_gameid = self.eventId;
+            
+            [self.vc_search.navigationController pushViewController:rootvc animated:YES];
+
+//            [self.vc_search presentViewController:drawer animated:YES completion:nil];
+            
             
         }
             break;
@@ -150,6 +196,20 @@
         {
             [DataSingleton Instance].id_search_player = self.eventId;
             
+            HLNavgationController *  loginNav =  [[UIStoryboard storyboardWithName:@"Playerinfo" bundle:nil] instantiateViewControllerWithIdentifier:@"playerinfo"];
+            
+            
+            GameLeftVC *leftVC = [[GameLeftVC alloc] init];
+            
+            TeamMainVC *  nextvc =  [[UIStoryboard storyboardWithName:@"Playerinfo" bundle:nil] instantiateViewControllerWithIdentifier:@"playermainvc"];
+            
+            
+            TeamBaseVC * rootvc = (TeamBaseVC*)loginNav.visibleViewController;
+            
+            rootvc = [rootvc initWithLeftViewController:leftVC centerViewController:nextvc];
+            
+            [self.vc_search.navigationController pushViewController:rootvc animated:YES];
+
         }
             break;
         default:

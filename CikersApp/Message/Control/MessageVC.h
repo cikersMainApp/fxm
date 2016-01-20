@@ -10,6 +10,8 @@
 @interface MessageVC :UITableViewController
 
 
+@property(nonatomic,strong)NSString *str_updateCount;  //更新数量
+@property(nonatomic,assign)NSInteger num_selectTag;
 
 -(UITableViewCell*)updateUI:(UITableViewCell*)cell index:(NSInteger)index;
 

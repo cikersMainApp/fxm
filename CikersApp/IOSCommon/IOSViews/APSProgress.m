@@ -21,18 +21,21 @@ static __weak UIView *currentView;
 }
 
 + (BOOL)hideHUDWithAnimated:(BOOL)animated {
-    
-    if(currentView) {
-        return [MBProgressHUD hideHUDForView:currentView animated:animated];
-        currentView = nil;
-    }
+    AppDelegate  * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    return [MBProgressHUD hideHUDForView:appDele.window animated:animated];
+
+//    if(currentView) {
+//        return [MBProgressHUD hideHUDForView:appDele.window animated:animated];
+//        currentView = nil;
+//    }
     return NO;
 }
 
 +(void)showNetworkErrorToast:(UIView *)view{
+    AppDelegate  * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:view];
-	[view addSubview:HUD];
+    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:appDele.window];
+	[appDele.window addSubview:HUD];
     //	// Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
 	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     HUD.mode = MBProgressHUDModeCustomView;
@@ -49,7 +52,7 @@ static __weak UIView *currentView;
 
     
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:appDele.window];
-	[view addSubview:HUD];
+	[appDele.window addSubview:HUD];
 //	HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     HUD.mode = MBProgressHUDModeText;
     HUD.labelText = message;
@@ -66,6 +69,8 @@ static __weak UIView *currentView;
     [appDele.window addSubview:HUD];
 	[HUD show:YES];
 
+    currentView = HUD;
+    
 }
 
 +(void) hidenIndicatorView {
@@ -77,7 +82,7 @@ static __weak UIView *currentView;
     AppDelegate  * appDele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:appDele.window];
-    [view addSubview:HUD];
+    [appDele.window addSubview:HUD];
     //	// Make the customViews 37 by 37 pixels for best results (those are the bounds of the build-in progress indicators)
     HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     HUD.mode = MBProgressHUDModeCustomView;

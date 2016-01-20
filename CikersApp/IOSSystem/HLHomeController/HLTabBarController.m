@@ -19,19 +19,26 @@
     // Do any additional setup after loading the view.
 
     
-     [[UITabBar appearance] setBackgroundImage:[[HLTabBarController imageWithColor:SUBJECT_COLOR] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch]];
+//     [[UITabBar appearance] setBackgroundImage:[[HLTabBarController imageWithColor:SUBJECT_COLOR] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeStretch]];
+
+    
+    UIImageView *img = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_bottombar"]];
+    img.frame = CGRectMake(0, 0, self.tabBar.frame.size.width, self.tabBar.frame.size.height);
+    img.contentMode = UIViewContentModeScaleToFill;
+    //img.frame = CGRectOffset(img.frame, 0, 1);
+    [[self tabBar] insertSubview:img atIndex:0];
     
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        
-                                                       [UIColor whiteColor], UITextAttributeTextColor,
+                                                       [UIColor whiteColor], NSForegroundColorAttributeName,
                                                        
                                                        nil] forState:UIControlStateNormal];
     
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        
-                                                       [UIColor orangeColor], UITextAttributeTextColor,
+                                                       [UIColor orangeColor], NSForegroundColorAttributeName,
                                                        
                                                        nil] forState:UIControlStateSelected];
     

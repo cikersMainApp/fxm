@@ -20,6 +20,13 @@
 #define PHONE_NUMBER @"PHONE_NUMBER"
 #define SUBJECT_COLOR [UIColor colorWithHexString:@"2e3959"]
 #define DEVICE_VERSION  ([[UIDevice currentDevice].systemVersion doubleValue])
+#define COLOR_GRAY     [UIColor colorWithRed:238.0f/256.0f green:238.0f/256.0f blue:238.0f/256.0f alpha:1]
+#define PLACEHOLDER_IMG [UIImage imageNamed:@"1"]
+
+#define PLACEHOLDER_NAME @"1"
+#define CELL_NORMAL_HEIGHT 88
+#define COLOR_BNT_Orange [UIColor orangeColor]
+
 
 
 #define COLOR_R 46

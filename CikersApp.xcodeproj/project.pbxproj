@@ -8,6 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3D1086ABB66BB0C9E9AA942E /* Pods_CikersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B71C5FE2154AE4F42402B53 /* Pods_CikersApp.framework */; };
+		D744BA311C4E257B0020268B /* BntLImageRTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA301C4E257B0020268B /* BntLImageRTitle.m */; };
+		D744BA341C4F59060020268B /* BaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA331C4F59060020268B /* BaseNavigationBar.m */; };
+		D744BA371C4F5EC90020268B /* TounamentBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA361C4F5EC90020268B /* TounamentBaseVC.m */; };
+		D744BA3E1C4FA6480020268B /* TeamMainHead.xib in Resources */ = {isa = PBXBuildFile; fileRef = D744BA3D1C4FA6480020268B /* TeamMainHead.xib */; };
+		D744BA411C4FA8300020268B /* TeamMainHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA401C4FA8300020268B /* TeamMainHeadView.m */; };
+		D744BA441C4FAC8A0020268B /* TeamBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA431C4FAC8A0020268B /* TeamBaseVC.m */; };
+		D744BA471C4FB09E0020268B /* PlayerBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA461C4FB09E0020268B /* PlayerBaseVC.m */; };
+		D744BA4B1C4FB0CF0020268B /* PlayerMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA4A1C4FB0CF0020268B /* PlayerMainVC.m */; };
+		D74D16EE1C4C77D30096FD5B /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D16ED1C4C77D30096FD5B /* MessageModel.m */; };
+		D74D16F11C4C7E150096FD5B /* DicMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D16F01C4C7E150096FD5B /* DicMessage.m */; };
+		D74D16F41C4C98BE0096FD5B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D16F31C4C98BE0096FD5B /* MessageCell.m */; };
+		D74D16F71C4CCD580096FD5B /* TounamentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D16F61C4CCD580096FD5B /* TounamentVC.m */; };
+		D74D16FA1C4CD2650096FD5B /* TounamentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D16F91C4CD2650096FD5B /* TounamentView.m */; };
+		D74D16FD1C4D0A780096FD5B /* DicTags.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D16FC1C4D0A780096FD5B /* DicTags.m */; };
+		D75904CA1C4899D70021DB70 /* TounamentWebInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D75904C91C4899D70021DB70 /* TounamentWebInfo.m */; };
+		D75904CD1C48B6EE0021DB70 /* GameTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D75904CC1C48B6EE0021DB70 /* GameTeamCell.m */; };
+		D75904D01C48B9EB0021DB70 /* TounamentInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D75904CF1C48B9EB0021DB70 /* TounamentInfoCell.m */; };
+		D75904D31C48BA930021DB70 /* TounamentPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D75904D21C48BA930021DB70 /* TounamentPlayerCell.m */; };
+		D75904D61C48D9830021DB70 /* GameSingUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D75904D51C48D9830021DB70 /* GameSingUpVC.m */; };
 		D779DB9B1C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DB921C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.m */; };
 		D779DB9C1C3B5DE900472FD9 /* UIButton+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DB941C3B5DE900472FD9 /* UIButton+BMExtension.m */; };
 		D779DB9D1C3B5DE900472FD9 /* UIImageView+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DB961C3B5DE900472FD9 /* UIImageView+BMExtension.m */; };
@@ -38,6 +57,7 @@
 		D779DC0B1C3FA81D00472FD9 /* GamelistTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC0A1C3FA81D00472FD9 /* GamelistTableVC.m */; };
 		D779DC0E1C3FADAB00472FD9 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC0D1C3FADAB00472FD9 /* GameModel.m */; };
 		D779DC111C3FB72F00472FD9 /* GameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC101C3FB72F00472FD9 /* GameListCell.m */; };
+		D7A1F99B1C477FD50028411D /* View+Bt+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A1F99A1C477FD50028411D /* View+Bt+Image.m */; };
 		D7B0DCCF1C3520EE00A3997A /* GameTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DCCE1C3520EE00A3997A /* GameTableView.m */; };
 		D7B0DCD11C35258F00A3997A /* GameSection1.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B0DCD01C35258F00A3997A /* GameSection1.xib */; };
 		D7B0DCD41C36583F00A3997A /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DCD31C36583F00A3997A /* CALayer+Addition.m */; };
@@ -142,12 +162,30 @@
 		D7B5F8D81C33DF3400AE7341 /* DicPrediction.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5F8D71C33DF3400AE7341 /* DicPrediction.m */; };
 		D7B5F8E31C34CECD00AE7341 /* BaoyuLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5F8E21C34CECD00AE7341 /* BaoyuLeftViewController.m */; };
 		D7B5FB991C34E13000AE7341 /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7B5FB981C34E13000AE7341 /* Game.storyboard */; };
-		D7B5FB9C1C34E17D00AE7341 /* GameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FB9B1C34E17D00AE7341 /* GameVC.m */; };
 		D7B5FB9F1C34ED3100AE7341 /* MatchToolButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FB9E1C34ED3100AE7341 /* MatchToolButton.m */; };
 		D7B5FBA21C350A3500AE7341 /* GameLeftVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FBA11C350A3500AE7341 /* GameLeftVC.m */; };
 		D7B5FBA61C350AC200AE7341 /* GameMainContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FBA51C350AC200AE7341 /* GameMainContent.m */; };
 		D7B5FBAA1C350DD200AE7341 /* GameSection1.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B5FBA81C350DD200AE7341 /* GameSection1.m */; };
 		D7CC759A1C421E690081BFE3 /* MatchMVPResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75991C421E690081BFE3 /* MatchMVPResultCell.m */; };
+		D7CC759D1C434B900081BFE3 /* PublishPersonalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC759C1C434B900081BFE3 /* PublishPersonalVC.m */; };
+		D7CC75A01C434BB20081BFE3 /* PublishActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC759F1C434BB20081BFE3 /* PublishActivityVC.m */; };
+		D7CC75A31C435C170081BFE3 /* PublishListTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75A21C435C170081BFE3 /* PublishListTableVC.m */; };
+		D7CC75A61C435EB20081BFE3 /* PublishTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75A51C435EB20081BFE3 /* PublishTimeVC.m */; };
+		D7CC75AC1C437F860081BFE3 /* KTSelectDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75A81C437F860081BFE3 /* KTSelectDatePicker.m */; };
+		D7CC75AD1C437F860081BFE3 /* KTSelectPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75AA1C437F860081BFE3 /* KTSelectPickerView.m */; };
+		D7CC75AE1C437F860081BFE3 /* KTSelectPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CC75AB1C437F860081BFE3 /* KTSelectPickerView.xib */; };
+		D7CC75B11C4392420081BFE3 /* CKRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75B01C4392420081BFE3 /* CKRadialMenu.m */; };
+		D7CC75B31C4398E80081BFE3 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7CC75B21C4398E80081BFE3 /* AssetsLibrary.framework */; };
+		D7CC75B61C43B6C50081BFE3 /* PublishImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75B51C43B6C50081BFE3 /* PublishImageView.m */; };
+		D7CC75B91C449D8D0081BFE3 /* PublishPersonalList.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75B81C449D8D0081BFE3 /* PublishPersonalList.m */; };
+		D7CC75BC1C44A29A0081BFE3 /* PublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75BB1C44A29A0081BFE3 /* PublishModel.m */; };
+		D7CC75BF1C44A8140081BFE3 /* DicSearchinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75BE1C44A8140081BFE3 /* DicSearchinfo.m */; };
+		D7CC75C21C4545060081BFE3 /* GameHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75C11C4545060081BFE3 /* GameHeaderView.m */; };
+		D7CC75C51C45DD1F0081BFE3 /* GameItemBt.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75C41C45DD1F0081BFE3 /* GameItemBt.m */; };
+		D7CC75C91C4606860081BFE3 /* GameTeamVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75C81C4606860081BFE3 /* GameTeamVC.m */; };
+		D7CC75CF1C4606DE0081BFE3 /* GameRankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75CE1C4606DE0081BFE3 /* GameRankVC.m */; };
+		D7CC75D21C4606FC0081BFE3 /* GameInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75D11C4606FC0081BFE3 /* GameInfoVC.m */; };
+		D7CC75D61C4607270081BFE3 /* GamePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75D51C4607270081BFE3 /* GamePlayerVC.m */; };
 		D7D569011C2584EC009CBF2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D569001C2584EC009CBF2D /* main.m */; };
 		D7D5690A1C2584EC009CBF2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D569081C2584EC009CBF2D /* Main.storyboard */; };
 		D7D5690F1C2584EC009CBF2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D5690D1C2584EC009CBF2D /* LaunchScreen.storyboard */; };
@@ -243,6 +281,43 @@
 /* Begin PBXFileReference section */
 		1DF5E9F0E8C7D787D4796FAB /* Pods-CikersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CikersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CikersApp/Pods-CikersApp.release.xcconfig"; sourceTree = "<group>"; };
 		9B71C5FE2154AE4F42402B53 /* Pods_CikersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CikersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D744BA2F1C4E257B0020268B /* BntLImageRTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BntLImageRTitle.h; sourceTree = "<group>"; };
+		D744BA301C4E257B0020268B /* BntLImageRTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BntLImageRTitle.m; sourceTree = "<group>"; };
+		D744BA321C4F59060020268B /* BaseNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationBar.h; sourceTree = "<group>"; };
+		D744BA331C4F59060020268B /* BaseNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationBar.m; sourceTree = "<group>"; };
+		D744BA351C4F5EC90020268B /* TounamentBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TounamentBaseVC.h; sourceTree = "<group>"; };
+		D744BA361C4F5EC90020268B /* TounamentBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TounamentBaseVC.m; sourceTree = "<group>"; };
+		D744BA3D1C4FA6480020268B /* TeamMainHead.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamMainHead.xib; sourceTree = "<group>"; };
+		D744BA3F1C4FA8300020268B /* TeamMainHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMainHeadView.h; sourceTree = "<group>"; };
+		D744BA401C4FA8300020268B /* TeamMainHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMainHeadView.m; sourceTree = "<group>"; };
+		D744BA421C4FAC8A0020268B /* TeamBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamBaseVC.h; sourceTree = "<group>"; };
+		D744BA431C4FAC8A0020268B /* TeamBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamBaseVC.m; sourceTree = "<group>"; };
+		D744BA451C4FB09E0020268B /* PlayerBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBaseVC.h; sourceTree = "<group>"; };
+		D744BA461C4FB09E0020268B /* PlayerBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerBaseVC.m; sourceTree = "<group>"; };
+		D744BA491C4FB0CF0020268B /* PlayerMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerMainVC.h; sourceTree = "<group>"; };
+		D744BA4A1C4FB0CF0020268B /* PlayerMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerMainVC.m; sourceTree = "<group>"; };
+		D74D16EC1C4C77D30096FD5B /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		D74D16ED1C4C77D30096FD5B /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		D74D16EF1C4C7E150096FD5B /* DicMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicMessage.h; sourceTree = "<group>"; };
+		D74D16F01C4C7E150096FD5B /* DicMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicMessage.m; sourceTree = "<group>"; };
+		D74D16F21C4C98BE0096FD5B /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		D74D16F31C4C98BE0096FD5B /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		D74D16F51C4CCD580096FD5B /* TounamentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TounamentVC.h; sourceTree = "<group>"; };
+		D74D16F61C4CCD580096FD5B /* TounamentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TounamentVC.m; sourceTree = "<group>"; };
+		D74D16F81C4CD2650096FD5B /* TounamentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TounamentView.h; sourceTree = "<group>"; };
+		D74D16F91C4CD2650096FD5B /* TounamentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TounamentView.m; sourceTree = "<group>"; };
+		D74D16FB1C4D0A780096FD5B /* DicTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicTags.h; sourceTree = "<group>"; };
+		D74D16FC1C4D0A780096FD5B /* DicTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicTags.m; sourceTree = "<group>"; };
+		D75904C81C4899D70021DB70 /* TounamentWebInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TounamentWebInfo.h; sourceTree = "<group>"; };
+		D75904C91C4899D70021DB70 /* TounamentWebInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TounamentWebInfo.m; sourceTree = "<group>"; };
+		D75904CB1C48B6EE0021DB70 /* GameTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTeamCell.h; sourceTree = "<group>"; };
+		D75904CC1C48B6EE0021DB70 /* GameTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTeamCell.m; sourceTree = "<group>"; };
+		D75904CE1C48B9EB0021DB70 /* TounamentInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TounamentInfoCell.h; sourceTree = "<group>"; };
+		D75904CF1C48B9EB0021DB70 /* TounamentInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TounamentInfoCell.m; sourceTree = "<group>"; };
+		D75904D11C48BA930021DB70 /* TounamentPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TounamentPlayerCell.h; sourceTree = "<group>"; };
+		D75904D21C48BA930021DB70 /* TounamentPlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TounamentPlayerCell.m; sourceTree = "<group>"; };
+		D75904D41C48D9830021DB70 /* GameSingUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSingUpVC.h; sourceTree = "<group>"; };
+		D75904D51C48D9830021DB70 /* GameSingUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSingUpVC.m; sourceTree = "<group>"; };
 		D779DB901C3B5DE900472FD9 /* DDKitCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDKitCategory.h; sourceTree = "<group>"; };
 		D779DB911C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BMExtension.h"; sourceTree = "<group>"; };
 		D779DB921C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BMExtension.m"; sourceTree = "<group>"; };
@@ -306,6 +381,8 @@
 		D779DC0D1C3FADAB00472FD9 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 		D779DC0F1C3FB72F00472FD9 /* GameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListCell.h; sourceTree = "<group>"; };
 		D779DC101C3FB72F00472FD9 /* GameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListCell.m; sourceTree = "<group>"; };
+		D7A1F9991C477FD50028411D /* View+Bt+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+Bt+Image.h"; sourceTree = "<group>"; };
+		D7A1F99A1C477FD50028411D /* View+Bt+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+Bt+Image.m"; sourceTree = "<group>"; };
 		D7B0DCCD1C3520EE00A3997A /* GameTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableView.h; sourceTree = "<group>"; };
 		D7B0DCCE1C3520EE00A3997A /* GameTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableView.m; sourceTree = "<group>"; };
 		D7B0DCD01C35258F00A3997A /* GameSection1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameSection1.xib; sourceTree = "<group>"; };
@@ -492,8 +569,6 @@
 		D7B5F8E11C34CECD00AE7341 /* BaoyuLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoyuLeftViewController.h; sourceTree = "<group>"; };
 		D7B5F8E21C34CECD00AE7341 /* BaoyuLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoyuLeftViewController.m; sourceTree = "<group>"; };
 		D7B5FB981C34E13000AE7341 /* Game.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
-		D7B5FB9A1C34E17D00AE7341 /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameVC.h; sourceTree = "<group>"; };
-		D7B5FB9B1C34E17D00AE7341 /* GameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameVC.m; sourceTree = "<group>"; };
 		D7B5FB9D1C34ED3100AE7341 /* MatchToolButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchToolButton.h; sourceTree = "<group>"; };
 		D7B5FB9E1C34ED3100AE7341 /* MatchToolButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchToolButton.m; sourceTree = "<group>"; };
 		D7B5FBA01C350A3500AE7341 /* GameLeftVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLeftVC.h; sourceTree = "<group>"; };
@@ -504,6 +579,42 @@
 		D7B5FBA81C350DD200AE7341 /* GameSection1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSection1.m; sourceTree = "<group>"; };
 		D7CC75981C421E690081BFE3 /* MatchMVPResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchMVPResultCell.h; sourceTree = "<group>"; };
 		D7CC75991C421E690081BFE3 /* MatchMVPResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchMVPResultCell.m; sourceTree = "<group>"; };
+		D7CC759B1C434B900081BFE3 /* PublishPersonalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishPersonalVC.h; sourceTree = "<group>"; };
+		D7CC759C1C434B900081BFE3 /* PublishPersonalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishPersonalVC.m; sourceTree = "<group>"; };
+		D7CC759E1C434BB20081BFE3 /* PublishActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishActivityVC.h; sourceTree = "<group>"; };
+		D7CC759F1C434BB20081BFE3 /* PublishActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishActivityVC.m; sourceTree = "<group>"; };
+		D7CC75A11C435C170081BFE3 /* PublishListTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishListTableVC.h; sourceTree = "<group>"; };
+		D7CC75A21C435C170081BFE3 /* PublishListTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishListTableVC.m; sourceTree = "<group>"; };
+		D7CC75A41C435EB20081BFE3 /* PublishTimeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishTimeVC.h; sourceTree = "<group>"; };
+		D7CC75A51C435EB20081BFE3 /* PublishTimeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishTimeVC.m; sourceTree = "<group>"; };
+		D7CC75A71C437F860081BFE3 /* KTSelectDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSelectDatePicker.h; sourceTree = "<group>"; };
+		D7CC75A81C437F860081BFE3 /* KTSelectDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSelectDatePicker.m; sourceTree = "<group>"; };
+		D7CC75A91C437F860081BFE3 /* KTSelectPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSelectPickerView.h; sourceTree = "<group>"; };
+		D7CC75AA1C437F860081BFE3 /* KTSelectPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSelectPickerView.m; sourceTree = "<group>"; };
+		D7CC75AB1C437F860081BFE3 /* KTSelectPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTSelectPickerView.xib; sourceTree = "<group>"; };
+		D7CC75AF1C4392420081BFE3 /* CKRadialMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRadialMenu.h; sourceTree = "<group>"; };
+		D7CC75B01C4392420081BFE3 /* CKRadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRadialMenu.m; sourceTree = "<group>"; };
+		D7CC75B21C4398E80081BFE3 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D7CC75B41C43B6C50081BFE3 /* PublishImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishImageView.h; sourceTree = "<group>"; };
+		D7CC75B51C43B6C50081BFE3 /* PublishImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishImageView.m; sourceTree = "<group>"; };
+		D7CC75B71C449D8D0081BFE3 /* PublishPersonalList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishPersonalList.h; sourceTree = "<group>"; };
+		D7CC75B81C449D8D0081BFE3 /* PublishPersonalList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishPersonalList.m; sourceTree = "<group>"; };
+		D7CC75BA1C44A29A0081BFE3 /* PublishModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublishModel.h; sourceTree = "<group>"; };
+		D7CC75BB1C44A29A0081BFE3 /* PublishModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublishModel.m; sourceTree = "<group>"; };
+		D7CC75BD1C44A8140081BFE3 /* DicSearchinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicSearchinfo.h; sourceTree = "<group>"; };
+		D7CC75BE1C44A8140081BFE3 /* DicSearchinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicSearchinfo.m; sourceTree = "<group>"; };
+		D7CC75C01C4545060081BFE3 /* GameHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameHeaderView.h; sourceTree = "<group>"; };
+		D7CC75C11C4545060081BFE3 /* GameHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameHeaderView.m; sourceTree = "<group>"; };
+		D7CC75C31C45DD1F0081BFE3 /* GameItemBt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameItemBt.h; sourceTree = "<group>"; };
+		D7CC75C41C45DD1F0081BFE3 /* GameItemBt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameItemBt.m; sourceTree = "<group>"; };
+		D7CC75C71C4606860081BFE3 /* GameTeamVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTeamVC.h; sourceTree = "<group>"; };
+		D7CC75C81C4606860081BFE3 /* GameTeamVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTeamVC.m; sourceTree = "<group>"; };
+		D7CC75CD1C4606DE0081BFE3 /* GameRankVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameRankVC.h; sourceTree = "<group>"; };
+		D7CC75CE1C4606DE0081BFE3 /* GameRankVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameRankVC.m; sourceTree = "<group>"; };
+		D7CC75D01C4606FC0081BFE3 /* GameInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfoVC.h; sourceTree = "<group>"; };
+		D7CC75D11C4606FC0081BFE3 /* GameInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoVC.m; sourceTree = "<group>"; };
+		D7CC75D41C4607270081BFE3 /* GamePlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayerVC.h; sourceTree = "<group>"; };
+		D7CC75D51C4607270081BFE3 /* GamePlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayerVC.m; sourceTree = "<group>"; };
 		D7D568FC1C2584EC009CBF2D /* CikersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CikersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D569001C2584EC009CBF2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D569091C2584EC009CBF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -654,6 +765,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7CC75B31C4398E80081BFE3 /* AssetsLibrary.framework in Frameworks */,
 				D7B5F83B1C2B93FF00AE7341 /* libz.tbd in Frameworks */,
 				D7B5F8561C2B99EA00AE7341 /* CoreGraphics.framework in Frameworks */,
 				D7B5F8541C2B99D500AE7341 /* libiconv.tbd in Frameworks */,
@@ -697,6 +809,7 @@
 		9EF27BF5C2E23091FEEF680F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7CC75B21C4398E80081BFE3 /* AssetsLibrary.framework */,
 				D7B5F8551C2B99EA00AE7341 /* CoreGraphics.framework */,
 				D7B5F8531C2B99D500AE7341 /* libiconv.tbd */,
 				D7B5F8511C2B99C600AE7341 /* libc++.tbd */,
@@ -723,6 +836,27 @@
 				1DF5E9F0E8C7D787D4796FAB /* Pods-CikersApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D744BA3C1C4FA62A0020268B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D744BA3D1C4FA6480020268B /* TeamMainHead.xib */,
+				D744BA3F1C4FA8300020268B /* TeamMainHeadView.h */,
+				D744BA401C4FA8300020268B /* TeamMainHeadView.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		D744BA481C4FB0B30020268B /* main */ = {
+			isa = PBXGroup;
+			children = (
+				D744BA451C4FB09E0020268B /* PlayerBaseVC.h */,
+				D744BA461C4FB09E0020268B /* PlayerBaseVC.m */,
+				D744BA491C4FB0CF0020268B /* PlayerMainVC.h */,
+				D744BA4A1C4FB0CF0020268B /* PlayerMainVC.m */,
+			);
+			name = main;
 			sourceTree = "<group>";
 		};
 		D779DBA01C3B697900472FD9 /* TYLaunchAnimation */ = {
@@ -814,6 +948,8 @@
 		D7B0DCE51C36758F00A3997A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D74D16F21C4C98BE0096FD5B /* MessageCell.h */,
+				D74D16F31C4C98BE0096FD5B /* MessageCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -821,6 +957,10 @@
 		D7B0DCE61C36758F00A3997A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D74D16EC1C4C77D30096FD5B /* MessageModel.h */,
+				D74D16ED1C4C77D30096FD5B /* MessageModel.m */,
+				D74D16EF1C4C7E150096FD5B /* DicMessage.h */,
+				D74D16F01C4C7E150096FD5B /* DicMessage.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -932,6 +1072,16 @@
 			children = (
 				D7B0DD071C36794300A3997A /* TabPublishVC.h */,
 				D7B0DD081C36794300A3997A /* TabPublishVC.m */,
+				D7CC759B1C434B900081BFE3 /* PublishPersonalVC.h */,
+				D7CC759C1C434B900081BFE3 /* PublishPersonalVC.m */,
+				D7CC75B71C449D8D0081BFE3 /* PublishPersonalList.h */,
+				D7CC75B81C449D8D0081BFE3 /* PublishPersonalList.m */,
+				D7CC759E1C434BB20081BFE3 /* PublishActivityVC.h */,
+				D7CC759F1C434BB20081BFE3 /* PublishActivityVC.m */,
+				D7CC75A11C435C170081BFE3 /* PublishListTableVC.h */,
+				D7CC75A21C435C170081BFE3 /* PublishListTableVC.m */,
+				D7CC75A41C435EB20081BFE3 /* PublishTimeVC.h */,
+				D7CC75A51C435EB20081BFE3 /* PublishTimeVC.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -939,6 +1089,8 @@
 		D7B0DD091C36794300A3997A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7CC75B41C43B6C50081BFE3 /* PublishImageView.h */,
+				D7CC75B51C43B6C50081BFE3 /* PublishImageView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -946,6 +1098,15 @@
 		D7B0DD0A1C36794300A3997A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D7CC75AF1C4392420081BFE3 /* CKRadialMenu.h */,
+				D7CC75B01C4392420081BFE3 /* CKRadialMenu.m */,
+				D7CC75A71C437F860081BFE3 /* KTSelectDatePicker.h */,
+				D7CC75A81C437F860081BFE3 /* KTSelectDatePicker.m */,
+				D7CC75A91C437F860081BFE3 /* KTSelectPickerView.h */,
+				D7CC75AA1C437F860081BFE3 /* KTSelectPickerView.m */,
+				D7CC75AB1C437F860081BFE3 /* KTSelectPickerView.xib */,
+				D7CC75BA1C44A29A0081BFE3 /* PublishModel.h */,
+				D7CC75BB1C44A29A0081BFE3 /* PublishModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1209,6 +1370,11 @@
 		D7B5FB941C34D78E00AE7341 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				D7CC75D31C4607190081BFE3 /* player */,
+				D7CC75CC1C4606C40081BFE3 /* rank */,
+				D7CC75CB1C4606B40081BFE3 /* list */,
+				D7CC75CA1C4606B10081BFE3 /* info */,
+				D7CC75C61C4606670081BFE3 /* team */,
 				D7B5FB971C34D91300AE7341 /* main */,
 			);
 			path = Control;
@@ -1220,6 +1386,20 @@
 				D7B5FBA31C350AA400AE7341 /* main */,
 				D779DC0F1C3FB72F00472FD9 /* GameListCell.h */,
 				D779DC101C3FB72F00472FD9 /* GameListCell.m */,
+				D7CC75C01C4545060081BFE3 /* GameHeaderView.h */,
+				D7CC75C11C4545060081BFE3 /* GameHeaderView.m */,
+				D7CC75C31C45DD1F0081BFE3 /* GameItemBt.h */,
+				D7CC75C41C45DD1F0081BFE3 /* GameItemBt.m */,
+				D7A1F9991C477FD50028411D /* View+Bt+Image.h */,
+				D7A1F99A1C477FD50028411D /* View+Bt+Image.m */,
+				D75904CB1C48B6EE0021DB70 /* GameTeamCell.h */,
+				D75904CC1C48B6EE0021DB70 /* GameTeamCell.m */,
+				D75904CE1C48B9EB0021DB70 /* TounamentInfoCell.h */,
+				D75904CF1C48B9EB0021DB70 /* TounamentInfoCell.m */,
+				D75904D11C48BA930021DB70 /* TounamentPlayerCell.h */,
+				D75904D21C48BA930021DB70 /* TounamentPlayerCell.m */,
+				D744BA2F1C4E257B0020268B /* BntLImageRTitle.h */,
+				D744BA301C4E257B0020268B /* BntLImageRTitle.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1236,12 +1416,14 @@
 		D7B5FB971C34D91300AE7341 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				D7B5FB9A1C34E17D00AE7341 /* GameVC.h */,
-				D7B5FB9B1C34E17D00AE7341 /* GameVC.m */,
+				D744BA351C4F5EC90020268B /* TounamentBaseVC.h */,
+				D744BA361C4F5EC90020268B /* TounamentBaseVC.m */,
 				D7B5FBA01C350A3500AE7341 /* GameLeftVC.h */,
 				D7B5FBA11C350A3500AE7341 /* GameLeftVC.m */,
-				D779DC091C3FA81D00472FD9 /* GamelistTableVC.h */,
-				D779DC0A1C3FA81D00472FD9 /* GamelistTableVC.m */,
+				D74D16F51C4CCD580096FD5B /* TounamentVC.h */,
+				D74D16F61C4CCD580096FD5B /* TounamentVC.m */,
+				D74D16F81C4CD2650096FD5B /* TounamentView.h */,
+				D74D16F91C4CD2650096FD5B /* TounamentView.m */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -1258,6 +1440,55 @@
 				D7B0DCCE1C3520EE00A3997A /* GameTableView.m */,
 			);
 			name = main;
+			sourceTree = "<group>";
+		};
+		D7CC75C61C4606670081BFE3 /* team */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC75C71C4606860081BFE3 /* GameTeamVC.h */,
+				D7CC75C81C4606860081BFE3 /* GameTeamVC.m */,
+				D75904D41C48D9830021DB70 /* GameSingUpVC.h */,
+				D75904D51C48D9830021DB70 /* GameSingUpVC.m */,
+			);
+			name = team;
+			sourceTree = "<group>";
+		};
+		D7CC75CA1C4606B10081BFE3 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC75D01C4606FC0081BFE3 /* GameInfoVC.h */,
+				D7CC75D11C4606FC0081BFE3 /* GameInfoVC.m */,
+				D75904C81C4899D70021DB70 /* TounamentWebInfo.h */,
+				D75904C91C4899D70021DB70 /* TounamentWebInfo.m */,
+			);
+			name = info;
+			sourceTree = "<group>";
+		};
+		D7CC75CB1C4606B40081BFE3 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				D779DC091C3FA81D00472FD9 /* GamelistTableVC.h */,
+				D779DC0A1C3FA81D00472FD9 /* GamelistTableVC.m */,
+			);
+			name = list;
+			sourceTree = "<group>";
+		};
+		D7CC75CC1C4606C40081BFE3 /* rank */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC75CD1C4606DE0081BFE3 /* GameRankVC.h */,
+				D7CC75CE1C4606DE0081BFE3 /* GameRankVC.m */,
+			);
+			name = rank;
+			sourceTree = "<group>";
+		};
+		D7CC75D31C4607190081BFE3 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				D7CC75D41C4607270081BFE3 /* GamePlayerVC.h */,
+				D7CC75D51C4607270081BFE3 /* GamePlayerVC.m */,
+			);
+			name = player;
 			sourceTree = "<group>";
 		};
 		D7D568F31C2584EC009CBF2D = {
@@ -1630,6 +1861,10 @@
 				D7B5F8B91C326B9B00AE7341 /* DicGameinfo.m */,
 				D7B5F8D21C33A77D00AE7341 /* DicUserinfo.h */,
 				D7B5F8D31C33A77D00AE7341 /* DicUserinfo.m */,
+				D7CC75BD1C44A8140081BFE3 /* DicSearchinfo.h */,
+				D7CC75BE1C44A8140081BFE3 /* DicSearchinfo.m */,
+				D74D16FB1C4D0A780096FD5B /* DicTags.h */,
+				D74D16FC1C4D0A780096FD5B /* DicTags.m */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1697,6 +1932,8 @@
 				D7D56A481C266872009CBF2D /* HLTabBarController.m */,
 				D7B5F88C1C30E96C00AE7341 /* MatchNavigation.h */,
 				D7B5F88D1C30E96C00AE7341 /* MatchNavigation.m */,
+				D744BA321C4F59060020268B /* BaseNavigationBar.h */,
+				D744BA331C4F59060020268B /* BaseNavigationBar.m */,
 			);
 			path = HLHomeController;
 			sourceTree = "<group>";
@@ -1780,7 +2017,6 @@
 			isa = PBXGroup;
 			children = (
 				D7D56AC11C26A87B009CBF2D /* Control */,
-				D7D56AC21C26A87B009CBF2D /* Operation */,
 				D7D56AC31C26A87B009CBF2D /* View */,
 				D7D56AC41C26A87B009CBF2D /* ViewModel */,
 			);
@@ -1790,15 +2026,9 @@
 		D7D56AC11C26A87B009CBF2D /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				D744BA481C4FB0B30020268B /* main */,
 			);
 			path = Control;
-			sourceTree = "<group>";
-		};
-		D7D56AC21C26A87B009CBF2D /* Operation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Operation;
 			sourceTree = "<group>";
 		};
 		D7D56AC31C26A87B009CBF2D /* View */ = {
@@ -1833,6 +2063,8 @@
 				D7D56AD81C27E8E2009CBF2D /* Creat */,
 				D7D56ACA1C26A892009CBF2D /* TeamMainVC.h */,
 				D7D56ACB1C26A892009CBF2D /* TeamMainVC.m */,
+				D744BA421C4FAC8A0020268B /* TeamBaseVC.h */,
+				D744BA431C4FAC8A0020268B /* TeamBaseVC.m */,
 				D7B5F8E11C34CECD00AE7341 /* BaoyuLeftViewController.h */,
 				D7B5F8E21C34CECD00AE7341 /* BaoyuLeftViewController.m */,
 				D7B5F7DE1C29301600AE7341 /* TeamJionVC.h */,
@@ -1851,6 +2083,7 @@
 		D7D56AC81C26A87B009CBF2D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D744BA3C1C4FA62A0020268B /* Main */,
 				D7B5F7D21C291DA900AE7341 /* TeamManagerList.h */,
 				D7B5F7D31C291DA900AE7341 /* TeamManagerList.m */,
 				D7B5F7DB1C292AED00AE7341 /* TeamContentView.h */,
@@ -2020,6 +2253,7 @@
 				D7D56AD71C27E8B5009CBF2D /* TeamCreat.storyboard in Resources */,
 				D7B5F7EC1C296F1000AE7341 /* zh_CN.json in Resources */,
 				D7B5F8261C2B871900AE7341 /* UMSnsAccountViewController.xib in Resources */,
+				D7CC75AE1C437F860081BFE3 /* KTSelectPickerView.xib in Resources */,
 				D7D56AB81C269BCF009CBF2D /* Team.storyboard in Resources */,
 				D7B5F8991C31030E00AE7341 /* CustomHeader.xib in Resources */,
 				D7D56AA41C267C48009CBF2D /* Login.storyboard in Resources */,
@@ -2040,6 +2274,7 @@
 				D7B0DD321C37FC5A00A3997A /* XBMeHeaderView.xib in Resources */,
 				D7B5F81F1C2B871900AE7341 /* UMSCommentDetailController.xib in Resources */,
 				D7D5690A1C2584EC009CBF2D /* Main.storyboard in Resources */,
+				D744BA3E1C4FA6480020268B /* TeamMainHead.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2115,14 +2350,17 @@
 				D7B5F8011C2ABEEF00AE7341 /* DataSingleton.m in Sources */,
 				D779DC0E1C3FADAB00472FD9 /* GameModel.m in Sources */,
 				D7B5F8E31C34CECD00AE7341 /* BaoyuLeftViewController.m in Sources */,
+				D7CC75A61C435EB20081BFE3 /* PublishTimeVC.m in Sources */,
 				D7D56A971C266872009CBF2D /* ViewController.m in Sources */,
 				D7B0DD421C3954D200A3997A /* MatchWikiCell.m in Sources */,
 				D779DBC11C3BB93B00472FD9 /* SDBrowserImageView.m in Sources */,
+				D7CC75AD1C437F860081BFE3 /* KTSelectPickerView.m in Sources */,
 				D7B5F87C1C30DE2F00AE7341 /* ARSegmentPageController.m in Sources */,
 				D7D56A7E1C266872009CBF2D /* HLLoginInfoView.m in Sources */,
 				D7D56A711C266872009CBF2D /* HLRoundButton.m in Sources */,
 				D779DBCF1C3BC72500472FD9 /* WikiPhotoView.m in Sources */,
 				D779DBC61C3BBB2700472FD9 /* WIkiModel.m in Sources */,
+				D7CC75A01C434BB20081BFE3 /* PublishActivityVC.m in Sources */,
 				D7D56ACF1C26D0A0009CBF2D /* LoginData.m in Sources */,
 				D7B5F8A51C32379A00AE7341 /* MatchTagCell.m in Sources */,
 				D7D56A701C266872009CBF2D /* HLLoadingView.m in Sources */,
@@ -2133,20 +2371,26 @@
 				D7D56A9B1C266872009CBF2D /* HLQRCodeViewController.m in Sources */,
 				D7B0DD2F1C37FC5A00A3997A /* XBSettingItemModel.m in Sources */,
 				D7D56A6A1C266872009CBF2D /* GTMBase64.m in Sources */,
+				D74D16F71C4CCD580096FD5B /* TounamentVC.m in Sources */,
 				D779DBC21C3BB93B00472FD9 /* SDPhotoBrowser.m in Sources */,
 				D7B5FBAA1C350DD200AE7341 /* GameSection1.m in Sources */,
 				D7D56A901C266872009CBF2D /* HttpResponse.m in Sources */,
 				D779DBFB1C3E0EE800472FD9 /* VOSegmentedControl.m in Sources */,
+				D7CC75B91C449D8D0081BFE3 /* PublishPersonalList.m in Sources */,
 				D779DB9D1C3B5DE900472FD9 /* UIImageView+BMExtension.m in Sources */,
 				D7D56A781C266872009CBF2D /* HLVericodeViewController.m in Sources */,
 				D7B0DD141C37F35200A3997A /* MessageInfoTBVC.m in Sources */,
 				D779DC111C3FB72F00472FD9 /* GameListCell.m in Sources */,
 				D7B5F85C1C2BB86C00AE7341 /* FollowTableCell.m in Sources */,
 				D7D56A611C266872009CBF2D /* UIColor+HSV.m in Sources */,
+				D744BA311C4E257B0020268B /* BntLImageRTitle.m in Sources */,
 				D7B0DD331C37FC5A00A3997A /* XBSettingCell.m in Sources */,
+				D75904D31C48BA930021DB70 /* TounamentPlayerCell.m in Sources */,
 				D7D56A631C266872009CBF2D /* UIImage+Custom.m in Sources */,
+				D7CC75C91C4606860081BFE3 /* GameTeamVC.m in Sources */,
 				D779DBFA1C3E0EE800472FD9 /* VOSegment.m in Sources */,
 				D779DBD21C3CF51000472FD9 /* UIView+FXM.m in Sources */,
+				D74D16FA1C4CD2650096FD5B /* TounamentView.m in Sources */,
 				D7D569011C2584EC009CBF2D /* main.m in Sources */,
 				D7D56A5D1C266872009CBF2D /* NSString+CMUtils.m in Sources */,
 				D7D56A721C266872009CBF2D /* HLTFContainerView.m in Sources */,
@@ -2157,6 +2401,8 @@
 				D7B0DD171C37F9B700A3997A /* ARLabel.m in Sources */,
 				D779DBAC1C3B697900472FD9 /* UIImage+TYLaunchImage.m in Sources */,
 				D7B5F8591C2BAAF000AE7341 /* MAThemeKit.m in Sources */,
+				D7CC75B11C4392420081BFE3 /* CKRadialMenu.m in Sources */,
+				D7CC75BF1C44A8140081BFE3 /* DicSearchinfo.m in Sources */,
 				D7D56A5A1C266872009CBF2D /* HLAlertManager.m in Sources */,
 				D7D56A5F1C266872009CBF2D /* TDUIDevice+Resolutions.m in Sources */,
 				D7B5F8BD1C326C7D00AE7341 /* DicPlayerinfo.m in Sources */,
@@ -2171,6 +2417,7 @@
 				D7D56A8F1C266872009CBF2D /* HttpRequest.m in Sources */,
 				D7D56A8D1C266872009CBF2D /* BaseApi.m in Sources */,
 				D7D56A751C266872009CBF2D /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
+				D7CC75C21C4545060081BFE3 /* GameHeaderView.m in Sources */,
 				D779DBC31C3BB93B00472FD9 /* SDWaitingView.m in Sources */,
 				D779DC071C3E58B300472FD9 /* DeformationButton.m in Sources */,
 				D7B5F8BA1C326B9B00AE7341 /* DicGameinfo.m in Sources */,
@@ -2185,7 +2432,9 @@
 				D7B0DCFF1C36758F00A3997A /* SearchTableCell.m in Sources */,
 				D7D56A5B1C266872009CBF2D /* NSDictionary+Utils.m in Sources */,
 				D7B0DD011C36758F00A3997A /* SearchOperation.m in Sources */,
+				D7CC75CF1C4606DE0081BFE3 /* GameRankVC.m in Sources */,
 				D7B0DD4B1C3A159100A3997A /* WikiLookVC.m in Sources */,
+				D7CC75B61C43B6C50081BFE3 /* PublishImageView.m in Sources */,
 				D7D56A6B1C266872009CBF2D /* NSString+ThreeDESUtil.m in Sources */,
 				D7D56A961C266872009CBF2D /* HLTabBarController.m in Sources */,
 				D7B5F8B01C3259EB00AE7341 /* MatchOpration.m in Sources */,
@@ -2199,12 +2448,17 @@
 				D7B5F8C01C32AA7900AE7341 /* ToolUtil.m in Sources */,
 				D7B5F88B1C30E04300AE7341 /* UIImage+ImageEffects.m in Sources */,
 				D7B5F88E1C30E96C00AE7341 /* MatchNavigation.m in Sources */,
+				D75904D01C48B9EB0021DB70 /* TounamentInfoCell.m in Sources */,
 				D7B5F7DA1C292AC900AE7341 /* DroppyScrollView.m in Sources */,
 				D7CC759A1C421E690081BFE3 /* MatchMVPResultCell.m in Sources */,
 				D779DBAA1C3B697900472FD9 /* TYLaunchBaseAnimation.m in Sources */,
+				D7CC75D61C4607270081BFE3 /* GamePlayerVC.m in Sources */,
 				D7B5F8B41C3267DA00AE7341 /* DicMatchinfo.m in Sources */,
+				D7CC75BC1C44A29A0081BFE3 /* PublishModel.m in Sources */,
 				D7D56A621C266872009CBF2D /* UIDevice+CMUtils.m in Sources */,
+				D744BA4B1C4FB0CF0020268B /* PlayerMainVC.m in Sources */,
 				D779DBF81C3E0EE800472FD9 /* VOContentLayer.m in Sources */,
+				D744BA341C4F59060020268B /* BaseNavigationBar.m in Sources */,
 				D7B0DD111C36896400A3997A /* WikiListTabview.m in Sources */,
 				D7D56A651C266872009CBF2D /* HLErrorUtil.m in Sources */,
 				D7D56A7F1C266872009CBF2D /* Api.m in Sources */,
@@ -2212,24 +2466,32 @@
 				D7D56A6C1C266872009CBF2D /* SFHFKeychainUtils.m in Sources */,
 				D7D56A741C266872009CBF2D /* NSObject+RMCopyable.m in Sources */,
 				D7B0DD2E1C37FC5A00A3997A /* UIView+XBExtension.m in Sources */,
+				D75904CD1C48B6EE0021DB70 /* GameTeamCell.m in Sources */,
 				D7B5F7EF1C297D1400AE7341 /* TeamManagerCell.m in Sources */,
 				D7D56A671C266872009CBF2D /* HLKeyboardUtil.m in Sources */,
+				D74D16FD1C4D0A780096FD5B /* DicTags.m in Sources */,
 				D7B0DD501C3A585100A3997A /* ClityListDatePick.m in Sources */,
 				D7D56A941C266872009CBF2D /* HLBaseViewController.m in Sources */,
+				D7A1F99B1C477FD50028411D /* View+Bt+Image.m in Sources */,
 				D7D56ADC1C27E983009CBF2D /* CreatTeam.m in Sources */,
 				D7B0DCFD1C36758F00A3997A /* MessageVC.m in Sources */,
+				D74D16F11C4C7E150096FD5B /* DicMessage.m in Sources */,
 				D7D56A9A1C266872009CBF2D /* HLPersonalViewController.m in Sources */,
 				D7B0DD021C36758F00A3997A /* WikiMainVC.m in Sources */,
+				D74D16F41C4C98BE0096FD5B /* MessageCell.m in Sources */,
 				D7D56A7D1C266872009CBF2D /* HLGetVericodeButton.m in Sources */,
+				D74D16EE1C4C77D30096FD5B /* MessageModel.m in Sources */,
 				D7B0DD3C1C39043500A3997A /* MatchTagInfoVC.m in Sources */,
 				D7B0DCD41C36583F00A3997A /* CALayer+Addition.m in Sources */,
 				D779DBCC1C3BBF2A00472FD9 /* WikiAllCell.m in Sources */,
 				D7D56A8E1C266872009CBF2D /* HttpDispatcher.m in Sources */,
+				D7CC75A31C435C170081BFE3 /* PublishListTableVC.m in Sources */,
 				D7B0DD3F1C3954BC00A3997A /* MatchWikiVC.m in Sources */,
 				D7D56A641C266872009CBF2D /* CrashUtil.m in Sources */,
 				D7B0DD471C3A044700A3997A /* ICSDrawerController.m in Sources */,
 				D7D56A951C266872009CBF2D /* HLNavgationController.m in Sources */,
 				D779DB9F1C3B5DE900472FD9 /* UIView+DDExtension.m in Sources */,
+				D75904CA1C4899D70021DB70 /* TounamentWebInfo.m in Sources */,
 				D7B0DD041C36758F00A3997A /* WikiViewModel.m in Sources */,
 				D7B5FB9F1C34ED3100AE7341 /* MatchToolButton.m in Sources */,
 				D7D56A681C266872009CBF2D /* UIResponder+FirstResponder.m in Sources */,
@@ -2239,27 +2501,33 @@
 				D779DC001C3E1B4100472FD9 /* DemoVC7Cell.m in Sources */,
 				D7D56AB31C269455009CBF2D /* RegOKVC.m in Sources */,
 				D7B5FBA61C350AC200AE7341 /* GameMainContent.m in Sources */,
+				D7CC75C51C45DD1F0081BFE3 /* GameItemBt.m in Sources */,
+				D7CC75D21C4606FC0081BFE3 /* GameInfoVC.m in Sources */,
 				D779DBF91C3E0EE800472FD9 /* VOIndicatorAnimation.m in Sources */,
 				D7D56A771C266872009CBF2D /* HLLoginViewController.m in Sources */,
 				D7B5F8A81C323EE900AE7341 /* MatchMVPCell.m in Sources */,
+				D7CC759D1C434B900081BFE3 /* PublishPersonalVC.m in Sources */,
 				D7D56A911C266872009CBF2D /* NetworkingUtils.m in Sources */,
 				D7B5FBA21C350A3500AE7341 /* GameLeftVC.m in Sources */,
-				D7B5FB9C1C34E17D00AE7341 /* GameVC.m in Sources */,
 				D7D56A7B1C266872009CBF2D /* RegVC.m in Sources */,
 				D7D56A6D1C266872009CBF2D /* APSProgress.m in Sources */,
 				D7B0DD391C37FD0500A3997A /* PersonalVC.m in Sources */,
 				D7B5F7D41C291DA900AE7341 /* TeamManagerList.m in Sources */,
 				D7B5F87E1C30DE2F00AE7341 /* ARSegmentView.m in Sources */,
+				D744BA411C4FA8300020268B /* TeamMainHeadView.m in Sources */,
 				D7D56A7C1C266872009CBF2D /* HLLoginOperation.m in Sources */,
 				D779DBAD1C3B697900472FD9 /* UIView+TYLaunchAnimation.m in Sources */,
 				D7D56A791C266872009CBF2D /* PasswordChangeVC.m in Sources */,
+				D744BA471C4FB09E0020268B /* PlayerBaseVC.m in Sources */,
 				D779DC011C3E1B4100472FD9 /* DemoVC7Cell2.m in Sources */,
 				D7B5F8631C2E7C2B00AE7341 /* TeamMainSection1.m in Sources */,
 				D7B5F87D1C30DE2F00AE7341 /* ARSegmentPageHeader.m in Sources */,
 				D7D56A931C266872009CBF2D /* AppDelegate.m in Sources */,
 				D7B0DD481C3A044700A3997A /* ICSDropShadowView.m in Sources */,
+				D75904D61C48D9830021DB70 /* GameSingUpVC.m in Sources */,
 				D779DB9E1C3B5DE900472FD9 /* UILabel+BMExtension.m in Sources */,
 				D7B5F7E71C2950B000AE7341 /* AddressPickerViewC.m in Sources */,
+				D744BA441C4FAC8A0020268B /* TeamBaseVC.m in Sources */,
 				D7D56ACC1C26A892009CBF2D /* TeamMainVC.m in Sources */,
 				D7B0DD0E1C36838F00A3997A /* WikiInfoVC.m in Sources */,
 				D7D56A981C266872009CBF2D /* HLTableView.m in Sources */,
@@ -2268,7 +2536,9 @@
 				D7B0DCFE1C36758F00A3997A /* SearchVC.m in Sources */,
 				D779DC081C3E58B300472FD9 /* MMMaterialDesignSpinner.m in Sources */,
 				D7B0DD001C36758F00A3997A /* SearchViewModel.m in Sources */,
+				D7CC75AC1C437F860081BFE3 /* KTSelectDatePicker.m in Sources */,
 				D7B5F89C1C312D0400AE7341 /* PredictionVC.m in Sources */,
+				D744BA371C4F5EC90020268B /* TounamentBaseVC.m in Sources */,
 				D7B0DD311C37FC5A00A3997A /* XBMeHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

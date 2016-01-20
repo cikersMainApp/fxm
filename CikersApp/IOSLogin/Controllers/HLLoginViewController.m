@@ -42,6 +42,8 @@
     self.tf_name.text = @"18610932023";
     self.tf_pwd.text = @"123";
     
+    self.tf_pwd.secureTextEntry = YES;
+    
     
 //    self.tf_name.layer.cornerRadius=8.0f;
 //    self.tf_name.layer.masksToBounds=NO;

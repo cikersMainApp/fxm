@@ -44,7 +44,7 @@
 /*
  检查用户名是否唯一
  */
-//-(void)checkUserName:(NSString *)userName;
+-(void)checkUserName:(NSString *)userName;
 
 
 /*

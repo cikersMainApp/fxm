@@ -130,10 +130,18 @@
 
             [APSProgress hideHUDWithAnimated:YES];
             
-            [APSProgress showToast:nil withMessage:@"测试打印：网络不畅"];
+            [APSProgress showToast:nil withMessage:@"网络不畅"];
 
             NSLog(@"++++++++++++++++++++++++++++++++++");
             NSLog(@"===================网络不畅");
+            NSLog(@"===================%@",error);
+            NSLog(@"++++++++++++++++++++++++++++++++++");
+            
+            if (error.code == -1001)
+            {
+                NSLog(@"+++++++++++++++++++++请求超时");
+            }
+            
             NSLog(@"++++++++++++++++++++++++++++++++++");
 
         }

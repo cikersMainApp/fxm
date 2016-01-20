@@ -96,15 +96,6 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-Io-Fma">
-                                                            <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="0.0" y="10" width="400" height="30"/>
-                                                            </variation>
-                                                            <connections>
-                                                                <action selector="bnt_click:" destination="tKo-2B-jrN" eventType="touchUpInside" id="7VB-6g-YQj"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -127,7 +118,6 @@
                                                             <exclude reference="GSM-fI-W30"/>
                                                             <exclude reference="1bK-AM-5kW"/>
                                                             <exclude reference="7n0-rN-TzV"/>
-                                                            <exclude reference="1mP-Io-Fma"/>
                                                         </mask>
                                                         <mask key="constraints">
                                                             <exclude reference="IFD-40-FR3"/>
@@ -150,7 +140,6 @@
                                                             <include reference="GSM-fI-W30"/>
                                                             <include reference="1bK-AM-5kW"/>
                                                             <include reference="7n0-rN-TzV"/>
-                                                            <include reference="1mP-Io-Fma"/>
                                                         </mask>
                                                         <mask key="constraints">
                                                             <include reference="IFD-40-FR3"/>
@@ -265,6 +254,15 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-Io-Fma">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="0.0" y="10" width="400" height="30"/>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="bnt_click:" destination="tKo-2B-jrN" eventType="touchUpInside" id="7VB-6g-YQj"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="L7c-6H-sx2" secondAttribute="bottom" id="52x-2h-cn9"/>
@@ -284,6 +282,7 @@
                                                 <mask key="subviews">
                                                     <exclude reference="L7c-6H-sx2"/>
                                                     <exclude reference="x5Z-2Q-BlQ"/>
+                                                    <exclude reference="1mP-Io-Fma"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="52x-2h-cn9"/>
@@ -304,6 +303,7 @@
                                                 <mask key="subviews">
                                                     <include reference="L7c-6H-sx2"/>
                                                     <include reference="x5Z-2Q-BlQ"/>
+                                                    <include reference="1mP-Io-Fma"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="52x-2h-cn9"/>
@@ -341,19 +341,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCU-uJ-3MS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cpO-MP-k2h">
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="cpO-MP-k2h">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="Uqx-dQ-1zB" id="K7a-NU-fUi"/>
                                         </connections>
                                     </searchBar>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="orC-8B-1Ip">
+                                        <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                                        <segments>
+                                            <segment title="赛事"/>
+                                            <segment title="球队"/>
+                                            <segment title="用户"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2z-KI-UG5" customClass="HLFullButton">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="AQH-2F-jcr"/>
                                         </constraints>
-                                        <state key="normal" title="确定"/>
+                                        <state key="normal" title="确定">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="AQH-2F-jcr"/>
@@ -368,19 +379,15 @@
                                             <action selector="searchMethod:" destination="Uqx-dQ-1zB" eventType="touchUpInside" id="Y7R-ce-wQa"/>
                                         </connections>
                                     </button>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="orC-8B-1Ip">
-                                        <rect key="frame" x="-60" y="-14" width="121" height="29"/>
-                                        <segments>
-                                            <segment title="赛事"/>
-                                            <segment title="球队"/>
-                                            <segment title="用户"/>
-                                        </segments>
-                                    </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.64313725490196083" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="cpO-MP-k2h" secondAttribute="trailing" id="8N8-Ve-U2b"/>
-                                    <constraint firstAttribute="trailing" secondItem="o2z-KI-UG5" secondAttribute="trailing" constant="37" id="8wJ-pr-4ay"/>
+                                    <constraint firstAttribute="trailing" secondItem="cpO-MP-k2h" secondAttribute="trailing" id="8N8-Ve-U2b">
+                                        <variation key="widthClass=compact" constant="43"/>
+                                    </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="o2z-KI-UG5" secondAttribute="trailing" constant="37" id="8wJ-pr-4ay">
+                                        <variation key="widthClass=compact" constant="8"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="orC-8B-1Ip" secondAttribute="trailing" id="Azu-Yo-Bl2"/>
                                     <constraint firstItem="orC-8B-1Ip" firstAttribute="top" secondItem="cpO-MP-k2h" secondAttribute="bottom" constant="10" id="T7p-Ay-4Ef"/>
                                     <constraint firstItem="orC-8B-1Ip" firstAttribute="leading" secondItem="wCU-uJ-3MS" secondAttribute="leading" id="Vbn-0t-dZK"/>
@@ -395,8 +402,8 @@
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="cpO-MP-k2h"/>
-                                        <exclude reference="o2z-KI-UG5"/>
                                         <exclude reference="orC-8B-1Ip"/>
+                                        <exclude reference="o2z-KI-UG5"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="b4t-gr-Yx4"/>
@@ -416,8 +423,8 @@
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="cpO-MP-k2h"/>
-                                        <include reference="o2z-KI-UG5"/>
                                         <include reference="orC-8B-1Ip"/>
+                                        <include reference="o2z-KI-UG5"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="b4t-gr-Yx4"/>

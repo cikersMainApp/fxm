@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-CikersApp/ABTableViewCellController.framework"
   install_framework "Pods-CikersApp/AFNetworking.framework"
+  install_framework "Pods-CikersApp/AGImagePickerController.framework"
   install_framework "Pods-CikersApp/IQKeyboardManager.framework"
   install_framework "Pods-CikersApp/JCAlertView.framework"
   install_framework "Pods-CikersApp/LLBootstrapButton.framework"
@@ -95,12 +96,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-CikersApp/ReactiveCocoa.framework"
   install_framework "Pods-CikersApp/ReactiveViewModel.framework"
   install_framework "Pods-CikersApp/SDWebImage.framework"
+  install_framework "Pods-CikersApp/TZImagePickerController.framework"
   install_framework "Pods-CikersApp/UIImage_ImageWithColor.framework"
   install_framework "Pods-CikersApp/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-CikersApp/ABTableViewCellController.framework"
   install_framework "Pods-CikersApp/AFNetworking.framework"
+  install_framework "Pods-CikersApp/AGImagePickerController.framework"
   install_framework "Pods-CikersApp/IQKeyboardManager.framework"
   install_framework "Pods-CikersApp/JCAlertView.framework"
   install_framework "Pods-CikersApp/LLBootstrapButton.framework"
@@ -110,6 +113,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-CikersApp/ReactiveCocoa.framework"
   install_framework "Pods-CikersApp/ReactiveViewModel.framework"
   install_framework "Pods-CikersApp/SDWebImage.framework"
+  install_framework "Pods-CikersApp/TZImagePickerController.framework"
   install_framework "Pods-CikersApp/UIImage_ImageWithColor.framework"
   install_framework "Pods-CikersApp/pop.framework"
 fi

@@ -107,8 +107,6 @@
     
     [APSProgress showIndicatorView];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [self.api verifyVericode:phoneNumber
-//                      verifyCode:vericode];
         dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
         HttpResponse * myResponse = self.response;
         if (myResponse) {
@@ -123,6 +121,37 @@
     });
     
 }
+
+-(void)checkUsername:(NSString *)name completeBlock:(void (^)(id, NSError *))completeBlock
+{
+    [HLKeyboardUtil hideCurrentKeyboard];
+    [APSProgress showIndicatorView];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        [self.api checkUserName:name];
+        
+        dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+        
+        HttpResponse * myResponse = self.response;
+        if (myResponse) {
+            NSError * error = nil;
+            NSDictionary * resultDic = [NSJSONSerialization JSONObjectWithData:myResponse.responseData options:NSJSONReadingAllowFragments error:&error];
+            self.response = nil;
+            
+            NSLog(@"%@",resultDic);
+            NSString *e  = [resultDic objectForKey:@"e"];
+            NSLog(@"%@",e);
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completeBlock(resultDic,nil);
+            });
+        }
+    });
+    
+}
+
 
 - (void)finishedWithRequest:(HttpRequest *)request
                    Response:(HttpResponse *)response

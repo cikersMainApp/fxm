@@ -20,22 +20,36 @@
     // Do any additional setup after loading the view.
     
 
-   // self.navigationBar.layer.contents = (id)[HLNavgationController imageWithColor:[UIColor redColor]];
-
     
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_img"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bg_nav"] forBarMetrics:UIBarMetricsDefault];
 
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
+    [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,nil]];
+    
+    
+    CGRect bounds = self.navigationBar.bounds;
+    bounds.size.height +=20;
+    
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:bounds
+                                                   byRoundingCorners:(UIRectCornerAllCorners)
+                                                         cornerRadii:CGSizeMake(10.0, 10.0)];
+    
+    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = bounds;
+    maskLayer.path = maskPath.CGPath;
+    
+//    [self.navigationBar.layer addSublayer:maskLayer];
+//    self.navigationBar.layer.mask = maskLayer;
+    self.navigationBar.layer.shadowOffset = CGSizeMake(3, 3);
+    self.navigationBar.layer.shadowOpacity = 0.7;
+    self.navigationBar.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.navigationBar.bounds].CGPath;
+
     
 }
 
 -(void)nav_addBntWhereTitle
 {
-
-    
-    
-    
     
     UIButton *bt = [UIButton buttonWithType:UIButtonTypeCustom];
     [bt setTitle:@"推荐" forState:UIControlStateNormal];

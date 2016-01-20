@@ -1019,10 +1019,10 @@
                                                 <mask key="constraints">
                                                     <exclude reference="QRh-CB-7lq"/>
                                                     <exclude reference="flF-vh-st1"/>
-                                                    <exclude reference="Xns-H1-P3d"/>
-                                                    <exclude reference="jCu-zU-HAg"/>
                                                     <exclude reference="1xX-4s-CaP"/>
                                                     <exclude reference="XGx-Jy-vOf"/>
+                                                    <exclude reference="Xns-H1-P3d"/>
+                                                    <exclude reference="jCu-zU-HAg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -1034,10 +1034,10 @@
                                                 <mask key="constraints">
                                                     <include reference="QRh-CB-7lq"/>
                                                     <include reference="flF-vh-st1"/>
-                                                    <include reference="Xns-H1-P3d"/>
-                                                    <include reference="jCu-zU-HAg"/>
                                                     <include reference="1xX-4s-CaP"/>
                                                     <include reference="XGx-Jy-vOf"/>
+                                                    <include reference="Xns-H1-P3d"/>
+                                                    <include reference="jCu-zU-HAg"/>
                                                 </mask>
                                             </variation>
                                         </view>
@@ -1065,15 +1065,15 @@
                                             <exclude reference="lFl-uG-smv"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <exclude reference="5Wf-rL-UjV"/>
-                                            <exclude reference="c4O-f0-sXZ"/>
-                                            <exclude reference="hre-6J-zMm"/>
-                                            <exclude reference="wI8-yb-hT8"/>
                                             <exclude reference="GO0-Vy-U8Y"/>
                                             <exclude reference="Q82-Uu-YrE"/>
                                             <exclude reference="Y7k-lj-Daf"/>
                                             <exclude reference="faa-xx-jKd"/>
                                             <exclude reference="hdf-Kt-3T6"/>
+                                            <exclude reference="5Wf-rL-UjV"/>
+                                            <exclude reference="c4O-f0-sXZ"/>
+                                            <exclude reference="hre-6J-zMm"/>
+                                            <exclude reference="wI8-yb-hT8"/>
                                             <exclude reference="45J-he-jdH"/>
                                             <exclude reference="9q7-4E-cAB"/>
                                             <exclude reference="C1I-gB-1Hi"/>
@@ -1088,15 +1088,15 @@
                                             <include reference="lFl-uG-smv"/>
                                         </mask>
                                         <mask key="constraints">
-                                            <include reference="5Wf-rL-UjV"/>
-                                            <include reference="c4O-f0-sXZ"/>
-                                            <include reference="hre-6J-zMm"/>
-                                            <include reference="wI8-yb-hT8"/>
                                             <include reference="GO0-Vy-U8Y"/>
                                             <exclude reference="Q82-Uu-YrE"/>
                                             <include reference="Y7k-lj-Daf"/>
                                             <include reference="faa-xx-jKd"/>
                                             <include reference="hdf-Kt-3T6"/>
+                                            <include reference="5Wf-rL-UjV"/>
+                                            <include reference="c4O-f0-sXZ"/>
+                                            <include reference="hre-6J-zMm"/>
+                                            <include reference="wI8-yb-hT8"/>
                                             <include reference="45J-he-jdH"/>
                                             <exclude reference="9q7-4E-cAB"/>
                                             <include reference="C1I-gB-1Hi"/>

@@ -55,6 +55,36 @@
     }
     
     
+    
+    [self.operation checkUsername:self.tf_phone.text completeBlock:^(id result, NSError *error) {
+      
+        NSString *e = [result objectForKey:@"e"];
+        int valeu = (int)[e intValue];
+        if (valeu == 0) {
+            __weak typeof(self) weakSelf = self;
+            dispatch_async(dispatch_get_main_queue(), ^{
+  
+                [weakSelf getVercode];
+                
+            });
+        }
+        else
+        {
+            [APSProgress showToast:nil withMessage:[result objectForKey:@"msg"]];
+        }
+        
+
+        
+    }];
+    
+    
+    
+    
+}
+
+
+-(void)getVercode
+{
     [self.operation vericodeGetByPhone:self.tf_phone.text completeBlock:^(id result, NSError *error) {
         
         NSString *e = [result objectForKey:@"e"];
@@ -68,10 +98,11 @@
                 [weakSelf countDown];
             });
         }
-
+        
     }];
-    
+
 }
+
 
 - (void) countDown
 {

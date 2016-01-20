@@ -7,7 +7,8 @@
 //
 
 #import "MessageInfoTBVC.h"
-
+#import "MessageVC.h"
+#import "MessageCell.h"
 @interface MessageInfoTBVC ()
 
 @end
@@ -17,11 +18,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    NSArray *views = self.navigationController.viewControllers;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    for (UIViewController *vc in views) {
+        
+        NSLog(@"%@",[vc restorationClass]);
+        
+    }
+    
+    CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
+    
+    CGRect bar = self.navigationController.navigationBar.frame;
+    
+    
+    NSLog(@"width :%f",rectStatus.size.width);
+    NSLog(@"height :%f",rectStatus.size.height);
+    NSLog(@"width :%f",bar.size.width);
+    NSLog(@"height :%f",bar.size.height);
+    
+    NSArray *array_temp =self.navigationController.viewControllers;
+    
+    for (UIViewController *vc in array_temp) {
+        if ([vc isKindOfClass:[MessageVC class]])
+        {
+            ((MessageVC*)vc).str_updateCount = @"";
+            ((MessageVC*)vc).num_selectTag = self.num_selectCellTag;
+        }
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +61,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return CELL_NORMAL_HEIGHT;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,11 +73,20 @@
 {
     static  NSString  *CellIdentiferId = @"cell";
     
-    UITableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentiferId];
+    MessageCell  *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentiferId];
     
     //添加向右箭头
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
+    cell.imageView.image = [UIImage imageNamed:@"bnt_rankbyplayer"];
+    cell.textLabel.text =@"我是标题";
+    cell.detailTextLabel.text = @"您有10个新消息我在测试这个文本的内容能有多长，到底有多长呢，我再试试";
+
+    UILabel *lb_time = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 105, 0, 100, 30)];
+    lb_time.textAlignment = NSTextAlignmentRight;
+    lb_time.textAlignment = NSTextAlignmentCenter;
+    lb_time.font = [UIFont systemFontOfSize:10];
+    lb_time.text = @"2015-01-12 13::00";
+    [cell addSubview:lb_time];
     return cell;
 }
 

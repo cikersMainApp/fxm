@@ -1,0 +1,6 @@
+framework module AGImagePickerController {
+  umbrella header "AGImagePickerController-umbrella.h"
+
+  export *
+  module * { export * }
+}

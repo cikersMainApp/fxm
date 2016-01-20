@@ -11,5 +11,9 @@
 @interface ToolUtil : NSObject
 
 +(NSString*)tool_utcToNsstring:(NSNumber*)time;
-+(NSNumber*)tool_curUnitTime;
++(BOOL)tool_checktimeIsTomorrow:(NSNumber *)checktime;
++(NSNumber*)tool_returnCurTime;
++(BOOL)isBetweenFromHour:(NSInteger)fromHour toHour:(NSInteger)toHour;
++ (NSDate *)getCustomDateWithHour:(NSInteger)hour;
+
 @end

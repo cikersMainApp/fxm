@@ -62,7 +62,17 @@
 
         if (self.params) {
             if (self.method && ([self.method isEqualToString:@"POST"] || [self.method isEqualToString:@"PUT"])) {
-                [self setBodyWithDictionary:self.params];
+               
+                if ([self.apiName isEqual:@"wikipublish"]) {
+                    
+                }
+                else
+                {
+                    [self setBodyWithDictionary:self.params];
+
+                }
+                
+                
             } else {
                 [self setQuerystringWithDictionary:self.params];
             }
@@ -111,7 +121,7 @@
         NSString *strLength = [NSString stringWithFormat:@"%ld", [body_ length]];
         [_request setValue:strLength forHTTPHeaderField:@"Content-Length"];
         [_request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-        [_request setValue:@"https://ipcrs.pbccrc.org.cn/" forHTTPHeaderField:@"Referer"];
+//        [_request setValue:@"https://ipcrs.pbccrc.org.cn/" forHTTPHeaderField:@"Referer"];
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"login"])
         {
@@ -181,6 +191,8 @@
     [bodyFromString appendData:[stringBody dataUsingEncoding:enc]];
 //    [bodyFromString appendData:[stringBody dataUsingEncoding:NSUTF8StringEncoding]];
     self.body = bodyFromString;
+    
+    NSLog(@"body::%@",self.body);
 }
 
 - (void)setBodyWithDictionary:(NSDictionary *)dictBody

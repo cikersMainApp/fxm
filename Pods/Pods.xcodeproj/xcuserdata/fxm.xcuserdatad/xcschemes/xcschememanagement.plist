@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AGImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -64,6 +69,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TZImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIImage+ImageWithColor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,22 +87,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05DB21ECF996E4E4FB0C5AED2FC1D16B</key>
+		<key>15D4CDB561311239082A5482F52684A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0E62E89B713113CE69F36F80277B2A15</key>
+		<key>17E10077CD87D56141457A218D716B9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>10692F04072DF963C2652B416ABE3359</key>
+		<key>19F0F0E5BBC45D2B7FF8EC47964CE627</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>407BB901AAF78D06C4763F6B600DC4CB</key>
+		<key>2F05E290E4A389F74BA3CA864D0EECFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>36D27CBEC71A12AC4F06226D42A48C46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +117,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4878C70B21CA37D7CB8A476BF986741B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5ACE1BEF74237689A7FEFB322B393EF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6251F0626A57FEC3D29F42BDABCDDBFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,17 +137,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D40D39612371E5AB6EAE3D38F58362F</key>
+		<key>A3C8EC5041DAEAFDAD41E97B79495DDA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>846E48B279C20B0FFB7D9E8CDABCD383</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D01A3F253213EFE9CE4DA6EAB07BFEDC</key>
+		<key>B70415ED1FD348F63CE1AC6C7609C6FA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,7 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBB70B39B24BFA8A41C2439A78FAC47B</key>
+		<key>E9B27454F61D343366082F232EB12DF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,34 +14,15 @@
 
 @property(nonatomic,strong)NSArray *array_data;
 
-- (IBAction)customHeader:(id)sender;
-
 @end
 
 
 @implementation MessageVC
 
 
-
-
-
-
-- (IBAction)customHeader:(id)sender
-{
-    
-    MatchVC *nextvc = [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"match"];
-    
-    [self presentViewController:nextvc animated:YES completion:nil];
-    
-//    MatchVC *customHeader = [[MatchVC alloc] init];
-    
-//    [self.navigationController pushViewController:customHeader animated:YES];
-
-
-}
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return CELL_NORMAL_HEIGHT;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -64,18 +45,11 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
-    if (indexPath.row == 3)
-    {
-        MatchVC *nextvc = [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"match"];
-        
-        [self presentViewController:nextvc animated:YES completion:nil];
-
-        
-        return;
-    }
-    
     MessageInfoTBVC *nextvc = [[UIStoryboard storyboardWithName:@"Message" bundle:nil] instantiateViewControllerWithIdentifier:@"messageinfotavc"];
+    
+    nextvc.navigationItem.title = [self.array_data objectAtIndex:indexPath.row];
+    
+    nextvc.num_selectCellTag = indexPath.row;
     
     [self.navigationController pushViewController:nextvc animated:YES];
     
@@ -83,12 +57,14 @@
 
 -(UITableViewCell*)updateUI:(UITableViewCell *)cell index:(NSInteger)index
 {
-
-    
     cell.imageView.image = [UIImage imageNamed:[self.array_data objectAtIndex:index+4]];
     cell.textLabel.text = [self.array_data objectAtIndex:index];
-    cell.detailTextLabel.text = @"您有10个新消息";
-    [cell.detailTextLabel setTextColor:[UIColor redColor]];
+    cell.detailTextLabel.text = _str_updateCount;
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.backgroundColor = [UIColor orangeColor];
+    cell.detailTextLabel.layer.masksToBounds = YES;
+    cell.detailTextLabel.layer.cornerRadius = 10.0f;
+    cell.detailTextLabel.layer.borderWidth = 0.0f;
     
     return cell;
 }
@@ -97,10 +73,21 @@
 {
     [super viewDidLoad];
     
-    self.array_data = [NSArray arrayWithObjects:@"互动提醒",@"活动相关",@"比赛相关",@"系统提醒",@"bnt_info",@"bnt_match",@"bnt_rankbyplayer",@"bnt_team", nil];
+    _array_data = [NSArray arrayWithObjects:@"互动提醒",@"活动相关",@"比赛相关",@"系统提醒",@"bnt_info",@"bnt_match",@"bnt_rankbyplayer",@"bnt_team", nil];
+    
+    _str_updateCount = @" 10+  ";
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    // 局部更新
+    
+    NSLog(@"animated :%d",animated);
+    
+    [self.tableView reloadData];
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -85,6 +85,26 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
     return self;
 }
 
+
+-(void)addControllerByLeft:(UIViewController<ICSDrawerControllerChild,ICSDrawerControllerPresenting> *)leftViewController centerViewController:(UIViewController<ICSDrawerControllerChild,ICSDrawerControllerPresenting> *)centerViewController
+{
+    
+    NSParameterAssert(leftViewController);
+    NSParameterAssert(centerViewController);
+    
+    
+    _leftViewController = leftViewController;
+    _centerViewController = centerViewController;
+    
+    if ([_leftViewController respondsToSelector:@selector(setDrawer:)]) {
+        _leftViewController.drawer = self;
+    }
+    if ([_centerViewController respondsToSelector:@selector(setDrawer:)]) {
+        _centerViewController.drawer = self;
+    }
+
+}
+
 - (void)addCenterViewController
 {
     NSParameterAssert(self.centerViewController);
@@ -369,8 +389,12 @@ typedef NS_ENUM(NSUInteger, ICSDrawerControllerState)
 
 - (void)open
 {
-    NSParameterAssert(self.drawerState == ICSDrawerControllerStateClosed);
+//    NSParameterAssert(self.drawerState == ICSDrawerControllerStateClosed);
 
+    if (self.drawerState == ICSDrawerControllerStateOpen) {
+        return;
+    }
+    
     [self willOpen];
     
     [self animateOpening];

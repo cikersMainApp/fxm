@@ -100,6 +100,16 @@
 - (id)initWithLeftViewController:(UIViewController<ICSDrawerControllerChild, ICSDrawerControllerPresenting> *)leftViewController
             centerViewController:(UIViewController<ICSDrawerControllerChild, ICSDrawerControllerPresenting> *)centerViewController;
 
+
+
+/**
+ add by fxm
+ **/
+
+-(void)addControllerByLeft:(UIViewController<ICSDrawerControllerChild, ICSDrawerControllerPresenting> *)leftViewController
+      centerViewController:(UIViewController<ICSDrawerControllerChild, ICSDrawerControllerPresenting> *)centerViewController;
+
+
 /**
  @name Drawer functionality
  */

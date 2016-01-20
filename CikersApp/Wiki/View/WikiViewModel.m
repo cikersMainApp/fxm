@@ -105,11 +105,7 @@
         cell = cell1;
     }
     
-
     return cell;
-
-    
-
 }
 
 -(UITableViewCell*)updataCellByNews:(NSInteger)index

@@ -48,6 +48,12 @@
     self.http_tag = @"reg";
     [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params];
 }
+-(void)checkUserName:(NSString *)userName
+{
+    NSString *apiUrl=[NSString stringWithFormat:@"%@%@/%@",HOST,@"portal/unique",userName];
+    [self sendRequestWithUrl:apiUrl Method:@"GET" AndParams:nil];
+
+}
 
 -(void)getVerityCode:(NSString *)mobileTel
 {
