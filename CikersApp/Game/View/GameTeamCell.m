@@ -41,9 +41,6 @@
     accessFrame.origin.x += 20;
     self.accessoryView.frame = accessFrame;
 
-    
-//    self.imageView.backgroundColor = [UIColor orangeColor];
-    self.accessoryView.backgroundColor = [UIColor grayColor];
 }
 -(void)updateUI:(NSInteger)tag
 {

@@ -25,9 +25,6 @@
 
 }
 
--(void)finishedWithScuessData:(NSDictionary *)dic
-{
 
-}
 
 @end

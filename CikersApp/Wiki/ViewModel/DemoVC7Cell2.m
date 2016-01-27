@@ -35,7 +35,7 @@
     [self.contentView addSubview:_titleLabel];
     _titleLabel.textColor = [UIColor darkGrayColor];
     _titleLabel.font = [UIFont systemFontOfSize:15];
-    _titleLabel.numberOfLines = 0;
+    _titleLabel.numberOfLines = 2;
     
     UIImageView * imageView0 = [UIImageView new];
     [self.contentView addSubview:imageView0];
@@ -88,11 +88,11 @@
     [self setupAutoHeightWithBottomView:imageView0 bottomMargin:margin];
 }
 
-- (void)setModel:(WIkiModel *)model
+- (void)setModel:(DicWikiInfo *)model
 {
     _model = model;
     
-    _titleLabel.text = model.title;
+//    _titleLabel.text = model.title;
 
     
     

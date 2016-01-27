@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class WIkiModel;
+@class DicWikiInfo;
 
 @interface DemoVC7Cell2 : UITableViewCell
 
-@property (nonatomic, strong) WIkiModel *model;
+@property (nonatomic, strong) DicWikiInfo *model;
 
 @end

@@ -69,7 +69,7 @@
     self.lb_tag3.text = @"";
     
     
-    if (![dic.hottags isEqual:[NSNull null]])
+    if (![dic.hottags isEqual:@""])
     {
         //hottags 里面的内容有三个
         

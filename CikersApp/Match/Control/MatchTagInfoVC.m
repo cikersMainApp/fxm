@@ -109,19 +109,7 @@
 
 -(void)finishedWithRequest:(HttpRequest *)request Response:(HttpResponse *)response AndError:(NSError *)error
 {
-    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:nil];
-
-    NSNumber *json_e = [dic objectForKey:@"e"];
-    
-    if ([json_e intValue]  == 0) {
-        [APSProgress showToast:self.view withMessage:@"标记成功"];
-        
-    }
-    else
-    {
-        [APSProgress showToast:self.view withMessage:[dic objectForKey:@"msg"]];
-    }
-    
+        [APSProgress showToast:self.view withMessage:@"标记成功"];    
 }
 
 
@@ -142,7 +130,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    if ([self.dic_player.hottags isEqual:[NSNull null]]) {
+    if ([self.dic_player.hottags isEqual:@""]) {
         return 1;
     }
     

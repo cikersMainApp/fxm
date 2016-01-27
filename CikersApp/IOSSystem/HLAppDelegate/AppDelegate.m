@@ -95,7 +95,10 @@
 //        NSLog(@"clickedImageURLHandle");
 //    }];
 
-    NSLog(@"curtime :%@",[ToolUtil tool_returnCurTime]);
+    
+    
+    
+    NSLog(@"cur network stats :%@",[BaseApi GetNetWorkType]);
     
     [AppDelegate setLoginRoot];
 

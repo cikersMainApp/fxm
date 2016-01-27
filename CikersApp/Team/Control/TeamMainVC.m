@@ -7,8 +7,7 @@
 //
 
 #import "TeamMainVC.h"
-#import "CreatTeam.h"
-#import "UIView+DDExtension.h"
+#import "TeamPlayerVC.h"
 @interface TeamMainVC ()
 
 @end
@@ -18,20 +17,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+ 
+    [self initData];
+}
+
+-(void)initData
+{
+
+    _opration = [[TeamModel alloc] initWithDelegate:nil needCommonProcess:NO];
+    _opration.delegate = self;
+
+    [_opration sendInfo:_data_obj_info.id];
+    [_opration sendTags:_data_obj_info.id];
+    [_cell_1 updateInfo:_data_obj_info];
+
     
-//    [self.view_scrollow initUI];
+}
+
+-(void)dataInfo_scuess:(id)dic
+{
+    _data_obj_info = (DicTeaminfo*)dic;
     
+    NSLog(@"name:%@",_data_obj_info.cnname);
     
-    _view_1 = [[NSBundle mainBundle] loadNibNamed:@"TeamMainHead" owner:nil options:nil][0];
+    [_cell_1 updateInfo:_data_obj_info];
     
-    _view_1.coustom_x = 0;
-    _view_1.coustom_y = 64;
-    _view_1.coustom_width = ScreenWidth;
-    _view_1.coustom_height = 160;
-    
-    
-    [self.view addSubview:_view_1];
-    
+}
+
+-(void)dataTags_scuess:(id)dic
+{
+    [_cell_2 updateTag:(NSArray*)dic];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,9 +55,7 @@
 }
 -(IBAction)bnt_publish
 {
-    CreatTeam *nextvc = [[UIStoryboard storyboardWithName:@"TeamCreat" bundle:nil] instantiateViewControllerWithIdentifier:@"teamcreat"];
-    
-    [[DataSingleton Instance].curVC showViewController:nextvc sender:nil];
+
 }
 
 -(IBAction)bnt_back
@@ -55,7 +68,7 @@
 -(IBAction)bnt_share
 {
 
-    [self shareSNS];
+//    [self shareSNS];
     
 }
 -(IBAction)bnt_manager
@@ -65,51 +78,13 @@
 
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    //    self.tempTableView = tableView;
-    return 94.f;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 30;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static  NSString  *CellIdentiferId = @"HLCommonUsedCell";
-    UITableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentiferId];
-    if (cell == nil) {
-        
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentiferId];
-        
-    }
-    
-    
-    cell.textLabel.text=@"球队名";
-    
-    return cell;
-}
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
-
-#pragma mark -
-#pragma mark Left
-
-
--(IBAction)bnt_join:(id)sender
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
+    id nextvc = segue.destinationViewController;
+    [nextvc setValue:_data_obj_info.id forKey:@"num_teamid"];
 }
--(IBAction)bnt_creat:(id)sender
-{
 
-}
 
 #pragma mark -
 #pragma mark openDeaw

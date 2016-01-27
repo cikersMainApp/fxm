@@ -69,11 +69,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>TZImagePickerController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>UIImage+ImageWithColor.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -87,27 +82,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0E7F1D26A029DC14E6E4E029A7072CCD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>15D4CDB561311239082A5482F52684A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>17E10077CD87D56141457A218D716B9A</key>
+		<key>18DB40FB23492E2E08E88364C02EA943</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>19F0F0E5BBC45D2B7FF8EC47964CE627</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>2F05E290E4A389F74BA3CA864D0EECFC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>36D27CBEC71A12AC4F06226D42A48C46</key>
+		<key>41172DC289AE4AA7DD2B5C2C0A9457DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +112,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5ACE1BEF74237689A7FEFB322B393EF3</key>
+		<key>5184FCC36F70BB2537B98775CDDAE1C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6251F0626A57FEC3D29F42BDABCDDBFE</key>
+		<key>5ACE1BEF74237689A7FEFB322B393EF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +127,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A3C8EC5041DAEAFDAD41E97B79495DDA</key>
+		<key>815B9D7F643B295897A1EED5240637EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B70415ED1FD348F63CE1AC6C7609C6FA</key>
+		<key>8616A4D00E8FE377704F4865A384F089</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -162,7 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9B27454F61D343366082F232EB12DF3</key>
+		<key>EDEEB9A5C4324A73C9F5633F66ED8221</key>
 		<dict>
 			<key>primary</key>
 			<true/>

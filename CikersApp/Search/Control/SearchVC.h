@@ -11,11 +11,10 @@
 #import "HLFullButton.h"
 
 #import "SearchViewModel.h"
-
-@interface SearchVC : HLBaseViewController
+#import "SearchOperation.h"
+@interface SearchVC : HLBaseViewController<SearchOperationDelegate>
 
 @property (weak, nonatomic) IBOutlet HLTableView *mainTableView;
-//@property (nonatomic,strong) HLCommonlyUsedOperation * operation;
 @property (nonatomic,strong) SearchViewModel * viewModel;
 @property (weak, nonatomic) IBOutlet HLFullButton *searchButton;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -23,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchbarWidthConstrait;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *seg_bt;
 @property (strong,nonatomic) NSString *str_type;
+
+@property(nonatomic,strong)SearchOperation *operation;
+
 
 - (IBAction)searchMethod:(id)sender;
 -(void)segMethod:(id)sender;

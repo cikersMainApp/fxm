@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "ICSDrawerController.h"
-@interface PlayerMainVC : UIViewController<ICSDrawerControllerChild,ICSDrawerControllerPresenting>
+#import "PlayerModel.h"
+#import "DicPlayerinfo.h"
+#import "PlayerMainInfoView.h"
+@interface PlayerMainVC : UITableViewController<ICSDrawerControllerChild,ICSDrawerControllerPresenting,PlayerModelDelegate>
 
 @property(nonatomic,weak)ICSDrawerController *drawer;
+@property(nonatomic,strong)PlayerModel *opration;
+@property(nonatomic,strong)DicPlayerinfo *data_obj_info;
+@property(nonatomic,strong)NSNumber *num_id;
+
+@property(nonatomic,strong)IBOutlet PlayerMainInfoView *cell_contentview_1;
+@property(nonatomic,strong)IBOutlet PlayerMainInfoView *cell_contentview_2;
+
+
+-(void)initData;
 
 
 @end

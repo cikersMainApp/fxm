@@ -6,27 +6,19 @@
 //  Copyright © 2015年 cikers. All rights reserved.
 //
 
-#import "HLBaseViewController.h"
-#import "TeamManagerList.h"
-#import "TeamContentView.h"
 #import "ICSDrawerController.h"
+#import "TeamMainCell.h"
+#import "DicTeaminfo.h"
+#import "TeamModel.h"
+@interface TeamMainVC : UITableViewController<TeamModeDelegate,ICSDrawerControllerChild, ICSDrawerControllerPresenting>
 
-#import "TeamMainHeadView.h"
-@interface TeamMainVC : HLBaseViewController<UITableViewDelegate,UITableViewDataSource,ICSDrawerControllerChild, ICSDrawerControllerPresenting>
-
-//@property(nonatomic,weak)IBOutlet TeamContentView *view_scrollow;
 @property (nonatomic,weak) ICSDrawerController *drawer;
 
-@property(nonatomic,strong)TeamMainHeadView *view_1;
-
-
-//-(IBAction)bnt_back;
-//-(IBAction)bnt_share;
-//-(IBAction)bnt_manager;
-//-(IBAction)bnt_publish;
-
--(IBAction)bnt_join:(id)sender;
--(IBAction)bnt_creat:(id)sender;
-
+@property(nonatomic,strong)IBOutlet TeamMainCell *cell_1;
+@property(nonatomic,strong)IBOutlet TeamMainCell *cell_2;
+@property(nonatomic,strong)DicTeaminfo *data_obj_info;
+@property(nonatomic,strong)NSNumber* num_teamid;
+@property(nonatomic,strong)TeamModel *opration;
+-(void)initData;
 
 @end

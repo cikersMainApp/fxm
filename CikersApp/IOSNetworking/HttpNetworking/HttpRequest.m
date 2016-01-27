@@ -59,24 +59,7 @@
         self.params = params;
 
         [_request setHTTPMethod:self.method];
-
-        if (self.params) {
-            if (self.method && ([self.method isEqualToString:@"POST"] || [self.method isEqualToString:@"PUT"])) {
-               
-                if ([self.apiName isEqual:@"wikipublish"]) {
-                    
-                }
-                else
-                {
-                    [self setBodyWithDictionary:self.params];
-
-                }
-                
-                
-            } else {
-                [self setQuerystringWithDictionary:self.params];
-            }
-        }
+     
     }
     return self;
 }
@@ -113,15 +96,20 @@
     [_request setURL:_requestUrl];
 }
 
+
+
 - (void)setBody:(NSMutableData *)body
 {
     body_ = [body copy];
+    NSString *strLength = [NSString stringWithFormat:@"%ld", [body_ length]];
+    [_request setValue:strLength forHTTPHeaderField:@"Content-Length"];
 
+    
     if ([self needBody]) {
+        /*
         NSString *strLength = [NSString stringWithFormat:@"%ld", [body_ length]];
         [_request setValue:strLength forHTTPHeaderField:@"Content-Length"];
         [_request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//        [_request setValue:@"https://ipcrs.pbccrc.org.cn/" forHTTPHeaderField:@"Referer"];
         
         if ([[NSUserDefaults standardUserDefaults] objectForKey:@"login"])
         {
@@ -131,10 +119,12 @@
             [_request setValue:[NSString stringWithFormat:@"PID_%@",uid] forHTTPHeaderField:@"_CIKERS_KEY_"];
 
         }
-        
+        */
+
 
         [_request setHTTPBody:body_];
     }
+    
 }
 
 - (void)setCookie:(NSString *)cookie
@@ -192,12 +182,21 @@
 //    [bodyFromString appendData:[stringBody dataUsingEncoding:NSUTF8StringEncoding]];
     self.body = bodyFromString;
     
-    NSLog(@"body::%@",self.body);
+    [_request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString *strLength = [NSString stringWithFormat:@"%ld", [body_ length]];
+    [_request setValue:strLength forHTTPHeaderField:@"Content-Length"];
+    
+
 }
 
 - (void)setBodyWithDictionary:(NSDictionary *)dictBody
 {
     [self setBodyWithString:[self querystringWithDictionary:dictBody]];
+    [_request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSString *strLength = [NSString stringWithFormat:@"%ld", [body_ length]];
+    [_request setValue:strLength forHTTPHeaderField:@"Content-Length"];
+
+
 }
 
 - (NSString *)bodyString
@@ -252,15 +251,6 @@
     if (!dictHeaders) return;
     [_request setAllHTTPHeaderFields:dictHeaders];
     NSLog(@"请求包头: %@", [_request allHTTPHeaderFields]);
-}
-
-#pragma mark - basic auth
-
-- (void)setBasicAuthWithUsername:(NSString *)username AndPassword:(NSString *)password
-{
-    NSString *authStr = [NSString stringWithFormat:@"%@:%@", username, password];
-    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [authStr base64String]];
-    [_request setValue:authValue forHTTPHeaderField:@"Authorization"];
 }
 
 

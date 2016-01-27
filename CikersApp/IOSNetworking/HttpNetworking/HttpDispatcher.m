@@ -115,7 +115,7 @@
 
 - (int)countOfOperations
 {
-    return [_requestHandlers count];
+    return (int)[_requestHandlers count];
 }
 
 @end

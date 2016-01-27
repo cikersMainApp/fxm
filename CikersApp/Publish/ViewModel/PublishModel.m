@@ -35,11 +35,6 @@
     
 }
 
--(void)finishedWithScuessData:(NSDictionary *)dic
-{
-
-}
-
 -(void)sendBySearch:(NSString *)keyword Searchtype:(NSString *)type
 {
 
@@ -78,24 +73,13 @@
     
 //    NSString *apiUrl=[NSString stringWithFormat:@"%@wiki/post/0",HOST];
     
-    NSDictionary *params=@{@"wikitype":@"message",
-                           @"content":content,
-                           @"images":images,
-                           @"marks":marks,
-                           @"reftype":reftype,
-                           @"refid":refid,
+    NSDictionary *params=@{@"data":content,
                            };
     
-    
-    NSError *parseError = nil;
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&parseError];
-    
-    NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 
     NSString *apiUrl=[NSString stringWithFormat:@"%@wiki/post/0",HOST];
 
-    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params httpTag:@"wikipersonal"];
+    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:params httpTag:@"wikipersonal" header:0];
 
 }
 

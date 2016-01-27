@@ -17,6 +17,10 @@
 #import "HLKeyboardUtil.h"
 #import "NSString+ThreeDESUtil.h"
 #import "ToolUtil.h"
+#import "SingleManageVC.h"
+#import "UIImage+CYXExtension.h"
+#import "SDWebImage/UIImageView+WebCache.h"
+#import "MJRefresh/MJRefresh.h"
 #define PHONE_NUMBER @"PHONE_NUMBER"
 #define SUBJECT_COLOR [UIColor colorWithHexString:@"2e3959"]
 #define DEVICE_VERSION  ([[UIDevice currentDevice].systemVersion doubleValue])
@@ -26,6 +30,8 @@
 #define PLACEHOLDER_NAME @"1"
 #define CELL_NORMAL_HEIGHT 88
 #define COLOR_BNT_Orange [UIColor orangeColor]
+
+#define SDIMAGEURL(iconurl) [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,iconurl]]
 
 
 

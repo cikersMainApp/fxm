@@ -5,6 +5,14 @@
 //  Created by fxm on 15/12/23.
 //  Copyright © 2015年 cikers. All rights reserved.
 //
+/*
+ 
+                WikiMainVC(segmented、property--viewmodel、property--datamodel)
+    WikiModel(HTTP)     WikiViewModel(tableview delegate)       WikiListTabview
+ 
+ 
+ 
+ */
 
 #import "HLBaseViewController.h"
 #import "WikiViewModel.h"

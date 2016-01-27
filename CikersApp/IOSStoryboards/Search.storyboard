@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Uqx-dQ-1zB" kind="relationship" relationship="rootViewController" id="v6N-v7-vAl"/>
+                        <segue destination="2ue-Iu-Fr9" kind="relationship" relationship="rootViewController" id="w0I-Um-kP1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jeb-Yh-2hL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" red="0.98613810058010909" green="0.98046030405365925" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="searchcell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="50" id="tKo-2B-jrN" customClass="SearchTableCell">
-                                        <rect key="frame" x="0.0" y="92" width="404" height="50"/>
+                                        <rect key="frame" x="0.0" y="28" width="404" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKo-2B-jrN" id="imy-QW-kss">
                                             <rect key="frame" x="0.0" y="0.0" width="404" height="49"/>
@@ -68,13 +68,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="球队名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSM-fI-W30" customClass="ARLabel">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="参赛队数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-AM-5kW" customClass="ARLabel">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2011-11-15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7n0-rN-TzV" customClass="ARLabel">
@@ -83,7 +83,7 @@
                                                                 <constraint firstAttribute="width" constant="97" id="DQR-MO-GJc"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
@@ -182,7 +182,7 @@
                                                                 <constraint firstAttribute="width" constant="92" id="CQC-sY-Ytl"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
@@ -198,7 +198,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fj8-aw-RJz" customClass="ARLabel">
                                                             <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -341,14 +341,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCU-uJ-3MS">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="cpO-MP-k2h">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="Uqx-dQ-1zB" id="K7a-NU-fUi"/>
-                                        </connections>
-                                    </searchBar>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="orC-8B-1Ip">
                                         <rect key="frame" x="-60" y="-14" width="121" height="29"/>
                                         <segments>
@@ -379,6 +371,14 @@
                                             <action selector="searchMethod:" destination="Uqx-dQ-1zB" eventType="touchUpInside" id="Y7R-ce-wQa"/>
                                         </connections>
                                     </button>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="cpO-MP-k2h">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Uqx-dQ-1zB" id="K7a-NU-fUi"/>
+                                        </connections>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.64313725490196083" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -401,9 +401,9 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="cpO-MP-k2h"/>
                                         <exclude reference="orC-8B-1Ip"/>
                                         <exclude reference="o2z-KI-UG5"/>
+                                        <exclude reference="cpO-MP-k2h"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="b4t-gr-Yx4"/>
@@ -422,9 +422,9 @@
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="cpO-MP-k2h"/>
                                         <include reference="orC-8B-1Ip"/>
                                         <include reference="o2z-KI-UG5"/>
+                                        <include reference="cpO-MP-k2h"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="b4t-gr-Yx4"/>
@@ -481,7 +481,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AHp-rf-h79" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="234" y="330"/>
+            <point key="canvasLocation" x="270" y="206"/>
+        </scene>
+        <!--Main Search Hotpacks-->
+        <scene sceneID="61H-cl-jth">
+            <objects>
+                <tableViewController storyboardIdentifier="mainsearchhotpacks" id="2ue-Iu-Fr9" customClass="MainSearchHotpacks" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="atM-T2-di0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.98039215690000003" green="0.64313725489999995" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="2ue-Iu-Fr9" id="aKc-dZ-DVf"/>
+                            <outlet property="delegate" destination="2ue-Iu-Fr9" id="eTr-u3-CMd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="QO3-3W-jKz"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fnt-eM-P92" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="206"/>
+        </scene>
+        <!--Search Player-->
+        <scene sceneID="GWb-Wg-aFt">
+            <objects>
+                <tableViewController storyboardIdentifier="searchplayer" id="Gde-gN-1sn" customClass="SearchPlayer" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ECh-Xd-P4l">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Gde-gN-1sn" id="RXc-PG-T6c"/>
+                            <outlet property="delegate" destination="Gde-gN-1sn" id="8vt-qE-wsG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iE2-yg-RDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="1007"/>
+        </scene>
+        <!--Search Team-->
+        <scene sceneID="dhO-Wh-Gi7">
+            <objects>
+                <tableViewController storyboardIdentifier="searchteam" id="KdE-Lh-TNY" customClass="SearchTeam" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZDP-7t-m9o">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="KdE-Lh-TNY" id="DTp-Re-1KL"/>
+                            <outlet property="delegate" destination="KdE-Lh-TNY" id="qbo-GA-AzD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnB-Ur-KGQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Search Tounament-->
+        <scene sceneID="PEf-Kk-M7S">
+            <objects>
+                <tableViewController storyboardIdentifier="searchtounament" id="j3U-Ja-2Wm" customClass="SearchTounament" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kDa-HE-D3C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <connections>
+                            <outlet property="dataSource" destination="j3U-Ja-2Wm" id="S8Y-8U-S9C"/>
+                            <outlet property="delegate" destination="j3U-Ja-2Wm" id="pZb-bV-4ik"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78l-ud-l2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895.5" y="944"/>
         </scene>
     </scenes>
 </document>

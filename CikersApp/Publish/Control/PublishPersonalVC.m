@@ -48,64 +48,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    _opration = [[PublishModel alloc] initWithDelegate:nil needCommonProcess:NO];
+    _opration.delegate = self;
+
+    
     self.array_bnt = [[NSMutableArray alloc] init];
     self.array_imgs= [[NSMutableArray alloc] init];
-    [self.array_imgs addObject:@"bnt_add"];
+    [self.array_imgs addObject:[UIImage imageNamed:@"bnt_add"]];
     self.array_marks = [[NSMutableArray alloc] init];
     [self initUI];
-    
-    
-    
-    __block PublishPersonalVC *blockSelf = self;
-    
-//    self.ipc = [AGImagePickerController sharedInstance:self];
-//    self.ipc.didFailBlock = ^(NSError *error) {
-//        NSLog(@"Fail. Error: %@", error);
-//        
-//        if (error == nil) {
-//            [blockSelf.array_imgs removeAllObjects];
-//            [blockSelf.array_imgs addObject:@"bnt_add"];
-//
-//            NSLog(@"User has cancelled.");
-//            
-//            [blockSelf dismissViewControllerAnimated:YES completion:nil];
-//        } else {
-//            
-//            // We need to wait for the view controller to appear first.
-//            double delayInSeconds = 0.5;
-//            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-//            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//                [blockSelf dismissViewControllerAnimated:YES completion:nil];
-//            });
-//        }
-//        
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-//        
-//    };
-//    self.ipc.didFinishBlock = ^(NSArray *info) {
-//        [blockSelf.array_imgs setArray:info];
-//        
-//        if ([blockSelf.array_imgs count] <9)
-//        {
-//            [blockSelf.array_imgs addObject:@"bnt_add"];
-//        }
-//        NSLog(@"Info: %@", info);
-//        
-//        [blockSelf reloadImgsView];
-//        
-//        [blockSelf dismissViewControllerAnimated:YES completion:nil];
-//        
-//        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
-//    };
-//    
-    
-    
-    
-    
-    
-    
-}
 
+ 
+}
+-(void)data_publish:(NSDictionary *)dic
+{
+
+}
 -(UIImage*)userSelectImg:(ALAsset*)asset
 {
     // 处理被iOS自带Photos修改过的图片
@@ -165,14 +124,16 @@
         
         int w = i%4;
         
-        UIImage *image = [self userSelectImg:[self.array_imgs objectAtIndex:i]];
+//        UIImage *image = [self userSelectImg:[self.array_imgs objectAtIndex:i]];
+
+        UIImage *image = [self.array_imgs objectAtIndex:i];
 
         if ([self.array_imgs count] == 1 || ([self.array_imgs count]<9 && i == [self.array_imgs count]-1))
         {
             UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(5+w*(b_width+5), 10 + (i/4)*b_width, b_width, b_width)];
             [bt setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
-            
+            [bt setImage:image forState:UIControlStateNormal];
             [bt setBackgroundImage:image forState:UIControlStateNormal];
             [bt addTarget:self action:@selector(openSelect:) forControlEvents:UIControlEventTouchUpInside];
             [self.view_imgsbg addSubview:bt];
@@ -229,16 +190,15 @@
     
     
 
-    
     _imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:nil];
     
     [_imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets) {
         
-        [blockSelf.array_imgs setArray:assets];
+        [blockSelf.array_imgs setArray:photos];
         
         if ([blockSelf.array_imgs count] <9)
         {
-            [blockSelf.array_imgs addObject:@"bnt_add"];
+            [blockSelf.array_imgs addObject:[UIImage imageNamed:@"bnt_add"]];
         }
         NSLog(@"Info: %@", assets);
         
@@ -248,32 +208,6 @@
     }];
 
     [self presentViewController:_imagePickerVc animated:YES completion:nil];
-
-    return;
-    
-    // Show saved photos on top
-    self.ipc.shouldShowSavedPhotosOnTop = NO;
-    self.ipc.shouldChangeStatusBarStyle = YES;
-    self.ipc.selection = self.array_imgs;
-    self.ipc.maximumNumberOfPhotosToBeSelected = 9;
-    
-    // Custom toolbar items
-    AGIPCToolbarItem *selectAll = [[AGIPCToolbarItem alloc] initWithBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"全选" style:UIBarButtonItemStylePlain target:nil action:nil] andSelectionBlock:^BOOL(NSUInteger index, ALAsset *asset) {
-        return YES;
-    }];
-    AGIPCToolbarItem *flexible = [[AGIPCToolbarItem alloc] initWithBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] andSelectionBlock:nil];
-    AGIPCToolbarItem *selectOdd = [[AGIPCToolbarItem alloc] initWithBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"上次选择" style:UIBarButtonItemStylePlain target:nil action:nil] andSelectionBlock:^BOOL(NSUInteger index, ALAsset *asset) {
-        return !(index % 2);
-    }];
-    AGIPCToolbarItem *deselectAll = [[AGIPCToolbarItem alloc] initWithBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"全部取消" style:UIBarButtonItemStylePlain target:nil action:nil] andSelectionBlock:^BOOL(NSUInteger index, ALAsset *asset) {
-        return NO;
-    }];
-    self.ipc.toolbarItemsForManagingTheSelection = @[selectAll, flexible, selectOdd, flexible, deselectAll];
-    
-    [self presentViewController:self.ipc animated:YES completion:NULL];
-    
-    // Show first assets list, modified by springox(20140503)
-    [self.ipc showFirstAssetsController];
 
 }
 #pragma mark -
@@ -320,10 +254,7 @@
 }
 
 
--(void)data_publish:(NSDictionary *)dic
-{
 
-}
 
 -(IBAction)bnt_publish:(id)sender
 {
@@ -336,19 +267,18 @@
         return;
     }
     
-    PublishModel *model = [[PublishModel alloc] initWithDelegate:nil needCommonProcess:NO];
-    model.delegate = self;
-    
     //生成图片内容 images
     
-    [self.array_imgs removeObject:@"bnt_add"];
+    [self.array_imgs removeLastObject];
     
     NSMutableString *images = [NSMutableString stringWithString:@"["];
     
     for (int i = 0; i< [self.array_imgs count] ; i++)
     {
-        UIImage *image = [self userSelectImg:[self.array_imgs objectAtIndex:i]];
-        
+//        UIImage *image = [self userSelectImg:[self.array_imgs objectAtIndex:i]];
+
+        UIImage *image = [self.array_imgs objectAtIndex:i];
+
         NSData *data = UIImagePNGRepresentation(image);
         
         NSString *num1= [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
@@ -381,12 +311,7 @@
     }
     
 
-    NSError *parseError = nil;
     
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:mutabledic options:NSJSONWritingPrettyPrinted error:&parseError];
-    
-    NSString *str = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-
     for (int i = 0; i< [self.array_marks count] ; i++)
     {
         NSDictionary * num = [self.array_marks objectAtIndex:i];
@@ -395,10 +320,10 @@
         {
             [marks appendString:@"{"];
             
-            [marks appendString:@"\"id\":"];
+            [marks appendString:@"id:"];
             [marks appendFormat:@"%@,",[num objectForKey:@"id"]];
-            [marks appendString:@"\"name\":"];
-            [marks appendFormat:@"\"%@\"",[num objectForKey:@"name"]];
+            [marks appendString:@"name:"];
+            [marks appendFormat:@"%@",[num objectForKey:@"name"]];
             
             [marks appendString:@"}"];
         }
@@ -406,10 +331,10 @@
         {
             [marks appendString:@"{"];
             
-            [marks appendString:@"\"id\":"];
+            [marks appendString:@"id:"];
             [marks appendFormat:@"%@,",[num objectForKey:@"id"]];
-            [marks appendString:@"\"name\":"];
-            [marks appendFormat:@"\"%@\"",[num objectForKey:@"name"]];
+            [marks appendString:@"name:"];
+            [marks appendFormat:@"%@",[num objectForKey:@"name"]];
 
             [marks appendString:@"},"];
         }
@@ -418,60 +343,34 @@
     [marks appendString:@"]"];
     
     
-//    //生成文本
-//    
-//    [model sendWikiByPersonal:self.tfview_input.text
-//                       images:images
-//                        marks:str
-//                      reftype:@"team"
-//                        redid:[NSNumber numberWithInt:123]];
-//    
-//    
-    
-//    // 1.创建请求
-//    NSURL *url = [NSURL URLWithString:@"http://newstack.cikers.com:8080/cikersapi/wiki/post/0"];
-//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-//    request.HTTPMethod = @"POST";
-//    
-//    // 2.设置请求头
-//    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//    [request setValue:@"PID_10803" forHTTPHeaderField:@"_CIKERS_KEY_"];
-//    
-//    // 3.设置请求体
-//    
-//    NSDictionary *params=@{@"wikitype":@"message",
-//                           @"content":self.tfview_input.text,
-//                           @"images":self.array_imgs,
-//                           @"marks":self.array_marks,
-//                           @"reftype":@"team",
-//                           @"refid":@"1",
-//                           };
-
-    NSString *str1 = @"{wikitype: \"message\", content: \"123 [@球员1237号]\", images: [], marks: \"[]\", reftype: \"\", refid: \"\"}";
-    
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    NSString *str12 = @"{wikitype: \"message\", content: \"123 [@球员1237号]\", images: [], marks: \"[]\", reftype: \"\", refid: \"\"}";
 
     
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [manager.requestSerializer setValue:@"PID_10803" forHTTPHeaderField:@"_CIKERS_KEY_"];
     
-    NSLog(@"manager :%@",manager);
-    
-    
-    [manager POST:@"http://newstack.cikers.com:8080/cikersapi/wiki/post/0"
-       parameters:str12
-          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-              
-              NSLog(@"===%@",task);
-              
-          }
-          failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              NSLog(@"===error%@",error);
+    NSString *str12 =@"{\"wikitype\":\"message\",\"content\":\"TEST [@赵田力]\",\"images\":[],\"marks\":\"[{\"id\":1,\"name\":\"赵田力\"}]\",\"reftype\":\"\",\"refid\":\"\"}";
 
-          }];
+    NSDictionary *dataDictionary= [NSDictionary dictionaryWithObjectsAndKeys:self.tfview_input.text,@"content",
+                                   @"message",@"wikitype",
+                                   @"[]",@"images",
+                                   @"",@"reftype",
+                                   @"",@"refid",
+                                   marks,@"marks",
+                                   nil];
+
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dataDictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
     
+    NSLog(@"jsonString :%@",jsonString);
     
+    [_opration sendWikiByPersonal:str12 images:nil marks:nil reftype:nil redid:0];
+    
+    return;
 }
 @end

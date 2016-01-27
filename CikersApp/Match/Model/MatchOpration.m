@@ -31,9 +31,7 @@
 -(void)finishedWithRequest:(HttpRequest *)request Response:(HttpResponse *)response AndError:(NSError *)error
 {
 
-    [APSProgress hidenIndicatorView];
-
-    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:nil];
+    NSDictionary *dic = request.userInfo;
     
     if ([request.apiName isEqual:NET_MATCH_INFO]) {
 
@@ -69,11 +67,6 @@
     if([request.apiName isEqual:@"mvpvote"]) [self parsePlayerMvp:dic];
     
     
-
-}
-
--(void)finishedWithScuessData:(NSDictionary *)dic
-{
 
 }
 

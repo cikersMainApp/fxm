@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '80F7152C11D9F803A537D982'
+               BlueprintIdentifier = '9F9638C26D5DC9B975E8FBCB'
                BlueprintName = 'ABTableViewCellController'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ABTableViewCellController.framework'>

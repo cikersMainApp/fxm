@@ -18,7 +18,7 @@
 @property (nonatomic, copy, readonly) NSString            *method;
 @property (nonatomic, copy) NSData              *body;
 @property (nonatomic, copy) NSString            *cookie;
-@property (nonatomic, strong, readonly) NSDictionary      *params;
+@property (nonatomic, strong,readonly) NSDictionary      *params;
 @property (nonatomic, strong) NSDictionary      *headers;
 @property (nonatomic, strong) NSDictionary      *userInfo;
 @property int apiId;    //接口ID
@@ -42,10 +42,15 @@
 /// 获取Cookie (字典)
 - (NSDictionary *)cookieDict;
 
-/// 设置Basic Authentication
-- (void)setBasicAuthWithUsername:(NSString *)username AndPassword:(NSString *)password;
 
 /// 返回NSString类型的body
 - (NSString *)bodyString;
+- (void)setBodyWithString:(NSString *)stringBody;
+
+- (void)setHeaderWithDictionary:(NSDictionary *)dictHeaders;
+
+
+- (void)setBodyWithDictionary:(NSDictionary *)dictBody;
+- (void)setQuerystringWithDictionary:(NSDictionary *)dictQuery;
 
 @end

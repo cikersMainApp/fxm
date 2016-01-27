@@ -11,6 +11,8 @@
 #import "TZImagePickerController.h"
 @interface PublishPersonalVC : HLBaseViewController<UITextViewDelegate,PublishModelDelegate>
 
+@property(nonatomic,strong)PublishModel *opration;
+
 @property(nonatomic,strong)IBOutlet UITextView *tfview_input;
 @property(nonatomic,strong)IBOutlet UIView *view_bg;
 

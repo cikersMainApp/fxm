@@ -158,8 +158,9 @@
 
 -(void)finishedWithRequest:(HttpRequest *)request Response:(HttpResponse *)response AndError:(NSError *)error
 {
-    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:nil];
 
+    NSDictionary *dic = request.userInfo;
+    
     if([request.apiName isEqual:@"info"]) [self parseInfo:dic];
     if([request.apiName isEqual:@"gamelist"]) [self parseList:dic];
     if([request.apiName isEqual:@"wiki"]) [self parseWiki:dic];

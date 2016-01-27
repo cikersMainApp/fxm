@@ -16,6 +16,12 @@
 @protocol BaseApiDelegate <NSObject>
 
 @optional
+
+
+-(void)finishedFail:(NSError*)error
+            Request:(HttpRequest*)request
+           Response:(HttpResponse*)response;
+
 - (void)finishedWithScuessData:(NSDictionary *)dic;
 
 - (void)finishedWithRequest:(HttpRequest *)request
@@ -37,11 +43,29 @@
 
 - (id)initWithDelegate:(id<BaseApiDelegate>)newDelegate needCommonProcess:(BOOL) need;
 
+
+- (void)sendRequestWithUrl:(NSString *)apiUrl Method:(NSString *)method AndParams:(NSDictionary *)paramsDict httpTag:(NSString*)tag header:(NSInteger)type;
+
 - (void)sendRequestWithUrl:(NSString *)apiUrl Method:(NSString *)method AndParams:(NSDictionary *)paramsDict;
 - (void)sendRequestWithUrl:(NSString *)apiUrl Method:(NSString *)method AndParams:(NSDictionary *)paramsDict httpTag:(NSString*)tag;
+
+
 -(NSArray *)getCookie:(HttpRequest *)req;
-
-
 - (void)sendRequest:(HttpRequest *)req;
+
+
+/*
+ @abstract
+ 
+ */
+-(void)setHeader:(NSDictionary*)dic;
+
+/*
+ @abstract The state of User current network
+ @method
+ @request
+*/
++(NSString*)GetNetWorkType;
+
 
 @end

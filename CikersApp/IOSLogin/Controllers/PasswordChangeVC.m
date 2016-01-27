@@ -129,29 +129,10 @@
                    AndError:(NSError *)error
 
 {
-    [APSProgress hidenIndicatorView];
 
-    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:nil];
+    [APSProgress showToast:[UIApplication sharedApplication].keyWindow.rootViewController.view withMessage:@"修改完成"];
     
-    NSObject *json_ob = [dic objectForKey:@"e"];
-
-    if ([(NSNumber*)json_ob intValue]==0)
-    {
-        
-        [APSProgress showToast:[UIApplication sharedApplication].keyWindow.rootViewController.view withMessage:@"修改完成"];
-        
-        [AppDelegate setLoginRoot];
-
-    }
-    else
-    {
-    
-        [APSProgress showHUDAddedTo:self.view message:[dic objectForKey:@"msg"] animated:NO];
-        
-    }
-    
-    
-    
+    [AppDelegate setLoginRoot];
     
 }
 

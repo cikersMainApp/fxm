@@ -10,7 +10,10 @@
 #import "Api.h"
 #import "WikiNewsCell.h"
 #import "WikiAllCell.h"
-@interface WikiViewModel : NSObject<UITableViewDelegate,UITableViewDataSource,BaseApiDelegate>
+#import "WIkiModel.h"
+
+@interface WikiViewModel : NSObject<UITableViewDelegate,UITableViewDataSource,WikiModelDelegate>
+
 @property (nonatomic,strong) NSMutableArray * dataSource;
 @property(nonatomic,weak) id delegate;
 @property (nonatomic,strong) UITableView * tableView;

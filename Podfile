@@ -16,5 +16,4 @@ target'CikersApp' do
     pod ‘LLBootstrapButton’, '~> 0.0’
     pod ‘JCAlertView’, '~> 1.1’
     pod 'AGImagePickerController', '~> 3.0’
-    pod 'TZImagePickerController', '~> 1.0.6'
 end

@@ -17,6 +17,16 @@
     req.apiName=self.http_tag;
     [req setTimeoutInterval:30];
     [req setCookieWithCookiesArray:[self getCookie:req]];
+    if (req.params) {
+        if (req.method && ([req.method isEqualToString:@"POST"] || [req.method isEqualToString:@"PUT"])) {
+            
+            [req setBodyWithDictionary:req.params];
+            
+        } else {
+            [req setQuerystringWithDictionary:req.params];
+        }
+    }
+
     [super sendRequest:req];
 }
 

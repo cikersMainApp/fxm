@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+     [self initData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +25,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initData
+{
+    _opration = [[PlayerModel alloc] initWithDelegate:nil needCommonProcess:NO];
+    _opration.delegate = self;
+    
+    [_opration sendInfoByid:_num_id];
+    [_opration sendTagsByid:_num_id];
+    
+}
+
+-(void)datainfo_scuess:(id)dic
+{
+
+    [_cell_contentview_1 updateInfo:(DicPlayerinfo *)dic];
+    
+}
+-(void)dataTags_scuess:(id)dic
+{
+    [_cell_contentview_2 updateTag:(NSArray *)dic];
+}
 
 #pragma mark -
 #pragma mark openDeaw

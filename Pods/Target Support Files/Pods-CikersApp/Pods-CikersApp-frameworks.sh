@@ -96,7 +96,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-CikersApp/ReactiveCocoa.framework"
   install_framework "Pods-CikersApp/ReactiveViewModel.framework"
   install_framework "Pods-CikersApp/SDWebImage.framework"
-  install_framework "Pods-CikersApp/TZImagePickerController.framework"
   install_framework "Pods-CikersApp/UIImage_ImageWithColor.framework"
   install_framework "Pods-CikersApp/pop.framework"
 fi
@@ -113,7 +112,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-CikersApp/ReactiveCocoa.framework"
   install_framework "Pods-CikersApp/ReactiveViewModel.framework"
   install_framework "Pods-CikersApp/SDWebImage.framework"
-  install_framework "Pods-CikersApp/TZImagePickerController.framework"
   install_framework "Pods-CikersApp/UIImage_ImageWithColor.framework"
   install_framework "Pods-CikersApp/pop.framework"
 fi

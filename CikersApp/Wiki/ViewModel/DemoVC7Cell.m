@@ -33,7 +33,7 @@
     [self.contentView addSubview:_titleLabel];
     _titleLabel.textColor = [UIColor darkGrayColor];
     _titleLabel.font = [UIFont systemFontOfSize:15];
-    _titleLabel.numberOfLines = 0;
+    _titleLabel.numberOfLines = 2;
     
     _imageView = [UIImageView new];
     [self.contentView addSubview:_imageView];
@@ -59,11 +59,11 @@
     [self setupAutoHeightWithBottomView:_imageView bottomMargin:margin];
 }
 
-- (void)setModel:(WIkiModel *)model
+- (void)setModel:(DicWikiInfo *)model
 {
     _model = model;
 
-    _titleLabel.text = model.content;
+//    _titleLabel.text = model.content;
     
     
     if ([model.contenttype isEqual:Wiki_type_image])

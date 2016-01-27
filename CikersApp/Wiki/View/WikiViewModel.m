@@ -16,6 +16,7 @@
 #import "WikiAllCell.h"
 #import "WikiNewsCell.h"
 #import "MatchWikiCell.h"
+#import "DicWikiInfo.h"
 @implementation WikiViewModel
 
 -(void)initData
@@ -46,13 +47,14 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    return [self.tableView cellHeightForIndexPath:indexPath cellContentViewWidth:ScreenWidth tableView:self.tableView];
+
     if (self.cellTypeNews)
     {
         
         Class currentClass = [DemoVC7Cell class];
         
-        WIkiModel *model = self.dataSource[indexPath.row];
+        DicWikiInfo *model = self.dataSource[indexPath.row];
         
         if ([model.contenttype isEqual:Wiki_type_image])
             
@@ -115,7 +117,7 @@
     
     DemoVC7Cell *cell = nil;
     
-    WIkiModel *model = self.dataSource[index];
+    DicWikiInfo *model = self.dataSource[index];
     
     if ([model.contenttype isEqual:Wiki_type_image])
     {
@@ -157,32 +159,20 @@
 -(void)finishedWithRequest:(HttpRequest *)request Response:(HttpResponse *)response AndError:(NSError *)error
 {
 
-    [APSProgress hidenIndicatorView];
     
-    NSDictionary * resultDic = [NSJSONSerialization JSONObjectWithData:response.responseData options:NSJSONReadingAllowFragments error:&error];
-    
-    
-    // parse
-    
-    
-    NSArray *array = [resultDic objectForKey:@"data"];
+    NSArray *array = [request.userInfo objectForKey:@"data"];
     
     [self.dataSource removeAllObjects];
 
     for (NSDictionary *elem_dic in array) {
 
-        WIkiModel *model = [RMMapper objectWithClass:[WIkiModel class] fromDictionary:elem_dic];
+        DicWikiInfo *model = [RMMapper objectWithClass:[WIkiModel class] fromDictionary:elem_dic];
         
         [model parseExtra];
         
         [self.dataSource addObject:model];
 
     }
-    
-    
-    
-
-    
     
     [self.tableView reloadData];
     
