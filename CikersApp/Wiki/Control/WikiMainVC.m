@@ -49,34 +49,34 @@
 
     
     
-    self.view_content = [[UIView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight-64)];
-    [self.view addSubview:self.view_content];
-    
-    self.table_list = [[WikiListTabview alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 64)];
-    [self.view_content addSubview:self.table_list];
-
-    
-    
-    
-    self.view_follow  = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"select"];
-    [self.view_content addSubview:self.view_follow.view];
-    
-    self.table_list.hidden = NO;
-    self.view_follow.view.hidden = YES;
-    
-    // Do any additional setup after loading the view.
-
-    self.wikiModel = [[WikiViewModel alloc] init];
-
-    self.wikiModel.dataSource = [[NSMutableArray alloc] init];
-
-    
-    self.wikiModel.cellTypeNews = YES;
-    self.table_list.dataSource = self.wikiModel;
-    self.table_list.delegate = self.wikiModel;
-    self.wikiModel.tableView = self.table_list;
-    
-    [self.wikiModel initData];
+//    self.view_content = [[UIView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight-64)];
+//    [self.view addSubview:self.view_content];
+//    
+//    self.table_list = [[WikiListTabview alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - 64)];
+//    [self.view_content addSubview:self.table_list];
+//
+//    
+//    
+//    
+//    self.view_follow  = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"select"];
+//    [self.view_content addSubview:self.view_follow.view];
+//
+//    self.table_list.hidden = NO;
+//    self.view_follow.view.hidden = YES;
+//    
+//    // Do any additional setup after loading the view.
+//
+//    self.wikiModel = [[WikiViewModel alloc] init];
+//
+//    self.wikiModel.dataSource = [[NSMutableArray alloc] init];
+//
+//    
+//    self.wikiModel.cellTypeNews = YES;
+//    self.table_list.dataSource = self.wikiModel;
+//    self.table_list.delegate = self.wikiModel;
+//    self.wikiModel.tableView = self.table_list;
+//    
+//    [self.wikiModel initData];
 
 }
 

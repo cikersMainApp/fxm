@@ -32,9 +32,9 @@
 }
 
 
--(void)sendListrecommand
+-(void)sendListrecommandByoffset:(NSInteger)offset
 {
-    NSString *apiUrl=[NSString stringWithFormat:@"%@wiki/listrecommand?limit=30",HOST];
+    NSString *apiUrl=[NSString stringWithFormat:@"%@wiki/listrecommand?limit=30&offset=%ld",HOST,offset];
     
     [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:NULL httpTag:@"recommand"];
 }
@@ -58,11 +58,11 @@
 
 }
 
--(void)sendListCikcle
+-(void)sendListCikcleByoffset:(NSInteger)offset
 {
-    NSString *apiUrl=[NSString stringWithFormat:@"%@wiki/listcircle?limit=30",HOST];
+    NSString *apiUrl=[NSString stringWithFormat:@"%@wiki/listcircle?limit=100&offset=%ld",HOST,offset];
     
-    [self sendRequestWithUrl:apiUrl Method:@"POST" AndParams:NULL httpTag:@"circle"];
+    [self sendRequestWithUrl:apiUrl Method:@"GET" AndParams:NULL httpTag:@"circle"];
 }
 -(void)parseListCikcle:(NSDictionary*)dic
 {
@@ -76,7 +76,11 @@
         
         [model parseExtra];
         
-        [elem_array addObject:model];
+        if (!model.isNull) {
+            [elem_array addObject:model];
+
+        }
+        
         
     }
     

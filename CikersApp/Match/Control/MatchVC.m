@@ -156,7 +156,7 @@ void *MatchVCobserver = &MatchVCobserver;
     if ([self.data_dic_matchinfo isEqual:[NSNull null]])
     {
                 //请求比赛数据
-        [self.opration getDataForAllinfoBymatchid:self.data_dic_matchinfo.matchid];
+        [self.opration getDataForAllinfoBymatchid:_num_matchid];
     }
     else
     {
@@ -184,12 +184,11 @@ void *MatchVCobserver = &MatchVCobserver;
     
     
     //请求竞猜数据
-    [self.table_predic getData:self.data_dic_matchinfo.matchid];
-
+    [self.table_predic getData:_num_matchid];
 
     
     //请求帖子数据
-    self.table_wiki.matchid = self.data_dic_matchinfo.matchid;
+    self.table_wiki.matchid = _num_matchid;
     
 }
 

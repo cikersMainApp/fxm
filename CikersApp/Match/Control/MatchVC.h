@@ -28,6 +28,8 @@
 
 @property(nonatomic,strong)DicMatchinfo *data_dic_matchinfo;
 
+@property(nonatomic,strong)NSNumber *num_matchid;
+
 -(IBAction)bnt_back:(id)sender;
 
 @end

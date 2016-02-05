@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[DicWikiInfo parseExtra]:DicWikiInfo.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[WikiCircleTableview tableView:heightForRowAtIndexPath:]:WikiCircleTableview.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[SingleManageVC getCurViewControl]:SingleManageVC.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[WikiInfoCellMessage setData_obj_wiki:]:WikiInfoCellMessage.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

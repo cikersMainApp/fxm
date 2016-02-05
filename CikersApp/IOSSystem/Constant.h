@@ -26,6 +26,7 @@
 #define DEVICE_VERSION  ([[UIDevice currentDevice].systemVersion doubleValue])
 #define COLOR_GRAY     [UIColor colorWithRed:238.0f/256.0f green:238.0f/256.0f blue:238.0f/256.0f alpha:1]
 #define PLACEHOLDER_IMG [UIImage imageNamed:@"1"]
+#define PLACEHOLDER_VIDEO [UIImage imageNamed:@"icon_wiki_video"]
 
 #define PLACEHOLDER_NAME @"1"
 #define CELL_NORMAL_HEIGHT 88
@@ -125,11 +126,11 @@ static NSString *const HOST_IMAGE = @"http://www.cikers.com/";
 #define Wiki_type_image @"image"
 #define Wiki_type_video @"video"
 
-#define   WIKI_TYPE_MESSAGE   = "message"; //平常贴
-#define   WIKI_TYPE_EVENT    = "event"; // 活动贴
-#define   WIKI_TYPE_PREDICTION  = "prediction"; //预测贴 将要被废弃掉
-#define   WIKI_TYPE_MATCH    = "match"; //比赛贴
-#define   WIKI_TYPE_MATCHREPORT  = "matchreport"; //战报贴
+#define   WIKI_TYPE_MESSAGE    @"message" //平常贴
+#define   WIKI_TYPE_EVENT     @"event" // 活动贴
+#define   WIKI_TYPE_PREDICTION   @"prediction" //预测贴 将要被废弃掉
+#define   WIKI_TYPE_MATCH     @"match" //比赛贴
+#define   WIKI_TYPE_MATCHREPORT   @"matchreport" //战报贴
 
 
 #import "DataSingleton.h"

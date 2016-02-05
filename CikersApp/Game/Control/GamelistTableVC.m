@@ -178,28 +178,33 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    MatchNavigation *  nav =  [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"match"];
+//    MatchNavigation *  nav =  [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"match"];
 
-    MatchVC *nextvc = (MatchVC*)[nav.viewControllers firstObject];
-    nextvc.data_dic_matchinfo = [[DicMatchinfo alloc] init];
+//    MatchVC *nextvc = (MatchVC*)[nav.viewControllers firstObject];
+//    nextvc.data_dic_matchinfo = [[DicMatchinfo alloc] init];
+    
+    
+    DicMatchinfo *info;
     
     
     switch (indexPath.section) {
         case 0:
         {
-            nextvc.data_dic_matchinfo = (DicMatchinfo*)[self.array_next_data objectAtIndex:indexPath.row];
+            info = (DicMatchinfo*)[self.array_next_data objectAtIndex:indexPath.row];
         }
             break;
         case 1:
         {
-            nextvc.data_dic_matchinfo = (DicMatchinfo*)[self.array_pre_data objectAtIndex:indexPath.row];
+            info = (DicMatchinfo*)[self.array_pre_data objectAtIndex:indexPath.row];
         }
             break;
         default:
             break;
     }
+
+    [SingleManageVC pushOtherModuleByNav:self nextNav:nil type:Module_Match data:info];
     
-    [self presentViewController:nav animated:YES completion:nil];
+//    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

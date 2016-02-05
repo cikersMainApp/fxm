@@ -18,13 +18,13 @@
 #import "BaseApi.h"
 @interface WIkiModel :BaseApi <BaseApiDelegate>
 
-@property(nonatomic,strong,readonly)id<WikiModelDelegate>delegate;
+@property(nonatomic,strong)id<WikiModelDelegate>delegate;
 
 
--(void)sendListrecommand;
+-(void)sendListrecommandByoffset:(NSInteger)offset;
 -(void)parseListrecommand:(NSDictionary*)dic;
 
--(void)sendListCikcle;
+-(void)sendListCikcleByoffset:(NSInteger)offset;
 -(void)parseListCikcle:(NSDictionary*)dic;
 
 @end

@@ -83,7 +83,7 @@
         
         NSNumber *uid = [[NSUserDefaults standardUserDefaults] objectForKey:@"userid"];
         
-        [dic setValue:[NSString stringWithFormat:@"PID_%@",uid] forKey:@"_CIKERS_KEY_"];
+//        [dic setValue:[NSString stringWithFormat:@"PID_%@",uid] forKey:@"_CIKERS_KEY_"];
         
     }
 

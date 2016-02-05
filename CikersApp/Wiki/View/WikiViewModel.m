@@ -11,8 +11,7 @@
 #import "RMMapper.h"
 #import "WIkiModel.h"
 #import "UITableView+SDAutoTableViewCellHeight.h"
-#import "DemoVC7Cell.h"
-#import "DemoVC7Cell2.h"
+
 #import "WikiAllCell.h"
 #import "WikiNewsCell.h"
 #import "MatchWikiCell.h"
@@ -21,27 +20,27 @@
 
 -(void)initData
 {
-
-    self.api = [[Api alloc] initWithDelegate:self needCommonProcess:NO];
-    
-    self.tableView.mj_footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
-    
-    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
-    
-    
-    [self.tableView registerClass:[DemoVC7Cell class] forCellReuseIdentifier:NSStringFromClass([DemoVC7Cell class])];
-    [self.tableView registerClass:[DemoVC7Cell2 class] forCellReuseIdentifier:NSStringFromClass([DemoVC7Cell2 class])];
-    [self.tableView registerClass:[MatchWikiCell class] forCellReuseIdentifier:@"cell"];
-
-    self.tableView.estimatedRowHeight = 100;
-
-    
-    self.dataSource = [[NSMutableArray alloc] init];
-    
-    
-    [APSProgress showIndicatorView];
-    
-    [self.api wiki_listbygame:@"513" limit:@"20"];
+//
+//    self.api = [[Api alloc] initWithDelegate:self needCommonProcess:NO];
+//    
+//    self.tableView.mj_footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+//    
+//    self.tableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+//    
+//    
+//    [self.tableView registerClass:[DemoVC7Cell class] forCellReuseIdentifier:NSStringFromClass([DemoVC7Cell class])];
+//    [self.tableView registerClass:[DemoVC7Cell2 class] forCellReuseIdentifier:NSStringFromClass([DemoVC7Cell2 class])];
+//    [self.tableView registerClass:[MatchWikiCell class] forCellReuseIdentifier:@"cell"];
+//
+//    self.tableView.estimatedRowHeight = 100;
+//
+//    
+//    self.dataSource = [[NSMutableArray alloc] init];
+//    
+//    
+//    [APSProgress showIndicatorView];
+//    
+//    [self.api wiki_listbygame:@"513" limit:@"20"];
     
 }
 
@@ -49,30 +48,30 @@
 {
     return [self.tableView cellHeightForIndexPath:indexPath cellContentViewWidth:ScreenWidth tableView:self.tableView];
 
-    if (self.cellTypeNews)
-    {
-        
-        Class currentClass = [DemoVC7Cell class];
-        
-        DicWikiInfo *model = self.dataSource[indexPath.row];
-        
-        if ([model.contenttype isEqual:Wiki_type_image])
-            
-        {
-            currentClass = [DemoVC7Cell2 class];
-        }
-        
-        return [self.tableView cellHeightForIndexPath:indexPath model:model keyPath:@"model" cellClass:currentClass];
-    }
-    
-
-    
-    else
-    {
-        
-        return [self.tableView cellHeightForIndexPath:indexPath cellContentViewWidth:ScreenWidth tableView:self.tableView];
-        
-    }
+//    if (self.cellTypeNews)
+//    {
+//        
+//        Class currentClass = [DemoVC7Cell class];
+//        
+//        DicWikiInfo *model = self.dataSource[indexPath.row];
+//        
+//        if ([model.contenttype isEqual:Wiki_type_image])
+//            
+//        {
+//            currentClass = [DemoVC7Cell2 class];
+//        }
+//        
+//        return [self.tableView cellHeightForIndexPath:indexPath model:model keyPath:@"model" cellClass:currentClass];
+//    }
+//    
+//
+//    
+//    else
+//    {
+//        
+//        return [self.tableView cellHeightForIndexPath:indexPath cellContentViewWidth:ScreenWidth tableView:self.tableView];
+//        
+//    }
     
     return 1;
 }
@@ -82,7 +81,7 @@
     
  if (self.cellTypeNews)
  {
-     [self.tableView startAutoCellHeightWithCellClasses:@[[DemoVC7Cell class], [DemoVC7Cell2 class]] contentViewWidth:[UIScreen mainScreen].bounds.size.width];
+ //    [self.tableView startAutoCellHeightWithCellClasses:@[[DemoVC7Cell class], [DemoVC7Cell2 class]] contentViewWidth:[UIScreen mainScreen].bounds.size.width];
  }
 
     
@@ -96,7 +95,7 @@
     
     if (self.cellTypeNews) {
         
-        cell = [self updataCellByNews:indexPath.row];
+//        cell = [self updataCellByNews:indexPath.row];
     }
     else
     {
@@ -110,30 +109,30 @@
     return cell;
 }
 
--(UITableViewCell*)updataCellByNews:(NSInteger)index
-{
-    
-    Class currentClass = [DemoVC7Cell class];
-    
-    DemoVC7Cell *cell = nil;
-    
-    DicWikiInfo *model = self.dataSource[index];
-    
-    if ([model.contenttype isEqual:Wiki_type_image])
-    {
-        if (model.image.count > 1) {
-            currentClass = [DemoVC7Cell2 class];
-        }
-    }
-    
-    
-    cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass(currentClass)];
-    
-    cell.model = model;
-    
-    
-    return cell;
-}
+//-(UITableViewCell*)updataCellByNews:(NSInteger)index
+//{
+//    
+//    Class currentClass = [DemoVC7Cell class];
+//    
+//    DemoVC7Cell *cell = nil;
+//    
+//    DicWikiInfo *model = self.dataSource[index];
+//    
+//    if ([model.contenttype isEqual:Wiki_type_image])
+//    {
+//        if (model.image.count > 1) {
+//            currentClass = [DemoVC7Cell2 class];
+//        }
+//    }
+//    
+//    
+//    cell = [self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass(currentClass)];
+//    
+//    cell.model = model;
+//    
+//
+//    return cell;
+//}
 
 -(WikiAllCell*)updataCellByAll:(UITableViewCell *)cell
 {
@@ -174,7 +173,7 @@
 
     }
     
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
     
     
 }

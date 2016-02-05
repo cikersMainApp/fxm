@@ -8,6 +8,7 @@
 
 #import "SingleManageVC.h"
 #import "MainSearchHotpacks.h"
+#import "HLTabBarController.h"
 #import "HLNavgationController.h"
 #import "TounamentBaseVC.h"
 #import "TounamentVC.h"
@@ -16,6 +17,8 @@
 #import "MatchVC.h"
 #import "PlayerBaseVC.h"
 #import "PlayerMainVC.h"
+#import "MatchNavigation.h"
+#import "MainWikiVC.h"
 
 #import "GameLeftVC.h"
 #import "DicGameinfo.h"
@@ -105,9 +108,30 @@
         case Module_Match:
         {
             
+            MatchNavigation *  matchnav =  [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"match"];
+            
+            MatchVC *nextvc = (MatchVC*)[matchnav.viewControllers firstObject];
+
+            nextvc.data_dic_matchinfo = (DicMatchinfo*)data;
+            nextvc.num_matchid = nextvc.data_dic_matchinfo.matchid;
+            [nav presentViewController:matchnav animated:YES completion:nil];
+
         }
             break;
+        case Modul_WikiToMatch:
+        {
             
+            
+            MatchNavigation *  matchnav =  [[UIStoryboard storyboardWithName:@"Match" bundle:nil] instantiateViewControllerWithIdentifier:@"match"];
+            
+            MatchVC *nextvc = (MatchVC*)[matchnav.viewControllers firstObject];
+            
+            nextvc.num_matchid = data;
+            
+            [((MainWikiVC*)nav).navigationController presentViewController:matchnav animated:YES completion:nil];
+            
+        }
+            break;
         case Module_User:
         {
             
@@ -132,5 +156,20 @@
     
 }
 
++(UINavigationController*)getCurNavigation
+{
+    
+    HLTabBarController *appRootVC = (HLTabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController;
+    UINavigationController *nav =appRootVC.selectedViewController;
+    
+    return nav;
+}
 
++(id)getCurViewControl
+{
+    
+    HLTabBarController *appRootVC = (HLTabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    return appRootVC.selectedViewController;
+}
 @end

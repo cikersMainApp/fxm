@@ -19,10 +19,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class WIkiModel;
+@class DicWikiInfo;
 @interface WikiAllCell : UITableViewCell
 
-@property(nonatomic,strong)WIkiModel *model;
+@property(nonatomic,strong)DicWikiInfo *model;
 
 -(void)setup;
 

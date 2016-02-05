@@ -130,11 +130,11 @@
     
     for (NSDictionary *elem_dic in array) {
         
-        WIkiModel *model = [RMMapper objectWithClass:[WIkiModel class] fromDictionary:elem_dic];
-        
-        [model parseExtra];
-        
-        [temp_data addObject:model];
+//        WIkiModel *model = [RMMapper objectWithClass:[WIkiModel class] fromDictionary:elem_dic];
+//        
+//        [model parseExtra];
+//        
+//        [temp_data addObject:model];
         
     }
         

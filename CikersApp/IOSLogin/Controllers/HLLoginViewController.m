@@ -39,8 +39,8 @@
         
     self.operation = [[HLLoginOperation alloc] init];
 
-    self.tf_name.text = @"18610932023";
-    self.tf_pwd.text = @"123";
+    self.tf_name.text = @"1@1";
+    self.tf_pwd.text = @"1";
     
     self.tf_pwd.secureTextEntry = YES;
     
@@ -99,11 +99,6 @@
 
 - (IBAction)getVericodeMethod:(id)sender {
     
-    
-//    [AppDelegate setTabRoot];
-//    
-//    return;
-//    
     
     if ([self.tf_name.text isEqual:@""] || [self.tf_pwd.text isEqual:@""])
     {

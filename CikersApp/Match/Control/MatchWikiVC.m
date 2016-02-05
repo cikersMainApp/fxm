@@ -133,11 +133,11 @@
         
         
         
-        WIkiModel *model = [RMMapper objectWithClass:[WIkiModel class] fromDictionary:elem_dic];
-
-        [model parseExtra];
-        
-        [self.array_wikidata addObject:model];
+//        WIkiModel *model = [RMMapper objectWithClass:[WIkiModel class] fromDictionary:elem_dic];
+//
+//        [model parseExtra];
+//        
+//        [self.array_wikidata addObject:model];
         
     }
     

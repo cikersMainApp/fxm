@@ -13,6 +13,7 @@ typedef enum : NSUInteger {
     Module_Team,
     Module_Tounament,
     Module_Match,
+    Modul_WikiToMatch,
     Module_Search,
     Module_Wiki,
     Module_User,
@@ -20,6 +21,11 @@ typedef enum : NSUInteger {
 
 
 @interface SingleManageVC : NSObject
+
+
++(UINavigationController*)getCurNavigation;
+
++(id)getCurViewControl;
 
 +(void)pushOtherModuleByNav:(id)nav nextNav:(id)nextnav type:(NSInteger)type data:(id)data;
 

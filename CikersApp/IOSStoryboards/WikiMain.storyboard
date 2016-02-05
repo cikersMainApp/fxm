@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laM-0t-lN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109.5" y="349"/>
+            <point key="canvasLocation" x="700.5" y="418"/>
         </scene>
         <!--Wiki InfoVC-->
         <scene sceneID="027-ua-jeZ">
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="1150.5" y="232"/>
         </scene>
-        <!--Wiki MainVC-->
+        <!--Main WikiVC-->
         <scene sceneID="F2i-Ui-xhX">
             <objects>
-                <viewController id="UJw-Aq-1XU" customClass="WikiMainVC" sceneMemberID="viewController">
+                <viewController id="UJw-Aq-1XU" customClass="MainWikiVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dED-UM-gAW"/>
                         <viewControllerLayoutGuide type="bottom" id="dZK-T6-cEA"/>

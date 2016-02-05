@@ -9,7 +9,7 @@
 #import "WikiAllCell.h"
 #import "WikiPhotoView.h"
 #import "UIView+SDAutoLayout.h"
-#import "WIkiModel.h"
+#import "DicWikiInfo.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 @implementation WikiAllCell
 {
@@ -104,7 +104,7 @@
 }
 
 
-- (void)setModel:(WIkiModel *)model
+- (void)setModel:(DicWikiInfo *)model
 {
     _model = model;
     
@@ -122,7 +122,7 @@
 
     if ([model.contenttype isEqual:Wiki_type_image])
     {
-        _picContainerView.picPathStringsArray = model.image;
+        _picContainerView.picPathStringsArray = model.imgextra;
 
         picContainerTopMargin = 10;
 

@@ -13,6 +13,7 @@
 #import "XBSettingItemModel.h"
 #import "XBSettingSectionModel.h"
 #import "AppDelegate.h"
+#import "NSUserDefaults+RMSaveCustomObject.h"
 @interface PersonalVC ()
 @property (nonatomic,strong) XBMeHeaderView *header;
 @property (nonatomic,strong) NSArray  *sectionArray; /**< section模型数组*/
@@ -24,13 +25,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = XBMakeColorWithRGB(234, 234, 234, 1);
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    [self setupSections];
+//    self.view.backgroundColor = XBMakeColorWithRGB(234, 234, 234, 1);
+//    self.tableView.backgroundColor = [UIColor whiteColor];
+//    [self setupSections];
+//    
+//    XBMeHeaderView *header = [[[NSBundle mainBundle]loadNibNamed:@"XBMeHeaderView" owner:nil options:nil] firstObject];
+//    self.header = header;
+//    self.tableView.tableHeaderView = header;
     
-    XBMeHeaderView *header = [[[NSBundle mainBundle]loadNibNamed:@"XBMeHeaderView" owner:nil options:nil] firstObject];
-    self.header = header;
-    self.tableView.tableHeaderView = header;
+
+    _data_obj_info = [[NSUserDefaults standardUserDefaults] rm_customObjectForKey:@"user"];
+    
+    [_view_head updateUI:_data_obj_info];
+    
 }
 - (void)setupSections
 {
@@ -94,7 +101,7 @@
 }
 
 #pragma mark - Table view data source
-
+/*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return self.sectionArray.count;
@@ -137,6 +144,7 @@
     [AppDelegate setLoginRoot];
     
 }
+
 //uitableview处理section的不悬浮，禁止section停留的方法，主要是这段代码
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     XBSettingSectionModel *sectionModel = [self.sectionArray firstObject];
@@ -148,5 +156,5 @@
         scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
     }
 }
-
+ */
 @end
