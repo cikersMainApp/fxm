@@ -113,6 +113,8 @@
     
     if (!cell) {
         cell = [[SearchPlayercell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     }
     
     DicPlayerinfo *info = [_array_data objectAtIndex:indexPath.row];

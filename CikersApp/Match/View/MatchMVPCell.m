@@ -60,7 +60,7 @@
     
     if (playera)
     {
-        NSString *url = [NSString stringWithFormat:@"http://www.cikers.com%@",playera.icon];
+        NSString *url = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,playera.icon];
         [self.img_photo1 sd_setImageWithURL:[NSURL URLWithString:url]];
 
         self.lb_name1.text = playera.name;
@@ -72,7 +72,7 @@
     
     if (playerb) {
         
-        NSString *url = [NSString stringWithFormat:@"http://www.cikers.com%@",playerb.icon];
+        NSString *url = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,playerb.icon];
         [self.img_photo2 sd_setImageWithURL:[NSURL URLWithString:url]];
         
         self.lb_name2.text = playerb.name;
@@ -89,7 +89,7 @@
     
     self.view_bg.hidden = NO;
     
-    NSString *url = [NSString stringWithFormat:@"http://www.cikers.com%@",player.icon];
+    NSString *url = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,player.icon];
     [self.img_photo sd_setImageWithURL:[NSURL URLWithString:url]];
     
     self.lb_name.text = player.name;

@@ -30,7 +30,7 @@
     [radialView addPopoutView:[[UIImageView alloc] initWithImage:image1] withIndentifier:@"ONE"];
     [radialView addPopoutView:[[UIImageView alloc] initWithImage:image2] withIndentifier:@"TWO"];
     [radialView addPopoutView:[[UIImageView alloc] initWithImage:image3] withIndentifier:@"THREE"];
-    [self.view addSubview:radialView];
+//    [self.view addSubview:radialView];
 //    [radialView enableDevelopmentMode];
 }
 

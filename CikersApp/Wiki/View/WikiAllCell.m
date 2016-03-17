@@ -108,7 +108,7 @@
 {
     _model = model;
     
-    NSString *url1 = [NSString stringWithFormat:@"http://www.cikers.com%@",model.icon];
+    NSString *url1 = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,model.icon];
 
     
     [_iconView  sd_setImageWithURL:[NSURL URLWithString:url1] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {

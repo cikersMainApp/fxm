@@ -10,6 +10,7 @@
 #import "MatchVC.h"
 #import "MessageInfoTBVC.h"
 
+
 @interface MessageVC()
 
 @property(nonatomic,strong)NSArray *array_data;
@@ -44,7 +45,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+ 
     MessageInfoTBVC *nextvc = [[UIStoryboard storyboardWithName:@"Message" bundle:nil] instantiateViewControllerWithIdentifier:@"messageinfotavc"];
     
     nextvc.navigationItem.title = [self.array_data objectAtIndex:indexPath.row];

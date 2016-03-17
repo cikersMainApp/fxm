@@ -14,9 +14,6 @@
 
 -(void)awakeFromNib
 {
-
-    [self.img_icon sd_setImageWithURL:[NSURL URLWithString:testimgurl]];
-    [self.img_icon_right sd_setImageWithURL:[NSURL URLWithString:testimgurl]];
     
 }
 
@@ -30,15 +27,33 @@
     
 }
 
--(void)cell_update
+-(void)cell_update:(DicPlayerinfo*)dic1 right:(DicPlayerinfo*)dic2 userinfo:(DicUserinfo *)info
 {
-
+    
+    [self.img_icon sd_setImageWithURL:SDIMAGEURL(dic1.icon)];
+    [self.lb_name setText:dic1.name];
+    [self.lb_number_follow setText:[NSString stringWithFormat:@"%@",dic1.viewcount]];
+    [self.lb_number_wiki setText:[NSString stringWithFormat:@"%@",dic1.votecount]];
+    
+    
+    [self.img_icon_right sd_setImageWithURL:SDIMAGEURL(dic2.icon)];
+    [self.lb_name_right setText:dic2.name];
+    [self.lb_number_follow_right setText:[NSString stringWithFormat:@"%@",dic2.viewcount]];
+    [self.lb_number_wiki_right setText:[NSString stringWithFormat:@"%@",dic2.votecount]];
+    
+    
+    
+    
 }
 
 -(void)initUI
 {
 
     // left
+    
+    
+    UIView *view_left = [[UIView alloc] init];
+    
     
     
     

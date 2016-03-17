@@ -8,6 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		3D1086ABB66BB0C9E9AA942E /* Pods_CikersApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B71C5FE2154AE4F42402B53 /* Pods_CikersApp.framework */; };
+		D71F146E1C8191EC008F4447 /* MyTagsTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F146D1C8191EC008F4447 /* MyTagsTBView.m */; };
+		D71F14711C8194DC008F4447 /* MySettingTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F14701C8194DC008F4447 /* MySettingTBView.m */; };
+		D71F14741C81976C008F4447 /* MyinfoModifyTBView.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F14731C81976C008F4447 /* MyinfoModifyTBView.m */; };
+		D71F14771C81A90D008F4447 /* MySettingAboutUs.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F14761C81A90D008F4447 /* MySettingAboutUs.m */; };
+		D71F147B1C82F8C6008F4447 /* MySettingPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F147A1C82F8C6008F4447 /* MySettingPassword.m */; };
+		D71F147E1C841177008F4447 /* MyTeamList.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F147D1C841177008F4447 /* MyTeamList.m */; };
+		D71F14811C841230008F4447 /* MyTournamentList.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F14801C841230008F4447 /* MyTournamentList.m */; };
+		D71F14841C84124D008F4447 /* MyFollowList.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F14831C84124D008F4447 /* MyFollowList.m */; };
+		D71F14871C841265008F4447 /* MyEventList.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F14861C841265008F4447 /* MyEventList.m */; };
+		D71F148A1C84127A008F4447 /* MyWikiList.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F14891C84127A008F4447 /* MyWikiList.m */; };
+		D71F148D1C841831008F4447 /* UserinfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71F148C1C841831008F4447 /* UserinfoModel.m */; };
+		D72D33001C96A79D0008DC98 /* icon_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D72D32F81C96A79D0008DC98 /* icon_next@2x.png */; };
+		D72D33011C96A79D0008DC98 /* icon_previous@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D72D32F91C96A79D0008DC98 /* icon_previous@2x.png */; };
+		D72D33021C96A79D0008DC98 /* FDCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D32FC1C96A79D0008DC98 /* FDCalendar.m */; };
+		D72D33031C96A79D0008DC98 /* FDCalendarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D32FE1C96A79D0008DC98 /* FDCalendarItem.m */; };
+		D72D33061C96AD3F0008DC98 /* WikiFollowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D33051C96AD3F0008DC98 /* WikiFollowVC.m */; };
+		D72D33091C96B5750008DC98 /* WikiFavorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D33081C96B5750008DC98 /* WikiFavorCell.m */; };
+		D72D330C1C96B69C0008DC98 /* WikiWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D330B1C96B69C0008DC98 /* WikiWebVC.m */; };
+		D72D330F1C96BDB70008DC98 /* DicWikiComments.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D330E1C96BDB70008DC98 /* DicWikiComments.m */; };
+		D72D33121C96BDC80008DC98 /* DicWikiFavor.m in Sources */ = {isa = PBXBuildFile; fileRef = D72D33111C96BDC80008DC98 /* DicWikiFavor.m */; };
+		D73D680C1C853AEC00DD3BD0 /* MyTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D73D680B1C853AEC00DD3BD0 /* MyTagsCell.m */; };
+		D73D680F1C85A0F700DD3BD0 /* MyFollowContent.m in Sources */ = {isa = PBXBuildFile; fileRef = D73D680E1C85A0F700DD3BD0 /* MyFollowContent.m */; };
 		D73DD9341C50F2E800AAC4F2 /* UIImage+CYXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D73DD9331C50F2E800AAC4F2 /* UIImage+CYXExtension.m */; };
 		D744BA311C4E257B0020268B /* BntLImageRTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA301C4E257B0020268B /* BntLImageRTitle.m */; };
 		D744BA341C4F59060020268B /* BaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D744BA331C4F59060020268B /* BaseNavigationBar.m */; };
@@ -44,6 +66,11 @@
 		D75B029A1C60510A00C071BC /* icon144.png in Resources */ = {isa = PBXBuildFile; fileRef = D75B02921C60510A00C071BC /* icon144.png */; };
 		D75B029B1C60510A00C071BC /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = D75B02931C60510A00C071BC /* icon152.png */; };
 		D75B029C1C60510A00C071BC /* icon180.png in Resources */ = {isa = PBXBuildFile; fileRef = D75B02941C60510A00C071BC /* icon180.png */; };
+		D772FA871C915EE0005C56F8 /* WikiOtherBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D772FA861C915EE0005C56F8 /* WikiOtherBaseVC.m */; };
+		D772FA8A1C93E8AF005C56F8 /* MyTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D772FA891C93E8AF005C56F8 /* MyTeamCell.m */; };
+		D772FA8C1C93EE3B005C56F8 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D772FA8B1C93EE3B005C56F8 /* Accelerate.framework */; };
+		D772FA901C93F11C005C56F8 /* JCAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D772FA8D1C93F11C005C56F8 /* JCAlertView.bundle */; };
+		D772FA911C93F11C005C56F8 /* JCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = D772FA8F1C93F11C005C56F8 /* JCAlertView.m */; };
 		D779DB9B1C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DB921C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.m */; };
 		D779DB9C1C3B5DE900472FD9 /* UIButton+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DB941C3B5DE900472FD9 /* UIButton+BMExtension.m */; };
 		D779DB9D1C3B5DE900472FD9 /* UIImageView+BMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DB961C3B5DE900472FD9 /* UIImageView+BMExtension.m */; };
@@ -72,6 +99,7 @@
 		D779DC0B1C3FA81D00472FD9 /* GamelistTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC0A1C3FA81D00472FD9 /* GamelistTableVC.m */; };
 		D779DC0E1C3FADAB00472FD9 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC0D1C3FADAB00472FD9 /* GameModel.m */; };
 		D779DC111C3FB72F00472FD9 /* GameListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D779DC101C3FB72F00472FD9 /* GameListCell.m */; };
+		D77F098F1C9940D5002CD297 /* WikiCellComment.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F098E1C9940D5002CD297 /* WikiCellComment.m */; };
 		D78B15BB1C51FB7100F20524 /* TeamMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D78B15BA1C51FB7100F20524 /* TeamMainCell.m */; };
 		D78B15BE1C52023800F20524 /* TeamPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D78B15BD1C52023800F20524 /* TeamPlayerVC.m */; };
 		D78B15C11C52055400F20524 /* TeamStatisticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D78B15C01C52055400F20524 /* TeamStatisticsVC.m */; };
@@ -98,9 +126,6 @@
 		D7B0DD311C37FC5A00A3997A /* XBMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DD271C37FC5A00A3997A /* XBMeHeaderView.m */; };
 		D7B0DD321C37FC5A00A3997A /* XBMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7B0DD281C37FC5A00A3997A /* XBMeHeaderView.xib */; };
 		D7B0DD331C37FC5A00A3997A /* XBSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DD2A1C37FC5A00A3997A /* XBSettingCell.m */; };
-		D7B0DD341C37FC5A00A3997A /* icon-arrow1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7B0DD2B1C37FC5A00A3997A /* icon-arrow1@2x.png */; };
-		D7B0DD351C37FC5A00A3997A /* icon-list01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7B0DD2C1C37FC5A00A3997A /* icon-list01@2x.png */; };
-		D7B0DD361C37FC5A00A3997A /* icon-new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7B0DD2D1C37FC5A00A3997A /* icon-new@2x.png */; };
 		D7B0DD391C37FD0500A3997A /* PersonalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DD381C37FD0500A3997A /* PersonalVC.m */; };
 		D7B0DD3C1C39043500A3997A /* MatchTagInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DD3B1C39043500A3997A /* MatchTagInfoVC.m */; };
 		D7B0DD3F1C3954BC00A3997A /* MatchWikiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B0DD3E1C3954BC00A3997A /* MatchWikiVC.m */; };
@@ -266,6 +291,9 @@
 		D7CC75CF1C4606DE0081BFE3 /* GameRankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75CE1C4606DE0081BFE3 /* GameRankVC.m */; };
 		D7CC75D21C4606FC0081BFE3 /* GameInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75D11C4606FC0081BFE3 /* GameInfoVC.m */; };
 		D7CC75D61C4607270081BFE3 /* GamePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC75D51C4607270081BFE3 /* GamePlayerVC.m */; };
+		D7D17C711C8001C900EF81E1 /* MessageEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D17C701C8001C900EF81E1 /* MessageEvent.m */; };
+		D7D17C741C8001F500EF81E1 /* MessageMatch.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D17C731C8001F500EF81E1 /* MessageMatch.m */; };
+		D7D17C771C80020900EF81E1 /* MessageSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D17C761C80020900EF81E1 /* MessageSystem.m */; };
 		D7D569011C2584EC009CBF2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D569001C2584EC009CBF2D /* main.m */; };
 		D7D5690A1C2584EC009CBF2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D569081C2584EC009CBF2D /* Main.storyboard */; };
 		D7D5690F1C2584EC009CBF2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7D5690D1C2584EC009CBF2D /* LaunchScreen.storyboard */; };
@@ -361,6 +389,48 @@
 /* Begin PBXFileReference section */
 		1DF5E9F0E8C7D787D4796FAB /* Pods-CikersApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CikersApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CikersApp/Pods-CikersApp.release.xcconfig"; sourceTree = "<group>"; };
 		9B71C5FE2154AE4F42402B53 /* Pods_CikersApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CikersApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D71F146C1C8191EC008F4447 /* MyTagsTBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTagsTBView.h; sourceTree = "<group>"; };
+		D71F146D1C8191EC008F4447 /* MyTagsTBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTagsTBView.m; sourceTree = "<group>"; };
+		D71F146F1C8194DC008F4447 /* MySettingTBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingTBView.h; sourceTree = "<group>"; };
+		D71F14701C8194DC008F4447 /* MySettingTBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingTBView.m; sourceTree = "<group>"; };
+		D71F14721C81976C008F4447 /* MyinfoModifyTBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyinfoModifyTBView.h; sourceTree = "<group>"; };
+		D71F14731C81976C008F4447 /* MyinfoModifyTBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyinfoModifyTBView.m; sourceTree = "<group>"; };
+		D71F14751C81A90D008F4447 /* MySettingAboutUs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingAboutUs.h; sourceTree = "<group>"; };
+		D71F14761C81A90D008F4447 /* MySettingAboutUs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingAboutUs.m; sourceTree = "<group>"; };
+		D71F14791C82F8C6008F4447 /* MySettingPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingPassword.h; sourceTree = "<group>"; };
+		D71F147A1C82F8C6008F4447 /* MySettingPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingPassword.m; sourceTree = "<group>"; };
+		D71F147C1C841177008F4447 /* MyTeamList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTeamList.h; sourceTree = "<group>"; };
+		D71F147D1C841177008F4447 /* MyTeamList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTeamList.m; sourceTree = "<group>"; };
+		D71F147F1C841230008F4447 /* MyTournamentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTournamentList.h; sourceTree = "<group>"; };
+		D71F14801C841230008F4447 /* MyTournamentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTournamentList.m; sourceTree = "<group>"; };
+		D71F14821C84124D008F4447 /* MyFollowList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowList.h; sourceTree = "<group>"; };
+		D71F14831C84124D008F4447 /* MyFollowList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowList.m; sourceTree = "<group>"; };
+		D71F14851C841265008F4447 /* MyEventList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEventList.h; sourceTree = "<group>"; };
+		D71F14861C841265008F4447 /* MyEventList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyEventList.m; sourceTree = "<group>"; };
+		D71F14881C84127A008F4447 /* MyWikiList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWikiList.h; sourceTree = "<group>"; };
+		D71F14891C84127A008F4447 /* MyWikiList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWikiList.m; sourceTree = "<group>"; };
+		D71F148B1C841831008F4447 /* UserinfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserinfoModel.h; path = ../UserinfoModel.h; sourceTree = "<group>"; };
+		D71F148C1C841831008F4447 /* UserinfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserinfoModel.m; path = ../UserinfoModel.m; sourceTree = "<group>"; };
+		D72D32F81C96A79D0008DC98 /* icon_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_next@2x.png"; path = "../Resource/icon_next@2x.png"; sourceTree = "<group>"; };
+		D72D32F91C96A79D0008DC98 /* icon_previous@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_previous@2x.png"; path = "../Resource/icon_previous@2x.png"; sourceTree = "<group>"; };
+		D72D32FB1C96A79D0008DC98 /* FDCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCalendar.h; sourceTree = "<group>"; };
+		D72D32FC1C96A79D0008DC98 /* FDCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCalendar.m; sourceTree = "<group>"; };
+		D72D32FD1C96A79D0008DC98 /* FDCalendarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDCalendarItem.h; sourceTree = "<group>"; };
+		D72D32FE1C96A79D0008DC98 /* FDCalendarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDCalendarItem.m; sourceTree = "<group>"; };
+		D72D33041C96AD3F0008DC98 /* WikiFollowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiFollowVC.h; sourceTree = "<group>"; };
+		D72D33051C96AD3F0008DC98 /* WikiFollowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiFollowVC.m; sourceTree = "<group>"; };
+		D72D33071C96B5750008DC98 /* WikiFavorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiFavorCell.h; sourceTree = "<group>"; };
+		D72D33081C96B5750008DC98 /* WikiFavorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiFavorCell.m; sourceTree = "<group>"; };
+		D72D330A1C96B69C0008DC98 /* WikiWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiWebVC.h; sourceTree = "<group>"; };
+		D72D330B1C96B69C0008DC98 /* WikiWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiWebVC.m; sourceTree = "<group>"; };
+		D72D330D1C96BDB70008DC98 /* DicWikiComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicWikiComments.h; sourceTree = "<group>"; };
+		D72D330E1C96BDB70008DC98 /* DicWikiComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicWikiComments.m; sourceTree = "<group>"; };
+		D72D33101C96BDC80008DC98 /* DicWikiFavor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicWikiFavor.h; sourceTree = "<group>"; };
+		D72D33111C96BDC80008DC98 /* DicWikiFavor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicWikiFavor.m; sourceTree = "<group>"; };
+		D73D680A1C853AEC00DD3BD0 /* MyTagsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTagsCell.h; sourceTree = "<group>"; };
+		D73D680B1C853AEC00DD3BD0 /* MyTagsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTagsCell.m; sourceTree = "<group>"; };
+		D73D680D1C85A0F700DD3BD0 /* MyFollowContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowContent.h; sourceTree = "<group>"; };
+		D73D680E1C85A0F700DD3BD0 /* MyFollowContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowContent.m; sourceTree = "<group>"; };
 		D73DD9321C50F2E800AAC4F2 /* UIImage+CYXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CYXExtension.h"; sourceTree = "<group>"; };
 		D73DD9331C50F2E800AAC4F2 /* UIImage+CYXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CYXExtension.m"; sourceTree = "<group>"; };
 		D744BA2F1C4E257B0020268B /* BntLImageRTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BntLImageRTitle.h; sourceTree = "<group>"; };
@@ -425,6 +495,14 @@
 		D75B02921C60510A00C071BC /* icon144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon144.png; sourceTree = "<group>"; };
 		D75B02931C60510A00C071BC /* icon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152.png; sourceTree = "<group>"; };
 		D75B02941C60510A00C071BC /* icon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon180.png; sourceTree = "<group>"; };
+		D772FA851C915EE0005C56F8 /* WikiOtherBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiOtherBaseVC.h; sourceTree = "<group>"; };
+		D772FA861C915EE0005C56F8 /* WikiOtherBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiOtherBaseVC.m; sourceTree = "<group>"; };
+		D772FA881C93E8AF005C56F8 /* MyTeamCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTeamCell.h; sourceTree = "<group>"; };
+		D772FA891C93E8AF005C56F8 /* MyTeamCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTeamCell.m; sourceTree = "<group>"; };
+		D772FA8B1C93EE3B005C56F8 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D772FA8D1C93F11C005C56F8 /* JCAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = JCAlertView.bundle; sourceTree = "<group>"; };
+		D772FA8E1C93F11C005C56F8 /* JCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCAlertView.h; sourceTree = "<group>"; };
+		D772FA8F1C93F11C005C56F8 /* JCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCAlertView.m; sourceTree = "<group>"; };
 		D779DB901C3B5DE900472FD9 /* DDKitCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDKitCategory.h; sourceTree = "<group>"; };
 		D779DB911C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+BMExtension.h"; sourceTree = "<group>"; };
 		D779DB921C3B5DE900472FD9 /* UIBarButtonItem+BMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+BMExtension.m"; sourceTree = "<group>"; };
@@ -484,6 +562,8 @@
 		D779DC0D1C3FADAB00472FD9 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
 		D779DC0F1C3FB72F00472FD9 /* GameListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListCell.h; sourceTree = "<group>"; };
 		D779DC101C3FB72F00472FD9 /* GameListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListCell.m; sourceTree = "<group>"; };
+		D77F098D1C9940D5002CD297 /* WikiCellComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikiCellComment.h; sourceTree = "<group>"; };
+		D77F098E1C9940D5002CD297 /* WikiCellComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikiCellComment.m; sourceTree = "<group>"; };
 		D78B15B91C51FB7100F20524 /* TeamMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMainCell.h; sourceTree = "<group>"; };
 		D78B15BA1C51FB7100F20524 /* TeamMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMainCell.m; sourceTree = "<group>"; };
 		D78B15BC1C52023800F20524 /* TeamPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamPlayerVC.h; sourceTree = "<group>"; };
@@ -535,9 +615,6 @@
 		D7B0DD281C37FC5A00A3997A /* XBMeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XBMeHeaderView.xib; sourceTree = "<group>"; };
 		D7B0DD291C37FC5A00A3997A /* XBSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBSettingCell.h; sourceTree = "<group>"; };
 		D7B0DD2A1C37FC5A00A3997A /* XBSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBSettingCell.m; sourceTree = "<group>"; };
-		D7B0DD2B1C37FC5A00A3997A /* icon-arrow1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-arrow1@2x.png"; sourceTree = "<group>"; };
-		D7B0DD2C1C37FC5A00A3997A /* icon-list01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-list01@2x.png"; sourceTree = "<group>"; };
-		D7B0DD2D1C37FC5A00A3997A /* icon-new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-new@2x.png"; sourceTree = "<group>"; };
 		D7B0DD371C37FD0500A3997A /* PersonalVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalVC.h; sourceTree = "<group>"; };
 		D7B0DD381C37FD0500A3997A /* PersonalVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalVC.m; sourceTree = "<group>"; };
 		D7B0DD3A1C39043500A3997A /* MatchTagInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchTagInfoVC.h; sourceTree = "<group>"; };
@@ -832,6 +909,12 @@
 		D7CC75D11C4606FC0081BFE3 /* GameInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoVC.m; sourceTree = "<group>"; };
 		D7CC75D41C4607270081BFE3 /* GamePlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayerVC.h; sourceTree = "<group>"; };
 		D7CC75D51C4607270081BFE3 /* GamePlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayerVC.m; sourceTree = "<group>"; };
+		D7D17C6F1C8001C900EF81E1 /* MessageEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageEvent.h; sourceTree = "<group>"; };
+		D7D17C701C8001C900EF81E1 /* MessageEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageEvent.m; sourceTree = "<group>"; };
+		D7D17C721C8001F500EF81E1 /* MessageMatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMatch.h; sourceTree = "<group>"; };
+		D7D17C731C8001F500EF81E1 /* MessageMatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageMatch.m; sourceTree = "<group>"; };
+		D7D17C751C80020900EF81E1 /* MessageSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSystem.h; sourceTree = "<group>"; };
+		D7D17C761C80020900EF81E1 /* MessageSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSystem.m; sourceTree = "<group>"; };
 		D7D568FC1C2584EC009CBF2D /* CikersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CikersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7D569001C2584EC009CBF2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D7D569091C2584EC009CBF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -982,6 +1065,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D772FA8C1C93EE3B005C56F8 /* Accelerate.framework in Frameworks */,
 				D7B903B61C55ED53002B1AAE /* CoreMedia.framework in Frameworks */,
 				D7B903B41C55ED3B002B1AAE /* AVFoundation.framework in Frameworks */,
 				D7CC75B31C4398E80081BFE3 /* AssetsLibrary.framework in Frameworks */,
@@ -1028,6 +1112,7 @@
 		9EF27BF5C2E23091FEEF680F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D772FA8B1C93EE3B005C56F8 /* Accelerate.framework */,
 				D7B903B51C55ED53002B1AAE /* CoreMedia.framework */,
 				D7B903B31C55ED3B002B1AAE /* AVFoundation.framework */,
 				D7CC75B21C4398E80081BFE3 /* AssetsLibrary.framework */,
@@ -1050,6 +1135,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D71F14781C81A91E008F4447 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D71F146F1C8194DC008F4447 /* MySettingTBView.h */,
+				D71F14701C8194DC008F4447 /* MySettingTBView.m */,
+				D71F14721C81976C008F4447 /* MyinfoModifyTBView.h */,
+				D71F14731C81976C008F4447 /* MyinfoModifyTBView.m */,
+				D71F14751C81A90D008F4447 /* MySettingAboutUs.h */,
+				D71F14761C81A90D008F4447 /* MySettingAboutUs.m */,
+				D71F14791C82F8C6008F4447 /* MySettingPassword.h */,
+				D71F147A1C82F8C6008F4447 /* MySettingPassword.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
 		D7274C8F063E5BD8BD59AA29 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1057,6 +1157,28 @@
 				1DF5E9F0E8C7D787D4796FAB /* Pods-CikersApp.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D72D32FA1C96A79D0008DC98 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D72D32F81C96A79D0008DC98 /* icon_next@2x.png */,
+				D72D32F91C96A79D0008DC98 /* icon_previous@2x.png */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		D72D32FF1C96A79D0008DC98 /* FDCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				D72D32FA1C96A79D0008DC98 /* Resource */,
+				D72D32FB1C96A79D0008DC98 /* FDCalendar.h */,
+				D72D32FC1C96A79D0008DC98 /* FDCalendar.m */,
+				D72D32FD1C96A79D0008DC98 /* FDCalendarItem.h */,
+				D72D32FE1C96A79D0008DC98 /* FDCalendarItem.m */,
+			);
+			name = FDCalendar;
+			path = ../../../FDCalendar/FDCalendarDemo/FDCalendarDemo;
 			sourceTree = "<group>";
 		};
 		D744BA481C4FB0B30020268B /* main */ = {
@@ -1152,6 +1274,12 @@
 				D7B0DCE41C36758F00A3997A /* MessageVC.m */,
 				D7B0DD121C37F35200A3997A /* MessageInfoTBVC.h */,
 				D7B0DD131C37F35200A3997A /* MessageInfoTBVC.m */,
+				D7D17C6F1C8001C900EF81E1 /* MessageEvent.h */,
+				D7D17C701C8001C900EF81E1 /* MessageEvent.m */,
+				D7D17C721C8001F500EF81E1 /* MessageMatch.h */,
+				D7D17C731C8001F500EF81E1 /* MessageMatch.m */,
+				D7D17C751C80020900EF81E1 /* MessageSystem.h */,
+				D7D17C761C80020900EF81E1 /* MessageSystem.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -1283,6 +1411,8 @@
 				D7B904ED1C58BCEA002B1AAE /* WikiCellMatchreport.m */,
 				D7B904EF1C58BD04002B1AAE /* WikiCellPrediction.h */,
 				D7B904F01C58BD04002B1AAE /* WikiCellPrediction.m */,
+				D77F098D1C9940D5002CD297 /* WikiCellComment.h */,
+				D77F098E1C9940D5002CD297 /* WikiCellComment.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1298,6 +1428,10 @@
 				D779DBC51C3BBB2700472FD9 /* WIkiModel.m */,
 				D7B9040C1C5795FD002B1AAE /* DicWikiInfo.h */,
 				D7B9040D1C5795FD002B1AAE /* DicWikiInfo.m */,
+				D72D330D1C96BDB70008DC98 /* DicWikiComments.h */,
+				D72D330E1C96BDB70008DC98 /* DicWikiComments.m */,
+				D72D33101C96BDC80008DC98 /* DicWikiFavor.h */,
+				D72D33111C96BDC80008DC98 /* DicWikiFavor.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1360,15 +1494,27 @@
 		D7B0DD1A1C37FC5A00A3997A /* Userinfo */ = {
 			isa = PBXGroup;
 			children = (
+				D71F14781C81A91E008F4447 /* Setting */,
 				D7B0DD1B1C37FC5A00A3997A /* Category */,
 				D7B0DD1E1C37FC5A00A3997A /* Const */,
 				D7B0DD201C37FC5A00A3997A /* Model */,
 				D7B0DD251C37FC5A00A3997A /* View */,
-				D7B0DD2B1C37FC5A00A3997A /* icon-arrow1@2x.png */,
-				D7B0DD2C1C37FC5A00A3997A /* icon-list01@2x.png */,
-				D7B0DD2D1C37FC5A00A3997A /* icon-new@2x.png */,
 				D7B0DD371C37FD0500A3997A /* PersonalVC.h */,
 				D7B0DD381C37FD0500A3997A /* PersonalVC.m */,
+				D71F146C1C8191EC008F4447 /* MyTagsTBView.h */,
+				D71F146D1C8191EC008F4447 /* MyTagsTBView.m */,
+				D71F147C1C841177008F4447 /* MyTeamList.h */,
+				D71F147D1C841177008F4447 /* MyTeamList.m */,
+				D71F147F1C841230008F4447 /* MyTournamentList.h */,
+				D71F14801C841230008F4447 /* MyTournamentList.m */,
+				D71F14821C84124D008F4447 /* MyFollowList.h */,
+				D71F14831C84124D008F4447 /* MyFollowList.m */,
+				D73D680D1C85A0F700DD3BD0 /* MyFollowContent.h */,
+				D73D680E1C85A0F700DD3BD0 /* MyFollowContent.m */,
+				D71F14851C841265008F4447 /* MyEventList.h */,
+				D71F14861C841265008F4447 /* MyEventList.m */,
+				D71F14881C84127A008F4447 /* MyWikiList.h */,
+				D71F14891C84127A008F4447 /* MyWikiList.m */,
 			);
 			path = Userinfo;
 			sourceTree = "<group>";
@@ -1393,6 +1539,8 @@
 		D7B0DD201C37FC5A00A3997A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D71F148B1C841831008F4447 /* UserinfoModel.h */,
+				D71F148C1C841831008F4447 /* UserinfoModel.m */,
 				D7B0DD211C37FC5A00A3997A /* XBSettingItemModel.h */,
 				D7B0DD221C37FC5A00A3997A /* XBSettingItemModel.m */,
 				D7B0DD231C37FC5A00A3997A /* XBSettingSectionModel.h */,
@@ -1411,6 +1559,10 @@
 				D7B0DD2A1C37FC5A00A3997A /* XBSettingCell.m */,
 				D7B87B901C5B4F4E0068CF48 /* PersonalHead.h */,
 				D7B87B911C5B4F4E0068CF48 /* PersonalHead.m */,
+				D73D680A1C853AEC00DD3BD0 /* MyTagsCell.h */,
+				D73D680B1C853AEC00DD3BD0 /* MyTagsCell.m */,
+				D772FA881C93E8AF005C56F8 /* MyTeamCell.h */,
+				D772FA891C93E8AF005C56F8 /* MyTeamCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1751,6 +1903,12 @@
 				D7B904DB1C586890002B1AAE /* MainWikiVC.m */,
 				D7B904DD1C58A0AE002B1AAE /* WikiCircleTableview.h */,
 				D7B904DE1C58A0AE002B1AAE /* WikiCircleTableview.m */,
+				D772FA851C915EE0005C56F8 /* WikiOtherBaseVC.h */,
+				D772FA861C915EE0005C56F8 /* WikiOtherBaseVC.m */,
+				D72D33041C96AD3F0008DC98 /* WikiFollowVC.h */,
+				D72D33051C96AD3F0008DC98 /* WikiFollowVC.m */,
+				D72D330A1C96B69C0008DC98 /* WikiWebVC.h */,
+				D72D330B1C96B69C0008DC98 /* WikiWebVC.m */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -1831,6 +1989,8 @@
 				D7B904991C586859002B1AAE /* ThreeSecondCell.m */,
 				D7B9049A1C586859002B1AAE /* ThreeThirdCell.h */,
 				D7B9049B1C586859002B1AAE /* ThreeThirdCell.m */,
+				D72D33071C96B5750008DC98 /* WikiFavorCell.h */,
+				D72D33081C96B5750008DC98 /* WikiFavorCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1925,10 +2085,16 @@
 				D7D56A0E1C266871009CBF2D /* IOSNetworking */,
 				D7D56A3C1C266872009CBF2D /* IOSSystem */,
 				D7D56A4F1C266872009CBF2D /* IOSTabModule */,
-				D7D569081C2584EC009CBF2D /* Main.storyboard */,
-				D7D5690D1C2584EC009CBF2D /* LaunchScreen.storyboard */,
-				D7D569101C2584EC009CBF2D /* Info.plist */,
 				D7D568FF1C2584EC009CBF2D /* Supporting Files */,
+			);
+			path = CikersApp;
+			sourceTree = "<group>";
+		};
+		D7D568FF1C2584EC009CBF2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7D569101C2584EC009CBF2D /* Info.plist */,
+				D7D569001C2584EC009CBF2D /* main.m */,
 				D7D569AE1C265FE7009CBF2D /* CikersApp.pch */,
 				D75B028D1C60510A00C071BC /* Icon.png */,
 				D75B028E1C60510A00C071BC /* icon72.png */,
@@ -1938,14 +2104,6 @@
 				D75B02921C60510A00C071BC /* icon144.png */,
 				D75B02931C60510A00C071BC /* icon152.png */,
 				D75B02941C60510A00C071BC /* icon180.png */,
-			);
-			path = CikersApp;
-			sourceTree = "<group>";
-		};
-		D7D568FF1C2584EC009CBF2D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D7D569001C2584EC009CBF2D /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1971,6 +2129,7 @@
 		D7D569AF1C266871009CBF2D /* IOSCommon */ = {
 			isa = PBXGroup;
 			children = (
+				D72D32FF1C96A79D0008DC98 /* FDCalendar */,
 				D779DBEF1C3E0EE800472FD9 /* VOSegmentedControl */,
 				D7B5F8DE1C34CE4200AE7341 /* ICSDrawerController */,
 				D7B5F8401C2B975E00AE7341 /* UMSocial_Sdk_Extra_Frameworks */,
@@ -2306,6 +2465,9 @@
 				D7D56A4C1C266872009CBF2D /* HLTableView */,
 				D7B5F7FF1C2ABEEF00AE7341 /* DataSingleton.h */,
 				D7B5F8001C2ABEEF00AE7341 /* DataSingleton.m */,
+				D772FA8D1C93F11C005C56F8 /* JCAlertView.bundle */,
+				D772FA8E1C93F11C005C56F8 /* JCAlertView.h */,
+				D772FA8F1C93F11C005C56F8 /* JCAlertView.m */,
 				D757996A1C50A66F00093A27 /* SingleManageVC.h */,
 				D757996B1C50A66F00093A27 /* SingleManageVC.m */,
 			);
@@ -2419,6 +2581,8 @@
 				D7D56AB91C26A5D5009CBF2D /* Playerinfo.storyboard */,
 				D7B5F88F1C30E9BC00AE7341 /* Match.storyboard */,
 				D7B5FB981C34E13000AE7341 /* Game.storyboard */,
+				D7D569081C2584EC009CBF2D /* Main.storyboard */,
+				D7D5690D1C2584EC009CBF2D /* LaunchScreen.storyboard */,
 			);
 			path = IOSStoryboards;
 			sourceTree = "<group>";
@@ -2656,7 +2820,6 @@
 				D7B903E71C56175B002B1AAE /* photo_number_icon@2x.png in Resources */,
 				D7B903E21C56175B002B1AAE /* TableViewArrow@2x.png in Resources */,
 				D7D5690F1C2584EC009CBF2D /* LaunchScreen.storyboard in Resources */,
-				D7B0DD351C37FC5A00A3997A /* icon-list01@2x.png in Resources */,
 				D7B5F8221C2B871900AE7341 /* UMSLoginViewController.xib in Resources */,
 				D7B5F8901C30E9BC00AE7341 /* Match.storyboard in Resources */,
 				D75B029B1C60510A00C071BC /* icon152.png in Resources */,
@@ -2670,12 +2833,15 @@
 				D7B903E51C56175B002B1AAE /* photo_def_photoPickerVc@2x.png in Resources */,
 				D7D56AAA1C269315009CBF2D /* Search.storyboard in Resources */,
 				D7B903E81C56175B002B1AAE /* photo_original_def@2x.png in Resources */,
+				D72D33001C96A79D0008DC98 /* icon_next@2x.png in Resources */,
+				D772FA901C93F11C005C56F8 /* JCAlertView.bundle in Resources */,
 				D7B903DF1C56175B002B1AAE /* MMVideoPreviewPlayHL@2x.png in Resources */,
 				D7D56AD71C27E8B5009CBF2D /* TeamCreat.storyboard in Resources */,
 				D7B5F7EC1C296F1000AE7341 /* zh_CN.json in Resources */,
 				D7B903EA1C56175B002B1AAE /* photo_sel_photoPickerVc@2x.png in Resources */,
 				D7B5F8261C2B871900AE7341 /* UMSnsAccountViewController.xib in Resources */,
 				D7B903DE1C56175B002B1AAE /* MMVideoPreviewPlay@2x.png in Resources */,
+				D72D33011C96A79D0008DC98 /* icon_previous@2x.png in Resources */,
 				D75B029A1C60510A00C071BC /* icon144.png in Resources */,
 				D7B903E01C56175B002B1AAE /* TZAlbumCell.xib in Resources */,
 				D7B903ED1C56175B002B1AAE /* preview_original_def@2x.png in Resources */,
@@ -2693,14 +2859,12 @@
 				D75B02961C60510A00C071BC /* icon72.png in Resources */,
 				D7B5F8AD1C32585200AE7341 /* Images.xcassets in Resources */,
 				D7B903EC1C56175B002B1AAE /* preview_number_icon@2x.png in Resources */,
-				D7B0DD361C37FC5A00A3997A /* icon-new@2x.png in Resources */,
 				D7B5F8271C2B871900AE7341 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				D7B903E41C56175B002B1AAE /* navi_back@2x.png in Resources */,
 				D7B5F8231C2B871900AE7341 /* UMSShareListController.xib in Resources */,
 				D7B903E11C56175B002B1AAE /* TZAssetCell.xib in Resources */,
 				D7D56ABA1C26A5D5009CBF2D /* Playerinfo.storyboard in Resources */,
 				D7D56AB01C269338009CBF2D /* Myinfo.storyboard in Resources */,
-				D7B0DD341C37FC5A00A3997A /* icon-arrow1@2x.png in Resources */,
 				D75B029C1C60510A00C071BC /* icon180.png in Resources */,
 				D7B5FB991C34E13000AE7341 /* Game.storyboard in Resources */,
 				D7B0DCD11C35258F00A3997A /* GameSection1.xib in Resources */,
@@ -2788,20 +2952,25 @@
 				D7B904011C5724C2002B1AAE /* PlayerMainInfoView.m in Sources */,
 				D7D56A971C266872009CBF2D /* ViewController.m in Sources */,
 				D7B0DD421C3954D200A3997A /* MatchWikiCell.m in Sources */,
+				D7D17C741C8001F500EF81E1 /* MessageMatch.m in Sources */,
 				D779DBC11C3BB93B00472FD9 /* SDBrowserImageView.m in Sources */,
 				D7CC75AD1C437F860081BFE3 /* KTSelectPickerView.m in Sources */,
 				D7B5F87C1C30DE2F00AE7341 /* ARSegmentPageController.m in Sources */,
 				D7D56A7E1C266872009CBF2D /* HLLoginInfoView.m in Sources */,
 				D7D56A711C266872009CBF2D /* HLRoundButton.m in Sources */,
+				D71F146E1C8191EC008F4447 /* MyTagsTBView.m in Sources */,
 				D779DBCF1C3BC72500472FD9 /* WikiPhotoView.m in Sources */,
 				D779DBC61C3BBB2700472FD9 /* WIkiModel.m in Sources */,
 				D7CC75A01C434BB20081BFE3 /* PublishActivityVC.m in Sources */,
 				D7D56ACF1C26D0A0009CBF2D /* LoginData.m in Sources */,
 				D7B9040E1C5795FD002B1AAE /* DicWikiInfo.m in Sources */,
 				D78B15BB1C51FB7100F20524 /* TeamMainCell.m in Sources */,
+				D772FA871C915EE0005C56F8 /* WikiOtherBaseVC.m in Sources */,
+				D71F14771C81A90D008F4447 /* MySettingAboutUs.m in Sources */,
 				D7B5F8A51C32379A00AE7341 /* MatchTagCell.m in Sources */,
 				D7D56A701C266872009CBF2D /* HLLoadingView.m in Sources */,
 				D7D56AD21C26DAD8009CBF2D /* FollowVC.m in Sources */,
+				D71F14711C8194DC008F4447 /* MySettingTBView.m in Sources */,
 				D7D56A601C266872009CBF2D /* UIColor+Expanded.m in Sources */,
 				D7B904D31C586859002B1AAE /* Imgextra.m in Sources */,
 				D7B5F8D81C33DF3400AE7341 /* DicPrediction.m in Sources */,
@@ -2824,6 +2993,7 @@
 				D779DC111C3FB72F00472FD9 /* GameListCell.m in Sources */,
 				D7B5F85C1C2BB86C00AE7341 /* FollowTableCell.m in Sources */,
 				D7B904D01C586859002B1AAE /* XYString.m in Sources */,
+				D71F148A1C84127A008F4447 /* MyWikiList.m in Sources */,
 				D7B904DF1C58A0AE002B1AAE /* WikiCircleTableview.m in Sources */,
 				D7D56A611C266872009CBF2D /* UIColor+HSV.m in Sources */,
 				D7B9040B1C575710002B1AAE /* TeamPlayerCell.m in Sources */,
@@ -2831,8 +3001,10 @@
 				D744BA311C4E257B0020268B /* BntLImageRTitle.m in Sources */,
 				D7B0DD331C37FC5A00A3997A /* XBSettingCell.m in Sources */,
 				D75904D31C48BA930021DB70 /* TounamentPlayerCell.m in Sources */,
+				D71F14841C84124D008F4447 /* MyFollowList.m in Sources */,
 				D7B904B81C586859002B1AAE /* NSObject+MJKeyValue.m in Sources */,
 				D7D56A631C266872009CBF2D /* UIImage+Custom.m in Sources */,
+				D71F147B1C82F8C6008F4447 /* MySettingPassword.m in Sources */,
 				D7B903F41C56175B002B1AAE /* TZPhotoPreviewController.m in Sources */,
 				D7CC75C91C4606860081BFE3 /* GameTeamVC.m in Sources */,
 				D7B903B91C56074C002B1AAE /* BaseError.m in Sources */,
@@ -2848,6 +3020,8 @@
 				D7D56A721C266872009CBF2D /* HLTFContainerView.m in Sources */,
 				D75799691C50942C00093A27 /* SearchTounament.m in Sources */,
 				D75799661C50941900093A27 /* SearchTeam.m in Sources */,
+				D71F14871C841265008F4447 /* MyEventList.m in Sources */,
+				D72D33091C96B5750008DC98 /* WikiFavorCell.m in Sources */,
 				D7D56A6F1C266872009CBF2D /* HLLoadingBaseView.m in Sources */,
 				D7B0DD0B1C36794300A3997A /* TabPublishVC.m in Sources */,
 				D779DBC01C3BB93B00472FD9 /* UIView+SDAutoLayout.m in Sources */,
@@ -2877,10 +3051,12 @@
 				D7D56A8D1C266872009CBF2D /* BaseApi.m in Sources */,
 				D7D56A751C266872009CBF2D /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				D7CC75C21C4545060081BFE3 /* GameHeaderView.m in Sources */,
+				D772FA8A1C93E8AF005C56F8 /* MyTeamCell.m in Sources */,
 				D7B904B61C586859002B1AAE /* NSObject+MJClass.m in Sources */,
 				D779DBC31C3BB93B00472FD9 /* SDWaitingView.m in Sources */,
 				D779DC071C3E58B300472FD9 /* DeformationButton.m in Sources */,
 				D7B5F8BA1C326B9B00AE7341 /* DicGameinfo.m in Sources */,
+				D73D680C1C853AEC00DD3BD0 /* MyTagsCell.m in Sources */,
 				D78B15BE1C52023800F20524 /* TeamPlayerVC.m in Sources */,
 				D7B5F8981C31030E00AE7341 /* CustomHeader.m in Sources */,
 				D7B5F7E81C2950B000AE7341 /* YMUtils.m in Sources */,
@@ -2904,6 +3080,8 @@
 				D78B15C11C52055400F20524 /* TeamStatisticsVC.m in Sources */,
 				D7B5F8AB1C323F0300AE7341 /* MatchMVPTableVC.m in Sources */,
 				D7D56A661C266872009CBF2D /* HLImageUtil.m in Sources */,
+				D71F14741C81976C008F4447 /* MyinfoModifyTBView.m in Sources */,
+				D7D17C771C80020900EF81E1 /* MessageSystem.m in Sources */,
 				D7B904D41C586859002B1AAE /* ThreeModel.m in Sources */,
 				D7D56A591C266872009CBF2D /* HLQRCodeModule.m in Sources */,
 				D7B903EF1C56175B002B1AAE /* TZAssetModel.m in Sources */,
@@ -2927,6 +3105,7 @@
 				D7B904D51C586859002B1AAE /* ThreeBaseCell.m in Sources */,
 				D7B5F8B41C3267DA00AE7341 /* DicMatchinfo.m in Sources */,
 				D7CC75BC1C44A29A0081BFE3 /* PublishModel.m in Sources */,
+				D73D680F1C85A0F700DD3BD0 /* MyFollowContent.m in Sources */,
 				D7D56A621C266872009CBF2D /* UIDevice+CMUtils.m in Sources */,
 				D744BA4B1C4FB0CF0020268B /* PlayerMainVC.m in Sources */,
 				D779DBF81C3E0EE800472FD9 /* VOContentLayer.m in Sources */,
@@ -2936,6 +3115,7 @@
 				D7D56A651C266872009CBF2D /* HLErrorUtil.m in Sources */,
 				D75799571C50752300093A27 /* DicSearch.m in Sources */,
 				D7D56A7F1C266872009CBF2D /* Api.m in Sources */,
+				D72D330F1C96BDB70008DC98 /* DicWikiComments.m in Sources */,
 				D7D56ADF1C27F3A7009CBF2D /* CreatTeamIconVC.m in Sources */,
 				D7B904B91C586859002B1AAE /* NSObject+MJProperty.m in Sources */,
 				D7B87B8F1C5A0BE80068CF48 /* WikiInfoCellMessage.m in Sources */,
@@ -2943,13 +3123,18 @@
 				D75799601C507B2500093A27 /* MainHotpackscell.m in Sources */,
 				D7D56A741C266872009CBF2D /* NSObject+RMCopyable.m in Sources */,
 				D75799751C50DEB800093A27 /* SearchTounamentCell.m in Sources */,
+				D7D17C711C8001C900EF81E1 /* MessageEvent.m in Sources */,
+				D71F147E1C841177008F4447 /* MyTeamList.m in Sources */,
 				D7B0DD2E1C37FC5A00A3997A /* UIView+XBExtension.m in Sources */,
 				D75904CD1C48B6EE0021DB70 /* GameTeamCell.m in Sources */,
+				D772FA911C93F11C005C56F8 /* JCAlertView.m in Sources */,
+				D77F098F1C9940D5002CD297 /* WikiCellComment.m in Sources */,
 				D7D56A671C266872009CBF2D /* HLKeyboardUtil.m in Sources */,
 				D74D16FD1C4D0A780096FD5B /* DicTags.m in Sources */,
 				D7B0DD501C3A585100A3997A /* ClityListDatePick.m in Sources */,
 				D7D56A941C266872009CBF2D /* HLBaseViewController.m in Sources */,
 				D7A1F99B1C477FD50028411D /* View+Bt+Image.m in Sources */,
+				D72D33031C96A79D0008DC98 /* FDCalendarItem.m in Sources */,
 				D7B904B01C586859002B1AAE /* MJDictionaryCache.m in Sources */,
 				D7B903F31C56175B002B1AAE /* TZPhotoPreviewCell.m in Sources */,
 				D7D56ADC1C27E983009CBF2D /* CreatTeam.m in Sources */,
@@ -2975,9 +3160,12 @@
 				D7D56A951C266872009CBF2D /* HLNavgationController.m in Sources */,
 				D7B904B11C586859002B1AAE /* MJExtensionConst.m in Sources */,
 				D7B904DC1C586890002B1AAE /* MainWikiVC.m in Sources */,
+				D72D33061C96AD3F0008DC98 /* WikiFollowVC.m in Sources */,
 				D779DB9F1C3B5DE900472FD9 /* UIView+DDExtension.m in Sources */,
 				D75904CA1C4899D70021DB70 /* TounamentWebInfo.m in Sources */,
+				D72D33121C96BDC80008DC98 /* DicWikiFavor.m in Sources */,
 				D7B0DD041C36758F00A3997A /* WikiViewModel.m in Sources */,
+				D72D330C1C96B69C0008DC98 /* WikiWebVC.m in Sources */,
 				D7B5FB9F1C34ED3100AE7341 /* MatchToolButton.m in Sources */,
 				D7D56A681C266872009CBF2D /* UIResponder+FirstResponder.m in Sources */,
 				D7B0DCCF1C3520EE00A3997A /* GameTableView.m in Sources */,
@@ -2993,6 +3181,7 @@
 				D7B87B951C5B6B070068CF48 /* DicCommentsInfo.m in Sources */,
 				D7D56A771C266872009CBF2D /* HLLoginViewController.m in Sources */,
 				D7B5F8A81C323EE900AE7341 /* MatchMVPCell.m in Sources */,
+				D72D33021C96A79D0008DC98 /* FDCalendar.m in Sources */,
 				D7B903F11C56175B002B1AAE /* TZImagePickerController.m in Sources */,
 				D7CC759D1C434B900081BFE3 /* PublishPersonalVC.m in Sources */,
 				D7D56A911C266872009CBF2D /* NetworkingUtils.m in Sources */,
@@ -3006,6 +3195,7 @@
 				D779DBAD1C3B697900472FD9 /* UIView+TYLaunchAnimation.m in Sources */,
 				D7D56A791C266872009CBF2D /* PasswordChangeVC.m in Sources */,
 				D744BA471C4FB09E0020268B /* PlayerBaseVC.m in Sources */,
+				D71F14811C841230008F4447 /* MyTournamentList.m in Sources */,
 				D7B5F87D1C30DE2F00AE7341 /* ARSegmentPageHeader.m in Sources */,
 				D7B904B21C586859002B1AAE /* MJFoundation.m in Sources */,
 				D7D56A931C266872009CBF2D /* AppDelegate.m in Sources */,
@@ -3018,6 +3208,7 @@
 				D7B5F7E71C2950B000AE7341 /* AddressPickerViewC.m in Sources */,
 				D744BA441C4FAC8A0020268B /* TeamBaseVC.m in Sources */,
 				D7B903F61C56175B002B1AAE /* UIView+Layout.m in Sources */,
+				D71F148D1C841831008F4447 /* UserinfoModel.m in Sources */,
 				D7B903F51C56175B002B1AAE /* TZVideoPlayerController.m in Sources */,
 				D7D56ACC1C26A892009CBF2D /* TeamMainVC.m in Sources */,
 				D7B0DD0E1C36838F00A3997A /* WikiInfoVC.m in Sources */,
@@ -3080,6 +3271,7 @@
 				D7D569091C2584EC009CBF2D /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D7D5690D1C2584EC009CBF2D /* LaunchScreen.storyboard */ = {
@@ -3088,6 +3280,7 @@
 				D7D5690E1C2584EC009CBF2D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

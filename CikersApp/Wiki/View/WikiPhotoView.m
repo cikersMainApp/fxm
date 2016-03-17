@@ -70,7 +70,7 @@
         long columnIndex = idx % perRowItemCount;
         long rowIndex = idx / perRowItemCount;
         UIImageView *imageView = [UIImageView new];
-        NSString *url1 = [NSString stringWithFormat:@"http://www.cikers.com%@",obj];
+        NSString *url1 = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,obj];
 
         [imageView sd_setImageWithURL:[NSURL URLWithString:url1] placeholderImage:[UIImage imageNamed:@"photobg"]];
         

@@ -45,6 +45,8 @@
 @property(nonatomic,strong)NSString *portrait;//这个是头像
 
 
+@property(nonatomic,strong)NSMutableArray *array_matchs;
+
 
 //
 //@property(nonatomic,strong)NSString

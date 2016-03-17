@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DicWikiInfo.h"
 #import "WikiPhotoView.h"
+#import "WikiCellComment.h"
 @interface WikiCellBase : UITableViewCell
 // 头像
 @property(nonatomic,strong)UIImageView *img_icon;
@@ -39,12 +40,8 @@
 @property(nonatomic,strong)UILabel *lb_eventtime;
 
 
-
-
-
-
 @property (nonatomic, strong) DicWikiInfo *model;
-
+//@property(nonatomic,strong)DicWikiComments *data_obj_comment;
 
 
 +(NSString *)cellIdentifierForRow:(DicWikiInfo *)info;

@@ -28,7 +28,7 @@
         UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, i*ScreenWidth, view_scroll.frame.size.height)];
         [view_scroll addSubview:img];
         
-        NSString *url1 = [NSString stringWithFormat:@"http://www.cikers.com%@",[self.array_imgs objectAtIndex:i]];
+        NSString *url1 = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,[self.array_imgs objectAtIndex:i]];
         [img sd_setImageWithURL:[NSURL URLWithString:url1]];
     }
     

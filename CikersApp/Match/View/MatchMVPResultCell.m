@@ -39,7 +39,7 @@
 -(void)updateUI:(DicPlayerinfo *)player
 {
 
-    NSString *url = [NSString stringWithFormat:@"http://www.cikers.com%@",player.icon];
+    NSString *url = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,player.icon];
     [self.img_photo sd_setImageWithURL:[NSURL URLWithString:url]];
     
     self.lb_name.text = player.name;

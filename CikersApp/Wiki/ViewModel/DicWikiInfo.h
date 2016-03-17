@@ -17,6 +17,7 @@
 @property(nonatomic,strong)NSNumber *sharecount;//帖子被分享过的次数
 @property(nonatomic,strong)NSNumber *viewcount;//浏览次数
 @property(nonatomic,strong)NSNumber *id;
+@property(nonatomic,strong)NSString *wikiId;
 
 
 @property(nonatomic,strong)NSDictionary *extra;
@@ -77,6 +78,9 @@
 
 //--------------------
 
+
+@property(nonatomic,assign)NSInteger demotype;//临时变量
+@property(nonatomic,assign)NSInteger demotype1;//临时变量
 
 -(void)parseExtra;
 

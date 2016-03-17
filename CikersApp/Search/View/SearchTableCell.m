@@ -82,7 +82,7 @@
     self.eventId = [dic objectForKey:@"oid"];
     
 
-    [self.img_gameIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",url]]];
+    [self.img_gameIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,url]]];
     
     [self.lb_gameName setText:name];
     
@@ -100,7 +100,7 @@
     self.eventId = [dic objectForKey:@"oid"];
     
     
-    [self.img_gameIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",url]]];
+    [self.img_gameIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,url]]];
     
     [self.lb_gameName setText:name];
     
@@ -118,7 +118,7 @@
     self.eventId = [dic objectForKey:@"oid"];
     
     
-    [self.img_playerIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",url]]];
+    [self.img_playerIcon sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,url]]];
     
     [self.lb_playerName setText:name];
     

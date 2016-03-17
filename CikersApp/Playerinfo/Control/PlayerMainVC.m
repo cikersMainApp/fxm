@@ -7,7 +7,9 @@
 //
 
 #import "PlayerMainVC.h"
-
+#import "MyTagsTBView.h"
+#import "GamelistTableVC.h"
+#import "WikiOtherBaseVC.h"
 @interface PlayerMainVC ()
 
 @end
@@ -45,6 +47,40 @@
 {
     [_cell_contentview_2 updateTag:(NSArray *)dic];
 }
+
+
+-(IBAction)bnt_moreTag:(id)sender
+{
+
+    MyTagsTBView *vc = [[MyTagsTBView alloc] init];
+    vc.num_userid = _num_id;
+    [vc initOperation:@"player"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(IBAction)bnt_Tounament:(id)sender
+{
+    id nextvc = [[UIStoryboard storyboardWithName:@"Game" bundle:nil]
+                 instantiateViewControllerWithIdentifier:[NSString stringWithUTF8String:"gamelisttablevc"]];
+    
+    ((GamelistTableVC*)nextvc).num_gameid = [NSNumber numberWithInt:307];
+    
+    
+    [self.navigationController pushViewController:nextvc animated:YES];
+}
+-(IBAction)bnt_team:(id)sender
+{
+    
+}
+-(IBAction)bnt_wiki:(id)sender
+{
+    WikiOtherBaseVC *vc = [[WikiOtherBaseVC alloc] init];
+    
+    
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
+
 
 #pragma mark -
 #pragma mark openDeaw

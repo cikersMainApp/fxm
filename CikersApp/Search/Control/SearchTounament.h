@@ -14,5 +14,8 @@
 @property(nonatomic,strong)NSMutableArray *array_data;
 @property(nonatomic,strong)SearchOperation *operation;
 @property(nonatomic,strong)UISearchBar *search_bar;
+@property(nonatomic,strong)UIView *view_searchBg;
 
+@property(nonatomic,strong)UIButton *bt_province;
+@property(nonatomic,strong)UIButton *bt_state;
 @end

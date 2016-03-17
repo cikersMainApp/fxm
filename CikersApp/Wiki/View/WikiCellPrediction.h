@@ -8,6 +8,10 @@
 
 #import "WikiCellBase.h"
 
+/*
+ * 预测贴
+ */
+
 @interface WikiCellPrediction : WikiCellBase
 
 @end

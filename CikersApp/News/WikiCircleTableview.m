@@ -53,6 +53,11 @@
 
     if (self = [super initWithFrame:frame]) {
         
+        
+        self.opration = [[WIkiModel alloc] initWithDelegate:nil needCommonProcess:NO];
+        self.opration.delegate = self;
+
+        
         self.separatorColor = [UIColor clearColor];
         self.delegate = self;
         self.dataSource = self;
@@ -64,6 +69,7 @@
             [self loadData];
         }];
         // 马上进入刷新状态
+        [self.mj_header beginRefreshing];
         
         //..上拉刷新
         self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -73,8 +79,7 @@
         }];
         self.mj_footer.hidden = YES;
         
-        self.opration = [[WIkiModel alloc] initWithDelegate:nil needCommonProcess:NO];
-        self.opration.delegate = self;
+        
     }
     
     return self;
@@ -139,6 +144,8 @@
     if (!cell) {
         cell = [[mClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
+    
     cell.model = model;
     return cell;
     

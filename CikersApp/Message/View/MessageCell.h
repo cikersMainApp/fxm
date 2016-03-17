@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DicMessage.h"
 @interface MessageCell : UITableViewCell
+
+@property(nonatomic,strong)UILabel *lb_time;
+@property(nonatomic,strong)UIView *view_status;
+@property(nonatomic,strong)DicMessage *data_obj;
+
+-(void)cellUpdata:(DicMessage*)dic;
 
 @end

@@ -51,7 +51,7 @@
     
     DicSearchinfo *info = [self.array_data objectAtIndex:indexPath.row];
     
-    NSString *str = [NSString stringWithFormat:@"http://www.cikers.com%@",info.field2];
+    NSString *str = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,info.field2];
     
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:str]];
     

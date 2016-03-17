@@ -136,6 +136,9 @@ const char *RecommedTitle[] = {"热门赛事","风云球队","人气之星"};
     if (!cell) {
         
         cell =[[MainHotpackscell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+//        tableView.separatorInset = UIEdgeInsetsMake(CELL_NORMAL_HEIGHT - 2, 0, 1, 0);
         
     }
     

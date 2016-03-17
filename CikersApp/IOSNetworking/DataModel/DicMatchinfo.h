@@ -49,7 +49,7 @@
 @property(nonatomic,strong)NSNumber *tournamentid;
 //@property(nonatomic,strong)NSString *description; //描述
 
-
+@property(nonatomic,strong)NSString *resultforview; //结果
 
 
 @property(nonatomic,strong)NSNumber *goals; //总进球数

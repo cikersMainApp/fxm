@@ -8,6 +8,10 @@
 
 #import "TeamMainVC.h"
 #import "TeamPlayerVC.h"
+#import "MyTagsTBView.h"
+#import "WikiCircleTableview.h"
+#import "WikiOtherBaseVC.h"
+#import "GamelistTableVC.h"
 @interface TeamMainVC ()
 
 @end
@@ -77,12 +81,39 @@
     [self.drawer open];
 
 }
+-(IBAction)bnt_moreTag:(id)sender
+{
+    
+    MyTagsTBView *vc = [[MyTagsTBView alloc] init];
+    vc.num_userid = _data_obj_info.id;
+    [vc initOperation:@"team"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(IBAction)bnt_tounament:(id)sender
+{
+    id nextvc = [[UIStoryboard storyboardWithName:@"Game" bundle:nil]
+                 instantiateViewControllerWithIdentifier:[NSString stringWithUTF8String:"gamelisttablevc"]];
+    
+    ((GamelistTableVC*)nextvc).num_gameid = [NSNumber numberWithInt:307];
+    
+    
+    [self.navigationController pushViewController:nextvc animated:YES];
+
+}
+
+-(IBAction)bnt_wiki:(id)sender
+{
+
+    WikiOtherBaseVC *vc = [[WikiOtherBaseVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 
     id nextvc = segue.destinationViewController;
-    [nextvc setValue:_data_obj_info.id forKey:@"num_teamid"];
+//    [nextvc setValue:_data_obj_info.id forKey:@"num_teamid"];
 }
 
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DicPlayerinfo.h"
+#import "DicUserinfo.h"
 @interface FollowTableCell : UITableViewCell
 
 @property(nonatomic,weak)IBOutlet UILabel *lb_name;
@@ -26,6 +27,6 @@
 -(void)initUI;
 -(IBAction)bnt_follow:(id)sender;
 
--(void)cell_update;
+-(void)cell_update:(DicPlayerinfo*)dic1 right:(DicPlayerinfo*)dic2 userinfo:(DicUserinfo*)info;
 
 @end

@@ -40,6 +40,7 @@
     CGRect accessFrame = self.accessoryView.frame;
     accessFrame.origin.x += 20;
     self.accessoryView.frame = accessFrame;
+    
 
 }
 -(void)updateUI:(NSInteger)tag

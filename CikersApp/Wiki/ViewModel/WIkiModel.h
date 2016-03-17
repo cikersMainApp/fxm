@@ -12,6 +12,8 @@
 
 -(void)data_scuess:(NSMutableArray*)dic;
 
+-(void)data_info:(id)dic;
+
 @end
 
 #import <UIKit/UIKit.h>
@@ -21,10 +23,20 @@
 @property(nonatomic,strong)id<WikiModelDelegate>delegate;
 
 
+-(void)sendHotFavor:(NSNumber*)uid;
+-(void)parseHotFavor:(NSDictionary*)dic;
+
+-(void)sendWikiInfo:(NSNumber*)uid;
+-(void)parseWikiInfo:(NSDictionary*)dic;
+
+
 -(void)sendListrecommandByoffset:(NSInteger)offset;
 -(void)parseListrecommand:(NSDictionary*)dic;
 
 -(void)sendListCikcleByoffset:(NSInteger)offset;
 -(void)parseListCikcle:(NSDictionary*)dic;
+
+-(void)sendZhuanqu;
+-(void)parseZhuanqu:(NSDictionary*)dic;
 
 @end

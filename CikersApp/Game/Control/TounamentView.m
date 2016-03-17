@@ -17,7 +17,7 @@
 
 -(void)updateUI:(DicGameinfo *)dic
 {
-    NSString *urlstr = [NSString stringWithFormat:@"http://static.cikers.com%@",dic.portrait];
+    NSString *urlstr = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,dic.portrait];
     [_img_icon sd_setImageWithURL:[NSURL URLWithString:urlstr]];
 
     _lb_name.text = dic.name;

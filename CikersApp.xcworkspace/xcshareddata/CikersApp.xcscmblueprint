@@ -11,6 +11,7 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : 0,
     "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : 0,
+    "4B0EF01CFFF65457AD5517C8E04B10434B5BBC90+++DF91FA3" : 0,
     "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456" : 0,
     "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : 0,
     "D9356A042CDA2547EFDDDE759F9118640F71F77C+++8CD46DB" : 0
@@ -19,6 +20,7 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "367dc75e-88a9-8441-8764-18964780d762++8865+++6882555" : "..\/Downloads\/Teapod\/TeaLife",
     "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89" : "..\/Downloads\/Teapod\/TeaLife",
+    "4B0EF01CFFF65457AD5517C8E04B10434B5BBC90+++DF91FA3" : "FDCalendar\/",
     "D3CCF2F693101B8D4C2D311D6CA7DBC02CC5E18A+++23AA456" : "TYLaunchAnimation\/",
     "001DE46FBA6B3322354811F9C17215E32138BD71+++3DECDB3" : "CikersApp\/",
     "D9356A042CDA2547EFDDDE759F9118640F71F77C+++8CD46DB" : "VOSegmentedControlDemo\/"
@@ -41,6 +43,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:CoffeeTea\/TeaLife.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "367dc75e-88a9-8441-8764-18964780d762++8865+++E15DB89"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/fergusding\/FDCalendar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4B0EF01CFFF65457AD5517C8E04B10434B5BBC90+++DF91FA3"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/12207480\/TYLaunchAnimation.git",

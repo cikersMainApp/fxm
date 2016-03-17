@@ -24,11 +24,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JCAlertView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>LLBootstrapButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,7 +77,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E7F1D26A029DC14E6E4E029A7072CCD</key>
+		<key>07F63F481F4296F1CE5F33CD125B869A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>18DB40FB23492E2E08E88364C02EA943</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>41172DC289AE4AA7DD2B5C2C0A9457DF</key>
+		<key>2905B91A36267ECB612C6F51FCC1C69A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,11 +102,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5184FCC36F70BB2537B98775CDDAE1C5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5ACE1BEF74237689A7FEFB322B393EF3</key>
 		<dict>
 			<key>primary</key>
@@ -127,12 +112,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>815B9D7F643B295897A1EED5240637EA</key>
+		<key>691FB23B6EB4E6013D6DD36F18C049F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8616A4D00E8FE377704F4865A384F089</key>
+		<key>8B2AF795976A94E72D6E8B94CD1EE4FE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A0C1A09A2490C82A9525476E0AE4EBE6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF3962D0884F738763BB1A8B8A9FF86D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF4DA56EFE52A2D2376599E1FD14168D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -143,16 +143,6 @@
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E6AF542C0BD4B678F0B156D005629387</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EDEEB9A5C4324A73C9F5633F66ED8221</key>
 		<dict>
 			<key>primary</key>
 			<true/>

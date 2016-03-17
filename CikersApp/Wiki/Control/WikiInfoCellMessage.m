@@ -160,10 +160,10 @@
         .heightIs(200);
 
         
-        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.size.width - 20, 200)];
-        img.backgroundColor = [UIColor yellowColor];
-        [img setImage:[self thumbnailImageForVideo:[NSURL URLWithString:@"http://124.232.154.173/youku/67774226A883683168CDDA659A/03000805005153359910D703BAF2B17CDDDAF7-77C8-0F5A-F0BC-6BD2DA2B0B00.mp4"]]];
-        [self._picContainerView addSubview:img];
+//        UIImageView *img = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.contentView.size.width - 20, 200)];
+//        img.backgroundColor = [UIColor yellowColor];
+//        [img setImage:[self thumbnailImageForVideo:[NSURL URLWithString:@"http://124.232.154.173/youku/67774226A883683168CDDA659A/03000805005153359910D703BAF2B17CDDDAF7-77C8-0F5A-F0BC-6BD2DA2B0B00.mp4"]]];
+//        [self._picContainerView addSubview:img];
         
 
     }

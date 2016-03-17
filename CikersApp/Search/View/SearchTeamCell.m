@@ -29,7 +29,10 @@
         _lb_info.font = [UIFont systemFontOfSize:10];
         [self.contentView addSubview:_lb_info];
         
-        
+//        UIView *separatorView = [[UIView alloc] initWithFrame:CGRectMake(5, 130 - 3, ScreenWidth-10, 1)];
+//        separatorView.backgroundColor = [UIColor lightGrayColor];
+//        [self.contentView addSubview:separatorView];
+
     }
     
     return self;

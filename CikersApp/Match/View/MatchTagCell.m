@@ -58,7 +58,7 @@
         return;
     }
     
-    NSString *url = [NSString stringWithFormat:@"http://static.cikers.com%@",dic.icon];
+    NSString *url = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,dic.icon];
     
     [self.img_photo sd_setImageWithURL:[NSURL URLWithString:url]];
 

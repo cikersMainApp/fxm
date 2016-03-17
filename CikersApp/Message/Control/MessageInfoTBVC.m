@@ -9,7 +9,16 @@
 #import "MessageInfoTBVC.h"
 #import "MessageVC.h"
 #import "MessageCell.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
+#import "SingleManageVC.h"
+#import "DicPlayerinfo.h"
+#import "MyTagsTBView.h"
 @interface MessageInfoTBVC ()
+{
+    MJRefreshComponent *myRefreshView;
+
+}
 
 @end
 
@@ -17,7 +26,83 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
     
+    _operation = [[MessageModel alloc] initWithDelegate:nil needCommonProcess:NO];
+    _operation.delegate = self;
+
+    _array_infos = [[NSMutableArray alloc] init];
+    
+    
+    MJRefreshGifHeader *mjheader = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+        
+        _num_page = 0;
+        
+        myRefreshView = self.tableView.mj_header;
+        
+        [_operation sendBytype:_num_selectCellTag offset:@"0"];
+        
+    }];
+    
+    self.tableView.mj_header = mjheader;
+    
+    [self.tableView.mj_header beginRefreshing];
+    
+    MJRefreshAutoNormalFooter *mjfooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        
+        _num_page++;
+        
+        myRefreshView = self.tableView.mj_footer;
+        
+        [_operation sendBytype:_num_selectCellTag offset:[NSString stringWithFormat:@"%l",_num_page*20]];
+    }];
+    
+    self.tableView.mj_footer = mjfooter;
+    
+    _num_page = 0;
+    
+
+    
+    UIBarButtonItem *barRight = [[UIBarButtonItem alloc] initWithTitle:@"清除标记" style:UIBarButtonItemStylePlain target:self action:@selector(clearUpReadStatus)];
+    
+    self.navigationItem.rightBarButtonItem = barRight;
+    
+}
+
+-(void)clearUpReadStatus
+{
+
+}
+
+-(void)data_scuess:(id)sender
+{
+
+    NSMutableArray *temparray = (NSMutableArray*)sender;
+    
+    if ([temparray count] == 0) {
+        
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        [self.tableView.mj_header endRefreshing];
+        
+        return;
+    }
+    
+    if (myRefreshView == self.tableView.mj_header) {
+        _array_infos = temparray;
+        [self.tableView.mj_header endRefreshing];
+
+    }
+    
+    if (myRefreshView == self.tableView.mj_footer) {
+        [_array_infos addObjectsFromArray:temparray];
+        [self.tableView.mj_footer endRefreshing];
+
+    }
+    
+    
+    
+    [self.tableView reloadData];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated
@@ -66,7 +151,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [_array_infos count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,34 +160,49 @@
     
     MessageCell  *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentiferId];
     
-    //添加向右箭头
+    if (!cell) {
+        cell = [[MessageCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentiferId];
+    }
     
-    cell.imageView.image = [UIImage imageNamed:@"bnt_rankbyplayer"];
-    cell.textLabel.text =@"我是标题";
-    cell.detailTextLabel.text = @"您有10个新消息我在测试这个文本的内容能有多长，到底有多长呢，我再试试";
+    DicMessage *dic_msg = [_array_infos objectAtIndex:indexPath.row];
+    
+    //添加向右箭头
 
-    UILabel *lb_time = [[UILabel alloc] initWithFrame:CGRectMake(ScreenWidth - 105, 0, 100, 30)];
-    lb_time.textAlignment = NSTextAlignmentRight;
-    lb_time.textAlignment = NSTextAlignmentCenter;
-    lb_time.font = [UIFont systemFontOfSize:10];
-    lb_time.text = @"2015-01-12 13::00";
-    [cell addSubview:lb_time];
+    [cell cellUpdata:dic_msg];
+    
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+ 
+    DicMessage *dic_msg = [_array_infos objectAtIndex:indexPath.row];
+
+    if ([dic_msg.type isEqual:@"memberJoin"] || [dic_msg.type isEqualToString:@"memberLeave"])
+    {
+    
+        DicPlayerinfo *info = [DicPlayerinfo new];
+        
+        info.name = dic_msg.authorname;
+        info.icon = dic_msg.icon;
+        info.id = dic_msg.senderId;
+        
+        [SingleManageVC pushOtherModuleByNav:self.navigationController nextNav:self.navigationController type:Module_Player data:info];
+    }
+    if ([dic_msg.type isEqualToString:@"tag"]) {
+        
+
+        MyTagsTBView *vc_tag = [[MyTagsTBView alloc] init];
+        
+        //待定
+        vc_tag.num_userid = dic_msg.id;
+        [vc_tag initOperation:@"player"];
+        [self.navigationController pushViewController:vc_tag animated:YES];
+        
+    }
+    
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -60,7 +60,7 @@
 
     self._index = index;
     
-    NSString *url = [NSString stringWithFormat:@"http://www.cikers.com%@",[dic objectForKey:@"icon"]];
+    NSString *url = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,[dic objectForKey:@"icon"]];
     [self.img_photo sd_setImageWithURL:[NSURL URLWithString:url]];
 
     
@@ -100,7 +100,7 @@
             w = i - 3;
         }
         
-        NSString *url1 = [NSString stringWithFormat:@"http://www.cikers.com%@",[self.array_imgs objectAtIndex:i]];
+        NSString *url1 = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,[self.array_imgs objectAtIndex:i]];
         
         UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(30+w*(b_width+1), b_width + (i/3)*b_width, b_width, b_width)];
         

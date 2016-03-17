@@ -120,6 +120,8 @@
     
     if (!cell) {
         cell = [[SearchTeamCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     }
     
     DicTeaminfo *info = [_array_data objectAtIndex:indexPath.row];

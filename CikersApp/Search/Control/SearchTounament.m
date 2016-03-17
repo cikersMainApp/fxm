@@ -31,6 +31,40 @@
     
     
     
+    _view_searchBg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 66)];
+    
+    _search_bar = [[UISearchBar alloc] initWithFrame:CGRectMake(100, 0, ScreenWidth-100, 66)];
+    _search_bar.delegate = self;
+    _search_bar.searchResultsButtonSelected = YES;
+    _search_bar.showsSearchResultsButton = YES;
+    _search_bar.showsBookmarkButton = YES;
+    _search_bar.placeholder = @"输入您要寻找的赛事";
+    [_view_searchBg addSubview:_search_bar];
+    
+    _bt_province = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_bt_province setBackgroundColor:[UIColor orangeColor]];
+    [_bt_province setFrame:CGRectMake(0, 0, 50, 66)];
+    [_bt_province setTitle:@"省市" forState:UIControlStateNormal];
+    [_bt_province addTarget:self action:@selector(bnt_selectProvince:) forControlEvents:UIControlEventTouchUpInside];
+    [_view_searchBg addSubview:_bt_province];
+    
+    _bt_state = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_bt_state setFrame:CGRectMake(50, 0, 50, 66)];
+    [_bt_state setTitle:@"状态" forState:UIControlStateNormal];
+    [_bt_state addTarget:self action:@selector(bnt_selectState:) forControlEvents:UIControlEventTouchUpInside];
+    [_view_searchBg addSubview:_bt_state];
+    
+    
+}
+
+-(void)bnt_selectProvince:(UIButton*)bt
+{
+
+}
+
+-(void)bnt_selectState:(UIButton*)bt
+{
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,18 +111,13 @@
 -(nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     
-    if (!_search_bar) {
+    if (!_view_searchBg) {
         
-        _search_bar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 66)];
-        _search_bar.delegate = self;
-        _search_bar.searchResultsButtonSelected = YES;
-        _search_bar.showsSearchResultsButton = YES;
-        _search_bar.showsBookmarkButton = YES;
-        _search_bar.placeholder = @"输入您要寻找的赛事";
+
         
     }
     
-    return _search_bar;
+    return _view_searchBg;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -114,6 +143,8 @@
     
     if (!cell) {
         cell = [[SearchTounamentCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     }
     
     DicGameinfo *info = [_array_data objectAtIndex:indexPath.row];

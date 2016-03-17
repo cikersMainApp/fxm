@@ -6,6 +6,7 @@
 //  Copyright © 2016年 cikers. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
 @interface GameTeamCell : UITableViewCell

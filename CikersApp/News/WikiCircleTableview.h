@@ -16,5 +16,10 @@
 @property(nonatomic ,strong) NSMutableArray *listArry;
 @property(nonatomic, strong) WIkiModel *opration;
 
-@property(nonatomic,strong)MainWikiVC *nextvc;
+@property(nonatomic,strong)UIViewController *nextvc;
+
+@property(nonatomic,assign)NSInteger demotype;//临时变量
+@property(nonatomic,assign)NSInteger demotype1;//临时变量
+
+
 @end

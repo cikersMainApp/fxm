@@ -24,5 +24,7 @@
 
 -(void)initData;
 
+-(IBAction)bnt_moreTag:(id)sender;
+
 
 @end

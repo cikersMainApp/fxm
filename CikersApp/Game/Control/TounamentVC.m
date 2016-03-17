@@ -12,6 +12,8 @@
 #import "GamelistTableVC.h"
 #import "GameSingUpVC.h"
 #import "BaseNavigationBar.h"
+#import "MyTagsTBView.h"
+#import "WikiOtherBaseVC.h"
 @interface TounamentVC ()
 
 @end
@@ -77,10 +79,12 @@
 
 -(IBAction)bnt_moreTags:(id)sender
 {
+    MyTagsTBView *vc = [[MyTagsTBView alloc] init];
+    vc.num_userid = self.num_gameid;
+    [vc initOperation:@"game"];
+    [self.navigationController pushViewController:vc animated:YES];
 
 }
-
-
 
 
 //{"全部球队","比赛赛程","详细资料","活动动态","联赛排名","球员榜单"}
@@ -119,7 +123,10 @@ char * storyName[] = {"gameteamvc","gamelisttablevc","gameinfovc","","gamerankvc
             break;
         case 3:
         {
+            WikiOtherBaseVC *vc = [[WikiOtherBaseVC alloc] init];
             
+            
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 4:

@@ -87,7 +87,7 @@
     
     UIImageView *image_icon = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 90, 90)];
     [section_view1 addSubview:image_icon];
-    NSString *urlstr = [NSString stringWithFormat:@"http://static.cikers.com%@",self.data_obj_info.portrait];
+    NSString *urlstr = [NSString stringWithFormat:@"%@%@",HOST_IMAGE,self.data_obj_info.portrait];
     [image_icon sd_setImageWithURL:[NSURL URLWithString:urlstr]];
     
     image_icon.sd_layout

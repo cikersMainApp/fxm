@@ -40,8 +40,10 @@
 #define COLOR_G 57
 #define COLOR_B 89
 
+//static NSString *const HOST = @"http://sns.cikers.com/cikersapi/";
 static NSString *const HOST = @"http://newstack.cikers.com:8080/cikersapi/";
-static NSString *const HOST_IMAGE = @"http://www.cikers.com/";
+static NSString *const HOSTWEB = @"http://newstack.cikers.com:8080/cikersweb/";
+static NSString *const HOST_IMAGE = @"http://newstack.cikers.com:8080";
 
 
 #define DEBUGSTATE 1
@@ -131,6 +133,9 @@ static NSString *const HOST_IMAGE = @"http://www.cikers.com/";
 #define   WIKI_TYPE_PREDICTION   @"prediction" //预测贴 将要被废弃掉
 #define   WIKI_TYPE_MATCH     @"match" //比赛贴
 #define   WIKI_TYPE_MATCHREPORT   @"matchreport" //战报贴
+
+#define WIKI_TYPE_COMMENT "comment" //评论贴
+
 
 
 #import "DataSingleton.h"

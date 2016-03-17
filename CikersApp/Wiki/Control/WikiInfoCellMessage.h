@@ -33,6 +33,8 @@
 
 @property(nonatomic,strong)DicWikiInfo *data_obj_wiki;
 
+
+
 +(NSString *)cellIdentifierForRow:(NSInteger)index;
 
 - (UIImage*) thumbnailImageForVideo:(NSURL *)videoURL;

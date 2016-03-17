@@ -15,10 +15,16 @@ typedef enum : NSUInteger {
 
 #import <UIKit/UIKit.h>
 #import "DicMessage.h"
-@interface MessageInfoTBVC : UITableViewController
+#import "MessageModel.h"
+@interface MessageInfoTBVC : UITableViewController<MessageModelDelegate>
 
 @property(nonatomic,assign)NSInteger num_model; //模式
 @property(nonatomic,strong)NSMutableArray *array_infos;
 @property(nonatomic,assign)NSInteger num_selectCellTag;
+@property(nonatomic,strong)MessageModel *operation;
+@property(nonatomic,assign)NSInteger num_page;
+
+
+-(void)clearUpReadStatus;
 
 @end

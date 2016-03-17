@@ -8,6 +8,7 @@
 
 #import "MainWikiVC.h"
 #import "UITableView+SDAutoTableViewCellHeight.h"
+#import "UIView+SDAutoLayout.h"
 #import "AFNetworking.h"
 #import "MJRefresh.h"
 #import "MJExtension.h"
@@ -26,13 +27,16 @@
 #import "WikiInfoMessage.h"
 #import "WikiInfoTableVC.h"
 
-@interface MainWikiVC ()<UITableViewDelegate, UITableViewDataSource>
+#import "WikiWebVC.h"
+
+@interface MainWikiVC ()<UITableViewDelegate, UITableViewDataSource,UIScrollViewDelegate>
 {
     MJRefreshComponent *myRefreshView;
     NSInteger page;
 }
 @property(nonatomic ,strong) UITableView *view_recommand;
 @property(nonatomic ,strong) NSMutableArray *listArry;
+@property(nonatomic,strong)NSMutableArray *controllers;
 @end
 
 @implementation MainWikiVC
@@ -49,9 +53,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = YES;
+    
+
+//    _controllers = [NSMutableArray array];
+//    
+//    [_controllers addObject:self.view_recommand];
+//    
+//    
+//    
+//    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 124, ScreenWidth, ScreenHeight-124)];
+//    _scrollView.showsVerticalScrollIndicator = NO;
+//    _scrollView.showsHorizontalScrollIndicator = NO;
+//    _scrollView.bounces = NO;
+//    _scrollView.pagingEnabled = YES;
+//    _scrollView.delegate = self;
+//    
+//    self.view_recommand.frame = CGRectMake(0, 0, ScreenWidth, _scrollView.frame.size.height);
+//    self.view_circle.frame = CGRectMake(0, 0, ScreenWidth, _scrollView.frame.size.height);
+//    self.view_follow.view.frame = CGRectMake(0, 0, ScreenWidth, _scrollView.frame.size.height);
+//    
+//    [_scrollView addSubview:_view_recommand];
+//    [_scrollView addSubview:_view_circle];
+//    [_scrollView addSubview:_view_follow.view];
+//    
+//    
+//
+//    _scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width * _controllers.count, _scrollView.frame.size.height);
+//    [self.view addSubview:_scrollView];
+    
+
     
     [self.view addSubview:self.view_recommand];
     self.view_recommand.sd_layout.spaceToSuperView(UIEdgeInsetsMake(0, 0, 0, 0));
@@ -63,8 +95,9 @@
     .rightSpaceToView(self.view,0)
     .leftSpaceToView(self.view,0)
     .bottomSpaceToView(self.view,0);
+    _view_circle.hidden = YES;
     
-    self.view_circle.hidden = YES;
+    
     
     self.view_follow  = [[UIStoryboard storyboardWithName:@"Login" bundle:nil] instantiateViewControllerWithIdentifier:@"select"];
     [self.view addSubview:self.view_follow.view];
@@ -130,6 +163,18 @@
 
 
 #pragma mark - getter
+
+-(WikiFollowVC*)view_follow
+{
+
+    if (!_view_follow) {
+        
+        _view_follow = [[WikiFollowVC alloc] init];
+    }
+    
+    return _view_follow;
+}
+
 -(UITableView *)view_circle
 {
     if (!_view_circle) {
@@ -270,7 +315,14 @@
 
     WikiInfoMessage *nextvc = [[WikiInfoMessage alloc] init];
     nextvc.data_obj_wiki = model;
+    [nextvc initOperation];
     [self.navigationController pushViewController:nextvc animated:YES];
+
+
+//    WikiWebVC *vc = [[WikiWebVC alloc] init];
+//    [vc initUrl:model.wikiId];
+//    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 

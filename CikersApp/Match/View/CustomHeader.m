@@ -11,7 +11,7 @@
 #import "DicMatchinfo.h"
 #import "DicTeaminfo.h"
 #import "DicGameinfo.h"
-#define testimgurl @"http://static.cikers.com/repos/thumbnail/s130/repos/1/uploads/2015/11/06/72681.png"
+#define testimgurl @"http://newstack.cikers.com/repos/thumbnail/s130/repos/1/uploads/2015/11/06/72681.png"
 
 @implementation CustomHeader
 
@@ -177,14 +177,14 @@
     
     //增加mini显示
     self.img_left = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth*0.25, 20, 40, 40)];
-    [self.img_left sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",self.data_dic.teama.icon]]];
+    [self.img_left sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,self.data_dic.teama.icon]]];
     [self addSubview:self.img_left];
     
     
     
     //增加mini显示
     self.img_right = [[UIImageView alloc] initWithFrame:CGRectMake(ScreenWidth*0.75-40, 20, 40, 40)];
-    [self.img_right sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",self.data_dic.teamb.icon]]];
+    [self.img_right sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,self.data_dic.teamb.icon]]];
     [self addSubview:self.img_right];
     
     self.img_right.hidden = YES;
@@ -201,9 +201,9 @@
     self.lb_timebymatch.text = self.data_dic.formatScheduletime;
 
     
-    [self.img_icon_left sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",self.data_dic.teama.icon]]];
+    [self.img_icon_left sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,self.data_dic.teama.icon]]];
     
-    [self.img_icon_right sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.cikers.com%@",self.data_dic.teamb.icon]]];
+    [self.img_icon_right sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",HOST_IMAGE,self.data_dic.teamb.icon]]];
     
     
     //两个按钮状态

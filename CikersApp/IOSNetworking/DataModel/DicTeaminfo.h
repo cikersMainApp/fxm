@@ -26,8 +26,8 @@
 @property(nonatomic,strong)NSString *contact;
 @property(nonatomic,strong)NSNumber *createdBy;
 
-
-
+@property(nonatomic,strong)NSString *roles;  //角色  管理员 or 成员
+@property(nonatomic,strong)NSNumber *sportscat;
 
 
 @end

@@ -14,6 +14,5 @@ target'CikersApp' do
     pod 'ABTableViewCellController’, '~> 1.0’
     pod ‘MJRefresh’, '~> 3.0’
     pod ‘LLBootstrapButton’, '~> 0.0’
-    pod ‘JCAlertView’, '~> 1.1’
     pod 'AGImagePickerController', '~> 3.0’
 end
